@@ -1,0 +1,1 @@
+body{background-color:green}h1{color:rebeccapurple}@keyframes foo{to{background:red}}#selector{animation:foo 2s}
