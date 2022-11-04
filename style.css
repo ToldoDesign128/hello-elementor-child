@@ -1,17 +1,5 @@
-/*
- Theme Name:   Hello Elementor Child
- Theme URI:    
- Description:  Hello Elementor Child Theme
- Author:       FEderico Toldo e Matteo Bruschetti
- Author URI:   http://example.com
- Template:     hello-elementor
- Version:      1.0.0
- License:      GNU General Public License v2 or later
- License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
- Text Domain:  helloelementorchild
-*/
-
-h1,h2,h3,h4,a{
-    color:blue;
+h1, h2, h3, h4, h5, h6, p, a, ul, ol, li {
+  color: black;
+  background-color: black;
+  border: 1px black;
 }
