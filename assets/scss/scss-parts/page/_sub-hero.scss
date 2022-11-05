@@ -1,0 +1,34 @@
+.sub-hero{
+  background-color: $color-primary;
+  padding-block: 8rem;
+
+  .breadcrumps{
+    color: $color-txt-white-primary;
+  }
+
+  h1{
+    color: $color-txt-white-primary;
+  }
+
+  p{
+    color: $color-txt-white-secondary;
+  }
+}
+
+.page-child{
+  .sub-hero{
+    background-color: $color-white;
+  }
+
+  .breadcrumps{
+    color: $color-primary;
+  }
+
+  h1{
+    color: $color-txt-primary;
+  }
+
+  p{
+    color: $color-txt-secondary;
+  }
+}

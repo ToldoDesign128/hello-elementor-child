@@ -1,16 +1,96 @@
+/*
+Theme Name: Hello Elementor for FBK
+Author: Matteo Bruschetti, Federico Toldo
+Description: Hello Elementor theme for FBK How To 
+Template: hello-elementor
+Version: 0.1
+*/
+/*--------------------------------------------------
+RESET CSS
+--------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/*--------------------------------------------------
+BASE
+--------------------------------------------------*/
+*, *:before, *:after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+  font-size: 62.5%; /*= 62,5% di 16px = 10px*/
+  box-sizing: border-box; /*Include padding and border in the element's total width and height*/
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
-  background-color: green;
+  font-size: 1.6rem; /*= 10px * 1.6 = 16px*/
+  background: #FFF;
+  overflow-x: hidden;
 }
 
-h1 {
-  color: rebeccapurple;
+img {
+  max-width: 100%;
 }
 
-@keyframes foo {
-  to {
-    background: red;
-  }
+.sub-hero {
+  background-color: #1254A2;
+  padding-block: 8rem;
 }
-#selector {
-  animation: foo 2s;
+.sub-hero .breadcrumps {
+  color: #FFF;
+}
+.sub-hero h1 {
+  color: #FFF;
+}
+.sub-hero p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.page-child .sub-hero {
+  background-color: #FFF;
+}
+.page-child .breadcrumps {
+  color: #1254A2;
+}
+.page-child h1 {
+  color: #323130;
+}
+.page-child p {
+  color: #605E5C;
+}
+
+.single-sub-hero .single-sub-hero__cf {
+  display: flex;
+  gap: 3.2rem;
+}
+.single-sub-hero .single-sub-hero__cf div {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.fbk-cw-highlight {
+  background-color: lightcoral;
+}
+
+.fbk-cw-cta {
+  background-color: lightblue;
 }

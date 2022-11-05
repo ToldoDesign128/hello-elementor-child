@@ -1,2 +1,28 @@
+/*
+Theme Name: Hello Elementor for FBK
+Author: Matteo Bruschetti, Federico Toldo
+Description: Hello Elementor theme for FBK How To 
+Template: hello-elementor
+Version: 0.1
+*/
+
+//variables
+@import "scss-parts/variables/device-screen";  
+@import "scss-parts/variables/color";
+@import "scss-parts/variables/typography";
+@import "scss-parts/variables/helpers";
+
+
+//base
 @import "scss-parts/base";
+
+
+//page
 @import "scss-parts/page/footer";
+@import "scss-parts/page/sub-hero";
+@import "scss-parts/page/single-sub-hero";
+
+
+//widgets
+@import "scss-parts/widgets/highlight"; 
+@import "scss-parts/widgets/cta"; 
