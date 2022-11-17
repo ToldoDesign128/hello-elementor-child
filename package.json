@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ToldoDesign128/hello-elementor-child#readme",
   "devDependencies": {
     "laravel-mix": "^6.0.49",
+    "minifier": "^0.8.1",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.56.0",
     "sass-loader": "^12.1.0"
