@@ -9,6 +9,8 @@ function HT_setup_theme() {
 	add_theme_support("post-thumbnails");
 	//aggiunta di una posizione del menu
 	// register_nav_menu("header", "Navbar Header");
+	// Add widgets support
+	add_theme_support( 'widgets' );
 }
 add_action("after_setup_theme", "HT_setup_theme");
 
@@ -23,7 +25,7 @@ function HT_remove_content_editor() {
 function hello_elementor_child_enqueue_scripts() {
 	wp_enqueue_style(
 		'hello-elementor-child-style',
-		get_stylesheet_directory_uri() . '/style.css',
+		get_stylesheet_directory_uri() . '/style.min.css',
 		[
 			'hello-elementor-theme-style',
 		],
@@ -140,14 +142,17 @@ function HT_remove_menus_editors() {
 }
 add_action('init','HT_remove_menus_editors');
 
-
 /*FUNCTION PARTS
 -------------------------------------------------*/
+
+//CPT
+require dirname(__FILE__).'/assets/function-parts/theme/footer-functions-widget.php';
 
 //CPT
 require dirname(__FILE__).'/assets/function-parts/cpt-documenti.php';
 
 // Custom Elementor
 require dirname(__FILE__).'/assets/function-parts/custom-elementor/custom-elementor.php';
+
 
 ?>
