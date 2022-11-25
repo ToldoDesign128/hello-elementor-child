@@ -6,6 +6,10 @@ Template: hello-elementor
 Version: 0.1
 */
 
+//Bootstrap
+@import "bootstrap/bootstrap-reboot.scss";
+@import "bootstrap/bootstrap-grid.scss";
+
 //variables
 @import "scss-parts/variables/device-screen";  
 @import "scss-parts/variables/color";
