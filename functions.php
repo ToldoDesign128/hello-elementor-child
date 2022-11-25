@@ -145,7 +145,7 @@ add_action('init','HT_remove_menus_editors');
 /*FUNCTION PARTS
 -------------------------------------------------*/
 
-//CPT
+//Footer Widget
 require dirname(__FILE__).'/assets/function-parts/theme/footer-functions-widget.php';
 
 //CPT

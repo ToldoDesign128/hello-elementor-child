@@ -4657,8 +4657,52 @@ img {
 
 footer {
   background-color: #1254A2;
-  height: 80vh;
-  padding-top: 5rem;
+  padding: 3rem 0;
+}
+footer .footer-title {
+  color: #fff;
+  margin: 1rem 0;
+}
+footer ul li {
+  list-style: none;
+  margin: 0.2rem 0;
+}
+footer ul li a {
+  color: #FFF;
+  text-decoration: none;
+  opacity: 80%;
+  font-weight: 300;
+  transition-property: ease-in-out;
+  transition-duration: 0.3s;
+}
+footer ul li a:hover {
+  color: #FFF;
+  opacity: 100%;
+  font-weight: 400;
+}
+footer .footer-info {
+  max-height: 48px;
+}
+footer .footer-info p {
+  display: inline-block;
+  color: #FFF;
+  font-size: 12px;
+}
+footer .footer-info a {
+  text-decoration: none;
+}
+footer .footer-info button {
+  background: #FFF;
+  color: #161B22;
+  font-size: 12px;
+  border: 1px solid #1254A2;
+  transition-property: ease-in-out;
+  transition-duration: 0.3s;
+}
+footer .footer-info button:hover {
+  background: #1254A2;
+  color: #FFF;
+  border: 1px solid #FFF;
 }
 
 .sub-hero {
