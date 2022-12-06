@@ -9,7 +9,7 @@ function tutsplus_widgets_init() {
      'description' => __( 'Prima colonna del footer widget area', 'tutsplus' ),
      'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
      'after_widget' => '</div>',
-     'before_title' => '<h3 class="footer-title">',
+     'before_title' => '<h3 id="footer-title" class="footer-title">',
      'after_title' => '</h3>',
  ) );
 
@@ -20,7 +20,7 @@ function tutsplus_widgets_init() {
      'description' => __( 'Seconda colonna del footer widget area', 'tutsplus' ),
      'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
      'after_widget' => '</div>',
-     'before_title' => '<h3 class="footer-title">',
+     'before_title' => '<h3 id="footer-title" class="footer-title">',
      'after_title' => '</h3>',
  ) );
 
@@ -31,7 +31,7 @@ function tutsplus_widgets_init() {
      'description' => __( 'Terza colonna del footer widget area', 'tutsplus' ),
      'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
      'after_widget' => '</div>',
-     'before_title' => '<h3 class="footer-title">',
+     'before_title' => '<h3 id="footer-title" class="footer-title">',
      'after_title' => '</h3>',
  ) );
 
@@ -42,7 +42,7 @@ function tutsplus_widgets_init() {
      'description' => __( 'Quarta colonna del footer widget area', 'tutsplus' ),
      'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
      'after_widget' => '</div>',
-     'before_title' => '<h3 class="footer-title">',
+     'before_title' => '<h3 id="footer-title" class="footer-title">',
      'after_title' => '</h3>',
  ) );
 
@@ -53,7 +53,7 @@ function tutsplus_widgets_init() {
     'description' => __( 'Quinta colonna del footer widget area', 'tutsplus' ),
     'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<h3 class="footer-title">',
+    'before_title' => '<h3 id="footer-title" class="footer-title">',
     'after_title' => '</h3>',
  ) );
 
@@ -64,7 +64,7 @@ function tutsplus_widgets_init() {
     'description' => __( 'Sesta colonna del footer widget area', 'tutsplus' ),
     'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<h3 class="footer-title">',
+    'before_title' => '<h3 id="footer-title" class="footer-title">',
     'after_title' => '</h3>',
  ) );
       

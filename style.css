@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 /*
 Theme Name: Hello Elementor for FBK
 Author: Matteo Bruschetti, Federico Toldo
@@ -4609,6 +4610,72 @@ progress {
     display: none !important;
   }
 }
+h1 {
+  font-weight: 300;
+  font-size: 80px;
+  letter-spacing: -1.5px;
+  line-height: normal;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 36px;
+  letter-spacing: -0.5px;
+  line-height: 150%;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0.25px;
+  line-height: 150%;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+h6 {
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.15px;
+  line-height: 150%;
+}
+
+p,
+a,
+ul,
+ol,
+li {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 160%;
+}
+
+.card-body p {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 160%;
+}
+
+.overtitle p {
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
 /*--------------------------------------------------
 RESET CSS
 --------------------------------------------------*/
@@ -4657,6 +4724,7 @@ img {
 
 footer {
   background-color: #1254A2;
+  margin-top: 3rem;
   padding: 3rem 0;
 }
 footer .footer-title {
@@ -4682,6 +4750,13 @@ footer ul li a:hover {
 }
 footer .footer-info {
   max-height: 48px;
+  margin-top: 5rem;
+}
+footer .footer-info .lingua {
+  text-align: right;
+}
+footer .footer-info .lingua p {
+  font-size: 16px;
 }
 footer .footer-info p {
   display: inline-block;
@@ -4704,7 +4779,21 @@ footer .footer-info button:hover {
   color: #FFF;
   border: 1px solid #FFF;
 }
+footer .current_page_item a {
+  text-decoration: underline;
+}
 
+@media (max-width: 991px) {
+  footer {
+    margin-top: 1rem;
+  }
+  footer ul li {
+    display: none;
+  }
+  footer ul .show-item {
+    display: block;
+  }
+}
 .sub-hero {
   background-color: #1254A2;
   padding-block: 8rem;

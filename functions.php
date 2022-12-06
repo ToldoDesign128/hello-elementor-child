@@ -31,15 +31,10 @@ function hello_elementor_child_enqueue_scripts() {
 		],
 		'1.0.0'
 	);
+	// My JS
+	wp_enqueue_script( 'howto-script', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array('jquery'), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20 );
-
-
-// add JS
-// function HT_scripts() {
-// 	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array('jquery'), false, true );
-// }
-// add_action("wp_enqueue_scripts", "HT_scripts");
 
 
 // Remove comments
