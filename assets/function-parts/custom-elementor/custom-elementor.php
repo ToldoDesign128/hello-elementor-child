@@ -16,6 +16,14 @@ function add_elementor_widget_categories( $elements_manager ) {
 	);
 
   $elements_manager->add_category(
+		'fbk-loops',
+		[
+			'title' => esc_html__( 'FBK - Loops', 'custom-FBK-widget' ),
+			'icon' => 'fa fa-plug',
+		]
+	);
+
+  $elements_manager->add_category(
 		'fbk-single',
 		[
 			'title' => esc_html__( 'FBK - Single post', 'textdomain' ),
@@ -46,6 +54,25 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   // CTA
   require_once( __DIR__ . '/widgets/cta.php' );
   $widgets_manager->register( new \FBK_Elementor_CTA() );
+
+  // FAQ
+  require_once( __DIR__ . '/widgets/faq.php' );
+  $widgets_manager->register( new \FBK_Elementor_FAQ() );
+
+  // Gruppo di link 
+  require_once( __DIR__ . '/widgets/group-link.php' );
+  $widgets_manager->register( new \FBK_Elementor_GroupLink() );
+
+  // Contacts
+  require_once( __DIR__ . '/widgets/contacts.php' );
+  $widgets_manager->register( new \FBK_Elementor_Contacts() );
+
+
+  /* FBK - Loops
+  ----------------------*/
+
+  // Documenti
+  
 
 
   /* FBK - Single post
@@ -182,11 +209,15 @@ function HT_css_elementor(){
     /*remove style tab*/
     .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}
 
+    /*remove Capolettera switcher*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-drop_cap {display:none !important;}
+
     /*castred Wysiwyg*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-container .mce-panel .mce-container .mce-listbox{display:none !important;} /*no switcher p and headings*/
     .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-tools {display:none !important;} /*no caricamento media + no switcher modalità*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget.mce-btn#mceu_7 {display:none !important;} /*no full screen*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget.mce-btn#mceu_8 {display:none !important;} /*no toolbar*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(8) {display:none !important;} /*no full screen*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(9) {display:none !important;} /*no toolbar*/
   
-  </style>';
+    </style>';
 }
 add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor' );

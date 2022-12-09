@@ -4748,3 +4748,11 @@ footer .footer-info button:hover {
 .fbk-cw-cta {
   background-color: lightblue;
 }
+
+.link-list {
+  background-color: lightgray;
+}
+.link-list .link-card {
+  background-color: gray;
+  display: inline-block;
+}

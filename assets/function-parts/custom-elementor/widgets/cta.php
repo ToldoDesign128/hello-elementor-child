@@ -87,9 +87,19 @@ class FBK_Elementor_CTA extends \Elementor\Widget_Base {
       );
 
 			$this->add_control(
-				'highligh_link',
+        'cta_btn_label',
+        [
+          'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+          'type' => \Elementor\Controls_Manager::TEXT,
+          'placeholder' => esc_html__( 'Testo della pulsante', 'custom-FBK-widget' ),
+					'separator' => 'before',
+        ]
+      );
+
+			$this->add_control(
+				'cta_btn_link',
 				[
-					'label' => esc_html__( 'Pulsante', 'custom-FBK-widget' ),
+					'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
 					'type' => \Elementor\Controls_Manager::URL,
 					'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
 					'options' => [ 'url', 'is_external', 'nofollow' ],
@@ -123,14 +133,15 @@ class FBK_Elementor_CTA extends \Elementor\Widget_Base {
     //get input from controls
 		$title = $settings['cta_title'];
 		$text = $settings['cta_text'];
-		if ( ! empty( $settings['highligh_link']['url'] ) ) { $this->add_link_attributes( 'highligh_link', $settings['highligh_link'] ); }
+		$cta_btn_label = $settings['cta_btn_label'];
+		if ( ! empty( $settings['cta_btn_link']['url'] ) ) { $this->add_link_attributes( 'cta_btn_link', $settings['cta_btn_link'] ); }
     ?>
 
 
 		<section class="fbk-cw fbk-cw-cta">
       <p><?php echo $text; ?></p>
-			<a <?php echo $this->get_render_attribute_string( 'highligh_link' ); ?>>
-				Testo pulsante
+			<a <?php echo $this->get_render_attribute_string( 'cta_btn_link' ); ?>>
+				<?php echo $cta_btn_label; ?>
 			</a>
     </section>
 

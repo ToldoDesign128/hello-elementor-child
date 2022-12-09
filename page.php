@@ -20,6 +20,7 @@ while ( have_posts() ) :
 	<?php endif; ?>
 
 	<div class="page-content">
+		<p>loop delle pagine figlie e dei relativi Documenti</p>
 		<?php the_content(); ?>
   </div>
 
