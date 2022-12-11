@@ -28,7 +28,11 @@ Version: 0.1
 @import "scss-parts/page/single-sub-hero";
 
 
-//widgets
+//Widgets - FBK Pages
 @import "scss-parts/widgets/highlight"; 
 @import "scss-parts/widgets/cta"; 
 @import "scss-parts/widgets/group-link"; 
+
+//Widgets - FBK Single
+@import "scss-parts/widgets/h-phrase"; 
+@import "scss-parts/widgets/h-code"; 

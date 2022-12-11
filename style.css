@@ -4756,3 +4756,13 @@ footer .footer-info button:hover {
   background-color: gray;
   display: inline-block;
 }
+
+.h-phrase {
+  background-color: lightcyan;
+  padding: 1.6rem;
+}
+
+pre.h-code {
+  background-color: #EDEEEF;
+  padding: 1.6rem;
+}

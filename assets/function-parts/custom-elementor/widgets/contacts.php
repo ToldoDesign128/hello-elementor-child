@@ -192,9 +192,7 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
 				[
 					'label' => esc_html__( 'Immagine contatto', 'custom-FBK-widget' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
-					'default' => [
-						'url' => \Elementor\Utils::get_placeholder_image_src(),
-					],
+					'media_types' => ['image', 'svg'],
 				]
 			);
 
