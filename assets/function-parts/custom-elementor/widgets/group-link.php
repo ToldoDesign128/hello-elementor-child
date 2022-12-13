@@ -1,0 +1,262 @@
+<?php
+/**
+ * Group Link section
+ *
+ * @since 1.0.0
+ */
+class FBK_Elementor_GroupLink extends \Elementor\Widget_Base { 
+  
+  /**
+	 * Get widget name.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @return string Widget name.
+	 */
+	public function get_name() {
+		return 'fbk-group-link';
+	}
+
+	/**
+	 * Get widget title.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @return string Widget title.
+	 */
+	public function get_title() {
+		return esc_html__( 'FBK Group Link', 'custom-FBK-widget' );
+	}
+
+	/**
+	 * Get widget icon.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @return string Widget icon.
+	 */
+	public function get_icon() {
+		return 'eicon-chain-broken';
+	}
+
+  /**
+	 * Get widget categories.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @return array Widget categories.
+	 */
+	public function get_categories() {
+		return [ 'fbk-pages' ];
+	}
+
+	/**
+	 * Get widget keywords.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @return array Widget keywords.
+	 */
+	public function get_keywords() {
+		return [ 'group link', 'fbk', 'howto' ];
+	}
+
+	/**
+	 * Register widget controls.
+	 *
+	 * @since 1.0.0
+	 * @access protected
+	 */
+	protected function register_controls() {
+    $this->start_controls_section(
+			'content_section',
+			[
+				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+      $this->add_control(
+        'group-link_overtitle',
+        [
+          'label' => esc_html__( 'Sopratitolo', 'custom-FBK-widget' ),
+          'type' => \Elementor\Controls_Manager::TEXT,
+          'placeholder' => esc_html__( 'Sopratitolo della sezione', 'custom-FBK-widget' ),
+        ]
+      );
+
+      $this->add_control(
+        'group-link_title',
+        [
+          'label' => esc_html__( 'Titolo', 'custom-FBK-widget' ),
+          'type' => \Elementor\Controls_Manager::TEXT,
+          'placeholder' => esc_html__( 'Titolo della sezione', 'custom-FBK-widget' ),
+        ]
+      );
+
+			$this->add_control(
+        'group-link_btn_label',
+        [
+          'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+          'type' => \Elementor\Controls_Manager::TEXT,
+          'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
+					'separator' => 'before',
+        ]
+      );
+
+			$this->add_control(
+				'group-link_btn_link',
+				[
+					'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
+					'type' => \Elementor\Controls_Manager::URL,
+					'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
+					'options' => [ 'url', 'is_external', 'nofollow' ],
+					'default' => [
+						'url' => '',
+						'is_external' => false,
+						'nofollow' => false,
+					],
+					'label_block' => true,
+				]
+			);
+
+		$this->end_controls_section();
+
+
+		// Lista Link
+		$this->start_controls_section(
+			'links_section',
+			[
+				'label' => esc_html__( 'Lista Link', 'custom-FBK-widget' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+			/* Start repeater registration */
+			$repeater = new \Elementor\Repeater();
+
+			$repeater->add_control(
+				'group-link_links_label',
+				[
+					'label' => esc_html__( 'Testo', 'custom-FBK-widget' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'placeholder' => esc_html__( 'Testo della pulsante', 'custom-FBK-widget' ),
+					'label_block' => true,
+					'dynamic' => [
+						'active' => true,
+					],
+				]
+			);
+
+			$repeater->add_control(
+				'group-link_links_link',
+				[
+					'label' => esc_html__( 'Link', 'custom-FBK-widget' ),
+					'type' => \Elementor\Controls_Manager::URL,
+					'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
+					'options' => [ 'url', 'is_external', 'nofollow' ],
+					'default' => [
+						'url' => '',
+						'is_external' => false,
+						'nofollow' => false,
+					],
+					'dynamic' => [
+						'active' => true,
+					],
+				]
+			);
+			/* End repeater registration*/
+
+			/* Start repeater usage*/
+			$this->add_control(
+				'group-link_links',
+				[
+					'type' => \Elementor\Controls_Manager::REPEATER,
+					'fields' => $repeater->get_controls(),
+					'title_field' => "Link",
+				]
+			);
+			/* End repeater usage*/
+
+		$this->end_controls_section();
+	}
+
+	//Remove tab Avanzato
+	public function get_stack( $with_common_controls = true ) {
+		return parent::get_stack( false );
+	}
+
+
+	/**
+	 * Render widget output on the frontend.
+	 *
+	 * @since 1.0.0
+	 * @access protected
+	 */
+	protected function render() {
+		$settings = $this->get_settings_for_display();
+
+		//Content
+		$overtitle = $settings['group-link_overtitle'];
+		$title = $settings['group-link_title'];
+		$btn_label = $settings['group-link_btn_label'];
+		if ( ! empty( $settings['group-link_btn_link']['url'] ) ) { $this->add_link_attributes( 'group-link_btn_link', $settings['group-link_btn_link'] ); }
+
+		//REPEATER - Lista Link
+    $repeater = $settings['group-link_links']
+		?>
+
+		<section class="fbk-cw fbk-cw-group-link">
+
+			<div class="header">
+				<p><?php echo $overtitle; ?></p>
+				<h2><?php echo $title; ?></h2>
+				<a <?php echo $this->get_render_attribute_string( 'group-link_btn_link' ); ?>>
+					<?php echo $btn_label; ?>
+				</a>
+			</div>
+
+			<div class="link-list">
+
+				<?php foreach ( $repeater as $index => $item ) {
+					$link_label = $repeater[$index]['group-link_links_label'];
+					
+					//IF il campo Link non è vuoto
+					if ( ! empty( $item['group-link_links_link']['url'] ) ) { $this->add_link_attributes( "link_{$index}", $item['group-link_links_link'] ); 
+						?>
+
+						<a class="link-card" <?php echo $this->get_render_attribute_string( "link_{$index}" ); ?>>
+							<p class="link-card__label">
+								<?php echo $link_label; ?>
+							</p>
+							<?php
+							//Se target _blank
+							if ( $repeater[$index]['group-link_links_link']['is_external'] == 'on') { ?>
+								<p class="link-card__url">
+									<?php echo $repeater[$index]['group-link_links_link']['url']; ?>
+								</p>
+								<?php
+							};
+							?>
+						</a>
+						
+						<?php
+					} else { ?>
+
+						<a class="link-card url-missing">
+							<?php echo $link_label; ?>
+						</a>
+
+						<?php
+					};
+				}; ?>
+
+			</div>
+			
+		</section>
+		
+			
+
+	<?php
+	}
+}

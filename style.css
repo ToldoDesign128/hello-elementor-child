@@ -4837,3 +4837,21 @@ footer .current_page_item a {
 .fbk-cw-cta {
   background-color: lightblue;
 }
+
+.link-list {
+  background-color: lightgray;
+}
+.link-list .link-card {
+  background-color: gray;
+  display: inline-block;
+}
+
+.h-phrase {
+  background-color: lightcyan;
+  padding: 1.6rem;
+}
+
+pre.h-code {
+  background-color: #EDEEEF;
+  padding: 1.6rem;
+}

@@ -16,6 +16,14 @@ function add_elementor_widget_categories( $elements_manager ) {
 	);
 
   $elements_manager->add_category(
+		'fbk-loops',
+		[
+			'title' => esc_html__( 'FBK - Loops', 'custom-FBK-widget' ),
+			'icon' => 'fa fa-plug',
+		]
+	);
+
+  $elements_manager->add_category(
 		'fbk-single',
 		[
 			'title' => esc_html__( 'FBK - Single post', 'textdomain' ),
@@ -47,9 +55,55 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   require_once( __DIR__ . '/widgets/cta.php' );
   $widgets_manager->register( new \FBK_Elementor_CTA() );
 
+  // FAQ
+  require_once( __DIR__ . '/widgets/faq.php' );
+  $widgets_manager->register( new \FBK_Elementor_FAQ() );
+
+  // Gruppo di link 
+  require_once( __DIR__ . '/widgets/group-link.php' );
+  $widgets_manager->register( new \FBK_Elementor_GroupLink() );
+
+  // Gruppo di download 
+  require_once( __DIR__ . '/widgets/group-download.php' );
+  $widgets_manager->register( new \FBK_Elementor_GroupDownload() );
+
+  // Contacts
+  require_once( __DIR__ . '/widgets/contacts.php' );
+  $widgets_manager->register( new \FBK_Elementor_Contacts() );
+
+  // GoogleCalendar
+  require_once( __DIR__ . '/widgets/google-calendar.php' );
+  $widgets_manager->register( new \FBK_Elementor_GoogleCalendar() );
+
+
+  /* FBK - Loops
+  ----------------------*/
+
+  // Documenti
+  
+
 
   /* FBK - Single post
   ----------------------*/
+  // HeadingTwo
+  require_once( __DIR__ . '/widgets/h2.php' );
+  $widgets_manager->register( new \FBK_Elementor_HeadingTwo() );
+
+  // HeadingThree
+  require_once( __DIR__ . '/widgets/h3.php' );
+  $widgets_manager->register( new \FBK_Elementor_HeadingThree() );
+
+  // Images
+  require_once( __DIR__ . '/widgets/img.php' );
+  $widgets_manager->register( new \FBK_Elementor_Image() );
+
+  // HighlightedPhrase
+  require_once( __DIR__ . '/widgets/h-phrase.php' );
+  $widgets_manager->register( new \FBK_Elementor_HighlightedPhrase() );
+
+  // HighlightedCode
+  require_once( __DIR__ . '/widgets/h-code.php' );
+  $widgets_manager->register( new \FBK_Elementor_HighlightedCode() );
 }
 add_action( 'elementor/widgets/register', 'register_fbk_custom_widgets' );
 
@@ -71,10 +125,10 @@ function remove_unused_widgets( $widgets_manager ) {
 	$widgets_to_unregister = [
     //Base
     'inner-section',
-		// 'heading',
+		'heading',
 		'image',
 		// 'text-editor', // non si può disattivare nei single
-		'video',
+		//'video',
 		'button',
 		'divider',
 		'spacer',
@@ -86,7 +140,7 @@ function remove_unused_widgets( $widgets_manager ) {
 		'icon-box',
 		'star-rating',
 		'image-carousel',
-		'image-gallery',
+		//'image-gallery',
 		'icon-list',
 		'counter',
 		'progress',
@@ -182,11 +236,19 @@ function HT_css_elementor(){
     /*remove style tab*/
     .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}
 
+    /*remove Capolettera switcher from Editor*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-drop_cap {display:none !important;}
+
     /*castred Wysiwyg*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-container .mce-panel .mce-container .mce-listbox{display:none !important;} /*no switcher p and headings*/
     .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-tools {display:none !important;} /*no caricamento media + no switcher modalità*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget.mce-btn#mceu_7 {display:none !important;} /*no full screen*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget.mce-btn#mceu_8 {display:none !important;} /*no toolbar*/
-  
-  </style>';
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(8) {display:none !important;} /*no full screen*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(9) {display:none !important;} /*no toolbar*/
+
+    /*castred Alert*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-alert_type.elementor-control-type-select {display:none !important;} /*no selector for Type*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-show_dismiss.elementor-control-type-select {display:none !important;} /*no selector for Dismiss icon*/
+    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-dismiss_icon.elementor-control-type-icons {display:none !important;} /*no Icon*/  
+    </style>';
 }
 add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor' );

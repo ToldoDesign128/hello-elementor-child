@@ -93,14 +93,6 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 }
 
 
-// add SVG
-function businessplus_mime_types($mimes) {
-	$mimes['svg'] = 'image/svg+xml';
-	return $mimes;
-}
-add_filter('upload_mimes', 'businessplus_mime_types');
-add_filter('mime_types', 'businessplus_mime_types');
-
 
 //Remove items from admin bar
 function HT_remove_admin_bar_links() {
