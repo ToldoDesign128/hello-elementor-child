@@ -3,33 +3,38 @@ footer{
     margin-top: 3rem;
     padding: 3rem 0;
 
-    .footer-title{
-        color: #fff;
-        margin: 1rem 0;
-    }
-    ul{
-        
+    .footer-menu-list{
 
-        li{
-            list-style: none;
-            margin: 0.2rem 0;
+        .footer-title{
+            color: #fff;
+            margin: 1rem 0;
+        }
+        ul{
             
-            a{
-                color:$color-white;
-                text-decoration: none;
-                opacity: 80%;
-                font-weight: 300;
-                transition-property: ease-in-out;
-                transition-duration: 0.3s;
+    
+            li{
+                list-style: none;
+                margin: 0.2rem 0;
                 
-                &:hover{
+                a{
                     color:$color-white;
-                    opacity: 100%;
-                    font-weight: 400;
+                    text-decoration: none;
+                    opacity: 80%;
+                    font-weight: 300;
+                    transition-property: ease-in-out;
+                    transition-duration: 0.3s;
+                    
+                    &:hover{
+                        color:$color-white;
+                        opacity: 100%;
+                        font-weight: 400;
+                    }
                 }
             }
         }
     }
+
+
     .footer-info{
         max-height: 48px;
         margin-top: 5rem;
@@ -73,14 +78,24 @@ footer{
 @media #{$underlarge}{
     footer{
         margin-top: 1rem;
+        
+        .menu{
+            display: none;
+        }
 
-        ul{    
-            li{
-                display: none;
+        .footer-menu-list{
+
+            ul{
+                
+        
+                li{
+                    margin:1rem 0;
+                }
             }
-            .show-item{
-                display: block;
-            }
+        }
+
+        .show-item{
+            display: block;
         }
     }
 }
