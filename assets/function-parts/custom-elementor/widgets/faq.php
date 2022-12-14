@@ -204,7 +204,7 @@ class FBK_Elementor_FAQ extends \Elementor\Widget_Base {
 
 		<section class="fbk-cw fbk-cw-faq">
 
-			<div class="header">
+			<div class="section-header">
 				<p><?php echo $overtitle; ?></p>
 				<h2><?php echo $title; ?></h2>
 				<a <?php echo $this->get_render_attribute_string( 'faq_btn_link' ); ?>>

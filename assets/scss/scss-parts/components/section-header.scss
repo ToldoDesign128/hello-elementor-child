@@ -1,0 +1,28 @@
+.section-header{
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 2.4rem;
+   
+   @media #{$medium}{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+   }
+   
+   @media #{$large}{
+      margin-bottom: 2.8rem;
+   }
+
+   .overtitle{
+      margin-bottom: .4rem;
+   }
+
+   .button{
+      margin-top: 1.2rem;
+      
+      @media #{$medium}{
+         margin-top: 0;
+         margin-bottom: .8rem;
+      }
+   }
+}

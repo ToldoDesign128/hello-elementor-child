@@ -27,17 +27,50 @@ BASE
 *, *:before, *:after{ -webkit-tap-highlight-color: rgba(0, 0, 0, 0); } //remove highlights on tapping on mobile devices 
 html{
   font-size: 62.5%; /*= 62,5% di 16px = 10px*/
-  box-sizing: border-box; /*Include padding and border in the element's total width and height*/
+  box-sizing: border-box;
   scroll-behavior: smooth; 
   overflow-x: hidden;
 }
 
 body{
   font-size: 1.6rem; /*= 10px * 1.6 = 16px*/
-  background: $color-white;
+  background: $color-fede;
   overflow-x: hidden;
 }
 
 img{
   max-width: 100%;
+}
+
+
+
+// Elemntor CSS overwrite
+.elementor .elementor-section{
+   position: unset;
+   
+   .elementor-container{
+      display: unset;
+      position: unset;
+      max-width: 100%;
+      
+      .elementor-column{
+         display: unset;
+         position: unset;
+         
+         .elementor-widget-wrap{
+            display: unset;
+            position: unset;
+            padding: 0;
+
+            .elementor-widget{
+               position: unset;
+
+               .elementor-widget-container{
+                  transition: none;
+               }
+            }
+         }
+      }
+
+   }
 }

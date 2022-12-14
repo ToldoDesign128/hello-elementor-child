@@ -174,7 +174,7 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 
 		<section class="fbk-cw fbk-cw-gcalendar">
 
-			<div class="header">
+			<div class="section-header">
 				<p><?php echo $overtitle; ?></p>
 				<h2><?php echo $title; ?></h2>
 				<a <?php echo $this->get_render_attribute_string( 'gcalendar_btn_link' ); ?>>

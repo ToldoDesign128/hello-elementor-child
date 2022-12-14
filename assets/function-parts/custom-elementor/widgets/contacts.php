@@ -241,7 +241,7 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
 
 		<section class="fbk-cw fbk-cw-contacts">
 
-			<div class="header">
+			<div class="section-header">
 				<p><?php echo $overtitle; ?></p>
 				<h2><?php echo $title; ?></h2>
 				<a <?php echo $this->get_render_attribute_string( 'contacts_btn_link' ); ?>>
