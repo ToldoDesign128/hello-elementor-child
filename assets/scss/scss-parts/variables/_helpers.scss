@@ -1,0 +1,7 @@
+.mb-section{
+   margin-bottom: 5.6rem;
+   
+   @media #{$large}{
+      margin-bottom: 10.4rem;
+   }
+}

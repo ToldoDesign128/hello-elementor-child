@@ -170,7 +170,7 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
 
 		<section class="fbk-cw fbk-cw-group-download">
 
-			<div class="header">
+			<div class="section-header">
 				<p><?php echo $overtitle; ?></p>
 				<h2><?php echo $title; ?></h2>
 			</div>

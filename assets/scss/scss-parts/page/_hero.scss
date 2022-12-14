@@ -1,0 +1,136 @@
+.hero{
+
+.hero-bg{
+   min-height: 100vh; min-height: 100svh; //da toglierci poi l'altezza della navbar
+   background-color: $color-primary;
+   display: grid; align-items: center;
+
+   h1{
+      color: $color-txt-white-primary;
+      text-align: center;
+      font-size: clamp(5.6rem, 10vw, 8.8rem);
+   }
+
+   .subtitle{
+      color: $color-txt-white-secondary;
+      text-align: center;
+      letter-spacing: 3px;
+      font-size: 1.8rem;
+      
+      @media #{$large}{
+         font-size: 2.4rem;
+      }
+   }
+
+
+   .searchform-wrapper{
+      margin-block: 5vh;
+      text-align: center;
+      width: 100%;
+
+      form{
+         display: flex;
+         justify-content: center;
+
+         .input-wrapper{
+            width: 100%; max-width: 58rem;
+         }
+
+         .search-field{
+            border-radius: 0;
+            border: 2px solid $color-white;
+            background-color: $color-white;
+            padding: 1.6rem 1.6rem 1.6rem 2.4rem;
+            transition: none;
+
+            //iOS min height fix
+            box-sizing: border-box !important; height: 5.2rem !important;
+
+            @media #{$large}{
+               padding: 1.6rem 2.4rem 1.6rem 3.2rem;
+            }
+
+            &:focus-visible{
+               outline: 2px solid $color-primary;
+               outline-offset: -4px;
+            }
+         }
+
+
+         .svg-wrapper{
+            position: relative;
+
+            svg{
+               position: absolute;
+               inset: 0; margin: auto;
+               pointer-events: none;
+            }
+
+            .search-submit{
+               display: block;
+               padding: 0;
+               background-color: $color-white;
+               transition: all .4s cubic-bezier(.165,.84,.44,1);
+   
+               font-family: $primary-font;
+               border-radius: 0;
+               border: 2px solid $color-white;
+               /*iOS input height fix*/
+               box-sizing: border-box !important; height: 5.2rem !important; width: 5.2rem !important; -webkit-appearance: none !important;
+
+               &:focus-visible, &:focus{
+                  outline: 0;
+               }
+            }
+
+            &:hover, &:focus-visible, &:focus{
+               outline: 0;
+
+               svg path{fill: $color-white}
+               .search-submit{
+                  background-color: $color-primary;
+               }
+            }
+         }
+
+
+      }
+   }
+
+
+   .chips-wrapper{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+      justify-content: center;
+      width: 100%; max-width: 100rem; margin-inline: auto;
+
+      .chip{
+         display: inline-block;
+         padding: 1rem 1.6rem;
+         text-decoration: none;
+         color: $color-txt-primary;
+         background-color: $color-white;
+         font-size: 1.4rem;
+         text-align: center;
+         line-height: 100%;
+         transition: all .4s cubic-bezier(.165,.84,.44,1);
+
+         &:hover{
+            background-color: $color-light-primary;
+            color: $color-primary;
+         }
+      }
+   }
+}
+
+
+.home_posts{
+   transform: translateY(-20%);
+   
+   @media #{$large}{
+      transform: translateY(-35%);
+   }
+}
+
+}
