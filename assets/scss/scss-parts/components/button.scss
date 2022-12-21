@@ -1,4 +1,4 @@
-.button{
+.button {
    display: inline-block;
    text-decoration: none;
    padding: 1.2rem 1.4rem 1.2rem 1.8rem;
@@ -7,26 +7,29 @@
    font-weight: 500;
    letter-spacing: 3px;
    text-transform: uppercase;
-   transition: all .4s cubic-bezier(.165,.84,.44,1);
+   white-space: nowrap;
+   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-   .svg-wrapper{
+   .svg-wrapper {
       display: inline-block;
       margin-left: 1.2rem;
    }
-   
-   @media #{$large}{
+
+   @media #{$large} {
       padding: 1.2rem 1.6rem 1.2rem 2.4rem;
    }
 
-   &.button-primary{
+   &.button-primary {
       background-color: $color-primary;
       color: $color-white;
 
-      &:hover{
+      &:hover {
          background-color: $color-light-primary;
          color: $color-primary;
 
-         .svg-wrapper svg path {fill: $color-primary;}
+         .svg-wrapper svg path {
+            fill: $color-primary;
+         }
       }
    }
 }

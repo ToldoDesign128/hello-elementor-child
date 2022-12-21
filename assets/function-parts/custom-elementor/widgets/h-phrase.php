@@ -77,13 +77,13 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 		);
 
       $this->add_control(
-        'h-phrase',
-        [
-          'label' => esc_html__( 'Frase in evidenza', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXTAREA,
-					'rows' => 20,
-					'placeholder' => esc_html__( 'Inserisci la frase in evidenza', 'custom-FBK-widget' ),
-        ]
+         'h-phrase',
+         [
+            'label' => esc_html__( 'Frase in evidenza', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXTAREA,
+            'rows' => 20,
+            'placeholder' => esc_html__( 'Inserisci la frase in evidenza', 'custom-FBK-widget' ),
+         ]
       );
 
 		$this->end_controls_section();
