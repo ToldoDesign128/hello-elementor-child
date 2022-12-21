@@ -136,6 +136,7 @@ add_action('init','HT_remove_menus_editors');
 require dirname(__FILE__).'/assets/function-parts/theme/footer-functions-widget.php';
 
 //CPT
+require dirname(__FILE__).'/assets/function-parts/cpt-contatti.php';
 require dirname(__FILE__).'/assets/function-parts/cpt-comunicazioni.php';
 require dirname(__FILE__).'/assets/function-parts/cpt-documenti.php';
 

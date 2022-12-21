@@ -6,7 +6,7 @@
  */
 class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base { 
   
-  /**
+   /**
 	 * Get widget name.
 	 *
 	 * @since 1.0.0
@@ -94,18 +94,18 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
         ]
       );
 
-			$this->add_control(
-        'gcalendar_btn_label',
-        [
-          'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXT,
-          'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
-					'separator' => 'before',
-        ]
+      $this->add_control(
+         'gcalendar_btn_label',
+         [
+            'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
+            'separator' => 'before',
+         ]
       );
 
 			$this->add_control(
-				'gcalendar_btn_link',
+            'gcalendar_btn_link',
 				[
 					'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
 					'type' => \Elementor\Controls_Manager::URL,
@@ -122,23 +122,23 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 
 			$this->add_control(
         'gcalendar_iframe',
-        [
-          'label' => esc_html__( 'iFrame', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXTAREA,
-					'row' => 6,
-          'default' => esc_html__( 'Inserisci iframe del Google Calendar', 'custom-FBK-widget' ),
-					'separator' => 'before',
-          'description' =>  '
-						<ol>
-							<li><b>#1</b> Open Google Calendar. In the top right, click Settings Settings and then Settings.</li>
-							<li><b>#2</b> On the left side of the screen, click the name of the calendar you want to embed.</li>
-							<li><b>#3</b> In the “Integrate this calendar” section, copy the iframe code displayed.</li>
-							<li><b>#4</b> Choose your options, then copy the HTML code displayed.</li>
-							<li><b>#5</b> Make sure your embedded calendar is set as public.</li>
-							<li><b>#6</b> Paste the iframe here.</li>
-						</ol>
-					', 'custom-FBK-widget' ,
-        ]
+         [
+            'label' => esc_html__( 'iFrame', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXTAREA,
+            'row' => 6,
+            'placeholder' => esc_html__( 'Inserisci iframe del Google Calendar', 'custom-FBK-widget' ),
+            'separator' => 'before',
+            'description' =>  '
+               <ol>
+                  <li><b>#1</b> Open Google Calendar. In the top right, click Settings icon and then Settings.</li>
+                  <li><b>#2</b> On the left side of the screen, click the name of the calendar you want to embed.</li>
+                  <li><b>#3</b> In the “Integrate this calendar” section, hit customize button.</li>
+                  <li><b>#4</b> Uncheck all the options, then copy the IFRAME code displayed.</li>
+                  <li><b>#5</b> Make sure your embedded calendar is set as public.</li>
+                  <li><b>#6</b> Paste the iframe here.</li>
+               </ol>
+            ', 'custom-FBK-widget' ,
+         ]
       );
 
 		$this->end_controls_section();
@@ -172,14 +172,23 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 		?>
 
 
-		<section class="fbk-cw fbk-cw-gcalendar">
+		<section class="fbk-cw fbk-cw-gcalendar container mb-section">
 
 			<div class="section-header">
-				<p><?php echo $overtitle; ?></p>
-				<h2><?php echo $title; ?></h2>
-				<a <?php echo $this->get_render_attribute_string( 'gcalendar_btn_link' ); ?>>
-					<?php echo $btn_label; ?>
-				</a>
+            <div class="content">
+               <p class="overtitle"><?php echo $overtitle; ?></p>
+               <h2><?php echo $title; ?></h2>
+            </div>
+            <div>
+               <?php if ($btn_label) : ?>
+                  <a <?php echo $this->get_render_attribute_string( 'gcalendar_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                        </svg>
+                     </span>
+                  </a>
+               <?php endif; ?>
+			   </div>
 			</div>
       
 			<div class="gcalendar">

@@ -147,7 +147,7 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
 
 		?>
 
-		<section class="fbk-cw fbk-cw-group-link container">
+		<section class="fbk-cw fbk-cw-group-link container mb-section">
 
 			<div class="section-header">
             <div class="content">
@@ -155,12 +155,14 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
                <h2><?php echo $title; ?></h2>
             </div>
             <div>
-               <a <?php echo $this->get_render_attribute_string( 'loop-comunicazioni_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
-                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
-                     </svg>
-                  </span>
-               </a>
+               <?php if ($btn_label) : ?>
+                  <a <?php echo $this->get_render_attribute_string( 'loop-comunicazioni_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                        </svg>
+                     </span>
+                  </a>
+               <?php endif; ?>
             </div>
 			</div>
 

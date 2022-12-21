@@ -135,64 +135,25 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
 			/* Start repeater registration */
 			$repeater = new \Elementor\Repeater();
 
+         
+         $options = array();
+         $posts = get_posts( array(
+            'post_type'       =>    'contatti',
+            'numberposts'     =>    -1,
+            'post_status'     =>    'publish',
+            // 'orderby'         =>    'date',
+            // 'order'           =>    'ASC',
+         ));
+         foreach ( $posts as $key => $post ) {
+            $options[$post->ID] = get_the_title($post->ID);
+         }
 			$repeater->add_control(
-				'contact_name',
+				'contact_id',
 				[
-					'label' => esc_html__( 'Nome', 'custom-FBK-widget' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Nome contatto', 'custom-FBK-widget' ),
-					'label_block' => true,
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-
-			$repeater->add_control(
-				'contact_desc',
-				[
-					'label' => esc_html__( 'Descrizione', 'custom-FBK-widget' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Descrizione contatto', 'custom-FBK-widget' ),
-					'label_block' => true,
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-
-			$repeater->add_control(
-				'contact_email',
-				[
-					'label' => esc_html__( 'Email', 'custom-FBK-widget' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Email contatto', 'custom-FBK-widget' ),
-					'label_block' => true,
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-
-			$repeater->add_control(
-				'contact_tel',
-				[
-					'label' => esc_html__( 'Telefono', 'custom-FBK-widget' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Telefono contatto', 'custom-FBK-widget' ),
-					'label_block' => true,
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-
-			$repeater->add_control(
-				'contact_img',
-				[
-					'label' => esc_html__( 'Immagine contatto', 'custom-FBK-widget' ),
-					'type' => \Elementor\Controls_Manager::MEDIA,
-					'media_types' => ['image', 'svg'],
+					'label' => esc_html__( 'Contatto', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::SELECT,
+               'description' => esc_html__( 'Seleziona un contatto da inserire nella lista' ),
+               'options' => $options,
 				]
 			);
 
@@ -235,45 +196,58 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
 		if ( ! empty( $settings['contacts_btn_link']['url'] ) ) { $this->add_link_attributes( 'contacts_btn_link', $settings['contacts_btn_link'] ); }
 
 		//REPEATER - Lista Link
-    $repeater = $settings['contacts']
+      $repeater = $settings['contacts']
 		?>
 
 
-		<section class="fbk-cw fbk-cw-contacts">
+		<section class="fbk-cw fbk-cw-contacts container mb-section">
 
-			<div class="section-header">
-				<p><?php echo $overtitle; ?></p>
-				<h2><?php echo $title; ?></h2>
-				<a <?php echo $this->get_render_attribute_string( 'contacts_btn_link' ); ?>>
-					<?php echo $btn_label; ?>
-				</a>
+         <div class="section-header">
+            <div class="content">
+               <p class="overtitle"><?php echo $overtitle; ?></p>
+               <h2><?php echo $title; ?></h2>
+            </div>
+            <div>
+               <?php if ($btn_label) : ?>
+                  <a <?php echo $this->get_render_attribute_string( 'contacts_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                        </svg>
+                     </span>
+                  </a>
+               <?php endif; ?>
+			   </div>
 			</div>
       
-			<div class="contacts">
+			<div class="row contacts">
 
 				<?php foreach ( $repeater as $index => $item ) {
-					$img = $repeater[$index]['contact_img'];
-					$name = $repeater[$index]['contact_name'];
-					$desc = $repeater[$index]['contact_desc'];
-					$email = $repeater[$index]['contact_email'];
-					$tel = $repeater[$index]['contact_tel'];
+					$id = $repeater[$index]['contact_id'];
+               $title = get_the_title($id);
+               $img = get_field('single_contact_img', $id);
+               $text = get_field('single_contact_text', $id);
+               $email = get_field('single_contact_email', $id);
+               $tel = get_field('single_contact_tel', $id);
+
+               if ($id) :
 					?>
 
-					<article class="single_contact">
-						<figure>
-							<?php if ($img) : ?>
-								<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
-							<?php endif; ?>
-						</figure>
-						<div>
-							<p><?php echo $name; ?></p>
-							<?php if ($desc) : ?><p><?php echo $desc; ?></p><?php endif; ?>
-							<?php if ($email) : ?><p><?php echo $email; ?></p><?php endif; ?>
-							<?php if ($tel) : ?><p><?php echo $tel; ?></p><?php endif; ?>
-						</div>
-					</article>
+               <div class="col-12 col-sm-6 col-lg-4">
+                  <article class="single_contact">
+                     <?php if ($img) : ?><div>
+                        <figure><img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"></figure>
+                     </div><?php endif; ?>
+                     <div class="content">
+                        <h3><?php echo $title; ?></h3>
+                        <?php if ($text) : ?><p class="desc"><?php echo $text; ?></p><?php endif; ?>
+                        <?php if ($email) : ?><p><?php echo $email; ?></p><?php endif; ?>
+                        <?php if ($tel) : ?><p><?php echo $tel; ?></p><?php endif; ?>
+                     </div>
+                  </article>
+               </div>
 						
 					<?php
+               endif;
 				}; ?>
 
 			</div>

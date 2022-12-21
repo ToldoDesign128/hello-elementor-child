@@ -1,10 +1,10 @@
 // _typography.scss
 
-@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import "https://fonts.googleapis.com/css?family=Roboto";
 
-$primary-font: 'Roboto', arial, sans-serif;
+$primary-font: "Roboto", arial, sans-serif;
 
-body{
+body {
    font-family: $primary-font;
    color: $color-txt-secondary;
 }
@@ -18,44 +18,45 @@ h1 {
 
 h2 {
    font-weight: 400;
-   font-size: 3rem;
+   font-size: 2.8rem;
    line-height: 150%;
    color: $color-txt-primary;
 
-   @media #{$large}{
+   @media #{$large} {
       font-size: 3.6rem;
    }
 }
 
-h3, .h3-style{
+h3,
+.h3-style {
    color: $color-txt-primary;
    font-weight: 400;
    font-size: 1.8rem;
    line-height: 150%;
-   
-   @media #{$large}{
+
+   @media #{$large} {
       font-size: 2.4rem;
    }
 }
 
 h4 {
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: 0.25px;
-    line-height: 150%;
+   font-weight: 400;
+   font-size: 22px;
+   letter-spacing: 0.25px;
+   line-height: 150%;
 }
 
 h5 {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 150%;
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 150%;
 }
 
 h6 {
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 0.15px;
-    line-height: 150%;
+   font-weight: 500;
+   font-size: 18px;
+   letter-spacing: 0.15px;
+   line-height: 150%;
 }
 
 p,
@@ -69,8 +70,7 @@ li {
    color: $color-txt-secondary;
 }
 
-
-.overtitle{
+.overtitle {
    font-weight: 400;
    font-size: 12px;
    letter-spacing: 2px;
