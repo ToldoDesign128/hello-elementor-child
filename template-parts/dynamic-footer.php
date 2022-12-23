@@ -2,7 +2,6 @@
  il file di registrazione dei widget si trova in assets/function-parts/theme/footer-functions-widget.php -->
 
 <footer>
-
     <div class="container">
         <div class="mb-5">
             <!-- Sitemap -->

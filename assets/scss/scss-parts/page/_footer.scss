@@ -78,6 +78,17 @@ footer{
 @media #{$underlarge}{
     footer{
         margin-top: 1rem;
+        padding: 0 1rem;
+
+        h3{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &::after{
+                content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAOElEQVRIie3NsQ0AIAgFUba2lM2P1saQKDTkvwHuzERkOGCR252Tv3gyqYlfJrXxY+KAt8RF5F0A5TRya8Dp5ngAAAAASUVORK5CYII=");
+            }
+        }
         
         .menu{
             display: none;
@@ -89,7 +100,8 @@ footer{
                 
         
                 li{
-                    margin:1rem 0;
+                    padding:1rem 0;
+                    border-bottom: solid 1px rgba($color: $color-white, $alpha: .6);
                 }
             }
         }

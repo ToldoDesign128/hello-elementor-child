@@ -4921,17 +4921,31 @@ footer .current_page_item a {
 @media (max-width: 991px) {
   footer {
     margin-top: 1rem;
+    padding: 0 1rem;
+  }
+  footer h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer h3::after {
+    content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAOElEQVRIie3NsQ0AIAgFUba2lM2P1saQKDTkvwHuzERkOGCR252Tv3gyqYlfJrXxY+KAt8RF5F0A5TRya8Dp5ngAAAAASUVORK5CYII=");
   }
   footer .menu {
     display: none;
   }
   footer .footer-menu-list ul li {
-    margin: 1rem 0;
+    padding: 1rem 0;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.6);
   }
   footer .show-item {
     display: block;
   }
 }
+header {
+  background-color: #1254A2;
+}
+
 .sub-hero {
   background-color: #1254A2;
   padding-block: 8rem;
