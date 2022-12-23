@@ -4883,6 +4883,9 @@ footer .footer-menu-list ul li a:hover {
   opacity: 100%;
   font-weight: 400;
 }
+footer .footer-menu-list ul .current_page_item a {
+  text-decoration: underline;
+}
 footer .footer-info {
   max-height: 48px;
   margin-top: 5rem;
@@ -4913,9 +4916,6 @@ footer .footer-info button:hover {
   background: #1254A2;
   color: #FFF;
   border: 1px solid #FFF;
-}
-footer .current_page_item a {
-  text-decoration: underline;
 }
 
 @media (max-width: 991px) {

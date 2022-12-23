@@ -9,9 +9,7 @@ footer{
             color: #fff;
             margin: 1rem 0;
         }
-        ul{
-            
-    
+        ul{    
             li{
                 list-style: none;
                 margin: 0.2rem 0;
@@ -29,6 +27,11 @@ footer{
                         opacity: 100%;
                         font-weight: 400;
                     }
+                }
+            }
+            .current_page_item{
+                a{
+                    text-decoration: underline;
                 }
             }
         }
@@ -66,11 +69,6 @@ footer{
                 color: $color-white;
                 border: 1px solid $color-white;
             }
-        }
-    }
-    .current_page_item{
-        a{
-            text-decoration: underline;
         }
     }
 }
