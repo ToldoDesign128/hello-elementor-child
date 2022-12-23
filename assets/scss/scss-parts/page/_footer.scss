@@ -3,33 +3,38 @@ footer{
     margin-top: 3rem;
     padding: 3rem 0;
 
-    .footer-title{
-        color: #fff;
-        margin: 1rem 0;
-    }
-    ul{
-        
+    .footer-menu-list{
 
-        li{
-            list-style: none;
-            margin: 0.2rem 0;
+        .footer-title{
+            color: #fff;
+            margin: 1rem 0;
+        }
+        ul{
             
-            a{
-                color:$color-white;
-                text-decoration: none;
-                opacity: 80%;
-                font-weight: 300;
-                transition-property: ease-in-out;
-                transition-duration: 0.3s;
+    
+            li{
+                list-style: none;
+                margin: 0.2rem 0;
                 
-                &:hover{
+                a{
                     color:$color-white;
-                    opacity: 100%;
-                    font-weight: 400;
+                    text-decoration: none;
+                    opacity: 80%;
+                    font-weight: 300;
+                    transition-property: ease-in-out;
+                    transition-duration: 0.3s;
+                    
+                    &:hover{
+                        color:$color-white;
+                        opacity: 100%;
+                        font-weight: 400;
+                    }
                 }
             }
         }
     }
+
+
     .footer-info{
         max-height: 48px;
         margin-top: 5rem;
@@ -73,14 +78,36 @@ footer{
 @media #{$underlarge}{
     footer{
         margin-top: 1rem;
+        padding: 0 1rem;
 
-        ul{    
-            li{
-                display: none;
+        h3{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &::after{
+                content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAOElEQVRIie3NsQ0AIAgFUba2lM2P1saQKDTkvwHuzERkOGCR252Tv3gyqYlfJrXxY+KAt8RF5F0A5TRya8Dp5ngAAAAASUVORK5CYII=");
             }
-            .show-item{
-                display: block;
+        }
+        
+        .menu{
+            display: none;
+        }
+
+        .footer-menu-list{
+
+            ul{
+                
+        
+                li{
+                    padding:1rem 0;
+                    border-bottom: solid 1px rgba($color: $color-white, $alpha: .6);
+                }
             }
+        }
+
+        .show-item{
+            display: block;
         }
     }
 }

@@ -2,40 +2,38 @@
  il file di registrazione dei widget si trova in assets/function-parts/theme/footer-functions-widget.php -->
 
 <footer>
-
     <div class="container">
         <div class="mb-5">
             <!-- Sitemap -->
             <aside class="mb-5">
                 <div class="row justify-content-between">
-                    <div class="col-12 col-md-3 mt-2 row">
+                    <div class="col-12 col-md-3 mt-2 footer-menu-list">
                         <?php dynamic_sidebar( 'prima-footer-widget-area' ); ?>
                     </div>
                 
-                    <div class="col-12 col-md-3 mt-2">
+                    <div class="col-12 col-md-3 mt-2 footer-menu-list">
                         <?php dynamic_sidebar( 'seconda-footer-widget-area' ); ?>
                     </div>
                 
-                    <div class="col-12 col-md-3 mt-2">
+                    <div class="col-12 col-md-3 mt-2 footer-menu-list">
                         <?php dynamic_sidebar( 'terza-footer-widget-area' ); ?>
                     </div>
                 </div>
                 <div class="row justify-content-between mt-md-5 mt-0">            
-                    <div class="col-12 col-md-3 mt-2">
+                    <div class="col-12 col-md-3 mt-2 footer-menu-list">
                         <?php dynamic_sidebar( 'quarta-footer-widget-area' ); ?>
                     </div>
 
-                    <div class="col-12 col-md-3 mt-2">
+                    <div class="col-12 col-md-3 mt-2 footer-menu-list">
                         <?php dynamic_sidebar( 'quinta-footer-widget-area' ); ?>
                     </div>
 
-                    <div class="col-12 col-md-3 mt-2">
+                    <div class="col-12 col-md-3 mt-2 footer-menu-list">
                         <?php dynamic_sidebar( 'sesta-footer-widget-area' ); ?>
                     </div>
                 </div>
             </aside>
         </div>
-
         <!-- Informazioni -->
         <section class="footer-info mb-5">
             <div class="row justify-content-between align-items-center">
