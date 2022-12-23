@@ -1,5 +1,6 @@
 footer {
   background-color: $color-primary;
+  height: 100%;
   margin-top: 3rem;
   padding: 3rem 0;
 
@@ -45,11 +46,21 @@ footer {
         font-size: 16px;
       }
     }
+    }
+  }
+
+  .footer-info {
+    margin-top: 5rem;
+
+    .lingua {
+      text-align: right;
+      p {
+        font-size: 16px;
+      }
     p {
       display: inline-block;
       color: $color-white;
       font-size: 12px;
-    }
     a {
       text-decoration: none;
     }
