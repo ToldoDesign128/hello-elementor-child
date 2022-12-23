@@ -68,49 +68,49 @@ class FBK_Elementor_CTA extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
-    $this->start_controls_section(
-			'content_section',
-			[
-				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
-		);
+      $this->start_controls_section(
+         'content_section',
+         [
+            'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
+            'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+         ]
+      );
 
       $this->add_control(
-        'cta_text',
-        [
-          'label' => esc_html__( 'Testo', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXTAREA,
-          'rows' => 3,
-          'placeholder' => esc_html__( 'Testo della cta', 'custom-FBK-widget' ),
-        ]
+         'cta_text',
+         [
+            'label' => esc_html__( 'Testo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXTAREA,
+            'rows' => 3,
+            'placeholder' => esc_html__( 'Testo della cta', 'custom-FBK-widget' ),
+         ]
       );
 
-			$this->add_control(
-        'cta_btn_label',
-        [
-          'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXT,
-          'placeholder' => esc_html__( 'Testo della pulsante', 'custom-FBK-widget' ),
-					'separator' => 'before',
-        ]
+      $this->add_control(
+         'cta_btn_label',
+         [
+            'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'placeholder' => esc_html__( 'Testo della pulsante', 'custom-FBK-widget' ),
+                  'separator' => 'before',
+         ]
       );
 
-			$this->add_control(
-				'cta_btn_link',
-				[
-					'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
-					'type' => \Elementor\Controls_Manager::URL,
-					'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
-					'options' => [ 'url', 'is_external', 'nofollow' ],
-					'default' => [
-						'url' => '',
-						'is_external' => false,
-						'nofollow' => false,
-					],
-					'label_block' => true,
-				]
-			);
+      $this->add_control(
+         'cta_btn_link',
+         [
+            'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::URL,
+            'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
+            'options' => [ 'url', 'is_external', 'nofollow' ],
+            'default' => [
+               'url' => '',
+               'is_external' => false,
+               'nofollow' => false,
+            ],
+            'label_block' => true,
+         ]
+      );
 
 		$this->end_controls_section();
 	}
@@ -130,21 +130,28 @@ class FBK_Elementor_CTA extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		
-    //get input from controls
+      //get input from controls
 		$title = $settings['cta_title'];
 		$text = $settings['cta_text'];
-		$cta_btn_label = $settings['cta_btn_label'];
+		$btn_label = $settings['cta_btn_label'];
 		if ( ! empty( $settings['cta_btn_link']['url'] ) ) { $this->add_link_attributes( 'cta_btn_link', $settings['cta_btn_link'] ); }
-    ?>
+      ?>
 
 
-		<section class="fbk-cw fbk-cw-cta">
-      <p><?php echo $text; ?></p>
-			<a <?php echo $this->get_render_attribute_string( 'cta_btn_link' ); ?>>
-				<?php echo $cta_btn_label; ?>
-			</a>
-    </section>
+		<section class="fbk-cw fbk-cw-cta mb-section">
+         <div class="container">
+            <h2><?php echo $text; ?></h2>
+            <?php if ($btn_label) : ?>
+               <a <?php echo $this->get_render_attribute_string( 'cta_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                     </svg>
+                  </span>
+               </a>
+            <?php endif; ?>
+         </div>
+      </section>
 
-    <?php
+      <?php
 	}
 }

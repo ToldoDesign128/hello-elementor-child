@@ -26,7 +26,7 @@ function add_elementor_widget_categories( $elements_manager ) {
   $elements_manager->add_category(
 		'fbk-single',
 		[
-			'title' => esc_html__( 'FBK - Single post', 'textdomain' ),
+			'title' => esc_html__( 'FBK - Single post', 'custom-FBK-widget' ),
 			'icon' => 'fa fa-plug',
 		]
 	);
@@ -79,7 +79,9 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   /* FBK - Loops
   ----------------------*/
 
-  // Documenti
+  // Comunicazioni
+  require_once( __DIR__ . '/widgets/loop-latest-comunicazioni.php' );
+  $widgets_manager->register( new \FBK_Elementor_LoopComunicazioni() );
   
 
 

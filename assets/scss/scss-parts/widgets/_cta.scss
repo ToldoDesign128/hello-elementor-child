@@ -1,3 +1,35 @@
-.fbk-cw-cta{
-  background-color: lightblue;
+.fbk-cw-cta {
+   background-color: $color-white;
+   padding-block: 5.6rem;
+
+   @media #{$medium} {
+      padding-block: 6.4rem;
+   }
+
+   .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      @media #{$medium} {
+         flex-direction: row;
+      }
+
+      h2 {
+         text-align: center;
+
+         @media #{$medium} {
+            text-align: left;
+         }
+      }
+
+      .button {
+         margin-top: 1.2rem;
+
+         @media #{$medium} {
+            margin-top: 0;
+         }
+      }
+   }
 }

@@ -68,7 +68,7 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
-    $this->start_controls_section(
+      $this->start_controls_section(
 			'content_section',
 			[
 				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
@@ -78,47 +78,47 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
 
       $this->add_control(
         'group-link_overtitle',
-        [
-          'label' => esc_html__( 'Sopratitolo', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXT,
-          'placeholder' => esc_html__( 'Sopratitolo della sezione', 'custom-FBK-widget' ),
-        ]
+         [
+            'label' => esc_html__( 'Sopratitolo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'placeholder' => esc_html__( 'Sopratitolo della sezione', 'custom-FBK-widget' ),
+         ]
       );
 
       $this->add_control(
         'group-link_title',
-        [
-          'label' => esc_html__( 'Titolo', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXT,
-          'placeholder' => esc_html__( 'Titolo della sezione', 'custom-FBK-widget' ),
-        ]
+         [
+            'label' => esc_html__( 'Titolo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'placeholder' => esc_html__( 'Titolo della sezione', 'custom-FBK-widget' ),
+         ]
       );
 
-			$this->add_control(
+      $this->add_control(
         'group-link_btn_label',
-        [
-          'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXT,
-          'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
-					'separator' => 'before',
-        ]
+         [
+            'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
+            'separator' => 'before',
+         ]
       );
 
-			$this->add_control(
-				'group-link_btn_link',
-				[
-					'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
-					'type' => \Elementor\Controls_Manager::URL,
-					'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
-					'options' => [ 'url', 'is_external', 'nofollow' ],
-					'default' => [
-						'url' => '',
-						'is_external' => false,
-						'nofollow' => false,
-					],
-					'label_block' => true,
-				]
-			);
+      $this->add_control(
+         'group-link_btn_link',
+         [
+            'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::URL,
+            'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
+            'options' => [ 'url', 'is_external', 'nofollow' ],
+            'default' => [
+               'url' => '',
+               'is_external' => false,
+               'nofollow' => false,
+            ],
+            'label_block' => true,
+         ]
+      );
 
 		$this->end_controls_section();
 
@@ -132,8 +132,8 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
 			]
 		);
 
-			/* Start repeater registration */
-			$repeater = new \Elementor\Repeater();
+      /* Start repeater registration */
+      $repeater = new \Elementor\Repeater();
 
 			$repeater->add_control(
 				'group-link_links_label',
@@ -165,18 +165,19 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
 					],
 				]
 			);
-			/* End repeater registration*/
 
-			/* Start repeater usage*/
-			$this->add_control(
-				'group-link_links',
-				[
-					'type' => \Elementor\Controls_Manager::REPEATER,
-					'fields' => $repeater->get_controls(),
-					'title_field' => "Link",
-				]
-			);
-			/* End repeater usage*/
+      /* End repeater registration*/
+
+      /* Start repeater usage*/
+      $this->add_control(
+         'group-link_links',
+         [
+            'type' => \Elementor\Controls_Manager::REPEATER,
+            'fields' => $repeater->get_controls(),
+            'title_field' => "Link",
+         ]
+      );
+      /* End repeater usage*/
 
 		$this->end_controls_section();
 	}
@@ -203,53 +204,78 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
 		if ( ! empty( $settings['group-link_btn_link']['url'] ) ) { $this->add_link_attributes( 'group-link_btn_link', $settings['group-link_btn_link'] ); }
 
 		//REPEATER - Lista Link
-    $repeater = $settings['group-link_links']
+      $repeater = $settings['group-link_links']
 		?>
 
-		<section class="fbk-cw fbk-cw-group-link">
+		<section class="fbk-cw fbk-cw-group-link container mb-section">
 
-			<div class="header">
-				<p><?php echo $overtitle; ?></p>
-				<h2><?php echo $title; ?></h2>
-				<a <?php echo $this->get_render_attribute_string( 'group-link_btn_link' ); ?>>
-					<?php echo $btn_label; ?>
-				</a>
+			<div class="section-header">
+            <div class="content">
+               <p class="overtitle"><?php echo $overtitle; ?></p>
+               <h2><?php echo $title; ?></h2>
+            </div>
+            <div>
+               <?php if ($btn_label) : ?>
+                  <a <?php echo $this->get_render_attribute_string( 'group-link_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                        </svg>
+                     </span>
+                  </a>
+               <?php endif; ?>
+			   </div>
 			</div>
 
 			<div class="link-list">
+            <div class="row">
 
-				<?php foreach ( $repeater as $index => $item ) {
-					$link_label = $repeater[$index]['group-link_links_label'];
-					
-					//IF il campo Link non è vuoto
-					if ( ! empty( $item['group-link_links_link']['url'] ) ) { $this->add_link_attributes( "link_{$index}", $item['group-link_links_link'] ); 
-						?>
+               <?php foreach ( $repeater as $index => $item ) {
+                  $link_label = $repeater[$index]['group-link_links_label'];
+                  
+                  //IF il campo Link non è vuoto
+                  if ( ! empty( $item['group-link_links_link']['url'] ) ) { $this->add_link_attributes( "link_{$index}", $item['group-link_links_link'] );
+                     $removeChar = ["https://", "http://"];
+                     ?>
+                     <div class="col-card col-6 col-lg-3">
 
-						<a class="link-card" <?php echo $this->get_render_attribute_string( "link_{$index}" ); ?>>
-							<p class="link-card__label">
-								<?php echo $link_label; ?>
-							</p>
-							<?php
-							//Se target _blank
-							if ( $repeater[$index]['group-link_links_link']['is_external'] == 'on') { ?>
-								<p class="link-card__url">
-									<?php echo $repeater[$index]['group-link_links_link']['url']; ?>
-								</p>
-								<?php
-							};
-							?>
-						</a>
-						
-						<?php
-					} else { ?>
+                        <a class="card card-secondary" <?php echo $this->get_render_attribute_string( "link_{$index}" ); ?>>
+                           <span class="svg-wrapper">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
+                              </svg>
+                           </span>
+                           <p class="h3-style"><?php echo $link_label; ?></p>
 
-						<a class="link-card url-missing">
-							<?php echo $link_label; ?>
-						</a>
+                           <?php //Se target _blank
+                           if ( $repeater[$index]['group-link_links_link']['is_external'] == 'on') { ?>
+                              <p class="link-card__url">
+                                 <span><?php $http_referer = str_replace($removeChar, "", $repeater[$index]['group-link_links_link']['url']); echo $http_referer; ?></span>
+                              </p>
+                              <?php
+                           };
+                           ?>
 
-						<?php
-					};
-				}; ?>
+                        </a>
+
+                     </div>
+                     <?php
+                  } else { 
+                     ?>
+                     <div class="col-card col-6 col-lg-3">
+                        <a class="card card-secondary no-href">
+                           <span class="svg-wrapper">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
+                              </svg>
+                           </span>
+                           <p class="h3-style"><?php echo $link_label; ?></p>
+                        </a>
+                     </div>
+                     <?php
+                  };
+               }; ?>
+            </div>
+
 
 			</div>
 			

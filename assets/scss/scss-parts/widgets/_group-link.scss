@@ -1,8 +1,20 @@
-.link-list{
-  background-color: lightgray;
+.link-list {
+   .card {
+      @media #{$large} {
+         min-height: 15.4rem;
+         height: 100%;
+      }
 
-  .link-card{
-    background-color: gray;
-    display: inline-block;
-  }
+      &.card-secondary {
+         grid-template-rows: auto 2fr auto;
+      }
+
+      &.no-href {
+         opacity: 0.32;
+         cursor: not-allowed;
+      }
+   }
+   .link-card__url {
+      align-self: end;
+   }
 }

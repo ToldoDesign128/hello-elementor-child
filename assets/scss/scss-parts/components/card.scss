@@ -1,0 +1,145 @@
+.card {
+   background-color: $color-white;
+   display: inline-block;
+   text-decoration: none;
+   min-width: 100%;
+   min-height: 100%;
+   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+   .svg-wrapper {
+      margin-bottom: 0.4rem;
+
+      @media #{$underxxsmall} {
+         margin-bottom: 0.8rem;
+      }
+
+      svg {
+         display: block;
+         margin-left: auto;
+
+         @media #{$underxxsmall} {
+            max-width: 1.6rem;
+            max-height: 1.6rem;
+         }
+      }
+   }
+
+   &.card-primary {
+      padding: 1.6rem;
+
+      @media #{$large} {
+         padding: 2.4rem;
+      }
+
+      .content {
+         @media #{$xsmall} {
+            margin: 0 1.6rem 1.2rem;
+            max-width: 88%;
+         }
+      }
+
+      .svg-wrapper {
+         display: block;
+      }
+
+      p.meta {
+         font-size: 12px;
+         letter-spacing: 1px;
+         line-height: 1;
+         text-transform: uppercase;
+         margin-bottom: 1rem;
+
+         display: inline-flex;
+         flex-direction: column;
+
+         @media #{$xxsmall} {
+            flex-direction: row;
+         }
+
+         span {
+            align-self: start;
+
+            @media #{$xxsmall} {
+               align-self: center;
+            }
+         }
+
+         .label_date_cat {
+            order: 2;
+            @media #{$xxsmall} {
+               order: 1;
+            }
+         }
+
+         .label_in_evidenza {
+            background-color: $color-accent;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: $color-white;
+            font-weight: 600;
+            padding: 0.5rem 0.8rem;
+            order: 1;
+            margin-bottom: 1.2rem;
+
+            @media #{$xxsmall} {
+               order: 2;
+               margin-left: 1.6rem;
+               margin-bottom: 0;
+            }
+         }
+      }
+
+      .h3-style {
+         margin-bottom: 1.4rem;
+      }
+
+      p.excerpt {
+         overflow: hidden;
+         text-overflow: ellipsis;
+         display: -webkit-box;
+         -webkit-line-clamp: 4;
+         -webkit-box-orient: vertical;
+      }
+   }
+
+   &.card-secondary {
+      display: grid;
+      padding: 1.6rem;
+
+      .h3-style {
+         max-width: 100%;
+         align-self: end;
+
+         @media #{$underxxsmall} {
+            font-size: 1.6rem;
+         }
+      }
+
+      .link-card__url {
+         max-width: 100%;
+         overflow: hidden;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+      }
+   }
+
+   &:hover {
+      background-color: $color-light-primary;
+
+      .svg-wrapper svg path {
+         fill: $color-primary;
+      }
+
+      p {
+         color: $color-primary;
+      }
+
+      .h3-style {
+         color: $color-dark-primary;
+      }
+   }
+}
+
+.col-card {
+   margin-bottom: 1.6rem;
+}

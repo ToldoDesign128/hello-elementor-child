@@ -165,12 +165,12 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
 		$title = $settings['group-download_title'];
 
 		//REPEATER - Lista Download
-    $repeater = $settings['group-download_downloads']
+      $repeater = $settings['group-download_downloads']
 		?>
 
 		<section class="fbk-cw fbk-cw-group-download">
 
-			<div class="header">
+			<div class="section-header container">
 				<p><?php echo $overtitle; ?></p>
 				<h2><?php echo $title; ?></h2>
 			</div>

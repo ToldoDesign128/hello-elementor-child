@@ -1,43 +1,137 @@
 /*--------------------------------------------------
 RESET CSS
 --------------------------------------------------*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   vertical-align: baseline;
 }
-
 
 /*--------------------------------------------------
 BASE
 --------------------------------------------------*/
-*, *:before, *:after{ -webkit-tap-highlight-color: rgba(0, 0, 0, 0); } //remove highlights on tapping on mobile devices 
-html{
-  font-size: 62.5%; /*= 62,5% di 16px = 10px*/
-  box-sizing: border-box; /*Include padding and border in the element's total width and height*/
-  scroll-behavior: smooth; 
-  overflow-x: hidden;
+*,
+*:before,
+*:after {
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+} //remove highlights on tapping on mobile devices
+html {
+   font-size: 62.5%; /*= 62,5% di 16px = 10px*/
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+   overflow-x: hidden;
 }
 
-body{
-  font-size: 1.6rem; /*= 10px * 1.6 = 16px*/
-  background: $color-white;
-  overflow-x: hidden;
+body {
+   font-size: 1.6rem; /*= 10px * 1.6 = 16px*/
+   background: $color-fede;
+   overflow-x: hidden;
 }
 
-img{
-  max-width: 100%;
+img {
+   max-width: 100%;
+}
+
+// Elemntor CSS overwrite
+.elementor .elementor-section {
+   .elementor-container {
+      display: unset;
+      max-width: 100%;
+
+      .elementor-column {
+         display: unset;
+
+         .elementor-widget-wrap {
+            display: unset;
+            padding: 0;
+
+            .elementor-widget {
+               .elementor-widget-container {
+                  transition: none;
+               }
+            }
+         }
+      }
+   }
 }

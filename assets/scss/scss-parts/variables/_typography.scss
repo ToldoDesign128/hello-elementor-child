@@ -1,47 +1,62 @@
 // _typography.scss
 
-@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import "https://fonts.googleapis.com/css?family=Roboto";
 
-$primary-font: 'Roboto', arial, sans-serif;
+$primary-font: "Roboto", arial, sans-serif;
+
+body {
+   font-family: $primary-font;
+   color: $color-txt-secondary;
+}
 
 h1 {
-    font-weight: 300;
-    font-size: 80px;
-    letter-spacing: -1.5px;
-    line-height: normal;
+   font-weight: 300;
+   font-size: 80px;
+   letter-spacing: -1.5px;
+   line-height: normal;
 }
 
 h2 {
-    font-weight: 300;
-    font-size: 36px;
-    letter-spacing: -0.5px;
-    line-height: 150%;
+   font-weight: 400;
+   font-size: 2.8rem;
+   line-height: 150%;
+   color: $color-txt-primary;
+
+   @media #{$large} {
+      font-size: 3.6rem;
+   }
 }
 
-h3 {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 150%;
+h3,
+.h3-style {
+   color: $color-txt-primary;
+   font-weight: 400;
+   font-size: 1.8rem;
+   line-height: 150%;
+
+   @media #{$large} {
+      font-size: 2.4rem;
+   }
 }
 
 h4 {
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: 0.25px;
-    line-height: 150%;
+   font-weight: 400;
+   font-size: 22px;
+   letter-spacing: 0.25px;
+   line-height: 150%;
 }
 
 h5 {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 150%;
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 150%;
 }
 
 h6 {
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 0.15px;
-    line-height: 150%;
+   font-weight: 500;
+   font-size: 18px;
+   letter-spacing: 0.15px;
+   line-height: 150%;
 }
 
 p,
@@ -49,28 +64,17 @@ a,
 ul,
 ol,
 li {
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    line-height: 160%;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 180%;
+   color: $color-txt-secondary;
 }
 
-.card-body{
-
-    p{
-        font-weight: 400;
-        font-size: 14px;
-        letter-spacing: 0.5px;
-        line-height: 160%;
-    }
-}
-
-.overtitle{
-    p{
-        font-weight: 300;
-        font-size: 12px;
-        letter-spacing: 0.5px;
-        line-height: 130%;
-        text-transform: uppercase;
-    }
+.overtitle {
+   font-weight: 400;
+   font-size: 12px;
+   letter-spacing: 2px;
+   line-height: 130%;
+   text-transform: uppercase;
+   color: $color-txt-secondary;
 }

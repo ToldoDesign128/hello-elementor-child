@@ -1,0 +1,46 @@
+.fbk-cw-contacts {
+   .section-header {
+      margin-bottom: 0;
+   }
+
+   .single_contact {
+      margin-top: 5.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      @media #{$large} {
+         flex-direction: row;
+      }
+
+      figure {
+         width: 4rem;
+         height: 4rem;
+         border-radius: 50%;
+         overflow: hidden;
+
+         img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+
+      h3 {
+         margin-bottom: 0.8rem;
+      }
+
+      p {
+         margin-bottom: 0.6rem;
+         line-height: 160%;
+      }
+
+      h3,
+      p {
+         @media #{$xxsmall} {
+            max-width: 88%;
+         }
+      }
+   }
+}
