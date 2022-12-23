@@ -4966,12 +4966,19 @@ img {
   padding: 1.6rem;
 }
 .card.card-secondary .h3-style {
+  max-width: 100%;
   align-self: end;
 }
 @media (max-width: 480px) {
   .card.card-secondary .h3-style {
     font-size: 1.6rem;
   }
+}
+.card.card-secondary .link-card__url {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .card:hover {
   background-color: #E1EAF6;

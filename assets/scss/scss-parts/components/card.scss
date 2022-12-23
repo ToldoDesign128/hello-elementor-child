@@ -107,11 +107,19 @@
       padding: 1.6rem;
 
       .h3-style {
+         max-width: 100%;
          align-self: end;
 
          @media #{$underxxsmall} {
             font-size: 1.6rem;
          }
+      }
+
+      .link-card__url {
+         max-width: 100%;
+         overflow: hidden;
+         white-space: nowrap;
+         text-overflow: ellipsis;
       }
    }
 

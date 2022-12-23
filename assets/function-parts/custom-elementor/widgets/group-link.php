@@ -249,7 +249,9 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
                            <?php //Se target _blank
                            if ( $repeater[$index]['group-link_links_link']['is_external'] == 'on') { ?>
                               <p class="link-card__url">
-                                 <?php $http_referer = str_replace($removeChar, "", $repeater[$index]['group-link_links_link']['url']); echo $http_referer; ?>
+                                 <span>
+                                    <?php $http_referer = str_replace($removeChar, "", $repeater[$index]['group-link_links_link']['url']); echo $http_referer; ?>
+                                 </span>
                               </p>
                               <?php
                            };
