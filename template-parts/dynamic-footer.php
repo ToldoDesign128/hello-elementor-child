@@ -35,7 +35,7 @@
             </aside>
         </div>
         <!-- Informazioni -->
-        <section class="footer-info mb-5">
+        <section class="footer-info">
             <div class="row justify-content-between align-items-center">
                 <div class="col-12 col-md-5 d-flex justify-content-between mb-4 mb-md-0"> <!-- Logo -->
                     <svg width="42" height="22" viewBox="0 0 42 22" fill="none" xmlns="http://www.w3.org/2000/svg">
