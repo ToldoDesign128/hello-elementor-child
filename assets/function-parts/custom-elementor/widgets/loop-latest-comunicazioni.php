@@ -25,7 +25,7 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Comunicazioni recenti', 'custom-FBK-widget' );
+		return esc_html__( 'Comunicazioni recenti', 'custom-FBK-widget' );
 	}
 
 	/**

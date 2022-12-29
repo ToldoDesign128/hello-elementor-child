@@ -82,6 +82,10 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   // Comunicazioni
   require_once( __DIR__ . '/widgets/loop-latest-comunicazioni.php' );
   $widgets_manager->register( new \FBK_Elementor_LoopComunicazioni() );
+
+  // DocumentiI
+  require_once( __DIR__ . '/widgets/loop-documenti-I.php' );
+  $widgets_manager->register( new \FBK_Elementor_LoopDocumentiI() );
   
 
 
@@ -251,6 +255,8 @@ function HT_css_elementor(){
     .elementor-editor-active .elementor-panel .elementor-control.elementor-control-alert_type.elementor-control-type-select {display:none !important;} /*no selector for Type*/
     .elementor-editor-active .elementor-panel .elementor-control.elementor-control-show_dismiss.elementor-control-type-select {display:none !important;} /*no selector for Dismiss icon*/
     .elementor-editor-active .elementor-panel .elementor-control.elementor-control-dismiss_icon.elementor-control-type-icons {display:none !important;} /*no Icon*/  
+
+
     </style>';
 }
 add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor' );

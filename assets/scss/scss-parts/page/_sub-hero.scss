@@ -1,34 +1,39 @@
-.sub-hero{
-  background-color: $color-primary;
-  padding-block: 8rem;
+.sub-hero {
+   background-color: $color-primary;
+   padding-block: 24vh;
 
-  .breadcrumps{
-    color: $color-txt-white-primary;
-  }
+   .breadcrumps {
+      display: inline-block;
+      color: $color-txt-white-primary;
+      margin-bottom: 3.2rem;
+   }
 
-  h1{
-    color: $color-txt-white-primary;
-  }
+   h1 {
+      color: $color-txt-white-primary;
+      max-width: 80rem;
+      margin-bottom: 2.4rem;
+   }
 
-  p{
-    color: $color-txt-white-secondary;
-  }
+   p {
+      color: $color-txt-white-secondary;
+      max-width: 80rem;
+   }
 }
 
-.page-child{
-  .sub-hero{
-    background-color: $color-white;
-  }
+.page-child {
+   .sub-hero {
+      background-color: $color-white;
+   }
 
-  .breadcrumps{
-    color: $color-primary;
-  }
+   .breadcrumps {
+      color: $color-primary;
+   }
 
-  h1{
-    color: $color-txt-primary;
-  }
+   h1 {
+      color: $color-txt-primary;
+   }
 
-  p{
-    color: $color-txt-secondary;
-  }
+   p {
+      color: $color-txt-secondary;
+   }
 }

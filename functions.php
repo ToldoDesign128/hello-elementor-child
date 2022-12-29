@@ -1,12 +1,7 @@
 <?php
-//setup_theme
 function HT_setup_theme() {
-	//tag title dinamico inserito in automatico nell'header
 	add_theme_support("title-tag");
-	//add feed RSS supports
 	add_theme_support( 'automatic-feed-links' );
-	//supporto all'img in evidenza
-	add_theme_support("post-thumbnails");
 	//aggiunta di una posizione del menu
 	// register_nav_menu("header", "Navbar Header");
 	// Add widgets support
@@ -35,6 +30,29 @@ function hello_elementor_child_enqueue_scripts() {
 	wp_enqueue_script( 'howto-script', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array('jquery'), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20 );
+
+// Change footer in admin panel
+function remove_footer_admin () {
+   echo '<p>Website by Officina FBK</p>';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+function change_footer_version() {return ' ';}
+add_filter( 'update_footer', 'change_footer_version', 9999);
+
+//ADD Automatically check alla parent category when selecting a child one
+add_action('save_post', 'assign_parent_terms_targhe_cpt', 10, 2); //CPT documenti
+function assign_parent_terms_targhe_cpt($post_id, $post){
+   if($post->post_type != 'documenti')
+   return $post_id;
+   $terms = wp_get_post_terms($post_id, 'documenti_tax' );
+   foreach($terms as $term){
+      while($term->parent != 0 && !has_term( $term->parent, 'documenti_tax', $post )){
+         wp_set_post_terms($post_id, array($term->parent), 'documenti_tax', true);
+         $term = get_term($term->parent, 'documenti_tax');
+      }
+   }
+}
 
 
 // Remove comments
@@ -128,6 +146,22 @@ function HT_remove_menus_editors() {
 	define( 'DISALLOW_FILE_EDIT', true );
 }
 add_action('init','HT_remove_menus_editors');
+
+// Remove field descriptions from categories
+function NP_hide_cat_descr() {
+   ?>
+   <style type="text/css">
+   .term-description-wrap {
+       display: none;
+   }
+   </style>
+   <?php
+} 
+add_action( 'admin_head-term.php', 'NP_hide_cat_descr' );
+add_action( 'admin_head-edit-tags.php', 'NP_hide_cat_descr' );
+
+
+
 
 /*FUNCTION PARTS
 -------------------------------------------------*/

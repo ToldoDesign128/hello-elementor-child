@@ -1,30 +1,31 @@
-<?php
+<?php get_header();
 
+while ( have_posts() ) : the_post();
 
-get_header();
+   $subhero_text = get_field('subhero_text');
+   ?>
 
-while ( have_posts() ) :
-	the_post();
+   <main id="content" <?php post_class( 'site-main' ); ?> role="main">
 
-  $subhero_text = get_field('subhero_text');
-	?>
+      <?php if ( apply_filters( 'hello_elementor_page_title', true ) ) : ?>
+         <header class="sub-hero mb-section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <a class="breadcrumps" href="">Breadcrumps</a>
+                     <h1><?php the_title(); ?></h1>
+                     <?php if($subhero_text) : ?><p><?php echo $subhero_text; ?></p><?php endif; ?>
+                  </div>
+               </div>
+            </div>
+         </header>
+      <?php endif; ?>
 
-<main id="content" <?php post_class( 'site-main' ); ?> role="main">
+      <div class="page-content">
+         <?php the_content(); ?>
+   </div>
 
-	<?php if ( apply_filters( 'hello_elementor_page_title', true ) ) : ?>
-		<header class="sub-hero">
-      <a class="breadcrumps" href="">Breadcrumps</a>
-      <h1><?php the_title(); ?></h1>
-      <p><?php echo $subhero_text; ?></p>
-		</header>
-	<?php endif; ?>
-
-	<div class="page-content">
-		<p>loop delle pagine figlie e dei relativi Documenti</p>
-		<?php the_content(); ?>
-  </div>
-
-</main>
+   </main>
 
 <?php endwhile; ?>
 

@@ -1,0 +1,111 @@
+.fbk-cw-faq {
+   .faqs {
+      article.col-12 {
+         margin-bottom: 1.6rem;
+      }
+
+      .faq-container {
+         cursor: pointer;
+         position: relative;
+         transition: all 0.4s ease-in-out;
+         padding-block: 1.6rem;
+         border-bottom: 2px solid $color-gray;
+
+         @media #{$medium} {
+            padding-block: 2.4rem;
+         }
+
+         &:after {
+            content: "";
+            position: absolute;
+            z-index: -10;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            left: -50vw;
+            right: -50vw;
+            width: 200vw;
+            transition: all 0.3s ease-in-out;
+         }
+
+         &:hover:after {
+            background-color: rgba($color-white, 0.24);
+         }
+
+         .faq-question {
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.4s ease-in-out;
+
+            h3 {
+               color: $color-txt-primary;
+               margin-right: 2.4rem;
+
+               @media #{$large} {
+                  max-width: 64%;
+               }
+            }
+
+            svg {
+               margin-block: auto;
+               max-width: 18px;
+               transition: transform 0.4s ease-in-out;
+
+               @media #{$large} {
+                  max-width: 25px;
+               }
+            }
+         }
+
+         .faq-answer {
+            height: 0;
+            overflow-y: hidden;
+
+            .wysiwyg {
+               opacity: 0;
+               transition: opacity 0.6s ease-in-out;
+               max-width: 88%;
+
+               @media #{$xsmall} {
+                  max-width: 80%;
+               }
+
+               @media #{$large} {
+                  max-width: 80ch;
+               }
+            }
+         }
+
+         &:hover {
+            border-color: $color-dark-primary;
+            .faq-question {
+               h3 {
+                  color: $color-dark-primary;
+               }
+               svg path {
+                  fill: $color-primary;
+               }
+            }
+         }
+
+         &.faq-active {
+            .faq-question svg {
+               transform: rotate(45deg);
+            }
+
+            .faq-answer {
+               height: 100%;
+               padding-top: 1.6rem;
+
+               @media #{$medium} {
+                  padding-top: 2.4rem;
+               }
+
+               .wysiwyg {
+                  opacity: 1;
+               }
+            }
+         }
+      }
+   }
+}

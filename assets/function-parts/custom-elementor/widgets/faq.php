@@ -221,21 +221,27 @@ class FBK_Elementor_FAQ extends \Elementor\Widget_Base {
 			   </div>
 			</div>
       
-			<div class="faqs">
+			<div class="row faqs">
 
 				<?php foreach ( $repeater as $index => $item ) {
 					$question = $repeater[$index]['faq_question'];
 					$answer = $repeater[$index]['faq_answer'];
 					?>
 
-						<div class="single_faq">
-							<div class="question">
-								<p><?php echo $question; ?></p>
-							</div>
-							<div class="answer">
-								<p><?php echo $answer; ?></p>
-							</div>
-						</div>
+                  <article class="col-12">
+                     <div class="faq-container">
+                        <div class="faq-question">
+                           <h3><?php echo $question ?></h3>
+                           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M0 13.7931L0 11.2069H25V13.7931H0Z" fill="#A19E9E"/>
+                              <path d="M11.2069 0L13.7931 0V25H11.2069V0Z" fill="#A19E9E"/>
+                           </svg>
+                        </div>
+                        <div class="faq-answer">
+                           <div class="wysiwyg"><?php echo $answer ?></div>
+                        </div>
+                     </div>
+                  </article>
 						
 					<?php
 				}; ?>

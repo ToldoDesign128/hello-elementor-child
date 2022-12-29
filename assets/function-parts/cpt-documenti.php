@@ -27,8 +27,8 @@ function HT_custom_documenti() {
             'menu_position'         =>          20,
             'menu_icon'             =>          'dashicons-clipboard', //Dashicon
             'rewrite'               =>          array(
-                'slug'              =>          'documenti',
-                'with-front'        =>          false,
+               'slug'              =>          'documenti',
+               'with-front'        =>          false,
             ),
             'has_archive'           =>          true,
             'capability_type'       =>          'post',
@@ -36,7 +36,7 @@ function HT_custom_documenti() {
             'taxonomies'            =>          array(''),
             'show_in_rest'          =>          false, //gutemberg disattivato
             'supports'              =>          array('title', 'excerpt', ) //campi supportati
-        ), flush_rewrite_rules() /*fine delle opzioni*/
+        ), flush_rewrite_rules() 
     );
 }
 add_action( 'init', 'HT_custom_documenti');
