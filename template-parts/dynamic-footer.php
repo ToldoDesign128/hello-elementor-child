@@ -1,6 +1,3 @@
-<!-- Questa sezione gestisce i contenuti del footer che sono gestiti tramite widget in maniera dinamica,
- il file di registrazione dei widget si trova in assets/function-parts/theme/footer-functions-widget.php -->
-
 <footer>
     <div class="container">
         <div class="mb-5">
