@@ -1,0 +1,105 @@
+.fbk-cw-alert {
+   height: 100%;
+   transition: height 0.2s ease-in-out 0.2s;
+
+   .alert-wrapper {
+      background-color: $color-white;
+      padding-inline: $child-card-padding;
+      padding-block: calc(#{$child-card-padding} + 0.8rem);
+      position: relative;
+      opacity: 1;
+      transition: opacity 0.3s ease-out;
+
+      @media #{$medium} {
+         padding-inline: $child-card-padding-md;
+         padding-block: calc(#{$child-card-padding-md} + 0.8rem);
+      }
+      @media #{$xlarge} {
+         padding-inline: $child-card-padding-xl;
+         padding-block: calc(#{$child-card-padding-xl} + 0.8rem);
+      }
+
+      .button-wrapper {
+         position: absolute;
+         top: 0;
+         right: 0;
+         z-index: 10;
+
+         button.close-alert {
+            padding: 1.4rem;
+            border: 0;
+
+            svg {
+               display: block;
+            }
+
+            @media #{$medium} {
+               margin: calc(#{$child-card-padding-md} - 1.4rem);
+            }
+            @media #{$xlarge} {
+               margin: calc(#{$child-card-padding-xl} - 1.4rem);
+               margin-top: 1rem;
+            }
+
+            &:hover {
+               background-color: transparent;
+
+               svg {
+                  path {
+                     fill: $color-primary;
+                  }
+               }
+            }
+
+            &:focus {
+               background-color: transparent;
+            }
+            &:focus-visible {
+               background-color: transparent;
+               outline: $color-primary auto 1px;
+               outline-offset: -3px;
+            }
+         }
+      }
+
+      h3 {
+         max-width: calc(100% - 5.2rem);
+
+         @media #{$xlarge} {
+            max-width: calc(80rem - #{$child-card-padding-xl});
+         }
+
+         .icon-wrapper {
+            vertical-align: middle;
+            display: inline-flex;
+            margin-bottom: 3px;
+            margin-right: 0.4rem;
+
+            svg {
+               max-width: 2rem;
+
+               @media #{$xsmall} {
+                  max-width: 2.4rem;
+               }
+            }
+         }
+      }
+
+      .wysiwyg {
+         max-width: calc(80rem - #{$child-card-padding-xl});
+         margin-top: 1.6rem;
+         margin-bottom: -0.6rem;
+
+         @media #{$large} {
+            margin-bottom: -1.2rem;
+         }
+      }
+   }
+
+   &.closed-alert {
+      height: 0;
+      .alert-wrapper {
+         opacity: 0;
+      }
+   }
+}

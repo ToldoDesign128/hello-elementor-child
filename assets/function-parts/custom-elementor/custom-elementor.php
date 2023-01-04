@@ -75,6 +75,10 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   require_once( __DIR__ . '/widgets/google-calendar.php' );
   $widgets_manager->register( new \FBK_Elementor_GoogleCalendar() );
 
+  // Alert
+  require_once( __DIR__ . '/widgets/alert.php' );
+  $widgets_manager->register( new \FBK_Elementor_Alert() );
+
 
   /* FBK - Loops
   ----------------------*/
@@ -129,8 +133,8 @@ add_action( 'elementor/widgets/register', 'register_fbk_custom_widgets' );
 function remove_unused_widgets( $widgets_manager ) {
 
 	$widgets_to_unregister = [
-    //Base
-    'inner-section',
+      //Base
+      'inner-section',
 		'heading',
 		'image',
 		// 'text-editor', // non si può disattivare nei single
@@ -141,90 +145,90 @@ function remove_unused_widgets( $widgets_manager ) {
 		'google-maps', //non funzia
 		'icon',
 
-    //Generale
-    'image-box',
-		'icon-box',
-		'star-rating',
-		'image-carousel',
-		//'image-gallery',
-		'icon-list',
-		'counter',
-		'progress',
-		'testimonial',
-		'tabs',
-		'accordion',
-		'toggle',
-		'social-icons',
-		// 'alert',
-		'audio',
-		'shortcode',
-		'html',
-		'menu-anchor',
-		'sidebar',
-		'read-more',
-    'text-path' //non funzia
+      //Generale
+      'image-box',
+      'icon-box',
+      'star-rating',
+      'image-carousel',
+      'image-gallery',
+      'icon-list',
+      'counter',
+      'progress',
+      'testimonial',
+      'tabs',
+      'accordion',
+      'toggle',
+      'social-icons',
+      'alert',
+      'audio',
+      'shortcode',
+      'html',
+      'menu-anchor',
+      'sidebar',
+      'read-more',
+      'text-path' //non funzia
 
-    // pro ----------------- //
-    ,'posts'
-    ,'portfolio'
-    ,'slides'
-    ,'form'
-    ,'login'
-    ,'media-carousel'
-    ,'testimonial-carousel'
-    ,'nav-menu'
-    ,'pricing'
-    ,'facebook-comment'
-    ,'nav-menu'
-    ,'animated-headline'
-    ,'price-list'
-    ,'price-table'
-    ,'facebook-button'
-    ,'facebook-comments'
-    ,'facebook-embed'
-    ,'facebook-page'
-    ,'add-to-cart'
-    ,'categories'
-    ,'elements'
-    ,'products'
-    ,'flip-box'
-    ,'carousel'
-    ,'countdown'
-    ,'share-buttons'
-    ,'author-box'
-    ,'breadcrumbs'
-    ,'search-form'
-    ,'post-navigation'
-    ,'post-comments'
-    ,'theme-elements'
-    ,'blockquote'
-    ,'template'
-    ,'wp-widget-audio'
-    ,'woocommerce'
-    ,'social'
-    ,'library'
+      // pro ----------------- //
+      ,'posts'
+      ,'portfolio'
+      ,'slides'
+      ,'form'
+      ,'login'
+      ,'media-carousel'
+      ,'testimonial-carousel'
+      ,'nav-menu'
+      ,'pricing'
+      ,'facebook-comment'
+      ,'nav-menu'
+      ,'animated-headline'
+      ,'price-list'
+      ,'price-table'
+      ,'facebook-button'
+      ,'facebook-comments'
+      ,'facebook-embed'
+      ,'facebook-page'
+      ,'add-to-cart'
+      ,'categories'
+      ,'elements'
+      ,'products'
+      ,'flip-box'
+      ,'carousel'
+      ,'countdown'
+      ,'share-buttons'
+      ,'author-box'
+      ,'breadcrumbs'
+      ,'search-form'
+      ,'post-navigation'
+      ,'post-comments'
+      ,'theme-elements'
+      ,'blockquote'
+      ,'template'
+      ,'wp-widget-audio'
+      ,'woocommerce'
+      ,'social'
+      ,'library'
 
-    // wp widgets ----------------- //
-    ,'wp-widget-pages'
-    ,'wp-widget-archives'
-    ,'wp-widget-media_audio'
-    ,'wp-widget-media_image'
-    ,'wp-widget-media_gallery'
-    ,'wp-widget-media_video'
-    ,'wp-widget-meta'
-    ,'wp-widget-search'
-    ,'wp-widget-text'
-    ,'wp-widget-categories'
-    ,'wp-widget-recent-posts'
-    ,'wp-widget-recent-comments'
-    ,'wp-widget-rss'
-    ,'wp-widget-tag_cloud'
-    ,'wp-widget-nav_menu'
-    ,'wp-widget-custom_html'
-    ,'wp-widget-polylang'
-    ,'wp-widget-calendar'
-    ,'wp-widget-elementor-library'
-    ,'wp-widget-block'
+      // wp widgets ----------------- //
+      ,'wp-widget-pages'
+      ,'wp-widget-archives'
+      ,'wp-widget-media_audio'
+      ,'wp-widget-media_image'
+      ,'wp-widget-media_gallery'
+      ,'wp-widget-media_video'
+      ,'wp-widget-meta'
+      ,'wp-widget-search'
+      ,'wp-widget-text'
+      ,'wp-widget-categories'
+      ,'wp-widget-recent-posts'
+      ,'wp-widget-recent-comments'
+      ,'wp-widget-rss'
+      ,'wp-widget-tag_cloud'
+      ,'wp-widget-nav_menu'
+      ,'wp-widget-custom_html'
+      ,'wp-widget-polylang'
+      ,'wp-widget-calendar'
+      ,'wp-widget-elementor-library'
+      ,'wp-widget-block'
 	];
 
 	foreach ( $widgets_to_unregister as $widget ) {
@@ -237,26 +241,31 @@ add_action( 'elementor/widgets/register', 'remove_unused_widgets' );
 
 //custom CSS in Elementor editor
 function HT_css_elementor(){
-  echo '<style>
+   echo '<style>
 
-    /*remove style tab*/
-    .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}
+      /*remove panel category of widgets*/
+      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-general {display:none !important;}
+      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-pro-elements {display:none !important;}
+      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements {display:none !important;}
+      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements-single {display:none !important;}
 
-    /*remove Capolettera switcher from Editor*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-drop_cap {display:none !important;}
+      /*remove style tab*/
+      .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}
+      /*remove advanced tab*/
+      .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-advanced {display:none !important;}
 
-    /*castred Wysiwyg*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-container .mce-panel .mce-container .mce-listbox{display:none !important;} /*no switcher p and headings*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-tools {display:none !important;} /*no caricamento media + no switcher modalità*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(8) {display:none !important;} /*no full screen*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(9) {display:none !important;} /*no toolbar*/
+      /*remove Serve aiuto?*/
+      .elementor-editor-active .elementor-panel #elementor-panel-page-editor #elementor-panel__editor__help {display:none !important;}
 
-    /*castred Alert*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-alert_type.elementor-control-type-select {display:none !important;} /*no selector for Type*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-show_dismiss.elementor-control-type-select {display:none !important;} /*no selector for Dismiss icon*/
-    .elementor-editor-active .elementor-panel .elementor-control.elementor-control-dismiss_icon.elementor-control-type-icons {display:none !important;} /*no Icon*/  
+      /*remove Capolettera switcher from Editor*/
+      .elementor-editor-active .elementor-panel .elementor-control.elementor-control-drop_cap {display:none !important;}
 
+      /*castred Wysiwyg*/
+      .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-container .mce-panel .mce-container .mce-listbox{display:none !important;} /*no switcher p and headings*/
+      .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-tools {display:none !important;} /*no caricamento media + no switcher modalità*/
+      .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(8) {display:none !important;} /*no full screen*/
+      .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(9) {display:none !important;} /*no toolbar*/
 
-    </style>';
+   </style>';
 }
 add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor' );

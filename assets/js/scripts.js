@@ -5,8 +5,19 @@ jQuery(".footer-title").click(function () {
 });
 
 jQuery(document).ready(function () {
-   //FAQs section
+   //FAQs widget
    jQuery(".faq-container").click(function () {
       jQuery(this).toggleClass("faq-active");
+   });
+
+   //Alert widget
+   jQuery(".close-alert").click(function () {
+      jQuery(this)
+         .parent()
+         .parent()
+         .parent()
+         .parent()
+         .parent(".fbk-cw-alert")
+         .addClass("closed-alert");
    });
 });

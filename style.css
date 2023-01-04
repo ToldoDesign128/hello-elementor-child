@@ -4879,6 +4879,9 @@ img {
 .elementor .elementor-section .elementor-container .elementor-column .elementor-widget-wrap .elementor-widget .elementor-widget-container {
   transition: none;
 }
+.elementor .elementor-section .elementor-container .elementor-widget:not(:last-child) {
+  margin-bottom: 0;
+}
 
 .button {
   display: inline-block;
@@ -5433,7 +5436,7 @@ header {
 }
 @media (min-width: 992px) {
   .fbk-cw-faq .faqs .faq-container .faq-question svg {
-    max-width: 25px;
+    max-width: 20px;
   }
 }
 .fbk-cw-faq .faqs .faq-container .faq-answer {
@@ -5682,4 +5685,105 @@ header {
 pre.h-code {
   background-color: #EDEEEF;
   padding: 1.6rem;
+}
+
+.fbk-cw-alert {
+  height: 100%;
+  transition: height 0.2s ease-in-out 0.2s;
+}
+.fbk-cw-alert .alert-wrapper {
+  background-color: #fff;
+  padding-inline: 1.6rem;
+  padding-block: calc(1.6rem + 0.8rem);
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+@media (min-width: 768px) {
+  .fbk-cw-alert .alert-wrapper {
+    padding-inline: 2.4rem;
+    padding-block: calc(2.4rem + 0.8rem);
+  }
+}
+@media (min-width: 1200px) {
+  .fbk-cw-alert .alert-wrapper {
+    padding-inline: 3.2rem;
+    padding-block: calc(3.2rem + 0.8rem);
+  }
+}
+.fbk-cw-alert .alert-wrapper .button-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+.fbk-cw-alert .alert-wrapper .button-wrapper button.close-alert {
+  padding: 1.4rem;
+  border: 0;
+}
+.fbk-cw-alert .alert-wrapper .button-wrapper button.close-alert svg {
+  display: block;
+}
+@media (min-width: 768px) {
+  .fbk-cw-alert .alert-wrapper .button-wrapper button.close-alert {
+    margin: calc(2.4rem - 1.4rem);
+  }
+}
+@media (min-width: 1200px) {
+  .fbk-cw-alert .alert-wrapper .button-wrapper button.close-alert {
+    margin: calc(3.2rem - 1.4rem);
+    margin-top: 1rem;
+  }
+}
+.fbk-cw-alert .alert-wrapper .button-wrapper button.close-alert:hover {
+  background-color: transparent;
+}
+.fbk-cw-alert .alert-wrapper .button-wrapper button.close-alert:hover svg path {
+  fill: #1254a2;
+}
+.fbk-cw-alert .alert-wrapper .button-wrapper button.close-alert:focus {
+  background-color: transparent;
+}
+.fbk-cw-alert .alert-wrapper .button-wrapper button.close-alert:focus-visible {
+  background-color: transparent;
+  outline: #1254a2 auto 1px;
+  outline-offset: -3px;
+}
+.fbk-cw-alert .alert-wrapper h3 {
+  max-width: calc(100% - 5.2rem);
+}
+@media (min-width: 1200px) {
+  .fbk-cw-alert .alert-wrapper h3 {
+    max-width: calc(80rem - 3.2rem);
+  }
+}
+.fbk-cw-alert .alert-wrapper h3 .icon-wrapper {
+  vertical-align: middle;
+  display: inline-flex;
+  margin-bottom: 3px;
+  margin-right: 0.4rem;
+}
+.fbk-cw-alert .alert-wrapper h3 .icon-wrapper svg {
+  max-width: 2rem;
+}
+@media (min-width: 576px) {
+  .fbk-cw-alert .alert-wrapper h3 .icon-wrapper svg {
+    max-width: 2.4rem;
+  }
+}
+.fbk-cw-alert .alert-wrapper .wysiwyg {
+  max-width: calc(80rem - 3.2rem);
+  margin-top: 1.6rem;
+  margin-bottom: -0.6rem;
+}
+@media (min-width: 992px) {
+  .fbk-cw-alert .alert-wrapper .wysiwyg {
+    margin-bottom: -1.2rem;
+  }
+}
+.fbk-cw-alert.closed-alert {
+  height: 0;
+}
+.fbk-cw-alert.closed-alert .alert-wrapper {
+  opacity: 0;
 }

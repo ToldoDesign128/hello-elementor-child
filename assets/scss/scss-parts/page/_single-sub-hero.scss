@@ -1,12 +1,11 @@
-.single-sub-hero{
-  
-  .single-sub-hero__cf{
-    display: flex;
-    gap: 3.2rem;
-
-    div{
+.single-sub-hero {
+   .single-sub-hero__cf {
       display: flex;
-      gap: 1.2rem;
-    }
-  }
+      gap: 3.2rem;
+
+      div {
+         display: flex;
+         gap: 1.2rem;
+      }
+   }
 }
