@@ -1,0 +1,76 @@
+.fbk-cw-group-download {
+   .section-header {
+      display: inline-block;
+   }
+
+   .col-download {
+      margin-bottom: 1.6rem;
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+
+      @media #{$medium} {
+         &:last-child {
+            margin-bottom: 1.6rem;
+         }
+      }
+   }
+
+   .download-list {
+      .download-card {
+         background-color: $color-white;
+         display: inline-block;
+         text-decoration: none;
+         width: 100%;
+         min-height: 100%;
+         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+         padding: 1.6rem;
+
+         @media #{$medium} {
+            padding-inline: 2.4rem;
+         }
+
+         .flex-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2.4rem;
+
+            .download-card__label {
+               color: $color-txt-primary;
+               max-width: 100%;
+               overflow: hidden;
+               white-space: nowrap;
+               text-overflow: ellipsis;
+            }
+         }
+
+         &:hover {
+            background-color: $color-light-primary;
+
+            .svg-wrapper svg path {
+               fill: $color-primary;
+            }
+
+            p {
+               color: $color-primary;
+            }
+         }
+      }
+   }
+}
+
+// Img lightbox
+.dialog-lightbox-widget {
+   &.dialog-type-lightbox {
+      position: fixed !important;
+   }
+
+   .swiper-container footer.elementor-slideshow__footer,
+   .swiper-container header.elementor-slideshow__header {
+      opacity: 0;
+      pointer-events: none;
+   }
+}

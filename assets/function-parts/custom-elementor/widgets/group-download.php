@@ -169,38 +169,48 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
       $repeater = $settings['group-download_downloads']
 		?>
 
-		<section class="fbk-cw fbk-cw-group-download">
+		<section class="fbk-cw fbk-cw-group-download container mb-section">
 
-			<div class="section-header container">
+			<div class="section-header">
 				<p><?php echo $overtitle; ?></p>
 				<h2><?php echo $title; ?></h2>
 			</div>
 
-			<div class="download-list">
+         <?php if ($repeater) : ?>
+			   <div class="row download-list">
 
-				<?php foreach ( $repeater as $index => $item ) {
-					$download_label = $repeater[$index]['group-download_downloads_label'];
-					$download_file = $repeater[$index]['group-download_downloads_file'];
-					
-					//IF il campo Download non è vuoto
-					if ( $download_file['url'] ) {
-						?>
+               <?php foreach ( $repeater as $index => $item ) {
+                  $download_label = $repeater[$index]['group-download_downloads_label'];
+                  $download_file = $repeater[$index]['group-download_downloads_file'];
 
-						<a class="download-card" href="<?php echo $download_file['url']; ?> " target="_blank" rel="noopener noreferrer">
-							<p class="download-card__label">
-								<?php echo $download_label; ?>
-							</p>
-						</a>
-						
-						<?php
-					};
-				}; ?>
+                  if ( $download_file['url'] ) { ?>
+                     <div class="col-download col-12 col-md-6 col-xl-4">
 
-			</div>
+                        <a class="download-card" href="<?php echo $download_file['url']; ?> " target="_blank" rel="noopener noreferrer">
+                           <div class="flex-wrapper">
+                              <p class="download-card__label">
+                                 <span>
+                                    <?php if ($download_label) : echo $download_label; 
+                                    else: echo basename($download_file['url']); endif; ?>
+                                 </span>
+                              </p>
+                              <div class="svg-wrapper">
+                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6719 0.444824V17.4366L19.7749 9.33359L20.8861 10.4448L10.8861 20.4448L0.886108 10.4448L1.99735 9.33359L10.1003 17.4366V0.444824H11.6719Z" fill="#A19E9E"/>
+                                 </svg>
+                              </div>
+                           </div>
+                        </a>
+
+                     </div>
+                     
+                  <?php };
+               }; ?>
+
+			   </div>
+         <?php endif; ?>
 			
 		</section>
-		
-			
 
 	<?php
 	}

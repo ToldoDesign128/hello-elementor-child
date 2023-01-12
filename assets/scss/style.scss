@@ -20,6 +20,7 @@ Version: 0.1
 @import "scss-parts/base";
 
 //components
+@import "scss-parts/components/breadcrumps";
 @import "scss-parts/components/button";
 @import "scss-parts/components/card";
 @import "scss-parts/components/section-header";
@@ -36,12 +37,12 @@ Version: 0.1
 @import "scss-parts/widgets/cta";
 @import "scss-parts/widgets/faq";
 @import "scss-parts/widgets/loop-documenti-I";
+@import "scss-parts/widgets/loop-documenti-II";
+@import "scss-parts/widgets/group-download";
 @import "scss-parts/widgets/group-link";
 @import "scss-parts/widgets/contact";
+@import "scss-parts/widgets/alert";
 
 //Widgets - FBK Single
 @import "scss-parts/widgets/h-phrase";
 @import "scss-parts/widgets/h-code";
-
-//Elementor core Widgets
-@import "scss-parts/widgets/alert";

@@ -31,6 +31,7 @@ function hello_elementor_child_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20 );
 
+
 // Change footer in admin panel
 function remove_footer_admin () {
    echo '<p>Website by Officina FBK</p>';

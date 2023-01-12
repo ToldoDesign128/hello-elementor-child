@@ -1,0 +1,85 @@
+nav.breadcrumps {
+   // background-color: lightblue;
+   max-width: 80rem;
+   margin-bottom: 3.2rem;
+
+   ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      max-width: 100%;
+      // background-color: lightcyan;
+      overflow: hidden;
+      position: relative;
+
+      &:after {
+         content: "";
+         position: absolute;
+         z-index: 20;
+         top: 0;
+         bottom: 0;
+         right: 0;
+         width: 3.2rem;
+         background: rgb(255, 255, 255);
+         background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 5%,
+            rgba(255, 255, 255, 1) 60%
+         );
+      }
+
+      li {
+         a.bread-link {
+            color: $color-primary;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: middle;
+            transition: all 0.3s ease-in-out;
+
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            white-space: nowrap;
+
+            @media #{$xxlarge} {
+               font-size: 1.6rem;
+               letter-spacing: 2px;
+            }
+
+            .home {
+               margin-bottom: 5px;
+
+               path {
+                  fill: $color-primary;
+                  transition: fill 0.3s ease-in-out;
+               }
+            }
+
+            &:hover {
+               color: $color-txt-secondary;
+               text-decoration: underline;
+               text-decoration-thickness: 2px;
+               text-underline-offset: 3px;
+
+               .home path {
+                  fill: $color-txt-secondary;
+                  transition: fill 0.3s ease-in-out;
+               }
+            }
+         }
+         a.bread-link:not([href]) {
+            color: $color-primary;
+            &:hover {
+               text-decoration: none;
+               color: $color-primary;
+            }
+         }
+      }
+
+      .pointer {
+         svg {
+            margin-bottom: 2px;
+         }
+      }
+   }
+}

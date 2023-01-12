@@ -36,7 +36,7 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-document-file';
+		return 'eicon-folder-o';
 	}
 
   /**
@@ -71,7 +71,7 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
     $this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
+				'label' => esc_html__( 'Contenuti', 'custom-FBK-widget' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);

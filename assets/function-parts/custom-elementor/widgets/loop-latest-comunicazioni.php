@@ -179,7 +179,6 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
                <?php while ( $the_comunicazioni_query->have_posts() ) : $the_comunicazioni_query->the_post(); 
                   $cpt_in_evidenza = get_field('cpt_in_evidenza');
                   $cpt_comunicazioni_taxonomy = get_field('cpt_comunicazioni_taxonomy');
-
                   ?>
                   <div class="col-card col-12 col-lg-6">
 

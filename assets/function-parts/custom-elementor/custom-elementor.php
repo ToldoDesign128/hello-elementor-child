@@ -90,6 +90,10 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   // DocumentiI
   require_once( __DIR__ . '/widgets/loop-documenti-I.php' );
   $widgets_manager->register( new \FBK_Elementor_LoopDocumentiI() );
+
+  // DocumentiII
+  require_once( __DIR__ . '/widgets/loop-documenti-II.php' );
+  $widgets_manager->register( new \FBK_Elementor_LoopDocumentiII() );
   
 
 
@@ -243,11 +247,13 @@ add_action( 'elementor/widgets/register', 'remove_unused_widgets' );
 function HT_css_elementor(){
    echo '<style>
 
-      /*remove panel category of widgets*/
-      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-general {display:none !important;}
+      /*remove panel core category of widgets*/
+      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-basic {display:none !important;}
       .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-pro-elements {display:none !important;}
+      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-general {display:none !important;}
       .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements {display:none !important;}
       .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements-single {display:none !important;}
+      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-woocommerce-elements {display:none !important;}
 
       /*remove style tab*/
       .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}

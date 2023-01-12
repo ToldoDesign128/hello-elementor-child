@@ -1,0 +1,16 @@
+.fbk-cw-doc-II {
+   .card.card-primary {
+      p.meta {
+         display: block;
+         line-height: unset;
+         margin-top: -1.2rem;
+
+         .label_in_evidenza {
+            margin-bottom: 0;
+            @media #{$xxsmall} {
+               margin-left: 0;
+            }
+         }
+      }
+   }
+}

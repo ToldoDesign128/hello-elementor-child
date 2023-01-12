@@ -4883,6 +4883,74 @@ img {
   margin-bottom: 0;
 }
 
+nav.breadcrumps {
+  max-width: 80rem;
+  margin-bottom: 3.2rem;
+}
+nav.breadcrumps ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+nav.breadcrumps ul:after {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 3.2rem;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 5%, rgb(255, 255, 255) 60%);
+}
+nav.breadcrumps ul li a.bread-link {
+  color: #1254a2;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+@media (min-width: 1480px) {
+  nav.breadcrumps ul li a.bread-link {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+}
+nav.breadcrumps ul li a.bread-link .home {
+  margin-bottom: 5px;
+}
+nav.breadcrumps ul li a.bread-link .home path {
+  fill: #1254a2;
+  transition: fill 0.3s ease-in-out;
+}
+nav.breadcrumps ul li a.bread-link:hover {
+  color: #605e5c;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+nav.breadcrumps ul li a.bread-link:hover .home path {
+  fill: #605e5c;
+  transition: fill 0.3s ease-in-out;
+}
+nav.breadcrumps ul li a.bread-link:not([href]) {
+  color: #1254a2;
+}
+nav.breadcrumps ul li a.bread-link:not([href]):hover {
+  text-decoration: none;
+  color: #1254a2;
+}
+nav.breadcrumps ul .pointer svg {
+  margin-bottom: 2px;
+}
+
 .button {
   display: inline-block;
   text-decoration: none;
@@ -4952,7 +5020,7 @@ img {
 }
 @media (min-width: 576px) {
   .card.card-primary .content {
-    margin: 0 1.6rem 1.2rem;
+    margin: 0 0.8rem 0.8rem;
     max-width: 88%;
   }
 }
@@ -5335,6 +5403,15 @@ header {
   color: #605e5c;
 }
 
+.single-sub-hero {
+  background-color: #fff;
+  padding-block: 24vh;
+}
+.single-sub-hero h1 {
+  color: #323130;
+  max-width: 80rem;
+  margin-bottom: 2.4rem;
+}
 .single-sub-hero .single-sub-hero__cf {
   display: flex;
   gap: 3.2rem;
@@ -5615,6 +5692,80 @@ header {
   grid-template-rows: auto 2fr auto;
 }
 
+.fbk-cw-doc-II .card.card-primary p.meta {
+  display: block;
+  line-height: unset;
+  margin-top: -1.2rem;
+}
+.fbk-cw-doc-II .card.card-primary p.meta .label_in_evidenza {
+  margin-bottom: 0;
+}
+@media (min-width: 480px) {
+  .fbk-cw-doc-II .card.card-primary p.meta .label_in_evidenza {
+    margin-left: 0;
+  }
+}
+
+.fbk-cw-group-download .section-header {
+  display: inline-block;
+}
+.fbk-cw-group-download .col-download {
+  margin-bottom: 1.6rem;
+}
+.fbk-cw-group-download .col-download:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .fbk-cw-group-download .col-download:last-child {
+    margin-bottom: 1.6rem;
+  }
+}
+.fbk-cw-group-download .download-list .download-card {
+  background-color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  min-height: 100%;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 1.6rem;
+}
+@media (min-width: 768px) {
+  .fbk-cw-group-download .download-list .download-card {
+    padding-inline: 2.4rem;
+  }
+}
+.fbk-cw-group-download .download-list .download-card .flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+}
+.fbk-cw-group-download .download-list .download-card .flex-wrapper .download-card__label {
+  color: #323130;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.fbk-cw-group-download .download-list .download-card:hover {
+  background-color: #e1eaf6;
+}
+.fbk-cw-group-download .download-list .download-card:hover .svg-wrapper svg path {
+  fill: #1254a2;
+}
+.fbk-cw-group-download .download-list .download-card:hover p {
+  color: #1254a2;
+}
+
+.dialog-lightbox-widget.dialog-type-lightbox {
+  position: fixed !important;
+}
+.dialog-lightbox-widget .swiper-container footer.elementor-slideshow__footer,
+.dialog-lightbox-widget .swiper-container header.elementor-slideshow__header {
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media (min-width: 992px) {
   .link-list .card {
     min-height: 15.4rem;
@@ -5675,16 +5826,6 @@ header {
 }
 .fbk-cw-contacts .single_contact .content p {
   font-size: 1.4rem;
-}
-
-.h-phrase {
-  background-color: lightcyan;
-  padding: 1.6rem;
-}
-
-pre.h-code {
-  background-color: #EDEEEF;
-  padding: 1.6rem;
 }
 
 .fbk-cw-alert {
@@ -5786,4 +5927,14 @@ pre.h-code {
 }
 .fbk-cw-alert.closed-alert .alert-wrapper {
   opacity: 0;
+}
+
+.h-phrase {
+  background-color: lightcyan;
+  padding: 1.6rem;
+}
+
+pre.h-code {
+  background-color: #EDEEEF;
+  padding: 1.6rem;
 }
