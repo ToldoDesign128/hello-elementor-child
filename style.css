@@ -5193,6 +5193,9 @@ footer .footer-info .lingua p {
 .footer-info {
   margin-top: 5rem;
 }
+.footer-info p {
+  color: #fff;
+}
 .footer-info .lingua {
   text-align: right;
 }
