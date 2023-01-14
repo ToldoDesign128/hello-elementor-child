@@ -20,33 +20,4 @@
             </a>
         </div>
     </div>
-    <div class="container-fluid sub__menu">
-        <div class="container">
-            <div class="row">
-                <div class="sub__menu__list col-9">
-                    <?php   
-                    $args = array(
-                    'posts_per_page' => -1,
-                    'post_parent' => $post->ID,
-                    'post_type' => 'page',
-                    'post_status' => '',
-                    'orderby' => 'title',
-                    'order' => 'ASC',);
-
-                    query_posts($args);
-                    
-                    if(have_posts()) {
-                        while (have_posts()) : the_post(); 
-                            get_template_part("template-parts/list/header-page-list"); 
-                        endwhile; 
-                    }?>
-                </div>
-                <div class="sub__menu__cta col-3">
-                    <a href=""><button>Prova</button></a>
-                    <a href=""><button>Prova</button></a>
-                    <a href=""><button>Prova</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
 </header>
