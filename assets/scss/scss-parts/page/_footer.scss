@@ -35,6 +35,14 @@ footer {
         }
       }
     }
+    .menu {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    .show-item {
+      display: block;
+    }
   }
 
   .footer-info {
@@ -85,7 +93,7 @@ footer {
     }
   }
 
-  @media #{$underlarge} {
+  @media (max-width: 768px) {
     footer {
       margin-top: 1rem;
       padding: 0 1rem;
@@ -100,10 +108,6 @@ footer {
         }
       }
 
-      .menu {
-        display: none;
-      }
-
       .footer-menu-list {
         ul {
           li {
@@ -111,10 +115,6 @@ footer {
             border-bottom: solid 1px rgba($color: $color-white, $alpha: 0.6);
           }
         }
-      }
-
-      .show-item {
-        display: block;
       }
     }
   }
