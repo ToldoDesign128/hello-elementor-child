@@ -8,10 +8,4 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<header>
-		<div class="container">
-			<div class="row">
-				
-			</div>
-		</div>
-	</header>
+<?php get_template_part('/template-parts/dynamic-header'); ?>

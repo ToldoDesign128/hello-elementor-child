@@ -6,6 +6,10 @@ function HT_setup_theme() {
 	// register_nav_menu("header", "Navbar Header");
 	// Add widgets support
 	add_theme_support( 'widgets' );
+
+	register_nav_menu('ht-menu',__( 'Header HT menu' ));
+
+	
 }
 add_action("after_setup_theme", "HT_setup_theme");
 
