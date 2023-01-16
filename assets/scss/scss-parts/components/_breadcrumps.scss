@@ -1,14 +1,17 @@
 nav.breadcrumps {
-   // background-color: lightblue;
+   width: 100%;
    max-width: 80rem;
-   margin-bottom: 3.2rem;
+   margin-bottom: 2rem;
+
+   @media #{$medium} {
+      margin-bottom: 3.2rem;
+   }
 
    ul {
       list-style: none;
       display: flex;
       gap: 1.2rem;
       max-width: 100%;
-      // background-color: lightcyan;
       overflow: hidden;
       position: relative;
 
@@ -41,7 +44,7 @@ nav.breadcrumps {
             letter-spacing: 1px;
             white-space: nowrap;
 
-            @media #{$xxlarge} {
+            @media #{$xlarge} {
                font-size: 1.6rem;
                letter-spacing: 2px;
             }
@@ -51,7 +54,7 @@ nav.breadcrumps {
 
                path {
                   fill: $color-primary;
-                  transition: fill 0.3s ease-in-out;
+                  transition: all 0.3s ease-in-out;
                }
             }
 
@@ -63,11 +66,11 @@ nav.breadcrumps {
 
                .home path {
                   fill: $color-txt-secondary;
-                  transition: fill 0.3s ease-in-out;
                }
             }
          }
          a.bread-link:not([href]) {
+            cursor: default;
             color: $color-primary;
             &:hover {
                text-decoration: none;
@@ -79,6 +82,48 @@ nav.breadcrumps {
       .pointer {
          svg {
             margin-bottom: 2px;
+         }
+      }
+   }
+
+   &.parent-breadcrumps {
+      ul {
+         &:after {
+            background: $color-primary;
+            background: linear-gradient(
+               90deg,
+               rgba($color-primary, 0) 5%,
+               rgba($color-primary, 1) 60%
+            );
+         }
+
+         li {
+            a.bread-link {
+               color: $color-white;
+
+               .home path {
+                  fill: $color-white;
+               }
+
+               &:hover {
+                  color: rgba($color-white, 0.64);
+
+                  .home path {
+                     opacity: 0.64;
+                  }
+               }
+            }
+            a.bread-link:not([href]) {
+               color: $color-white;
+               &:hover {
+                  color: $color-white;
+               }
+            }
+         }
+         .pointer {
+            svg path {
+               fill: rgba($color-white, 0.72);
+            }
          }
       }
    }

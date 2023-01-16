@@ -27,15 +27,15 @@ function HT_custom_comunicazioni() {
             'menu_position'         =>          20,
             'menu_icon'             =>          'dashicons-format-status', //Dashicon
             'rewrite'               =>          array(
-                'slug'              =>          'comunicazioni',
-                'with-front'        =>          false,
+               'slug'              =>          'comunicazioni',
+               'with-front'        =>          false,
             ),
             'has_archive'           =>          true,
             'capability_type'       =>          'post',
             'hierarchycal'          =>          false,
             'taxonomies'            =>          array(''),
             'show_in_rest'          =>          false, //gutemberg disattivato
-            'supports'              =>          array('title', 'excerpt', ) //campi supportati
+            'supports'              =>          array('title') //campi supportati
         ), flush_rewrite_rules() /*fine delle opzioni*/
     );
 }
@@ -48,9 +48,9 @@ function HT_comunicazioni_taxonomies() {
         'comunicazioni',
         array(
             'labels' => array(
-                'name' => 'Categorie',
-                'add_new_item' => 'Aggiungi nuova categoria',
-                'new_item_name' => "Nuova categoria"
+               'name' => 'Categorie',
+               'add_new_item' => 'Aggiungi nuova categoria',
+               'new_item_name' => "Nuova categoria"
             ),
             'show_ui' => true,
             'show_tagcloud' => false,
@@ -58,7 +58,7 @@ function HT_comunicazioni_taxonomies() {
             'show_admin_column' => true,
             'show_in_rest' => true,
             'show_in_quick_edit'         => false,
-    'meta_box_cb'                => false,
+            'meta_box_cb'                => false,
         )
     );
 

@@ -56,6 +56,74 @@ function assign_parent_terms_targhe_cpt($post_id, $post){
 }
 
 
+//ADD svg support
+add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+   global $wp_version;
+   if ( $wp_version !== '4.7.1' ) {
+      return $data;
+   }
+   $filetype = wp_check_filetype( $filename, $mimes );
+   return [
+       'ext'             => $filetype['ext'],
+       'type'            => $filetype['type'],
+       'proper_filename' => $data['proper_filename']
+   ];
+ }, 10, 4 );
+ function cc_mime_types( $mimes ){
+   $mimes['svg'] = 'image/svg+xml';
+   return $mimes;
+ }
+ add_filter( 'upload_mimes', 'cc_mime_types' );
+ function fix_svg() {
+   echo '<style type="text/css">
+         .attachment-266x266, .thumbnail img {
+              width: 100% !important;
+              height: auto !important;
+         }
+         </style>';
+ }
+ add_action( 'admin_head', 'fix_svg' );
+
+
+//ADD custom admin column for Comunicazioni Categorie
+add_filter('manage_comunicazioni_posts_columns', 'filter_comunicazioni_custom_columns'); //add custom col
+function filter_comunicazioni_custom_columns($columns) {
+   $columns['comunicazioni_tax'] = 'Categoria';
+   return $columns;
+}
+add_action('manage_comunicazioni_posts_custom_column',  'action_comunicazioni_custom_columns'); //add ACF data to custom col rows
+function action_comunicazioni_custom_columns($column) {
+   global $post;
+   if($column == 'comunicazioni_tax') {
+      $IDfield = get_fields($post->ID);
+      if ( $IDfield && is_array($IDfield) ) :
+         $Namefield = get_term($IDfield['cpt_comunicazioni_taxonomy']);
+         if ( !is_wp_error($Namefield) ) : echo $Namefield->name; else: echo '—'; endif;
+      else: 
+         echo '—';
+      endif;
+   }
+}
+
+//ADD custom admin column for Documenti in Evidenza
+add_filter('manage_documenti_posts_columns', 'filter_documenti_custom_columns'); //add custom col
+function filter_documenti_custom_columns($columns) {
+   $columns['documenti_tax'] = ' ';
+   return $columns;
+}
+add_action('manage_documenti_posts_custom_column',  'action_documenti_custom_columns'); //add ACF data to custom col rows
+function action_documenti_custom_columns($column) {
+   global $post;
+   if($column == 'documenti_tax') {
+      $IDfield = get_fields($post->ID);
+      if ( $IDfield && is_array($IDfield) ) :
+         $Stickyfield = $IDfield['cpt_in_evidenza'];
+         if ($Stickyfield) : echo "In evidenza"; endif;
+      endif;
+   }
+}
+
+
 // Remove comments
 add_action('admin_init', function () {
 	global $pagenow;
@@ -148,19 +216,42 @@ function HT_remove_menus_editors() {
 }
 add_action('init','HT_remove_menus_editors');
 
-// Remove field descriptions from categories
-function NP_hide_cat_descr() {
-   ?>
-   <style type="text/css">
-   .term-description-wrap {
-       display: none;
-   }
-   </style>
-   <?php
-} 
-add_action( 'admin_head-term.php', 'NP_hide_cat_descr' );
-add_action( 'admin_head-edit-tags.php', 'NP_hide_cat_descr' );
+//CSS Soft Remove items from menu
+function NP_css_soft_remove_menu() {
+   echo '<style type="text/css">
 
+      /*hide Elementor Template*/
+      .wp-admin #adminmenuwrap #menu-posts-elementor_library{display:none !important;}
+
+   </style>';
+}
+add_action('wp_before_admin_bar_render', 'NP_css_soft_remove_menu');
+
+
+/*Remove category parent and description
+--------------------------------------*/
+function NP_css_custom_categories() {
+   echo '<style type="text/css"> 
+      .wp-admin.post-type-comunicazioni .form-field.term-parent-wrap {display:none !important;} 
+      .wp-admin .form-field.term-description-wrap {display:none !important;} 
+   </style>';
+}
+add_action('wp_before_admin_bar_render', 'NP_css_custom_categories');
+
+
+// Increase default post per page looped posts
+function NP_change_wp_search_size($query) { //search.php
+   if ( $query->is_search )
+      $query->query_vars['posts_per_page'] = -1;
+   return $query;
+}
+add_filter('pre_get_posts', 'NP_change_wp_search_size');
+function NP_change_wp_archive_size( $query ) { //archive.php
+   if ( !is_admin() && $query->is_main_query() && is_archive() )
+       $query->query_vars['posts_per_page'] = -1;
+   return $query;
+}
+add_action( 'pre_get_posts', 'NP_change_wp_archive_size'); 
 
 
 

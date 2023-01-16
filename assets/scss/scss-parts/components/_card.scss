@@ -113,6 +113,10 @@
          @media #{$underxxsmall} {
             font-size: 1.6rem;
          }
+
+         @media #{$medium} {
+            max-width: 90%;
+         }
       }
 
       .link-card__url {

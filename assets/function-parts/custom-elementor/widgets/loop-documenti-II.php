@@ -184,6 +184,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                   <div class="row docII-loop">
                      <?php while ( $wp_query->have_posts() ) : $wp_query->the_post();
                         $cpt_in_evidenza = get_field('cpt_in_evidenza');
+                        $cpt_excerpt = get_field('single_doc_excerpt');
                         ?>
                         <div class="col-card col-12 col-lg-6">
 
@@ -196,7 +197,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                               <div class="content">
                                  <?php if ($cpt_in_evidenza) : ?><p class="meta"><span class="label_in_evidenza">in evidenza</span></p><?php endif; ?>
                                  <p class="h3-style"><?php echo the_title(); ?></p>
-                                 <p class="excerpt"><?php echo get_the_excerpt(); ?></p>
+                                 <?php if ($cpt_excerpt) : ?><p class="excerpt"><?php echo $cpt_excerpt; ?></p><?php endif; ?>
                               </div>
                            </a>
 

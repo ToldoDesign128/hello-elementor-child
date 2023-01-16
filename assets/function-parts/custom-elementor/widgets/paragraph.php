@@ -1,12 +1,12 @@
 <?php
 /**
- * HighlightedPhrase section
+ * Paragraph section
  *
  * @since 1.0.0
  */
-class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base { 
+class FBK_Elementor_Paragraph extends \Elementor\Widget_Base { 
   
-  /**
+   /**
 	 * Get widget name.
 	 *
 	 * @since 1.0.0
@@ -14,7 +14,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'fbk-hphrase';
+		return 'fbk-p';
 	}
 
 	/**
@@ -25,7 +25,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Frase in evidenza', 'custom-FBK-widget' );
+		return esc_html__( 'FBK Paragrafo', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -36,10 +36,10 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-pencil';
+		return 'eicon-editor-paragraph';
 	}
 
-  /**
+   /**
 	 * Get widget categories.
 	 *
 	 * @since 1.0.0
@@ -58,7 +58,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'highlight', 'fbk', 'howto' ];
+		return [ 'paragraph', 'fbk', 'howto' ];
 	}
 
 	/**
@@ -68,26 +68,28 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
-    $this->start_controls_section(
-			'content_section',
-			[
-				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
-		);
-
-      $this->add_control(
-         'h-phrase',
+      $this->start_controls_section(
+         'content_section',
          [
-            'label' => esc_html__( 'Frase in evidenza', 'custom-FBK-widget' ),
-            'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'rows' => 20,
-            'placeholder' => esc_html__( 'Inserisci la frase in evidenza', 'custom-FBK-widget' ),
+            'label' => esc_html__( 'Contenuto', 'custom-FBK-widget' ),
+            'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
          ]
       );
 
-		$this->end_controls_section();
+         $this->add_control(
+            'p_txt',
+            [
+               'label' => esc_html__( 'Paragrafo', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::WYSIWYG,
+               'placeholder' => esc_html__( 'Paragrafo di testo', 'custom-FBK-widget' ),
+               'label_block' => true,
+					'dynamic' => [
+						'active' => true,
+					],
+            ]
+         );
 
+      $this->end_controls_section();
 	}
 
 	//Remove tab Avanzato
@@ -103,21 +105,19 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		$settings = $this->get_settings_for_display();
+      $settings = $this->get_settings_for_display();
 		
-    //Content
-		$hphrase = $settings['h-phrase'];
+      //Content
+		$text = $settings['p_txt'];
 		
-		if ($hphrase) : ?>
-         <div class="fbk-cw fbk-cw-single fbk-h-phrase container">
+		if ( $text ) : ?>
+         <div class="fbk-cw fbk-cw-single fbk-p container">
             <div class="row">
                <div class="col-12">
-                  <p class="h-phrase">
-                     <span><?php echo $hphrase; ?></span>
-                  </p>
+                  <div class="wysiwyg"><?php echo $text; ?></div>
                </div>
             </div>
          </div>
-    <?php endif;
+      <?php endif;
 	}
 }

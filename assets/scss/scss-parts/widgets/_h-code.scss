@@ -1,4 +1,19 @@
-pre.h-code{
-  background-color: #EDEEEF;
-  padding: 1.6rem;
+.fbk-h-code {
+   pre.h-code {
+      background-color: #edeeef;
+      padding-inline: 1.6rem;
+      padding-block: 2rem;
+      margin-bottom: 2.4rem;
+      white-space: normal;
+
+      @media #{$large} {
+         padding-inline: 2.4rem;
+         padding-block: 2.8rem;
+      }
+
+      code {
+         color: $color-txt-secondary;
+         line-height: 2;
+      }
+   }
 }

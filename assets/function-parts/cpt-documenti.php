@@ -30,12 +30,12 @@ function HT_custom_documenti() {
                'slug'              =>          'documenti',
                'with-front'        =>          false,
             ),
-            'has_archive'           =>          true,
+            'has_archive'           =>          false,
             'capability_type'       =>          'post',
             'hierarchycal'          =>          false,
             'taxonomies'            =>          array(''),
             'show_in_rest'          =>          false, //gutemberg disattivato
-            'supports'              =>          array('title', 'excerpt', ) //campi supportati
+            'supports'              =>          array('title') //campi supportati
         ), flush_rewrite_rules() 
     );
 }
