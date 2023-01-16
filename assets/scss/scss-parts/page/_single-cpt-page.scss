@@ -1,0 +1,37 @@
+.single.single-documenti,
+.single.single-comunicazioni {
+   background-color: $color-white;
+
+   .single-page-content {
+      .fbk-cw-single.container .row {
+         max-width: 80rem;
+      }
+
+      //widgets overwrite
+
+      .fbk-cw-cta {
+         background-color: $color-fede;
+      }
+      .fbk-cw-group-link .card {
+         background-color: $color-fede;
+         &:hover {
+            background-color: $color-light-primary;
+         }
+      }
+      .fbk-cw-group-download .download-list .download-card {
+         background-color: $color-fede;
+         &:hover {
+            background-color: $color-light-primary;
+         }
+      }
+      .fbk-cw-alert .alert-wrapper {
+         background-color: $color-fede;
+      }
+
+      .fbk-cw-doc-I {
+         .child-card-wrapper {
+            background-color: $color-fede;
+         }
+      }
+   }
+}

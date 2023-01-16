@@ -1,0 +1,30 @@
+.fbk-cw-gallery {
+   margin-top: 1.6rem;
+   margin-bottom: 2.4rem;
+
+   .gallery-item {
+      margin-bottom: 1.5rem !important;
+
+      a {
+         display: block;
+         transition: background-color 0.3s ease-in-out;
+
+         img {
+            display: block;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease-in-out;
+         }
+
+         &:hover {
+            background-color: $color-primary;
+
+            img {
+               opacity: 0.48;
+            }
+         }
+      }
+   }
+}

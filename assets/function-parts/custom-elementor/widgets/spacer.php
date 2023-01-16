@@ -1,10 +1,10 @@
 <?php
 /**
- * HighlightedPhrase section
+ * Spacer section
  *
  * @since 1.0.0
  */
-class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base { 
+class FBK_Elementor_Spacer extends \Elementor\Widget_Base { 
   
   /**
 	 * Get widget name.
@@ -14,7 +14,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'fbk-hphrase';
+		return 'fbk-spacer';
 	}
 
 	/**
@@ -25,7 +25,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Frase in evidenza', 'custom-FBK-widget' );
+		return esc_html__( 'Spazio vuoto', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-pencil';
+		return 'eicon-divider';
 	}
 
   /**
@@ -58,7 +58,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'highlight', 'fbk', 'howto' ];
+		return [ 'spacer', 'fbk', 'howto' ];
 	}
 
 	/**
@@ -68,26 +68,14 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
-    $this->start_controls_section(
+      $this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
+				'label' => esc_html__( 'Spazio vuoto tra sezioni', 'custom-FBK-widget' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
-
-      $this->add_control(
-         'h-phrase',
-         [
-            'label' => esc_html__( 'Frase in evidenza', 'custom-FBK-widget' ),
-            'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'rows' => 20,
-            'placeholder' => esc_html__( 'Inserisci la frase in evidenza', 'custom-FBK-widget' ),
-         ]
-      );
-
 		$this->end_controls_section();
-
 	}
 
 	//Remove tab Avanzato
@@ -102,22 +90,10 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function render() {
-		$settings = $this->get_settings_for_display();
+	protected function render() { ?>
+
+      <div class="fbk-cw fbk-cw-single fbk-cw-spacer mb-section"></div>
 		
-    //Content
-		$hphrase = $settings['h-phrase'];
-		
-		if ($hphrase) : ?>
-         <div class="fbk-cw fbk-cw-single fbk-h-phrase container">
-            <div class="row">
-               <div class="col-12">
-                  <p class="h-phrase">
-                     <span><?php echo $hphrase; ?></span>
-                  </p>
-               </div>
-            </div>
-         </div>
-    <?php endif;
+	<?php
 	}
 }

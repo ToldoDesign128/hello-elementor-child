@@ -1,20 +1,44 @@
 .single-sub-hero {
    background-color: $color-white;
-   padding-block: 24vh;
+   padding-top: 24vh;
+   padding-bottom: calc(24vh - 6.4rem - 10.4rem);
 
    h1 {
       color: $color-txt-primary;
       max-width: 80rem;
-      margin-bottom: 2.4rem;
+      margin-bottom: 2.8rem;
    }
 
    .single-sub-hero__cf {
       display: flex;
-      gap: 3.2rem;
+      gap: 2rem;
+      flex-direction: column;
+
+      @media #{$medium} {
+         gap: 3.2rem;
+         flex-direction: row;
+      }
+
+      @media #{$xxlarge} {
+         gap: 4.4rem;
+      }
 
       div {
          display: flex;
          gap: 1.2rem;
+
+         svg {
+            opacity: 0.5;
+         }
+
+         p {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1;
+            white-space: nowrap;
+            align-self: flex-end;
+         }
       }
    }
 }

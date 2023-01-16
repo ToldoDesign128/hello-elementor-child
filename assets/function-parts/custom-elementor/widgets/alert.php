@@ -88,19 +88,19 @@ class FBK_Elementor_Alert extends \Elementor\Widget_Base {
          $this->add_control(
             'alert_icon',
             [
-               'label' => esc_html__( 'Icona', 'textdomain' ),
+               'label' => esc_html__( 'Icona', 'custom-FBK-widget' ),
                'type' => \Elementor\Controls_Manager::CHOOSE,
                'options' => [
                   'info' => [
-                     'title' => esc_html__( 'Info', 'textdomain' ),
+                     'title' => esc_html__( 'Info', 'custom-FBK-widget' ),
                      'icon' => 'eicon-info',
                   ],
                   'help' => [
-                     'title' => esc_html__( 'Help', 'textdomain' ),
+                     'title' => esc_html__( 'Help', 'custom-FBK-widget' ),
                      'icon' => 'eicon-help-o',
                   ],
                   'warning' => [
-                     'title' => esc_html__( 'Warning', 'textdomain' ),
+                     'title' => esc_html__( 'Warning', 'custom-FBK-widget' ),
                      'icon' => 'eicon-warning-full',
                   ],
                ],

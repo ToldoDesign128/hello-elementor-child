@@ -1,4 +1,15 @@
-.h-phrase{
-  background-color: lightcyan;
-  padding: 1.6rem;
+.fbk-h-phrase {
+   .h-phrase {
+      background-color: $color-light-primary;
+      color: $color-dark-primary;
+      padding-inline: 1.6rem;
+      padding-block: 2rem;
+      margin-top: 0.8rem;
+      margin-bottom: 2.4rem;
+
+      @media #{$large} {
+         padding-inline: 2.4rem;
+         padding-block: 2.8rem;
+      }
+   }
 }

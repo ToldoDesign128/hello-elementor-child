@@ -47,10 +47,6 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   /* FBK - Pages
   ----------------------*/
 
-  // Highlight section
-  require_once( __DIR__ . '/widgets/highlight.php' );
-  $widgets_manager->register( new \FBK_Elementor_Highlight() );
-
   // CTA
   require_once( __DIR__ . '/widgets/cta.php' );
   $widgets_manager->register( new \FBK_Elementor_CTA() );
@@ -107,9 +103,21 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   require_once( __DIR__ . '/widgets/h3.php' );
   $widgets_manager->register( new \FBK_Elementor_HeadingThree() );
 
-  // Images
+  // Paragraph
+  require_once( __DIR__ . '/widgets/paragraph.php' );
+  $widgets_manager->register( new \FBK_Elementor_Paragraph() );
+
+  // Image
   require_once( __DIR__ . '/widgets/img.php' );
   $widgets_manager->register( new \FBK_Elementor_Image() );
+
+  // Gallery
+  require_once( __DIR__ . '/widgets/gallery.php' );
+  $widgets_manager->register( new \FBK_Elementor_Gallery() );
+
+  // Youtube video
+  require_once( __DIR__ . '/widgets/youtube-video.php' );
+  $widgets_manager->register( new \FBK_Elementor_YoutubeVideo() );
 
   // HighlightedPhrase
   require_once( __DIR__ . '/widgets/h-phrase.php' );
@@ -118,6 +126,10 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   // HighlightedCode
   require_once( __DIR__ . '/widgets/h-code.php' );
   $widgets_manager->register( new \FBK_Elementor_HighlightedCode() );
+
+  // Spacer
+  require_once( __DIR__ . '/widgets/spacer.php' );
+  $widgets_manager->register( new \FBK_Elementor_Spacer() );
 }
 add_action( 'elementor/widgets/register', 'register_fbk_custom_widgets' );
 
@@ -142,7 +154,7 @@ function remove_unused_widgets( $widgets_manager ) {
 		'heading',
 		'image',
 		// 'text-editor', // non si può disattivare nei single
-		//'video',
+		'video',
 		'button',
 		'divider',
 		'spacer',
@@ -259,6 +271,8 @@ function HT_css_elementor(){
       .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}
       /*remove advanced tab*/
       .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-advanced {display:none !important;}
+      /*remove layout tab*/
+      .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-layout {display:none !important;}
 
       /*remove Serve aiuto?*/
       .elementor-editor-active .elementor-panel #elementor-panel-page-editor #elementor-panel__editor__help {display:none !important;}

@@ -108,11 +108,15 @@ class FBK_Elementor_HighlightedCode extends \Elementor\Widget_Base {
 		$hcode = $settings['h-code'];
 		
 		if ($hcode) : ?>
-
-			<pre class="h-code">
-				<code><?php echo esc_html__($hcode); ?></code>
-			</pre>
-
+         <div class="fbk-cw fbk-cw-single fbk-h-code container">
+            <div class="row">
+               <div class="col-12">
+                  <pre class="h-code">
+                     <code><?php echo esc_html__($hcode); ?></code>
+                  </pre>
+               </div>
+            </div>
+         </div>
     <?php endif;
 	}
 }

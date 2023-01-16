@@ -1,12 +1,12 @@
 <?php
 /**
- * HighlightedPhrase section
+ * Gallery section
  *
  * @since 1.0.0
  */
-class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base { 
+class FBK_Elementor_Gallery extends \Elementor\Widget_Base { 
   
-  /**
+   /**
 	 * Get widget name.
 	 *
 	 * @since 1.0.0
@@ -14,7 +14,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'fbk-hphrase';
+		return 'fbk-gallery';
 	}
 
 	/**
@@ -25,7 +25,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Frase in evidenza', 'custom-FBK-widget' );
+		return esc_html__( 'FBK Galleria immagini', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -36,10 +36,10 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-pencil';
+		return 'eicon-gallery-grid';
 	}
 
-  /**
+   /**
 	 * Get widget categories.
 	 *
 	 * @since 1.0.0
@@ -58,7 +58,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'highlight', 'fbk', 'howto' ];
+		return [ 'gallery', 'fbk', 'howto' ];
 	}
 
 	/**
@@ -68,26 +68,24 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
-    $this->start_controls_section(
+      $this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
+				'label' => esc_html__( 'Contenuto', 'custom-FBK-widget' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
-      $this->add_control(
-         'h-phrase',
-         [
-            'label' => esc_html__( 'Frase in evidenza', 'custom-FBK-widget' ),
-            'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'rows' => 20,
-            'placeholder' => esc_html__( 'Inserisci la frase in evidenza', 'custom-FBK-widget' ),
-         ]
-      );
+			$this->add_control(
+				'gallery',
+				[
+					'label' => esc_html__( 'Galleria immagini', 'custom-FBK-widget' ),
+					'type' => \Elementor\Controls_Manager::GALLERY,
+					'default' => [],
+				]
+			);
 
 		$this->end_controls_section();
-
 	}
 
 	//Remove tab Avanzato
@@ -105,19 +103,27 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		
-    //Content
-		$hphrase = $settings['h-phrase'];
+      //Content
+		$gallery = $settings['gallery'];
 		
-		if ($hphrase) : ?>
-         <div class="fbk-cw fbk-cw-single fbk-h-phrase container">
+		if ( !empty($gallery) ) : ?>
+
+			<div class="fbk-cw fbk-cw-gallery container">
             <div class="row">
-               <div class="col-12">
-                  <p class="h-phrase">
-                     <span><?php echo $hphrase; ?></span>
-                  </p>
-               </div>
+               
+               <?php foreach ($gallery as $img) : ?>
+                  <div class="col-6 col-md-4 col-xl-3">
+                     <figure class="gallery-item">
+                        <a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="3f43f85" href="<?php echo $img['url']; ?>">
+                           <img src="<?php echo $img['url']; ?>" alt="galleria immagini FBK">
+                        </a>
+                     </figure>
+                  </div>
+               <?php endforeach; ?>
+
             </div>
-         </div>
-    <?php endif;
+			</div>
+
+      <?php endif;
 	}
 }

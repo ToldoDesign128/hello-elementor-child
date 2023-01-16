@@ -50,6 +50,10 @@
          &:hover {
             background-color: $color-light-primary;
 
+            .download-card__label {
+               color: $color-dark-primary;
+            }
+
             .svg-wrapper svg path {
                fill: $color-primary;
             }

@@ -24,12 +24,14 @@ Version: 0.1
 @import "scss-parts/components/button";
 @import "scss-parts/components/card";
 @import "scss-parts/components/section-header";
+@import "scss-parts/components/searchform";
 
 //page
 @import "scss-parts/page/footer";
 @import "scss-parts/page/header";
 @import "scss-parts/page/hero";
 @import "scss-parts/page/sub-hero";
+@import "scss-parts/page/single-cpt-page";
 @import "scss-parts/page/single-sub-hero";
 
 //Widgets - FBK Pages
@@ -44,5 +46,9 @@ Version: 0.1
 @import "scss-parts/widgets/alert";
 
 //Widgets - FBK Single
+@import "scss-parts/widgets/headings";
 @import "scss-parts/widgets/h-phrase";
 @import "scss-parts/widgets/h-code";
+@import "scss-parts/widgets/img";
+@import "scss-parts/widgets/gallery";
+@import "scss-parts/widgets/youtube-video";

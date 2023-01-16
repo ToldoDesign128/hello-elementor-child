@@ -1,0 +1,24 @@
+.fbk-cw-heading {
+   h2,
+   h3 {
+      margin-top: 6.4rem;
+      margin-bottom: 2.4rem;
+   }
+
+   h2 {
+      .icon-wrapper {
+         vertical-align: middle;
+         display: inline-flex;
+         margin-bottom: 5px;
+         margin-right: 0.5rem;
+
+         svg {
+            max-width: 2rem;
+
+            @media #{$xsmall} {
+               max-width: 2.4rem;
+            }
+         }
+      }
+   }
+}

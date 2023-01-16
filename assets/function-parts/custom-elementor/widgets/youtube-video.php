@@ -1,10 +1,10 @@
 <?php
 /**
- * Image section
+ * YoutubeVideo section
  *
  * @since 1.0.0
  */
-class FBK_Elementor_Image extends \Elementor\Widget_Base { 
+class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base { 
   
    /**
 	 * Get widget name.
@@ -14,7 +14,7 @@ class FBK_Elementor_Image extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'fbk-img';
+		return 'fbk-youtube-video';
 	}
 
 	/**
@@ -25,7 +25,7 @@ class FBK_Elementor_Image extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Immagine', 'custom-FBK-widget' );
+		return esc_html__( 'FBK Youtube Video', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class FBK_Elementor_Image extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-image-bold';
+		return 'eicon-youtube';
 	}
 
    /**
@@ -58,7 +58,7 @@ class FBK_Elementor_Image extends \Elementor\Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'img', 'fbk', 'howto' ];
+		return [ 'youtube video', 'fbk', 'howto' ];
 	}
 
 	/**
@@ -76,21 +76,13 @@ class FBK_Elementor_Image extends \Elementor\Widget_Base {
 			]
 		);
 
-			$this->add_control(
-				'img_img',
-				[
-					'label' => esc_html__( 'Immagine', 'custom-FBK-widget' ),
-					'type' => \Elementor\Controls_Manager::MEDIA,
-					'media_types' => ['image'],
-				]
-			);
-
          $this->add_control(
-            'img_caption',
+            'iframe',
             [
-               'label' => esc_html__( 'Descrizione', 'custom-FBK-widget' ),
-               'type' => \Elementor\Controls_Manager::TEXTAREA,
-               'placeholder' => esc_html__( 'Descrizione immagine', 'custom-FBK-widget' ),
+               'label' => esc_html__( 'Youtube iframe', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::CODE,
+               'description' => esc_html__( 'Incolla qui l\'iframe del video youtube che trovi in Condividi > Incorpora > Copia', 'custom-FBK-widget' ),
+				   'language' => 'html',
             ]
          );
 
@@ -112,21 +104,32 @@ class FBK_Elementor_Image extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		
-    //Content
-		$img = $settings['img_img'];
-		$caption = $settings['img_caption'];
+      //Content
+		$iframe = $settings['iframe'];
 		
-		if ( $img['url'] ) : ?>
+		if ( $iframe ) : 
+         // Use preg_match to find iframe src.
+         preg_match('/src="(.+?)"/', $iframe, $matches);
+         $src = $matches[1];
+         // Add extra parameters to src and replace HTML.
+         $params = array(
+            'controls'  => 0,
+            'hd'        => 1,
+            'autohide'  => 1
+         );
+         $new_src = add_query_arg($params, $src);
+         $iframe = str_replace($src, $new_src, $iframe);
+         // Add extra attributes to iframe HTML.
+         $attributes = 'frameborder="0"';
+         $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+         ?>
 
-			<div class="fbk-cw fbk-cw-single fbk-cw-img container">
+			<div class="fbk-cw fbk-cw-single fbk-cw-youtube-video container">
             <div class="row">
                <div class="col-12">
-                  <figure>
-                     <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
-                     <?php if ( $caption ) : ?>
-                        <figcaption><?php echo $caption; ?></figcaption>
-                     <?php endif; ?>
-                  </figure>
+                  <div class="embed-container">
+                     <?php echo $iframe; ?>
+                  </div>
                </div>
             </div>
 			</div>
