@@ -5368,6 +5368,40 @@ header {
   background-color: #1254a2;
   padding: 2rem 0;
 }
+@media (max-width: 991px) {
+  header .header__container__box {
+    padding: 0 1.2rem;
+  }
+}
+header .header__container__box__link {
+  display: flex;
+  justify-content: flex-start;
+}
+header .header__container__box__link__serch {
+  display: flex;
+  justify-content: center;
+}
+header .header__container__box__hamburgher__menu {
+  display: none;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1.2rem;
+}
+header .header__container__box__hamburgher__menu span {
+  flex-grow: 1;
+  display: block;
+  height: 2px;
+  width: 30px;
+  color: #e1eaf6;
+  background-color: #e1eaf6;
+  margin: 0.6rem 0;
+}
+@media (max-width: 768px) {
+  header .header__container__box__hamburgher__menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
 header .menu-header-container {
   margin: 0 5rem;
 }
@@ -5384,7 +5418,7 @@ header .menu-header-container ul li a {
   color: #e1eaf6;
   text-decoration: none;
 }
-@media (max-width: 991.98px) {
+@media (max-width: 991px) {
   header .menu-header-container {
     margin: 0 1rem;
   }
@@ -5394,38 +5428,28 @@ header .menu-header-container ul li a {
     margin: 0;
   }
 }
+header .menu-header-container .sub-menu {
+  display: none;
+}
 header svg path {
   fill: #e1eaf6;
 }
-header .sub__menu {
+header .hamburgher__menu {
+  display: none;
+  padding: 1.2rem;
+}
+header .hamburgher__menu span {
+  display: block;
+  height: 2px;
+  width: 30px;
+  color: #e1eaf6;
   background-color: #e1eaf6;
-  padding: 2rem 0;
+  margin: 1.2rem 0;
 }
-header .sub__menu__list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 1rem 0;
-}
-header .sub__menu__list__page a {
-  text-decoration: none;
-}
-header .sub__menu__cta {
-  display: flex;
-  flex-direction: column;
-}
-header .sub__menu__cta a {
-  flex-grow: 1;
-  width: 100%;
-  margin: 1rem 0;
-}
-header .sub__menu__cta a button {
-  width: 100%;
-  background-color: #e3e2e2;
-  border: 0;
-  padding: 1rem 2rem;
-  color: #161b22;
-  text-align: left;
+@media (max-width: 768px) {
+  header .hamburgher__menu {
+    display: block;
+  }
 }
 
 .hero .hero-bg {

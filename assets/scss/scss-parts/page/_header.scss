@@ -2,6 +2,45 @@ header {
   background-color: $color-primary;
   padding: 2rem 0;
 
+  .header__container {
+    &__box {
+      @media #{$underlarge} {
+        padding: 0 1.2rem;
+      }
+
+      &__link {
+        display: flex;
+        justify-content: flex-start;
+
+        &__serch {
+          display: flex;
+          justify-content: center;
+        }
+      }
+      &__hamburgher__menu {
+        display: none;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 1.2rem;
+
+        span {
+          flex-grow: 1;
+          display: block;
+          height: 2px;
+          width: 30px;
+          color: $color-light-primary;
+          background-color: $color-light-primary;
+          margin: 0.6rem 0;
+        }
+
+        @media (max-width: 768px) {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
   .menu-header-container {
     margin: 0 5rem;
     ul {
@@ -20,7 +59,7 @@ header {
       }
     }
 
-    @media (max-width: 991.98px) {
+    @media #{$underlarge} {
       margin: 0 1rem;
       ul {
         li {
@@ -30,46 +69,30 @@ header {
         }
       }
     }
+
+    .sub-menu {
+      display: none;
+    }
   }
   svg path {
     fill: $color-light-primary;
   }
 
-  .sub__menu {
-    background-color: $color-light-primary;
-    padding: 2rem 0;
+  .hamburgher__menu {
+    display: none;
+    padding: 1.2rem;
 
-    &__list {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 1rem 0;
-
-      &__page {
-        a {
-          text-decoration: none;
-        }
-      }
+    span {
+      display: block;
+      height: 2px;
+      width: 30px;
+      color: $color-light-primary;
+      background-color: $color-light-primary;
+      margin: 1.2rem 0;
     }
 
-    &__cta {
-      display: flex;
-      flex-direction: column;
-
-      a {
-        flex-grow: 1;
-        width: 100%;
-        margin: 1rem 0;
-
-        button {
-          width: 100%;
-          background-color: $color-gray;
-          border: 0;
-          padding: 1rem 2rem;
-          color: $color-black;
-          text-align: left;
-        }
-      }
+    @media (max-width: 768px) {
+      display: block;
     }
   }
 }
