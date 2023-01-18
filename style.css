@@ -5299,6 +5299,9 @@ footer .footer-menu-list ul .current_page_item a {
     display: none;
   }
 }
+footer .footer-menu-list .show-footer-item {
+  display: block;
+}
 footer .footer-info {
   margin-top: 5rem;
 }
@@ -5358,12 +5361,6 @@ footer .footer-info .lingua p {
   .footer-info footer .footer-menu-list ul li {
     padding: 1rem 0;
     border-bottom: solid 1px rgba(255, 255, 255, 0.6);
-  }
-  .footer-info footer .menu {
-    display: none;
-  }
-  .footer-info footer .show-item {
-    display: block;
   }
 }
 
