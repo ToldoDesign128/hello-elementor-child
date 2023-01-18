@@ -66,11 +66,11 @@ get_header();
       <?php endif; ?>
    </section>
 
-   <label class="dark-mode-label" for="dark-mode-trigger">
+   <!-- <label class="dark-mode-label" for="dark-mode-trigger">
       <h2>Going dark</h2>
       <input type="checkbox" class="dark-mode-trigger" id="dark-mode-trigger"/>
       <div>icone sole e luna</div>
-   </label>
+   </label> -->
 
    <?php the_content(); ?>
 

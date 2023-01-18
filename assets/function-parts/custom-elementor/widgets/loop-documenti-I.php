@@ -118,121 +118,130 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
 
 		//Content
 		$selected_cat_id = $settings['selected_cat'];
-		?>
 
-		<section class="fbk-cw fbk-cw-doc-I container mb-section">
+      if ( !is_singular( array( 'documenti', 'comunicazioni' ) ) ) : ?>
+         <section class="fbk-cw fbk-cw-doc-I container mb-section">
 
-			<?php $cat_children_id = get_term_children($selected_cat_id, $cpt_tax); //array con solo i child cat della parent cat selezionata
-         if (sizeof($cat_children_id) > 0) : // solo se la parent cat selezionata ha dei children
-            ?>
-            <div class="row with-child-loop">
-         
-               <?php foreach ( $cat_children_id as $cat_child ) :
-                  $cat_child_term = get_term_by( 'id', $cat_child, $cpt_tax);
-                  if ( $cat_child_term->count > 0 ) : //solo se la child cat ha almeno un doc assegnato
-                     $child_cat_page = get_field('child_cat_page', $cat_child_term);
-                     ?>
+            <?php $cat_children_id = get_term_children($selected_cat_id, $cpt_tax); //array con solo i child cat della parent cat selezionata
+            if (sizeof($cat_children_id) > 0) : // solo se la parent cat selezionata ha dei children
+               ?>
+               <div class="row with-child-loop">
+            
+                  <?php foreach ( $cat_children_id as $cat_child ) :
+                     $cat_child_term = get_term_by( 'id', $cat_child, $cpt_tax);
+                     if ( $cat_child_term->count > 0 ) : //solo se la child cat ha almeno un doc assegnato
+                        $child_cat_page = get_field('child_cat_page', $cat_child_term);
+                        ?>
 
-                     <div class="col-child-card">
-                        <div class="child-card-wrapper">
+                        <div class="col-child-card">
+                           <div class="child-card-wrapper">
 
-                           <article class="child-card">
-                              <a class="head" <?php if ($child_cat_page) : ?>href="<?php echo get_permalink( $child_cat_page ); ?>"<?php endif; ?>>
-                                 <h3><?php echo $cat_child_term->name; ?></h3>
-                                 <?php if ($child_cat_page) : ?>
-                                    <span class="svg-wrapper">
-                                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
-                                       </svg>
-                                    </span>
-                                 <?php endif; ?>
-                              </a>
-   
-                              <?php $args = array( // loop di tutti i doc della child cat
-                                 'post_status'     =>    'publish',
-                                 'post_type'       =>    'documenti',
-                                 'posts_per_page'  =>    -1,
-                                 'tax_query'       =>    array(
-                                    array(
-                                       'taxonomy'           =>    $cpt_tax,
-                                       'field'              =>    'term_id',
-                                       'terms'              =>    $cat_child_term->term_id,
-                                       'operator'           =>    'IN',
+                              <article class="child-card">
+                                 <a class="head" <?php if ($child_cat_page) : ?>href="<?php echo get_permalink( $child_cat_page ); ?>"<?php endif; ?>>
+                                    <h3><?php echo $cat_child_term->name; ?></h3>
+                                    <?php if ($child_cat_page) : ?>
+                                       <span class="svg-wrapper">
+                                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
+                                          </svg>
+                                       </span>
+                                    <?php endif; ?>
+                                 </a>
+      
+                                 <?php $args = array( // loop di tutti i doc della child cat
+                                    'post_status'     =>    'publish',
+                                    'post_type'       =>    'documenti',
+                                    'posts_per_page'  =>    -1,
+                                    'tax_query'       =>    array(
+                                       array(
+                                          'taxonomy'           =>    $cpt_tax,
+                                          'field'              =>    'term_id',
+                                          'terms'              =>    $cat_child_term->term_id,
+                                          'operator'           =>    'IN',
+                                       ),
                                     ),
-                                 ),
-                              );
-                              $with_child_query = new WP_Query( $args );
-   
-                              if ( $with_child_query->have_posts() ) : ?>
-                                 <div class="content">
-                                    <?php while ( $with_child_query->have_posts() ) : $with_child_query->the_post(); ?>
-                                       <a class="child-card-post" href="<?php the_permalink(); ?>">
-                                          <span>
-                                             <h4><?php echo the_title(); ?></h4>
-                                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4934 1.46834H0.519136V0H13V12.4809H11.5317V2.50661L1.03827 13L0 11.9617L10.4934 1.46834Z" fill="#A19E9E"/>
-                                             </svg>
-                                          </span>
-                                       </a>
-                                    <?php endwhile; wp_reset_postdata(); ?>
-                                 </div>
-                              <?php endif; ?>
-   
-                           </article>
+                                 );
+                                 $with_child_query = new WP_Query( $args );
+      
+                                 if ( $with_child_query->have_posts() ) : ?>
+                                    <div class="content">
+                                       <?php while ( $with_child_query->have_posts() ) : $with_child_query->the_post(); ?>
+                                          <a class="child-card-post" href="<?php the_permalink(); ?>">
+                                             <span>
+                                                <h4><?php echo the_title(); ?></h4>
+                                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                   <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4934 1.46834H0.519136V0H13V12.4809H11.5317V2.50661L1.03827 13L0 11.9617L10.4934 1.46834Z" fill="#A19E9E"/>
+                                                </svg>
+                                             </span>
+                                          </a>
+                                       <?php endwhile; wp_reset_postdata(); ?>
+                                    </div>
+                                 <?php endif; ?>
+      
+                              </article>
+                           </div>
                         </div>
-                     </div>
 
-                     <?php
-                  endif;
-               endforeach; ?>
-            
-            </div>
-         <?php endif; ?>
-            
-         <!-- Docs con solo categorie genitore -->
-         <?php $args = array(
-               'post_status'     =>    'publish',
-               'post_type'       =>    'documenti',
-               'posts_per_page'  =>    -1,
-               'tax_query'       =>    array(
-                  'relation' => 'AND',
-                  array(
-                     'taxonomy'           =>    $cpt_tax,
-                     'field'              =>    'term_id',
-                     'terms'              =>    $selected_cat_id,
-                     'operator'           =>    'IN',
-                  ),
-                  array(
-                     'taxonomy'           =>    $cpt_tax,
-                     'field'              =>    'term_id',
-                     'terms'              =>    $cat_children_id,
-                     'operator'           =>    'NOT IN',
-                  ),
-               ), 
-            );
-            $without_child_query = new WP_Query( $args );
-
-            if ( $without_child_query->have_posts() ) : ?>
-               <div class="row">
-                  <?php while ( $without_child_query->have_posts() ) : $without_child_query->the_post(); ?>
-                     <div class="col-card col-6 col-lg-3">
-
-                        <a class="card card-secondary" href="<?php echo the_permalink() ?>">
-                           <span class="svg-wrapper">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
-                              </svg>
-                           </span>
-                           <p class="h3-style"><?php echo the_title() ?></p>
-                        </a>
-                     </div>
-                  <?php endwhile; wp_reset_postdata(); ?>
+                        <?php
+                     endif;
+                  endforeach; ?>
+               
                </div>
             <?php endif; ?>
-      
-		</section>
+               
+            <!-- Docs con solo categorie genitore -->
+            <?php $args = array(
+                  'post_status'     =>    'publish',
+                  'post_type'       =>    'documenti',
+                  'posts_per_page'  =>    -1,
+                  'tax_query'       =>    array(
+                     'relation' => 'AND',
+                     array(
+                        'taxonomy'           =>    $cpt_tax,
+                        'field'              =>    'term_id',
+                        'terms'              =>    $selected_cat_id,
+                        'operator'           =>    'IN',
+                     ),
+                     array(
+                        'taxonomy'           =>    $cpt_tax,
+                        'field'              =>    'term_id',
+                        'terms'              =>    $cat_children_id,
+                        'operator'           =>    'NOT IN',
+                     ),
+                  ), 
+               );
+               $without_child_query = new WP_Query( $args );
+
+               if ( $without_child_query->have_posts() ) : ?>
+                  <div class="row">
+                     <?php while ( $without_child_query->have_posts() ) : $without_child_query->the_post(); ?>
+                        <div class="col-card col-6 col-lg-3">
+
+                           <a class="card card-secondary" href="<?php echo the_permalink() ?>">
+                              <span class="svg-wrapper">
+                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
+                                 </svg>
+                              </span>
+                              <p class="h3-style"><?php echo the_title() ?></p>
+                           </a>
+                        </div>
+                     <?php endwhile; wp_reset_postdata(); ?>
+                  </div>
+               <?php endif; ?>
+         
+         </section>
 		
-			
+      <?php else : ?>
+         <div class="container mb-section">
+            <div class="row">
+               <div class="col-12">
+                  <h2>Attenzione!</h2>
+                  <p>Questo widget <b>"Documenti livello I"</b> non è utilizzabile nei documenti e nelle comunicazioni.</p>
+               </div>
+            </div>
+         </div>
+		<?php endif; ?>
 
 	<?php
 	}
