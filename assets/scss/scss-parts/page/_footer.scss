@@ -1,6 +1,7 @@
 footer {
    background-color: $color-primary;
    height: 100%;
+   margin-top: 3rem;
    padding: 3rem 0;
 
    .footer-menu-list {
@@ -8,28 +9,10 @@ footer {
          color: #fff;
          margin: 1rem 0;
       }
-<<<<<<< HEAD
-      .current_page_item {
-        a {
-          text-decoration: underline;
-        }
-      }
-    }
-    .menu {
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
-    .show-item {
-      display: block;
-    }
-  }
-=======
       ul {
          li {
             list-style: none;
             margin: 0.2rem 0;
->>>>>>> 41282ad3115a223d9b413a78f674f2c2c90cab7c
 
             a {
                color: $color-white;
@@ -50,6 +33,12 @@ footer {
             a {
                text-decoration: underline;
             }
+         }
+      }
+
+      .menu {
+         @media (max-width: 768px) {
+            display: none;
          }
       }
    }
@@ -102,17 +91,10 @@ footer {
       }
    }
 
-<<<<<<< HEAD
-  @media (max-width: 768px) {
-    footer {
-      margin-top: 1rem;
-      padding: 0 1rem;
-=======
-   @media #{$underlarge} {
+   @media (max-width: 768px) {
       footer {
          margin-top: 1rem;
          padding: 0 1rem;
->>>>>>> 41282ad3115a223d9b413a78f674f2c2c90cab7c
 
          h3 {
             display: flex;
@@ -124,10 +106,6 @@ footer {
             }
          }
 
-         .menu {
-            display: none;
-         }
-
          .footer-menu-list {
             ul {
                li {
@@ -137,24 +115,13 @@ footer {
                }
             }
          }
+         .menu {
+            display: none;
+         }
 
          .show-item {
             display: block;
          }
       }
-<<<<<<< HEAD
-
-      .footer-menu-list {
-        ul {
-          li {
-            padding: 1rem 0;
-            border-bottom: solid 1px rgba($color: $color-white, $alpha: 0.6);
-          }
-        }
-      }
-    }
-  }
-=======
    }
->>>>>>> 41282ad3115a223d9b413a78f674f2c2c90cab7c
 }

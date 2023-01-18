@@ -59,6 +59,7 @@
             &:focus-visible,
             &:focus {
                outline: 0;
+               background-color: $color-primary;
             }
          }
 
@@ -66,7 +67,6 @@
          &:focus-visible,
          &:focus {
             outline: 0;
-
             svg path {
                fill: $color-white;
             }

@@ -172,7 +172,7 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 		?>
 
 
-		<section class="fbk-cw fbk-cw-gcalendar container mb-section">
+		<section class="fbk-cw fbk-cw-group-link container mb-section">
 
 			<div class="section-header">
             <div class="content">
@@ -191,12 +191,14 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 			   </div>
 			</div>
       
-			<div class="gcalendar">
-				<?php echo $iframe; ?>
+			<div class="link-list">
+            <div class="row">
+               <?php dynamic_sidebar( 'gc-widget' ); ?>
+            </div>
 			</div>
 
-    </section>
+      </section>
 
-    <?php
+      <?php
 	}
 }

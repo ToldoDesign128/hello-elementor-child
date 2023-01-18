@@ -1,4 +1,4 @@
-<?php
+<?php if ( !defined('ABSPATH') ) {exit;}
 /**
  * Text Domain: custom-FBK-widget
  */

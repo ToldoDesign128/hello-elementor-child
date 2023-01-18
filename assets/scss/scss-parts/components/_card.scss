@@ -4,7 +4,7 @@
    text-decoration: none;
    min-width: 100%;
    min-height: 100%;
-   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+   transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 
    .svg-wrapper {
       margin-bottom: 0.4rem;
@@ -141,6 +141,11 @@
       .h3-style {
          color: $color-dark-primary;
       }
+   }
+
+   &:focus-visible {
+      outline: 2px solid $color-primary;
+      outline-offset: -4px;
    }
 }
 

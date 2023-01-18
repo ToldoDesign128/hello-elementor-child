@@ -4996,7 +4996,7 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
   letter-spacing: 3px;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .button .svg-wrapper {
   display: inline-block;
@@ -5018,6 +5018,10 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
 .button.button-primary:hover .svg-wrapper svg path {
   fill: #1254a2;
 }
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+}
 
 .card {
   background-color: #fff;
@@ -5025,7 +5029,7 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
   text-decoration: none;
   min-width: 100%;
   min-height: 100%;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .card .svg-wrapper {
   margin-bottom: 0.4rem;
@@ -5155,6 +5159,10 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
 .card:hover .h3-style {
   color: #2e4083;
 }
+.card:focus-visible {
+  outline: 2px solid #1254a2;
+  outline-offset: -4px;
+}
 
 .col-card {
   margin-bottom: 1.6rem;
@@ -5244,6 +5252,7 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
 }
 .searchform-wrapper form .svg-wrapper .search-submit:focus-visible, .searchform-wrapper form .svg-wrapper .search-submit:focus {
   outline: 0;
+  background-color: #1254a2;
 }
 .searchform-wrapper form .svg-wrapper:hover, .searchform-wrapper form .svg-wrapper:focus-visible, .searchform-wrapper form .svg-wrapper:focus {
   outline: 0;
@@ -5258,6 +5267,7 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
 footer {
   background-color: #1254a2;
   height: 100%;
+  margin-top: 3rem;
   padding: 3rem 0;
 }
 footer .footer-menu-list .footer-title {
@@ -5288,9 +5298,6 @@ footer .footer-menu-list ul .current_page_item a {
   footer .footer-menu-list .menu {
     display: none;
   }
-}
-footer .footer-menu-list .show-item {
-  display: block;
 }
 footer .footer-info {
   margin-top: 5rem;
@@ -5351,6 +5358,12 @@ footer .footer-info .lingua p {
   .footer-info footer .footer-menu-list ul li {
     padding: 1rem 0;
     border-bottom: solid 1px rgba(255, 255, 255, 0.6);
+  }
+  .footer-info footer .menu {
+    display: none;
+  }
+  .footer-info footer .show-item {
+    display: block;
   }
 }
 
@@ -5466,11 +5479,33 @@ header .sub__menu__cta a button {
   font-size: 1.4rem;
   text-align: center;
   line-height: 100%;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hero .hero-bg .chips-wrapper .chip span {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 480px) {
+  .hero .hero-bg .chips-wrapper .chip {
+    max-width: 32rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hero .hero-bg .chips-wrapper .chip span {
+    display: inline;
+  }
 }
 .hero .hero-bg .chips-wrapper .chip:hover {
   background-color: #e1eaf6;
   color: #1254a2;
+}
+.hero .hero-bg .chips-wrapper .chip:focus-visible {
+  outline: 2px solid #1254a2;
+  outline-offset: -4px;
 }
 .hero .home_posts {
   transform: translateY(-20%);

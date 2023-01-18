@@ -50,11 +50,35 @@
             font-size: 1.4rem;
             text-align: center;
             line-height: 100%;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+            span {
+               display: -webkit-box;
+               -webkit-line-clamp: 1;
+               -webkit-box-orient: vertical;
+               overflow: hidden;
+               text-overflow: ellipsis;
+            }
+
+            @media #{$xxsmall} {
+               max-width: 32rem;
+               white-space: nowrap;
+               overflow: hidden;
+               text-overflow: ellipsis;
+
+               span {
+                  display: inline;
+               }
+            }
 
             &:hover {
                background-color: $color-light-primary;
                color: $color-primary;
+            }
+
+            &:focus-visible {
+               outline: 2px solid $color-primary;
+               outline-offset: -4px;
             }
          }
       }

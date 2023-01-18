@@ -6,6 +6,7 @@ function HT_setup_theme() {
 	// register_nav_menu("header", "Navbar Header");
 	// Add widgets support
 	add_theme_support( 'widgets' );
+   remove_theme_support( 'widgets-block-editor' ); //but without gutenberg
 
 	register_nav_menu('ht-menu',__( 'Header HT menu' ));
 
@@ -221,15 +222,17 @@ function HT_remove_menus_editors() {
 add_action('init','HT_remove_menus_editors');
 
 //CSS Soft Remove items from menu
-function NP_css_soft_remove_menu() {
+function HT_css_soft_remove_menu() {
    echo '<style type="text/css">
 
       /*hide Elementor Template*/
       .wp-admin #adminmenuwrap #menu-posts-elementor_library{display:none !important;}
+      /*hide ACF*/
+      // .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
 
    </style>';
 }
-add_action('wp_before_admin_bar_render', 'NP_css_soft_remove_menu');
+add_action('wp_before_admin_bar_render', 'HT_css_soft_remove_menu');
 
 
 /*Remove category parent and description
@@ -264,6 +267,7 @@ add_action( 'pre_get_posts', 'NP_change_wp_archive_size');
 
 //Footer Widget
 require dirname(__FILE__).'/assets/function-parts/theme/footer-functions-widget.php';
+require dirname(__FILE__).'/assets/function-parts/theme/gcalendar-api-widget.php';
 
 //CPT
 require dirname(__FILE__).'/assets/function-parts/cpt-contatti.php';
