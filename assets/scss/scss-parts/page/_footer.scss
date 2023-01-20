@@ -41,6 +41,9 @@ footer {
             display: none;
          }
       }
+      .show-footer-item {
+         display: block;
+      }
    }
 
    .footer-info {
@@ -76,7 +79,7 @@ footer {
          }
          button {
             background: $color-white;
-            color: $color-txt-primary;
+            color: $color-black;
             font-size: 12px;
             border: 1px solid $color-primary;
             transition-property: ease-in-out;
@@ -114,13 +117,6 @@ footer {
                      rgba($color: $color-white, $alpha: 0.6);
                }
             }
-         }
-         .menu {
-            display: none;
-         }
-
-         .show-item {
-            display: block;
          }
       }
    }

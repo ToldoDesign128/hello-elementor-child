@@ -35,11 +35,6 @@
 //    jQuery("body").removeClass("dark-mode-off");
 // }
 
-// Open list footer
-jQuery(".footer-title").click(function () {
-   jQuery(this).next().children().toggleClass("show-item");
-});
-
 jQuery(document).ready(function () {
    //FAQs widget
    jQuery(".faq-container").click(function () {
@@ -56,4 +51,9 @@ jQuery(document).ready(function () {
          .parent(".fbk-cw-alert")
          .addClass("closed-alert");
    });
+});
+
+// Open list footer
+jQuery(".footer-title").click(function () {
+   jQuery(this).next().children().toggleClass("show-footer-item");
 });
