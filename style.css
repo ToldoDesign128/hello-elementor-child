@@ -5355,7 +5355,6 @@ footer .footer-info .lingua p {
 }
 .footer-info .lingua p button {
   background: #fff;
-  color: #323130;
   font-size: 12px;
   border: 1px solid #1254a2;
   transition-property: ease-in-out;
@@ -5443,10 +5442,18 @@ header .menu-header-container ul li a {
   header .menu-header-container {
     margin: 0 1rem;
   }
+  header .menu-header-container ul {
+    display: flex;
+    flex-direction: row;
+  }
   header .menu-header-container ul li {
     flex-grow: 1;
     list-style: none;
-    margin: 0;
+    margin: 0 1rem;
+  }
+  header .menu-header-container ul li a {
+    color: #e1eaf6;
+    text-decoration: none;
   }
 }
 header .menu-header-container .sub-menu {
@@ -5467,38 +5474,10 @@ header .hamburgher__menu span {
   background-color: #e1eaf6;
   margin: 1.2rem 0;
 }
-<<<<<<< HEAD
-header .sub__menu__list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 1rem 0;
-}
-header .sub__menu__list__page a {
-  text-decoration: none;
-}
-header .sub__menu__cta {
-  display: flex;
-  flex-direction: column;
-}
-header .sub__menu__cta a {
-  flex-grow: 1;
-  width: 100%;
-  margin: 1rem 0;
-}
-header .sub__menu__cta a button {
-  width: 100%;
-  background-color: #e3e2e2;
-  border: 0;
-  padding: 1rem 2rem;
-  color: #323130;
-  text-align: left;
-=======
 @media (max-width: 768px) {
   header .hamburgher__menu {
     display: block;
   }
->>>>>>> 39bc1b14c55d91aa043d533a15c7947f1581cc57
 }
 
 .hero .hero-bg {
