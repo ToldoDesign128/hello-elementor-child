@@ -6,7 +6,7 @@
       padding-block: 6.4rem;
    }
 
-   .container {
+   .content {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -21,6 +21,10 @@
 
          @media #{$medium} {
             text-align: left;
+         }
+
+         &:target {
+            color: $color-primary;
          }
       }
 

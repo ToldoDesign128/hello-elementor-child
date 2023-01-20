@@ -33,6 +33,23 @@
       }
    }
 
+   &.button-secondary {
+      background-color: $color-white;
+      color: $color-primary;
+
+      .svg-wrapper svg path {
+         fill: $color-primary;
+      }
+
+      &:hover {
+         background-color: $color-light-primary;
+      }
+      &:focus-visible {
+         outline: 2px solid $color-primary;
+         outline-offset: -4px;
+      }
+   }
+
    &:focus-visible {
       outline: 1px solid $color-white;
       outline-offset: -3px;

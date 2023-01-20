@@ -25,7 +25,7 @@ class FBK_Elementor_HeadingThree extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Titolo H3', 'custom-FBK-widget' );
+		return esc_html__( 'Titolo H3', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class FBK_Elementor_HeadingThree extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-heading';
+		return 'eicon-editor-h3';
 	}
 
    /**

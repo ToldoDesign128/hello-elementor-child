@@ -8,7 +8,7 @@
       padding-block: calc(#{$child-card-padding} + 0.8rem);
       position: relative;
       opacity: 1;
-      transition: opacity 0.3s ease-out;
+      transition: opacity 0.3s ease-out, $dark-bg-transition;
 
       @media #{$medium} {
          padding-inline: $child-card-padding-md;

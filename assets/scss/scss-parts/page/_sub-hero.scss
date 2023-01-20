@@ -1,6 +1,7 @@
 .sub-hero {
    background-color: $color-primary;
    padding-block: 24vh;
+   transition: $dark-bg-transition;
 
    .breadcrumps {
       display: inline-block;
@@ -10,19 +11,20 @@
 
    h1 {
       color: $color-txt-white-primary;
-      max-width: 80rem;
+      max-width: $width-limiter;
       margin-bottom: 2.4rem;
    }
 
    p {
       color: $color-txt-white-secondary;
-      max-width: 80rem;
+      max-width: $width-limiter;
    }
 }
 
 .page-child {
    .sub-hero {
       background-color: $color-white;
+      transition: $dark-bg-transition;
    }
 
    .breadcrumps {

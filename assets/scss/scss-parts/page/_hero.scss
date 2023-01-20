@@ -5,6 +5,7 @@
       background-color: $color-primary;
       display: grid;
       align-items: center;
+      transition: $dark-bg-transition;
 
       h1 {
          color: $color-txt-white-primary;

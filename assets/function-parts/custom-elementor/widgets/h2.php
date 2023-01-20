@@ -25,7 +25,7 @@ class FBK_Elementor_HeadingTwo extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Titolo H2', 'custom-FBK-widget' );
+		return esc_html__( 'Titolo H2', 'custom-FBK-widget' );
 	}
 
 	/**

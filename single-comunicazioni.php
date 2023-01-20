@@ -7,7 +7,7 @@ while ( have_posts() ) : the_post();
    $bread_archive_label = 'Comunicazioni';
 
    $single_doc_author = get_field('single_doc_author');
-   $single_doc_date = get_the_date('j F Y');
+   $single_doc_date = get_field('single_doc_date');
    $single_doc_time = get_field('single_doc_time');
    
 	?>

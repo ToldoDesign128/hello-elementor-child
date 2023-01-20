@@ -25,7 +25,7 @@ class FBK_Elementor_Alert extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Avviso', 'custom-FBK-widget' );
+		return esc_html__( 'Avviso', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class FBK_Elementor_Alert extends \Elementor\Widget_Base {
       $this->start_controls_section(
          'content_section',
          [
-            'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
+            'label' => esc_html__( 'Contenuto', 'custom-FBK-widget' ),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
          ]
       );
@@ -146,7 +146,7 @@ class FBK_Elementor_Alert extends \Elementor\Widget_Base {
       ?>
 
 
-		<section class="fbk-cw fbk-cw-alert container">
+		<section class="fbk-cw fbk-cw-alert container <?php if (is_singular('documenti')) : echo " fbk-cw-single"; endif; ?>">
          <div class="row mb-section">
             <div class="col-12">
                <div class="alert-wrapper">

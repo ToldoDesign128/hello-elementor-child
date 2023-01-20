@@ -10,7 +10,7 @@ function add_elementor_widget_categories( $elements_manager ) {
 	$elements_manager->add_category(
 		'fbk-pages',
 		[
-			'title' => esc_html__( 'FBK - Pages', 'custom-FBK-widget' ),
+			'title' => esc_html__( 'FBK — Pagine', 'custom-FBK-widget' ),
 			'icon' => 'fa fa-plug',
 		]
 	);
@@ -18,7 +18,7 @@ function add_elementor_widget_categories( $elements_manager ) {
   $elements_manager->add_category(
 		'fbk-loops',
 		[
-			'title' => esc_html__( 'FBK - Loops', 'custom-FBK-widget' ),
+			'title' => esc_html__( 'FBK — Loops', 'custom-FBK-widget' ),
 			'icon' => 'fa fa-plug',
 		]
 	);
@@ -26,7 +26,7 @@ function add_elementor_widget_categories( $elements_manager ) {
   $elements_manager->add_category(
 		'fbk-single',
 		[
-			'title' => esc_html__( 'FBK - Single post', 'custom-FBK-widget' ),
+			'title' => esc_html__( 'FBK — Articoli', 'custom-FBK-widget' ),
 			'icon' => 'fa fa-plug',
 		]
 	);
@@ -47,6 +47,14 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   /* FBK - Pages
   ----------------------*/
 
+  // Intro
+  require_once( __DIR__ . '/widgets/intro.php' );
+  $widgets_manager->register( new \FBK_Elementor_Intro() );
+
+  // Alert
+  require_once( __DIR__ . '/widgets/alert.php' );
+  $widgets_manager->register( new \FBK_Elementor_Alert() );
+
   // CTA
   require_once( __DIR__ . '/widgets/cta.php' );
   $widgets_manager->register( new \FBK_Elementor_CTA() );
@@ -62,34 +70,30 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   // Gruppo di download 
   require_once( __DIR__ . '/widgets/group-download.php' );
   $widgets_manager->register( new \FBK_Elementor_GroupDownload() );
+  
+   // GoogleCalendar
+   require_once( __DIR__ . '/widgets/google-calendar.php' );
+   $widgets_manager->register( new \FBK_Elementor_GoogleCalendar() );
 
   // Contacts
   require_once( __DIR__ . '/widgets/contacts.php' );
   $widgets_manager->register( new \FBK_Elementor_Contacts() );
 
-  // GoogleCalendar
-  require_once( __DIR__ . '/widgets/google-calendar.php' );
-  $widgets_manager->register( new \FBK_Elementor_GoogleCalendar() );
-
-  // Alert
-  require_once( __DIR__ . '/widgets/alert.php' );
-  $widgets_manager->register( new \FBK_Elementor_Alert() );
-
 
   /* FBK - Loops
   ----------------------*/
-
-  // Comunicazioni
-  require_once( __DIR__ . '/widgets/loop-latest-comunicazioni.php' );
-  $widgets_manager->register( new \FBK_Elementor_LoopComunicazioni() );
-
+  
   // DocumentiI
   require_once( __DIR__ . '/widgets/loop-documenti-I.php' );
   $widgets_manager->register( new \FBK_Elementor_LoopDocumentiI() );
-
+  
   // DocumentiII
   require_once( __DIR__ . '/widgets/loop-documenti-II.php' );
   $widgets_manager->register( new \FBK_Elementor_LoopDocumentiII() );
+  
+    // Comunicazioni
+    require_once( __DIR__ . '/widgets/loop-latest-comunicazioni.php' );
+    $widgets_manager->register( new \FBK_Elementor_LoopComunicazioni() );
   
 
 
@@ -103,21 +107,29 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   require_once( __DIR__ . '/widgets/h3.php' );
   $widgets_manager->register( new \FBK_Elementor_HeadingThree() );
 
+  // HeadingFour
+  require_once( __DIR__ . '/widgets/h4.php' );
+  $widgets_manager->register( new \FBK_Elementor_HeadingFour() );
+
   // Paragraph
   require_once( __DIR__ . '/widgets/paragraph.php' );
   $widgets_manager->register( new \FBK_Elementor_Paragraph() );
-
+  
   // Image
   require_once( __DIR__ . '/widgets/img.php' );
   $widgets_manager->register( new \FBK_Elementor_Image() );
-
+  
   // Gallery
   require_once( __DIR__ . '/widgets/gallery.php' );
   $widgets_manager->register( new \FBK_Elementor_Gallery() );
-
+  
   // Youtube video
   require_once( __DIR__ . '/widgets/youtube-video.php' );
   $widgets_manager->register( new \FBK_Elementor_YoutubeVideo() );
+  
+    // Button
+    require_once( __DIR__ . '/widgets/btn.php' );
+    $widgets_manager->register( new \FBK_Elementor_Button() );
 
   // HighlightedPhrase
   require_once( __DIR__ . '/widgets/h-phrase.php' );
@@ -266,6 +278,7 @@ function HT_css_elementor(){
       .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements {display:none !important;}
       .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements-single {display:none !important;}
       .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-woocommerce-elements {display:none !important;}
+      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-wordpress {display:none !important;}
 
       /*remove style tab*/
       .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}
@@ -285,6 +298,23 @@ function HT_css_elementor(){
       .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-tools {display:none !important;} /*no caricamento media + no switcher modalità*/
       .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(8) {display:none !important;} /*no full screen*/
       .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(9) {display:none !important;} /*no toolbar*/
+
+      /*Remove options for Colonna*/
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-_inline_size,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-content_position,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-align,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-space_between_widgets,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-html_tag {display:none !important;}
+
+      /*Remove options for Sezione*/
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-layout,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-content_width,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-gap,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-height,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-overflow,
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-stretch_section,
+
+      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-structure {display:none !important;}
 
    </style>';
 }

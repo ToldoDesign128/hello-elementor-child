@@ -25,7 +25,7 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Documenti livello I', 'custom-FBK-widget' );
+		return esc_html__( 'Documenti (livello I)', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
     $this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Contenuti', 'custom-FBK-widget' ),
+				'label' => esc_html__( 'Contenuto', 'custom-FBK-widget' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -120,6 +120,7 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
 		$selected_cat_id = $settings['selected_cat'];
 
       if ( !is_singular( array( 'documenti', 'comunicazioni' ) ) ) : ?>
+      
          <section class="fbk-cw fbk-cw-doc-I container mb-section">
 
             <?php $cat_children_id = get_term_children($selected_cat_id, $cpt_tax); //array con solo i child cat della parent cat selezionata

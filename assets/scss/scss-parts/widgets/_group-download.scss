@@ -1,8 +1,4 @@
 .fbk-cw-group-download {
-   .section-header {
-      display: inline-block;
-   }
-
    .col-download {
       margin-bottom: 1.6rem;
 
@@ -24,7 +20,7 @@
          text-decoration: none;
          width: 100%;
          min-height: 100%;
-         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+         transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 
          padding: 1.6rem;
 
@@ -61,6 +57,10 @@
             p {
                color: $color-primary;
             }
+         }
+         &:focus-visible {
+            outline: 2px solid $color-primary;
+            outline-offset: -4px;
          }
       }
    }

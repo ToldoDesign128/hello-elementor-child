@@ -1,15 +1,19 @@
+.fbk-cw-single.container .row,
+.fbk-cw-single .container .row {
+   max-width: $width-limiter;
+   // background-color: lightcyan;
+}
+
 .single.single-documenti,
 .single.single-comunicazioni {
    background-color: $color-white;
 
    .single-page-content {
-      .fbk-cw-single.container .row {
-         max-width: 80rem;
-      }
-
       //widgets overwrite
-
       .fbk-cw-cta {
+         background-color: $color-white;
+      }
+      .fbk-h-code pre.h-code {
          background-color: $color-fede;
       }
       .fbk-cw-group-link .card {
@@ -27,11 +31,115 @@
       .fbk-cw-alert .alert-wrapper {
          background-color: $color-fede;
       }
-
       .fbk-cw-doc-I {
          .child-card-wrapper {
             background-color: $color-fede;
          }
       }
+      .fbk-cw-btn {
+         .button.button-secondary {
+            background-color: $color-fede;
+            &:hover {
+               background-color: $color-light-primary;
+            }
+         }
+      }
    }
 }
+
+$gradient-overflow: 4.8rem;
+
+// .single.single-documenti .single-page-content {
+//    position: relative;
+
+//    aside.sidebar {
+//       background-color: $color-white;
+//       // background-color: lightcoral;
+
+//       position: fixed;
+//       height: 100vh;
+//       overflow: hidden;
+//       right: 0;
+//       bottom: 0;
+//       top: 0;
+//       z-index: 700; //nav bar sarà 900 e footer 800
+
+//       width: calc(1140px - #{$width-limiter});
+//       @media #{$xxlarge} {
+//          width: calc(1320px - #{$width-limiter});
+//       }
+
+//       .content-wrapper {
+//          // background-color: lightgreen;
+
+//          margin-top: calc(
+//             84px + 4rem
+//          ); //altezza navbar + padding top della hero //da diminuire da jqeury dopo che si ha scrollato
+//          padding-top: $gradient-overflow;
+//          padding-bottom: calc(
+//             84px + 8rem + #{$gradient-overflow}
+//          ); // = a margin top + 4.8rem altrimenti non scrolla
+
+//          max-height: 100%;
+//          overflow-y: scroll;
+//          margin-right: -4rem; //nascondo la scrollbar
+//          padding-right: 4rem;
+
+//          &:after,
+//          &:before {
+//             content: "";
+//             position: absolute;
+//             z-index: 10;
+//             left: 0;
+//             right: 0;
+//             height: $gradient-overflow;
+//             background: $color-white;
+//          }
+//          &:after {
+//             bottom: 0;
+//             background: linear-gradient(
+//                180deg,
+//                rgba($color-white, 0) 0%,
+//                rgba($color-white, 1) 72%
+//             );
+//          }
+//          &:before {
+//             top: calc(84px + 4rem); // = margin-top - altezza del gradient
+//             background: linear-gradient(
+//                0deg,
+//                rgba($color-white, 0) 0%,
+//                rgba($color-white, 1) 72%
+//             );
+//          }
+
+//          .index {
+//             // background-color: lightgoldenrodyellow;
+
+//             .index_item {
+//                display: block;
+//                color: $color-txt-primary;
+//                text-decoration: none;
+//                padding: 1.3rem 1.6rem;
+//                border-left: 2px solid $color-gray;
+//                white-space: nowrap;
+//                overflow: hidden;
+//                text-overflow: ellipsis;
+//                transition: all 0.3 ease-in-out;
+
+//                &:hover {
+//                   background-color: $color-light-primary;
+//                }
+//                &:focus-visible {
+//                   outline: 2px solid $color-primary;
+//                   outline-offset: -4px;
+//                }
+
+//                &.reading {
+//                   color: $color-primary;
+//                   border-color: $color-primary;
+//                }
+//             }
+//          }
+//       }
+//    }
+// }

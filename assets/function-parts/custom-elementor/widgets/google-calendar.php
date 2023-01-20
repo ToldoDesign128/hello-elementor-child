@@ -25,7 +25,7 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Google Calendar', 'custom-FBK-widget' );
+		return esc_html__( 'Google Calendar API', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
     $this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
+				'label' => esc_html__( 'Contenuto', 'custom-FBK-widget' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -169,35 +169,46 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 		if ( ! empty( $settings['gcalendar_btn_link']['url'] ) ) { $this->add_link_attributes( 'gcalendar_btn_link', $settings['gcalendar_btn_link'] ); }
 		
 		$iframe = $settings['gcalendar_iframe'];
-		?>
 
+      if ( !is_singular('documenti') ) : ?>
 
-		<section class="fbk-cw fbk-cw-group-link container mb-section">
+         <section class="fbk-cw fbk-cw-group-link container mb-section">
 
-			<div class="section-header">
-            <div class="content">
-               <p class="overtitle"><?php echo $overtitle; ?></p>
-               <h2><?php echo $title; ?></h2>
+            <div class="section-header">
+               <div class="content">
+                  <p class="overtitle"><?php echo $overtitle; ?></p>
+                  <h2><?php echo $title; ?></h2>
+               </div>
+               <div>
+                  <?php if ($btn_label) : ?>
+                     <a <?php echo $this->get_render_attribute_string( 'gcalendar_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                           </svg>
+                        </span>
+                     </a>
+                  <?php endif; ?>
+               </div>
             </div>
-            <div>
-               <?php if ($btn_label) : ?>
-                  <a <?php echo $this->get_render_attribute_string( 'gcalendar_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
-                        </svg>
-                     </span>
-                  </a>
-               <?php endif; ?>
-			   </div>
-			</div>
+         
+            <div class="link-list">
+               <div class="row">
+                  <?php dynamic_sidebar( 'gc-widget' ); ?>
+               </div>
+            </div>
+
+         </section>
       
-			<div class="link-list">
+      <?php else : ?>
+         <div class="container mb-section">
             <div class="row">
-               <?php dynamic_sidebar( 'gc-widget' ); ?>
+               <div class="col-12">
+                  <h2>Attenzione!</h2>
+                  <p>Questo widget <b>"FBK Google Calendar"</b> non è utilizzabile nei documenti.</p>
+               </div>
             </div>
-			</div>
-
-      </section>
+         </div>
+		<?php endif; ?>
 
       <?php
 	}

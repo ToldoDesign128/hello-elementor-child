@@ -1,75 +1,75 @@
 header {
-  background-color: $color-primary;
-  padding: 2rem 0;
+   background-color: $color-primary;
+   padding: 2rem 0;
 
-  .menu-header-container {
-    margin: 0 5rem;
-    ul {
-      display: flex;
-      flex-direction: row;
-
-      li {
-        flex-grow: 1;
-        list-style: none;
-        margin: 0 1rem;
-
-        a {
-          color: $color-light-primary;
-          text-decoration: none;
-        }
-      }
-    }
-
-    @media (max-width: 991.98px) {
-      margin: 0 1rem;
+   .menu-header-container {
+      margin: 0 5rem;
       ul {
-        li {
-          flex-grow: 1;
-          list-style: none;
-          margin: 0;
-        }
+         display: flex;
+         flex-direction: row;
+
+         li {
+            flex-grow: 1;
+            list-style: none;
+            margin: 0 1rem;
+
+            a {
+               color: $color-light-primary;
+               text-decoration: none;
+            }
+         }
       }
-    }
-  }
-  svg path {
-    fill: $color-light-primary;
-  }
 
-  .sub__menu {
-    background-color: $color-light-primary;
-    padding: 2rem 0;
-
-    &__list {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 1rem 0;
-
-      &__page {
-        a {
-          text-decoration: none;
-        }
+      @media (max-width: 991.98px) {
+         margin: 0 1rem;
+         ul {
+            li {
+               flex-grow: 1;
+               list-style: none;
+               margin: 0;
+            }
+         }
       }
-    }
+   }
+   svg path {
+      fill: $color-light-primary;
+   }
 
-    &__cta {
-      display: flex;
-      flex-direction: column;
+   .sub__menu {
+      background-color: $color-light-primary;
+      padding: 2rem 0;
 
-      a {
-        flex-grow: 1;
-        width: 100%;
-        margin: 1rem 0;
+      &__list {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         margin: 1rem 0;
 
-        button {
-          width: 100%;
-          background-color: $color-gray;
-          border: 0;
-          padding: 1rem 2rem;
-          color: $color-black;
-          text-align: left;
-        }
+         &__page {
+            a {
+               text-decoration: none;
+            }
+         }
       }
-    }
-  }
+
+      &__cta {
+         display: flex;
+         flex-direction: column;
+
+         a {
+            flex-grow: 1;
+            width: 100%;
+            margin: 1rem 0;
+
+            button {
+               width: 100%;
+               background-color: $color-gray;
+               border: 0;
+               padding: 1rem 2rem;
+               color: $color-txt-primary;
+               text-align: left;
+            }
+         }
+      }
+   }
 }

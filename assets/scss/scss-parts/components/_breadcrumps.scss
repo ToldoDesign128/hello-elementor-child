@@ -1,6 +1,6 @@
 nav.breadcrumps {
    width: 100%;
-   max-width: 80rem;
+   max-width: $width-limiter;
    margin-bottom: 2rem;
 
    @media #{$medium} {
@@ -38,7 +38,7 @@ nav.breadcrumps {
             text-decoration: none;
             display: inline-block;
             vertical-align: middle;
-            transition: all 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out;
 
             font-size: 1.4rem;
             letter-spacing: 1px;
@@ -54,7 +54,7 @@ nav.breadcrumps {
 
                path {
                   fill: $color-primary;
-                  transition: all 0.3s ease-in-out;
+                  transition: fill 0.3s ease-in-out;
                }
             }
 
@@ -67,6 +67,10 @@ nav.breadcrumps {
                .home path {
                   fill: $color-txt-secondary;
                }
+            }
+            &:focus-visible {
+               outline: 1px solid $color-primary;
+               outline-offset: -1px;
             }
          }
          a.bread-link:not([href]) {
@@ -95,6 +99,7 @@ nav.breadcrumps {
                rgba($color-primary, 0) 5%,
                rgba($color-primary, 1) 60%
             );
+            transition: $dark-bg-transition;
          }
 
          li {

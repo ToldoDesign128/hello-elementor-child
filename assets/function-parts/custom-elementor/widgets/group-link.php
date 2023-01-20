@@ -25,7 +25,7 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Group Link', 'custom-FBK-widget' );
+		return esc_html__( 'Gruppo di Link', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -207,24 +207,38 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
       $repeater = $settings['group-link_links']
 		?>
 
-		<section class="fbk-cw fbk-cw-group-link container mb-section">
+		<section class="fbk-cw fbk-cw-group-link container mb-section<?php if (is_singular('documenti')) : echo " fbk-cw-single"; endif; ?>">
 
-			<div class="section-header">
-            <div class="content">
-               <p class="overtitle"><?php echo $overtitle; ?></p>
-               <h2><?php echo $title; ?></h2>
+         <div class="row">
+            <div class="col-12">
+               <div class="section-header">
+                  <div class="content">
+                     <p class="overtitle"><?php echo $overtitle; ?></p>
+                     <?php if ($title) : 
+                        // Slugify the title
+                        $slug = preg_replace('~[^\pL\d]+~u', '-', $title);
+                        $slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+                        $slug = preg_replace('~[^-\w]+~', '', $slug);
+                        $slug = trim($slug, '-');
+                        $slug = preg_replace('~-+~', '-', $slug);
+                        $slug = strtolower($slug);
+                        ?>
+                        <h2 id="<?php echo $slug; ?>"><?php echo $title; ?></h2>
+                     <?php endif; ?>
+                  </div>
+                  <div>
+                     <?php if ($btn_label) : ?>
+                        <a <?php echo $this->get_render_attribute_string( 'group-link_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                              </svg>
+                           </span>
+                        </a>
+                     <?php endif; ?>
+                  </div>
+               </div>
             </div>
-            <div>
-               <?php if ($btn_label) : ?>
-                  <a <?php echo $this->get_render_attribute_string( 'group-link_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
-                        </svg>
-                     </span>
-                  </a>
-               <?php endif; ?>
-			   </div>
-			</div>
+         </div>
 
 			<div class="link-list">
             <div class="row">
@@ -236,7 +250,7 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
                   if ( ! empty( $item['group-link_links_link']['url'] ) ) { $this->add_link_attributes( "link_{$index}", $item['group-link_links_link'] );
                      $removeChar = ["https://", "http://"];
                      ?>
-                     <div class="col-card col-6 col-lg-3">
+                     <div class="col-card col-6 col-lg-4<?php if (!is_singular('documenti')) : echo " col-xl-3"; endif; ?>">
 
                         <a class="card card-secondary" <?php echo $this->get_render_attribute_string( "link_{$index}" ); ?>>
                            <span class="svg-wrapper">
@@ -261,7 +275,7 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
                      <?php
                   } else { 
                      ?>
-                     <div class="col-card col-6 col-lg-3">
+                     <div class="col-card col-6 col-lg-4<?php if (!is_singular('documenti')) : echo " col-xl-3"; endif; ?>">
                         <a class="card card-secondary no-href">
                            <span class="svg-wrapper">
                               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -5,7 +5,6 @@ $color-light-primary: #e1eaf6;
 $color-fede: #edeeef;
 
 $color-white: #fff;
-$color-black: #161b22;
 $color-gray: #e3e2e2;
 $color-accent: #c21966;
 
@@ -14,3 +13,12 @@ $color-txt-secondary: #605e5c;
 
 $color-txt-white-primary: $color-white;
 $color-txt-white-secondary: #e2eaf4;
+
+// Dark mode var
+$dark-bg: #161b22;
+$dark-el: #30363d;
+$dark-el-hover: #3e4a59;
+$dark-txt-secondary: #e6e7e7;
+$dark-color-primary: #9cc9ff;
+
+$dark-bg-transition: background-color 0.3s ease-out;

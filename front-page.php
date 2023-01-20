@@ -52,7 +52,7 @@ get_header();
                         <a class="card card-secondary" href="<?php echo $home_post_link; ?>">
                            <span class="svg-wrapper">
                               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z"/>
                               </svg>
                            </span>
                            <p class="h3-style"><?php echo $home_post_title; ?></p>

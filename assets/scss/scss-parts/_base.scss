@@ -101,12 +101,14 @@ html {
    box-sizing: border-box;
    scroll-behavior: smooth;
    overflow-x: hidden;
+   scroll-padding-top: 84px; /* height of sticky header */
 }
 
 body {
    font-size: 1.6rem; /*= 10px * 1.6 = 16px*/
-   background: $color-fede;
    overflow-x: hidden;
+   background: $color-fede;
+   transition: $dark-bg-transition;
 }
 
 img {

@@ -25,7 +25,7 @@ class FBK_Elementor_Image extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Immagine', 'custom-FBK-widget' );
+		return esc_html__( 'Immagine', 'custom-FBK-widget' );
 	}
 
 	/**

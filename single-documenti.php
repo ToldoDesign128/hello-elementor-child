@@ -21,7 +21,7 @@ while ( have_posts() ) : the_post();
    }
 
    $single_doc_author = get_field('single_doc_author');
-   $single_doc_date = get_the_date('j F Y');
+   $single_doc_date = get_field('single_doc_date');
    $single_doc_time = get_field('single_doc_time');
 	?>
 
@@ -109,6 +109,12 @@ while ( have_posts() ) : the_post();
 
       <div class="single-page-content">
          <?php the_content(); ?>
+         <!-- <aside class="sidebar d-none d-xl-block">
+            <div class="content-wrapper">
+               <nav class="index">
+               </nav>
+            </div>
+         </aside> -->
       </div>
 
    </main>

@@ -25,7 +25,7 @@ class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Youtube Video', 'custom-FBK-widget' );
+		return esc_html__( 'Youtube Video', 'custom-FBK-widget' );
 	}
 
 	/**

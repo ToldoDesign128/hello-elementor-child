@@ -25,7 +25,7 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Contacts', 'custom-FBK-widget' );
+		return esc_html__( 'Contatti', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
     $this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Content', 'custom-FBK-widget' ),
+				'label' => esc_html__( 'Introduzione', 'custom-FBK-widget' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -199,25 +199,38 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
       $repeater = $settings['contacts']
 		?>
 
+		<section class="fbk-cw fbk-cw-contacts container mb-section<?php if (is_singular('documenti')) : echo " fbk-cw-single"; endif; ?>">
 
-		<section class="fbk-cw fbk-cw-contacts container mb-section">
-
-         <div class="section-header">
-            <div class="content">
-               <p class="overtitle"><?php echo $overtitle; ?></p>
-               <h2><?php echo $title; ?></h2>
+         <div class="row">
+            <div class="col-12">
+               <div class="section-header">
+                  <div class="content">
+                     <p class="overtitle"><?php echo $overtitle; ?></p>
+                     <?php if ($title) : 
+                        // Slugify the title
+                        $slug = preg_replace('~[^\pL\d]+~u', '-', $title);
+                        $slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+                        $slug = preg_replace('~[^-\w]+~', '', $slug);
+                        $slug = trim($slug, '-');
+                        $slug = preg_replace('~-+~', '-', $slug);
+                        $slug = strtolower($slug);
+                        ?>
+                        <h2 id="<?php echo $slug; ?>"><?php echo $title; ?></h2>
+                     <?php endif; ?>
+                  </div>
+                  <div>
+                     <?php if ($btn_label) : ?>
+                        <a <?php echo $this->get_render_attribute_string( 'contacts_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                              </svg>
+                           </span>
+                        </a>
+                     <?php endif; ?>
+                  </div>
+               </div>
             </div>
-            <div>
-               <?php if ($btn_label) : ?>
-                  <a <?php echo $this->get_render_attribute_string( 'contacts_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
-                        </svg>
-                     </span>
-                  </a>
-               <?php endif; ?>
-			   </div>
-			</div>
+         </div>
       
 			<div class="row contacts">
 
@@ -232,7 +245,7 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
                if ($id) :
 					?>
 
-               <div class="col-12 col-sm-6 col-lg-4">
+               <div class="col-12 col-sm-6<?php if (!is_singular('documenti')) : echo " col-lg-4"; endif; ?>">
                   <article class="single_contact">
                      <?php if ($img) : ?><div>
                         <figure><img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"></figure>

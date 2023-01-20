@@ -1,0 +1,189 @@
+// .dark-mode-on {
+//    background-color: $dark-bg;
+
+//    .hero {
+//       .hero-bg {
+//          background-color: $dark-bg;
+
+//          .subtitle {
+//             color: $dark-txt-secondary;
+//          }
+
+//          .searchform-wrapper {
+//             .svg-wrapper {
+//                &:hover,
+//                &:focus-visible,
+//                &:focus {
+//                   .search-submit {
+//                      background-color: $dark-el-hover;
+//                   }
+//                }
+//             }
+//          }
+
+//          .chips-wrapper {
+//             .chip {
+//                color: $color-txt-white-primary;
+//                background-color: $dark-el;
+//                &:hover {
+//                   background-color: $dark-el-hover;
+//                }
+//             }
+//          }
+//       }
+//    }
+
+//    .card {
+//       background-color: $dark-el;
+
+//       .svg-wrapper svg path {
+//          fill: $color-white;
+//       }
+
+//       &.card-primary {
+//          p.meta,
+//          p.excerpt {
+//             color: $dark-txt-secondary;
+//          }
+//          .h3-style {
+//             color: $color-txt-white-primary;
+//          }
+//       }
+
+//       &.card-secondary {
+//          .h3-style {
+//             color: $color-txt-white-primary;
+//          }
+//          .link-card__url {
+//             color: $dark-txt-secondary;
+//          }
+//       }
+
+//       &:hover {
+//          background-color: $dark-el-hover;
+//          .svg-wrapper svg path {
+//             fill: $dark-color-primary;
+//          }
+//       }
+//    }
+
+//    .button.button-primary:hover {
+//       background-color: $dark-el-hover;
+//       color: $color-txt-white-primary;
+
+//       .svg-wrapper svg path {
+//          fill: $dark-color-primary;
+//       }
+//    }
+
+//    .fbk-cw {
+//       .overtitle,
+//       p {
+//          color: $dark-txt-secondary;
+//       }
+//       h2,
+//       h3 {
+//          color: $color-txt-white-primary;
+//       }
+//    }
+
+//    .fbk-cw-cta {
+//       background-color: $dark-el;
+//    }
+
+//    .sub-hero {
+//       background-color: $dark-bg;
+
+//       p {
+//          color: $dark-txt-secondary;
+//       }
+//    }
+
+//    nav.breadcrumps {
+//       ul {
+//          &:after {
+//             background: $dark-bg;
+//             background: linear-gradient(
+//                90deg,
+//                rgba($dark-bg, 0) 5%,
+//                rgba($dark-bg, 1) 60%
+//             );
+//          }
+//          li {
+//             a.bread-link {
+//                color: $color-txt-white-primary;
+//             }
+//          }
+//       }
+//       &.parent-breadcrumps {
+//          ul:after {
+//             background: $dark-bg;
+//             background: linear-gradient(
+//                90deg,
+//                rgba($dark-bg, 0) 5%,
+//                rgba($dark-bg, 1) 60%
+//             );
+//          }
+//       }
+//    }
+
+//    .fbk-cw-alert {
+//       .alert-wrapper {
+//          background-color: $dark-el;
+
+//          .button-wrapper {
+//             button.close-alert {
+//                &:hover {
+//                   svg {
+//                      path {
+//                         fill: $dark-color-primary;
+//                      }
+//                   }
+//                }
+//             }
+//          }
+//       }
+//    }
+
+//    .wysiwyg {
+//       p {
+//          color: $dark-txt-secondary;
+//       }
+
+//       ul,
+//       ol {
+//          li {
+//             color: $dark-txt-secondary;
+//          }
+//       }
+
+//       strong {
+//          color: $color-txt-white-primary;
+//       }
+
+//       a {
+//          color: $dark-color-primary;
+//          &:hover {
+//             color: $dark-txt-secondary;
+//          }
+//       }
+//    }
+
+//    // .page-child {
+//    //    background-color: red;
+//    //    .sub-hero {
+//    //       background-color: $dark-bg;
+//    //       .breadcrumps {
+//    //          color: $color-txt-white-primary;
+//    //       }
+
+//    //       h1 {
+//    //          color: $color-txt-white-primary;
+//    //       }
+//    //    }
+//    // }
+
+//    .single-sub-hero {
+//       background-color: $dark-bg;
+//    }
+// }

@@ -1,6 +1,7 @@
 .fbk-cw-heading {
    h2,
-   h3 {
+   h3,
+   h4 {
       margin-top: 6.4rem;
       margin-bottom: 2.4rem;
    }
@@ -19,6 +20,10 @@
                max-width: 2.4rem;
             }
          }
+      }
+
+      &:target {
+         color: $color-primary;
       }
    }
 }

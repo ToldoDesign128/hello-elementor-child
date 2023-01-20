@@ -2,10 +2,11 @@
    background-color: $color-white;
    padding-top: 24vh;
    padding-bottom: calc(24vh - 6.4rem - 10.4rem);
+   transition: $dark-bg-transition;
 
    h1 {
       color: $color-txt-primary;
-      max-width: 80rem;
+      max-width: $width-limiter;
       margin-bottom: 2.8rem;
    }
 

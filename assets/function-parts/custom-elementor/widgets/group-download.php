@@ -25,7 +25,7 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'FBK Group Download', 'custom-FBK-widget' );
+		return esc_html__( 'Gruppo di Download', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -93,6 +93,32 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
           'placeholder' => esc_html__( 'Titolo della sezione', 'custom-FBK-widget' ),
         ]
       );
+
+      $this->add_control(
+         'group-download_btn_label',
+          [
+             'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+             'type' => \Elementor\Controls_Manager::TEXT,
+             'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
+             'separator' => 'before',
+          ]
+       );
+ 
+       $this->add_control(
+          'group-download_btn_link',
+          [
+             'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
+             'type' => \Elementor\Controls_Manager::URL,
+             'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
+             'options' => [ 'url', 'is_external', 'nofollow' ],
+             'default' => [
+                'url' => '',
+                'is_external' => false,
+                'nofollow' => false,
+             ],
+             'label_block' => true,
+          ]
+       );
 
 		$this->end_controls_section();
 
@@ -164,17 +190,45 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
 		//Content
 		$overtitle = $settings['group-download_overtitle'];
 		$title = $settings['group-download_title'];
+      $btn_label = $settings['group-download_btn_label'];
+		if ( ! empty( $settings['group-download_btn_link']['url'] ) ) { $this->add_link_attributes( 'group-download_btn_link', $settings['group-download_btn_link'] ); }
 
 		//REPEATER - Lista Download
       $repeater = $settings['group-download_downloads']
 		?>
 
-		<section class="fbk-cw fbk-cw-group-download container mb-section">
+		<section class="fbk-cw fbk-cw-group-download container mb-section <?php if (is_singular('documenti')) : echo " fbk-cw-single"; endif; ?>">
 
-			<div class="section-header">
-				<p><?php echo $overtitle; ?></p>
-				<h2><?php echo $title; ?></h2>
-			</div>
+         <div class="row">
+            <div class="col-12">
+            <div class="section-header">
+                  <div class="content">
+                     <p class="overtitle"><?php echo $overtitle; ?></p>
+                     <?php if ($title) : 
+                        // Slugify the title
+                        $slug = preg_replace('~[^\pL\d]+~u', '-', $title);
+                        $slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+                        $slug = preg_replace('~[^-\w]+~', '', $slug);
+                        $slug = trim($slug, '-');
+                        $slug = preg_replace('~-+~', '-', $slug);
+                        $slug = strtolower($slug);
+                        ?>
+                        <h2 id="<?php echo $slug; ?>"><?php echo $title; ?></h2>
+                     <?php endif; ?>
+                  </div>
+                  <div>
+                     <?php if ($btn_label) : ?>
+                        <a <?php echo $this->get_render_attribute_string( 'group-download_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                              </svg>
+                           </span>
+                        </a>
+                     <?php endif; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
 
          <?php if ($repeater) : ?>
 			   <div class="row download-list">
@@ -184,7 +238,7 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
                   $download_file = $repeater[$index]['group-download_downloads_file'];
 
                   if ( $download_file['url'] ) { ?>
-                     <div class="col-download col-12 col-md-6 col-xl-4">
+                     <div class="col-download col-12 col-md-6<?php if (!is_singular('documenti')) : echo " col-xl-4"; endif; ?>">
 
                         <a class="download-card" href="<?php echo $download_file['url']; ?> " target="_blank" rel="noopener noreferrer">
                            <div class="flex-wrapper">
