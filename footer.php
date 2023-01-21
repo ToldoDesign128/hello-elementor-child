@@ -12,7 +12,7 @@
             $page_url = $menu_item->url;
             $page_children = $menu_item->item_children;
             ?>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 footer-menu-list">
+            <div class="col-12 col-sm-6 col-md-4 footer-menu-list">
                <a href="<?php echo $page_url ?>" class="footer-parent"><?php echo $page_title ?></a>
                <?php if (!empty($page_children)) :
                   foreach ($page_children as $child_item) : 
