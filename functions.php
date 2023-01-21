@@ -2,17 +2,50 @@
 function HT_setup_theme() {
 	add_theme_support("title-tag");
 	add_theme_support( 'automatic-feed-links' );
-	//aggiunta di una posizione del menu
-	// register_nav_menu("header", "Navbar Header");
+
 	// Add widgets support
 	add_theme_support( 'widgets' );
    remove_theme_support( 'widgets-block-editor' ); //but without gutenberg
 
-	register_nav_menu('ht-menu',__( 'Header HT menu' ));
-
-	
+	register_nav_menu('ht-menu',__( 'Header HT menu' ));	
 }
 add_action("after_setup_theme", "HT_setup_theme");
+
+
+/*🔥*/
+// ADD Menus locations
+if(!function_exists('register_custom_menu')):
+   function register_custom_menu() {
+      register_nav_menu("header", __("Menù di navigazione"));
+      register_nav_menu("footer", __("Footer Sitemap"));
+   }
+   add_action( 'init', 'register_custom_menu' );
+endif;
+// Get menu items by slug --------
+function NP_get_menu_by_slug( $menu_slug, $multilevel = true ) {
+   $menu_items = array();
+   if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[$menu_slug] ) && $locations[$menu_slug] != 0 ) {
+      $menu = wp_get_nav_menu_object( $locations[ $menu_slug ] );
+      $menu_items = wp_get_nav_menu_items( $menu->term_id ); // without WPML
+      if( $multilevel && is_array( $menu_items ) && !empty( $menu_items ) ) {
+         $multilevel_menu = array();
+         // echo 'multilevel';
+         foreach( $menu_items as $item ) {
+            if( $item->menu_item_parent == 0 ){
+               $multilevel_menu[$item->ID] = $item;
+            } else {
+               $multilevel_menu[$item->menu_item_parent] = (array)$multilevel_menu[$item->menu_item_parent];
+               $multilevel_menu[$item->menu_item_parent]['item_children'][$item->ID] = $item;
+               $multilevel_menu[$item->menu_item_parent] = (object)$multilevel_menu[$item->menu_item_parent];
+            }
+         }
+         return $multilevel_menu;
+      }
+   }
+   return $menu_items;
+}
+/*🔥*/
+
 
 add_action('admin_init', 'HT_remove_content_editor');
 function HT_remove_content_editor() {
@@ -216,11 +249,6 @@ function HT_remove_menus(){
 	remove_submenu_page( 'themes.php', $customizer_url );
 }
 add_action( 'admin_menu', 'HT_remove_menus' );
-//Remove theme file editor and plugin file editor
-function HT_remove_menus_editors() {
-	define( 'DISALLOW_FILE_EDIT', true );
-}
-add_action('init','HT_remove_menus_editors');
 
 //CSS Soft Remove items from menu
 function HT_css_soft_remove_menu() {
@@ -230,6 +258,11 @@ function HT_css_soft_remove_menu() {
       .wp-admin #adminmenuwrap #menu-posts-elementor_library{display:none !important;}
       /*hide ACF*/
       // .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
+      /*hide Tools*/
+      // .wp-admin #adminmenuwrap #menu-tools{display:none !important;}
+      /*Theme e plugin editor on WP enginge*/
+      .wp-admin #adminmenuwrap #menu-appearance li a[href="theme-editor.php"]{display:none !important;}
+      .wp-admin #adminmenuwrap #menu-plugins li a[href="plugin-editor.php"]{display:none !important;}
 
    </style>';
 }

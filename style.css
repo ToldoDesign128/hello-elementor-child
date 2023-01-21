@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@charset "UTF-8";
 /*
 Theme Name: Hello Elementor for FBK
 Author: Matteo Bruschetti, Federico Toldo
@@ -5288,100 +5289,80 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
 footer {
   background-color: #1254a2;
   height: 100%;
-  margin-top: 3rem;
-  padding: 3rem 0;
+  padding: 5.6rem 0 4rem;
 }
-footer .footer-menu-list .footer-title {
-  color: #fff;
-  margin: 1rem 0;
+@media (min-width: 768px) {
+  footer {
+    padding-top: 8rem;
+  }
 }
-footer .footer-menu-list ul li {
-  list-style: none;
-  margin: 0.2rem 0;
+footer .footer-menu-list {
+  /*🔥*/
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 4.8rem;
+  /*🔥*/
 }
-footer .footer-menu-list ul li a {
-  color: #fff;
+footer .footer-menu-list a {
+  line-height: 150%;
   text-decoration: none;
-  opacity: 80%;
-  font-weight: 300;
-  transition-property: ease-in-out;
-  transition-duration: 0.3s;
 }
-footer .footer-menu-list ul li a:hover {
+@media (min-width: 576px) {
+  footer .footer-menu-list a {
+    max-width: 80%;
+  }
+}
+footer .footer-menu-list a.footer-parent {
   color: #fff;
-  opacity: 100%;
-  font-weight: 400;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
-footer .footer-menu-list ul .current_page_item a {
+footer .footer-menu-list a.footer-child {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.4rem;
+}
+footer .footer-menu-list a:hover {
+  color: #fff;
   text-decoration: underline;
 }
-@media (max-width: 768px) {
-  footer .footer-menu-list .menu {
-    display: none;
+footer .footer-info {
+  /*🔥*/
+  /*🔥*/
+}
+footer .footer-info .footer-logo {
+  margin-bottom: 3.2rem;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  footer .footer-info .footer-logo {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    min-height: 100%;
   }
 }
-footer .footer-menu-list .show-footer-item {
-  display: block;
+footer .footer-info .footer-logo p {
+  display: inline;
+  font-size: 1.2rem;
+  margin-left: 1.2rem;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 1px;
 }
-footer .footer-info {
-  margin-top: 5rem;
+footer .footer-info .social-icons a {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 0.8rem;
+}
+footer .footer-info .social-icons a:hover {
+  opacity: 0.72;
 }
 footer .footer-info .lingua {
-  text-align: right;
+  margin-left: auto;
 }
 footer .footer-info .lingua p {
-  font-size: 16px;
-}
-
-.footer-info {
-  margin-top: 5rem;
-}
-.footer-info p {
-  color: #fff;
-}
-.footer-info .lingua {
+  color: rgba(255, 255, 255, 0.88);
   text-align: right;
-}
-.footer-info .lingua p {
-  font-size: 16px;
-}
-.footer-info .lingua p {
-  display: inline-block;
-  color: #fff;
-  font-size: 12px;
-}
-.footer-info .lingua p a {
-  text-decoration: none;
-}
-.footer-info .lingua p button {
-  background: #fff;
-  font-size: 12px;
-  border: 1px solid #1254a2;
-  transition-property: ease-in-out;
-  transition-duration: 0.3s;
-}
-.footer-info .lingua p button:hover {
-  background: #1254a2;
-  color: #fff;
-  border: 1px solid #fff;
-}
-@media (max-width: 768px) {
-  .footer-info footer {
-    margin-top: 1rem;
-    padding: 0 1rem;
-  }
-  .footer-info footer h3 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-info footer h3::after {
-    content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAOElEQVRIie3NsQ0AIAgFUba2lM2P1saQKDTkvwHuzERkOGCR252Tv3gyqYlfJrXxY+KAt8RF5F0A5TRya8Dp5ngAAAAASUVORK5CYII=");
-  }
-  .footer-info footer .footer-menu-list ul li {
-    padding: 1rem 0;
-    border-bottom: solid 1px rgba(255, 255, 255, 0.6);
-  }
 }
 
 header {
