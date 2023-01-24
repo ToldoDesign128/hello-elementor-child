@@ -8,7 +8,7 @@
                 <?php 
                     wp_nav_menu( 
                         array( 
-                            'theme_location' => 'ht-menu'
+                            'theme_location' => 'header'
                         ) 
                     ); 
                 ?>                

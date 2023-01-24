@@ -6,8 +6,6 @@ function HT_setup_theme() {
 	// Add widgets support
 	add_theme_support( 'widgets' );
    remove_theme_support( 'widgets-block-editor' ); //but without gutenberg
-
-	register_nav_menu('ht-menu',__( 'Header HT menu' ));	
 }
 add_action("after_setup_theme", "HT_setup_theme");
 
