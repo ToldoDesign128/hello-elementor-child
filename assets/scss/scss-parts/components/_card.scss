@@ -29,6 +29,7 @@
    }
 
    &.card-primary {
+      display: block;
       padding: 1.6rem;
 
       @media #{$large} {

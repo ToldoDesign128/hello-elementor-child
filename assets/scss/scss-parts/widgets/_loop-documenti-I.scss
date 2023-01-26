@@ -64,6 +64,14 @@ $child-card-padding-xl: 3.2rem;
                padding-top: $child-card-padding-xl;
                padding-inline: $child-card-padding-xl;
             }
+
+            .svg-wrapper {
+               svg {
+                  display: inline-block;
+                  width: 2rem;
+                  height: 2rem;
+               }
+            }
          }
          .head[href]:hover {
             opacity: 1;
@@ -76,6 +84,7 @@ $child-card-padding-xl: 3.2rem;
                fill: $color-primary;
             }
          }
+
          .content {
             .child-card-post {
                display: inline-block;
@@ -108,10 +117,17 @@ $child-card-padding-xl: 3.2rem;
                      font-size: 1.5rem;
                      line-height: 180%;
                      color: $color-txt-secondary;
+                     max-width: 90%;
 
                      @media #{$large} {
                         font-size: 1.6rem;
                      }
+                  }
+
+                  svg {
+                     display: inline-block;
+                     min-width: 1.3rem;
+                     min-height: 1.3rem;
                   }
                }
 

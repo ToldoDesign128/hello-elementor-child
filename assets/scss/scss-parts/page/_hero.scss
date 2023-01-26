@@ -7,6 +7,10 @@
       align-items: center;
       transition: $dark-bg-transition;
 
+      @media #{$underlarge} {
+         padding-bottom: 20%;
+      }
+
       h1 {
          color: $color-txt-white-primary;
          text-align: center;

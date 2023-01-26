@@ -1,4 +1,4 @@
-<header>
+<header class="header__nav">
     <div class="container header__container">
         <div class="row h-100 justify-content-between align-items-center header__container__box">
             <a  class="col-md-1 col-3 header__container__boxc" href="">

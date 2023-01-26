@@ -39,7 +39,7 @@
 
             h3 {
                color: $color-txt-primary;
-               margin-right: 2.4rem;
+               max-width: 88%;
 
                @media #{$large} {
                   max-width: 64%;

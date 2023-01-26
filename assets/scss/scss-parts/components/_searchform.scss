@@ -20,6 +20,7 @@
          //iOS min height fix
          box-sizing: border-box !important;
          height: 5.2rem !important;
+         -webkit-appearance: none !important;
 
          @media #{$large} {
             padding: 1.6rem 2.4rem 1.6rem 3.2rem;

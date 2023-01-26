@@ -65,8 +65,5 @@ while ( have_posts() ) : the_post();
 
    </main>
 
-<?php endwhile; ?>
-
-page.php here -- with Template predefinito
-
-<?php get_footer(); ?>
+<?php endwhile;
+get_footer(); ?>

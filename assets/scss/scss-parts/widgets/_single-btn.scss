@@ -4,7 +4,11 @@
 
    .btns-wrapper {
       display: flex;
-      gap: 2.4rem;
+      gap: 1.4rem;
       flex-wrap: wrap;
+
+      @media #{$medium} {
+         gap: 2.4rem;
+      }
    }
 }
