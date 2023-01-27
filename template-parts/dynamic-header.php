@@ -23,11 +23,9 @@
                             <div class="col-12 col-sm-6 col-md-4 header-sub-menu-list">
                                 <a href="<?php echo $child_url ?>" class="header-child"><?php echo $child_title ?></a>
                                 <?php if (!empty($child_item)) :
-                                    foreach ($child_item as $sub_child_item) : 
-                                        $sub_child_title = $sub_child_item->title;
-                                        $sub_child_url = $sub_child_item->url;
+                                    foreach ($child_item as $child_item) : 
                                         ?>
-                                        <a href="<?php echo $sub_child_url ?>" class="header-sub-child"><?php echo $sub_child_title ?></a>
+                                        <a href="<?php echo $child_url ?>" class="header-child"><?php echo $child_title ?></a>
                                     <?php endforeach; 
                                 endif; ?>
                             </div>
