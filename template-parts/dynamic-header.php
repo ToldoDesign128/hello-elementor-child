@@ -5,13 +5,24 @@
                 <img src=" <?php echo get_stylesheet_directory_uri() . '/assets/image/icon/logo.png';?>" alt="logo" class="header__container__box__link__icon">
             </a>
             <nav class="col-md-10 d-none d-md-block header__container__box__nav" role="navigation">
-                <?php 
-                    wp_nav_menu( 
-                        array( 
-                            'theme_location' => 'header'
-                        ) 
-                    ); 
-                ?>                
+                <?php $header_menu_items = NP_get_menu_by_slug('header');
+                foreach ($header_menu_items as $menu_item) : 
+                    $page_title = $menu_item->title;
+                    $page_url = $menu_item->url;
+                    $page_children = $menu_item->item_children;
+                    ?>
+                    <div class="col-12 col-sm-6 col-md-4 header-menu-list">
+                    <a href="<?php echo $page_url ?>" class="header-parent"><?php echo $page_title ?></a>
+                    <?php if (!empty($page_children)) :
+                        foreach ($page_children as $child_item) : 
+                            $child_title = $child_item->title;
+                            $child_url = $child_item->url;
+                            ?>
+                            <a href="<?php echo $child_url ?>" class="header-child"><?php echo $child_title ?></a>
+                        <?php endforeach; 
+                    endif; ?>
+                    </div>
+                <?php endforeach; ?>                
             </nav>
             <a class="col-md-1 col-3 header__container__box__link__serch" href="">
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
