@@ -38,24 +38,9 @@
                             $child_title = $child_item->title;
                             $child_url = $child_item->url;
                             ?>
-                            <a href="<?php echo $child_url ?>" class="header-child"><?php echo $child_title ?></a>
-                            <?php foreach ($header_child as $menu_item) : 
-                                $page_title = $menu_item->title;
-                                $page_url = $menu_item->url;
-                                $page_children = $menu_item->item_children;
-                                ?>
-                                <div class="col-12 col-sm-6 col-md-4 header-menu-list">
-                                    <a href="<?php echo $page_url ?>" class="header-parent"><?php echo $page_title ?></a>
-                                    <?php if (!empty($page_children)) :
-                                        foreach ($page_children as $child_item) : 
-                                            $child_title = $child_item->title;
-                                            $child_url = $child_item->url;
-                                            ?>
-                                            <a href="<?php echo $child_url ?>" class="header-child"><?php echo $child_title ?></a>
-                                        <?php endforeach; 
-                                    endif; ?>
-                                </div>
-                            <?php endforeach; ?>
+                            <div class="col-12 col-sm-6 col-md-4 header-sub-menu-list">
+                                <a href="<?php echo $child_url ?>" class="header-child"><?php echo $child_title ?></a>
+                            </div>
                         <?php endforeach; 
                     endif; ?>
                     </div>
