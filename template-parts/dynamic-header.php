@@ -19,25 +19,16 @@
                         foreach ($page_children as $child_item) : 
                             $child_title = $child_item->title;
                             $child_url = $child_item->url;
-                            ?>
-                            
+                            ?>                            
                                 <a href="<?php echo $child_url ?>" class="header-child"><?php echo $child_title ?></a>
                                     <div class="col-12header-sub-menu-list">
-                                        <?php if (!empty($child_item)) :
-                                            foreach ($child_item as $sub_child_item) : 
-                                                $sub_child_title = $sub_child_item->title;
-                                                $sub_child_url = $sub_child_item->url;
-                                                ?>
-                                                
-                                                <a href="<?php echo $sub_child_url ?>" class="header-sub-child"><?php echo $sub_child_title ?></a>
-                                            <?php endforeach; 
-
-                                        endif; ?>
                                     </div>
                         <?php endforeach; 
                     endif; ?>
                     </div>
                 <?php endforeach; ?>  
+
+                
             </nav>
             <a class="col-md-1 col-3 header__container__box__link__serch" href="">
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
