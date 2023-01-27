@@ -1,106 +1,79 @@
 header.header__nav {
-   background-color: $color-primary;
-   padding: 2rem 0;
+  background-color: $color-primary;
+  padding: 2rem 0;
 
-   .header__container {
-      &__box {
-         @media #{$underlarge} {
-            padding: 0 1.2rem;
-         }
-
-         &__link {
-            display: flex;
-            justify-content: flex-start;
-
-            &__serch {
-               display: flex;
-               justify-content: center;
-            }
-         }
-         &__hamburgher__menu {
-            display: none;
-            justify-content: flex-end;
-            align-items: flex-end;
-            padding: 1.2rem;
-
-            span {
-               flex-grow: 1;
-               display: block;
-               height: 2px;
-               width: 30px;
-               color: $color-light-primary;
-               background-color: $color-light-primary;
-               margin: 0.6rem 0;
-            }
-
-            @media (max-width: 768px) {
-               display: flex;
-               flex-direction: column;
-            }
-         }
-      }
-   }
-
-   .menu-header-container {
-      margin: 0 5rem;
-      ul {
-         display: flex;
-         flex-direction: row;
-
-         li {
-            flex-grow: 1;
-            list-style: none;
-            margin: 0 1rem;
-
-            a {
-               color: $color-light-primary;
-               text-decoration: none;
-            }
-         }
-      }
-
+  .header__container {
+    &__box {
       @media #{$underlarge} {
-         margin: 0 1rem;
-         ul {
-            display: flex;
-            flex-direction: row;
+        padding: 0 1.2rem;
 
-            li {
-               flex-grow: 1;
-               list-style: none;
-               margin: 0 1rem;
-
-               a {
-                  color: $color-light-primary;
-                  text-decoration: none;
-               }
+        &__nav {
+          .header-menu-list {
+            .header-parent {
+              color: red;
             }
-         }
+            .header-child {
+              color: white;
+            }
+            .header-sub-child {
+              color: purple;
+            }
+          }
+        }
       }
 
-      .sub-menu {
-         display: none;
-      }
-   }
-   svg path {
-      fill: $color-light-primary;
-   }
+      &__link {
+        display: flex;
+        justify-content: flex-start;
 
-   .hamburgher__menu {
-      display: none;
-      padding: 1.2rem;
-
-      span {
-         display: block;
-         height: 2px;
-         width: 30px;
-         color: $color-light-primary;
-         background-color: $color-light-primary;
-         margin: 1.2rem 0;
+        &__serch {
+          display: flex;
+          justify-content: center;
+        }
       }
+      &__hamburgher__menu {
+        display: none;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 1.2rem;
 
-      @media (max-width: 768px) {
-         display: block;
+        span {
+          flex-grow: 1;
+          display: block;
+          height: 2px;
+          width: 30px;
+          color: $color-light-primary;
+          background-color: $color-light-primary;
+          margin: 0.6rem 0;
+        }
+
+        @media (max-width: 768px) {
+          display: flex;
+          flex-direction: column;
+        }
       }
-   }
+    }
+  }
+
+  svg path {
+    fill: $color-light-primary;
+  }
+
+  .hamburgher__menu {
+    display: none;
+    padding: 1.2rem;
+
+    span {
+      display: block;
+      height: 2px;
+      width: 30px;
+      color: $color-light-primary;
+      background-color: $color-light-primary;
+      margin: 1.2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
 }
