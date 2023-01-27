@@ -40,11 +40,11 @@
                             ?>
                             <a href="<?php echo $child_url ?>" class="header-child"><?php echo $child_title ?></a>
                             <?php if (!empty($page_children)) :
-                                foreach ($child_item as $sub_child_item) : 
-                                    $sub_child_title = $sub_child_item->title;
-                                    $sub_child_url = $sub_child_item->url;
+                                foreach ($page_children as $child_item) : 
+                                    $child_title = $child_item->title;
+                                    $child_url = $child_item->url;
                                     ?>
-                                    <a href="<?php echo $sub_child_url ?>" class="header-sub-child"><?php echo $sub_child_title ?></a>
+                                    <a href="<?php echo $child_url ?>" class="header-sub-child"><?php echo $child_title ?></a>
                                 <?php endforeach; 
                             endif; ?>
                         <?php endforeach; 
