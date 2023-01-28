@@ -66,7 +66,9 @@
             </div>
          </div>
          <div class="col-2 lingua"> 
-            <p>ITA</p>
+            <div class="wpml-custom-switcher">
+               <?php do_action('wpml_add_language_selector'); ?>
+            </div>
          </div>
         </div>
     </div>
