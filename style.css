@@ -5358,9 +5358,28 @@ footer .footer-info .social-icons a:hover {
 footer .footer-info .lingua {
   margin-left: auto;
 }
+footer .footer-info .lingua .wpml-custom-switcher {
+  text-align: right;
+}
+footer .footer-info .lingua .wpml-custom-switcher li {
+  display: none;
+}
+footer .footer-info .lingua .wpml-custom-switcher li.wpml-ls-current-language {
+  display: inline-block;
+}
+footer .footer-info .lingua .wpml-custom-switcher li a {
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  line-height: 1;
+  padding: 0.6rem 1.6rem;
+}
+footer .footer-info .lingua .wpml-custom-switcher li a:hover {
+  background-color: #fff;
+  color: #1254a2;
+}
 footer .footer-info .lingua p {
   color: rgba(255, 255, 255, 0.88);
-  text-align: right;
 }
 
 .header__nav {

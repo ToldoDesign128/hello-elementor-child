@@ -75,9 +75,33 @@ footer {
 
       .lingua {
          margin-left: auto;
+
+         .wpml-custom-switcher {
+            text-align: right;
+
+            li {
+               display: none;
+
+               &.wpml-ls-current-language {
+                  display: inline-block;
+               }
+
+               a {
+                  color: $color-white;
+                  font-size: 1.4rem;
+                  letter-spacing: 2px;
+                  line-height: 1;
+                  padding: 0.6rem 1.6rem;
+
+                  &:hover {
+                     background-color: $color-white;
+                     color: $color-primary;
+                  }
+               }
+            }
+         }
          p {
             color: rgba($color-white, 0.88);
-            text-align: right;
          }
       }
    }
