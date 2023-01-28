@@ -5365,6 +5365,12 @@ footer .footer-info .lingua .wpml-custom-switcher .wpml-ls-legacy-list-horizonta
   padding: 0;
   border: 0;
 }
+footer .footer-info .lingua .wpml-custom-switcher li.wpml-ls-current-language a {
+  color: rgba(255, 255, 255, 0.64);
+  font-weight: 500;
+  pointer-events: none;
+  cursor: pointer;
+}
 footer .footer-info .lingua .wpml-custom-switcher li a {
   color: #fff;
   font-size: 1.4rem;
