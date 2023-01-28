@@ -162,7 +162,7 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
                            <div class="content">
                               <p class="meta">
                                  <span class="label_date_cat"><?php echo get_the_date('j F Y'); ?><?php if ($cpt_comunicazioni_taxonomy) : ?> — <?php echo $cpt_comunicazioni_taxonomy->name; endif; ?></span>
-                                 <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza">in evidenza</span><?php endif; ?>
+                                 <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span><?php endif; ?>
                               </p>
                               <p class="h3-style"><?php echo the_title(); ?></p>
                               <p class="excerpt"><?php echo $single_doc_excerpt; ?></p>

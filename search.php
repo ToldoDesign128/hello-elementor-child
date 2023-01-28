@@ -16,7 +16,7 @@
                <div class="row">
                   <div class="col-12">
                      <h1><?php _e('Risultati di ricerca', 'howto'); ?></h1>
-                     <p><?php _e('La ricerca <b>' .  $query . '</b> ha portato i seguenti risultati.', 'howto'); ?></p>
+                     <p><?php _e('La ricerca ha portato i seguenti risultati.', 'howto'); ?></p>
                   </div>
                   <div class="col-12">
                      <div class="searchform-wrapper">
@@ -185,7 +185,7 @@
                <div class="row">
                   <div class="col-12">
                      <h1><?php _e('Nessun risultato', 'howto'); ?></h1>
-                     <p><?php _e('La ricerca <b>' .  $query . '</b> non ha portato risultati.', 'howto'); ?></p>
+                     <p><?php _e('La ricerca non ha portato risultati.', 'howto'); ?></p>
                   </div>
                   <div class="col-12">
                      <div class="searchform-wrapper">

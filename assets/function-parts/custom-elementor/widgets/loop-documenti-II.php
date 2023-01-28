@@ -195,7 +195,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                                  </svg>
                               </span>
                               <div class="content">
-                                 <?php if ($cpt_in_evidenza) : ?><p class="meta"><span class="label_in_evidenza">in evidenza</span></p><?php endif; ?>
+                                 <?php if ($cpt_in_evidenza) : ?><p class="meta"><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span></p><?php endif; ?>
                                  <p class="h3-style"><?php echo the_title(); ?></p>
                                  <?php if ($cpt_excerpt) : ?><p class="excerpt"><?php echo $cpt_excerpt; ?></p><?php endif; ?>
                               </div>
