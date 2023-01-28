@@ -15,8 +15,8 @@
             <div class="container">
                <div class="row">
                   <div class="col-12">
-                     <h1><?php _e('Risultati di ricerca', 'ht'); ?></h1>
-                     <p><?php _e('La ricerca <b>' .  $query . '</b> ha portato i seguenti risultati.', 'ht'); ?></p>
+                     <h1><?php _e('Risultati di ricerca', 'howto'); ?></h1>
+                     <p><?php _e('La ricerca <b>' .  $query . '</b> ha portato i seguenti risultati.', 'howto'); ?></p>
                   </div>
                   <div class="col-12">
                      <div class="searchform-wrapper">
@@ -40,7 +40,7 @@
             <!-- layout = loop-documenti-II -->
             <section class="fbk-cw fbk-cw-doc-II container mb-section">
                <div class="section-header">
-                  <h2><?php _e('Documenti', 'ht'); ?></h2>
+                  <h2><?php _e('Documenti', 'howto'); ?></h2>
                </div>
                <div class="row docII-loop">
                   <?php foreach ( $result_type_documenti as $key => $result_post ) :
@@ -56,7 +56,7 @@
                               </svg>
                            </span>
                            <div class="content">
-                              <?php if ($cpt_in_evidenza) : ?><p class="meta"><span class="label_in_evidenza"><?php _e('in evidenza', 'ht'); ?></span></p><?php endif; ?>
+                              <?php if ($cpt_in_evidenza) : ?><p class="meta"><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span></p><?php endif; ?>
                               <p class="h3-style"><?php echo $result_post->post_title; ?></p>
                               <?php if ($cpt_excerpt) : ?><p class="excerpt"><?php echo $cpt_excerpt; ?></p><?php endif; ?>
                            </div>
@@ -73,10 +73,10 @@
             <section class="fbk-cw fbk-cw-group-link container mb-section">
                <div class="section-header">
                   <div class="content">
-                     <h2><?php _e('Comunicazioni', 'ht'); ?></h2>
+                     <h2><?php _e('Comunicazioni', 'howto'); ?></h2>
                   </div>
                   <div>
-                     <a href="<?php echo get_post_type_archive_link('comunicazioni'); ?>" class="button button-primary"><?php _e('Tutte le comunicazioni', 'ht'); ?><span class="svg-wrapper">
+                     <a href="<?php echo get_post_type_archive_link('comunicazioni'); ?>" class="button button-primary"><?php _e('Tutte le comunicazioni', 'howto'); ?><span class="svg-wrapper">
                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
                            </svg>
@@ -101,7 +101,7 @@
                            <div class="content">
                               <p class="meta">
                                  <span class="label_date_cat"><?php echo get_the_date('j F Y', $result_post->ID); ?><?php if ($cpt_comunicazioni_taxonomy) : ?> — <?php echo $cpt_comunicazioni_taxonomy->name; endif; ?></span>
-                                 <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza"><?php _e('in evidenza', 'ht'); ?></span><?php endif; ?>
+                                 <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span><?php endif; ?>
                               </p>
                               <p class="h3-style"><?php echo $result_post->post_title; ?></p>
                               <p class="excerpt"><?php echo $single_doc_excerpt; ?></p>
@@ -118,7 +118,7 @@
             <section class="fbk-cw fbk-cw-contacts container mb-section">
                <div class="section-header">
                   <div class="content">
-                     <h2><?php _e('Contatti', 'ht'); ?></h2>
+                     <h2><?php _e('Contatti', 'howto'); ?></h2>
                   </div>
                </div>
                <div class="row contacts">
@@ -153,7 +153,7 @@
             <section class="fbk-cw fbk-cw-group-link container mb-section">
                <div class="section-header">
                   <div class="content">
-                     <h2><?php _e('Pagine', 'ht'); ?></h2>
+                     <h2><?php _e('Pagine', 'howto'); ?></h2>
                   </div>
                </div>
                <div class="link-list">
@@ -184,8 +184,8 @@
             <div class="container">
                <div class="row">
                   <div class="col-12">
-                     <h1><?php _e('Nessun risultato', 'ht'); ?></h1>
-                     <p><?php _e('La ricerca <b>' .  $query . '</b> non ha portato risultati.', 'ht'); ?></p>
+                     <h1><?php _e('Nessun risultato', 'howto'); ?></h1>
+                     <p><?php _e('La ricerca <b>' .  $query . '</b> non ha portato risultati.', 'howto'); ?></p>
                   </div>
                   <div class="col-12">
                      <div class="searchform-wrapper">
