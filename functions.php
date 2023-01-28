@@ -255,7 +255,9 @@ function HT_css_soft_remove_menu() {
       /*hide ACF*/
       // .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
       /*hide Tools*/
-      // .wp-admin #adminmenuwrap #menu-tools{display:none !important;}
+      .wp-admin #adminmenuwrap #menu-tools{display:none !important;}
+      /*hide Widget*/
+      .wp-admin #adminmenuwrap #menu-appearance li a[href="widgets.php"]{display:none !important;}
       /*Theme e plugin editor on WP enginge*/
       .wp-admin #adminmenuwrap #menu-appearance li a[href="theme-editor.php"]{display:none !important;}
       .wp-admin #adminmenuwrap #menu-plugins li a[href="plugin-editor.php"]{display:none !important;}
@@ -324,7 +326,7 @@ add_action( 'pre_get_posts', 'NP_change_wp_archive_size');
 -------------------------------------------------*/
 
 //Footer Widget
-require dirname(__FILE__).'/assets/function-parts/theme/footer-functions-widget.php';
+require dirname(__FILE__).'/assets/function-parts/theme/wpml.php';
 require dirname(__FILE__).'/assets/function-parts/theme/gcalendar-api-widget.php';
 
 //CPT
