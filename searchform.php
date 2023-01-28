@@ -3,9 +3,9 @@
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
    <label class="input-wrapper">
-      <span class="screen-reader-text"><?php echo _x( 'Cerca nel sito:', 'label' ) ?></span>
+      <span class="screen-reader-text"><?php echo _x( 'Cerca nel sito:', 'ht' ) ?></span>
       <input type="search" class="search-field"
-         placeholder="<?php echo esc_attr_x( 'Cosa stai cercando?', 'placeholder' ) ?>"
+         placeholder="<?php echo esc_attr_x( 'Cosa stai cercando?', 'ht' ) ?>"
          value="<?php echo get_search_query() ?>" name="s"
          title="<?php echo esc_attr_x( 'Cerca nel sito:', 'label' ) ?>" />
    </label>

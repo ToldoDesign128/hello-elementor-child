@@ -87,10 +87,8 @@ footer {
             li {
                &.wpml-ls-current-language {
                   a {
-                     color: rgba($color-white, 0.64);
-                     font-weight: 500;
+                     color: rgba($color-white, 0.4);
                      pointer-events: none;
-                     cursor: pointer;
                   }
                }
 
