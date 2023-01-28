@@ -36,6 +36,16 @@
 // }
 
 jQuery(document).ready(function () {
+   //Navbar Dopdown
+   jQuery(".menu-item-wrapper .header-parent").hover(
+      function () {
+         jQuery(this).parent().find(".drop-down").addClass("show");
+      },
+      function () {
+         jQuery(this).parent().find(".drop-down").removeClass("show");
+      }
+   );
+
    //FAQs widget
    jQuery(".faq-container").click(function () {
       jQuery(this).toggleClass("faq-active");
@@ -51,9 +61,4 @@ jQuery(document).ready(function () {
          .parent(".fbk-cw-alert")
          .addClass("closed-alert");
    });
-});
-
-// Open list footer
-jQuery(".footer-title").click(function () {
-   jQuery(this).next().children().toggleClass("show-footer-item");
 });

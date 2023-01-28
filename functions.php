@@ -6,6 +6,8 @@ function HT_setup_theme() {
 	// Add widgets support
 	add_theme_support( 'widgets' );
    remove_theme_support( 'widgets-block-editor' ); //but without gutenberg
+
+	// register_nav_menu('ht-menu',__( 'Header HT menu' ));	
 }
 add_action("after_setup_theme", "HT_setup_theme");
 
@@ -217,13 +219,9 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
 }
 
 
-
 //Remove items from admin bar
 function HT_remove_admin_bar_links() {
 	global $wp_admin_bar;
-	// $wp_admin_bar->remove_node('wp-logo');
-	// $wp_admin_bar->remove_node('view-site');
-	// $wp_admin_bar->remove_node('site-name');
 	$wp_admin_bar->remove_node('comments');
 	$wp_admin_bar->remove_node('new-content');
 	$wp_admin_bar->remove_node('about');
@@ -266,7 +264,6 @@ function HT_css_soft_remove_menu() {
 }
 add_action('wp_before_admin_bar_render', 'HT_css_soft_remove_menu');
 
-
 /*Remove category parent and description
 --------------------------------------*/
 function NP_css_custom_categories() {
@@ -276,6 +273,35 @@ function NP_css_custom_categories() {
    </style>';
 }
 add_action('wp_before_admin_bar_render', 'NP_css_custom_categories');
+
+
+
+/* Aspetto > Menu:
+/* Remove menu meta-box links under 'Aggiungi voci del menu'
+--------------------------------------*/
+function HT_custom_remove() {
+   global $wp_meta_boxes, $nav_menu_selected_id, $menu_locations;
+   foreach ($wp_meta_boxes['nav-menus']['side'] as $nav_menus) {
+      // var_dump(wp_list_pluck($nav_menus,'id')); //display a list of all link type IDs
+      foreach ($nav_menus as $nav_id => $nav_menu) {
+         if ($nav_id == 'add-post-type-e-landing-page' || $nav_id == 'add-post-type-contatti' || $nav_id == 'add-post-type-post' || $nav_id == 'add-post_tag' || $nav_id == 'add-category' || $nav_id == 'add-comunicazioni_tax' || $nav_id == 'add-documenti_tax') {
+            remove_meta_box($nav_id, 'nav-menus', 'side');
+         }
+      }   
+   }
+}
+add_action('admin_head-nav-menus.php', __NAMESPACE__.'\\HT_custom_remove', 10);
+/* Aspetto > Menu:
+/* Mark menu items with depth level > 3
+--------------------------------------*/
+function HT_css_mark_menu_item() {
+   echo '<style type="text/css">
+      .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-3 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-4 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-5 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-6 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-7 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-8 .menu-item-handle{background-color:#ff000080!important;border-color:red!important;color:red!important;}
+   </style>';
+}
+add_action('wp_before_admin_bar_render', 'HT_css_mark_menu_item');
+
+
 
 
 // Increase default post per page looped posts
