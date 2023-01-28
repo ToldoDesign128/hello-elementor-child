@@ -3,11 +3,11 @@
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
    <label class="input-wrapper">
-      <span class="screen-reader-text"><?php echo _x( 'Cerca nel sito:', 'label' ) ?></span>
+      <span class="screen-reader-text"><?php _e( 'Cerca nel sito:', 'howto' ); ?></span>
       <input type="search" class="search-field"
-         placeholder="<?php echo esc_attr_x( 'Cosa stai cercando?', 'placeholder' ) ?>"
+         placeholder="<?php echo esc_attr_e( 'Cosa stai cercando?', 'howto' ); ?>"
          value="<?php echo get_search_query() ?>" name="s"
-         title="<?php echo esc_attr_x( 'Cerca nel sito:', 'label' ) ?>" />
+         title="<?php esc_attr_e( 'Cerca nel sito:', 'howto' ); ?>" />
    </label>
    <label class="svg-wrapper">
       <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
