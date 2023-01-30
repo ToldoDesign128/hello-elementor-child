@@ -5394,14 +5394,12 @@ footer .footer-info .lingua p {
   left: 0;
   right: 0;
   z-index: 990;
-  background-color: lightgoldenrodyellow;
 }
 .header__nav .header__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background-color: lightseagreen;
 }
 .header__nav .header__content__nav {
   background-color: lightgreen;
@@ -5421,20 +5419,21 @@ footer .footer-info .lingua p {
   padding-inline: 0.4rem;
 }
 .header__nav .header__content__nav .menu-item-wrapper .drop-down {
+  min-height: 30rem;
   background-color: #fff;
   box-shadow: -50vw 0 #fff, 50vw 0 #fff;
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   transform: translateY(100%);
   margin-top: 1.2rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease-in-out;
+  padding: 5rem 0;
+  transition: display 0.4s ease-in-out;
 }
 .header__nav .header__content__nav .menu-item-wrapper .drop-down.show {
-  opacity: 1;
+  display: flex;
 }
 .header__nav .header__content__nav .menu-item-wrapper .drop-down__content {
   display: flex;
@@ -5443,6 +5442,31 @@ footer .footer-info .lingua p {
 .header__nav .header__content__nav .menu-item-wrapper .drop-down__content .child-menu-item-wrapper {
   display: flex;
   flex-direction: column;
+}
+.header__nav .header__content__nav .menu-item-wrapper .drop-down__content .child-menu-item-wrapper .header-child {
+  text-decoration: none;
+  color: #323130;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.header__nav .header__content__nav .menu-item-wrapper .drop-down__content .child-menu-item-wrapper .header-nipote {
+  margin: 0.8rem 0;
+  text-decoration: none;
+  color: #605e5c;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.header__nav .header__content__nav .menu-item-wrapper .drop-down__button {
+  flex-direction: column;
+}
+.header__nav .header__content__nav .menu-item-wrapper .drop-down__button button {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #edeeef;
+  color: #323130;
+  border: none;
+  text-align: left;
 }
 
 .hero .hero-bg {

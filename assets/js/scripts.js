@@ -36,29 +36,39 @@
 // }
 
 jQuery(document).ready(function () {
-   //Navbar Dopdown
-   jQuery(".menu-item-wrapper .header-parent").hover(
-      function () {
-         jQuery(this).parent().find(".drop-down").addClass("show");
-      },
-      function () {
-         jQuery(this).parent().find(".drop-down").removeClass("show");
+  //   //Navbar Dopdown
+  let currentEl;
+
+  document.querySelectorAll(".header-parent").forEach(function (headerParent) {
+    headerParent.addEventListener("mouseover", function (event) {
+      if (currentEl) {
+        currentEl.classList.remove("show");
       }
-   );
+      currentEl = event.target.nextElementSibling;
+      currentEl.classList.add("show");
+    });
+  });
 
-   //FAQs widget
-   jQuery(".faq-container").click(function () {
-      jQuery(this).toggleClass("faq-active");
-   });
+  document.addEventListener("click", function (event) {
+    if (currentEl) {
+      currentEl.classList.remove("show");
+      currentEl = null;
+    }
+  });
 
-   //Alert widget
-   jQuery(".close-alert").click(function () {
-      jQuery(this)
-         .parent()
-         .parent()
-         .parent()
-         .parent()
-         .parent(".fbk-cw-alert")
-         .addClass("closed-alert");
-   });
+  //FAQs widget
+  jQuery(".faq-container").click(function () {
+    jQuery(this).toggleClass("faq-active");
+  });
+
+  //Alert widget
+  jQuery(".close-alert").click(function () {
+    jQuery(this)
+      .parent()
+      .parent()
+      .parent()
+      .parent()
+      .parent(".fbk-cw-alert")
+      .addClass("closed-alert");
+  });
 });
