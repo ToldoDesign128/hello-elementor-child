@@ -82,6 +82,8 @@ li {
 
 // Wysiwyg
 .wysiwyg {
+   max-width: $width-limiter;
+
    p {
       color: $color-txt-secondary;
       margin-bottom: 0.6rem;

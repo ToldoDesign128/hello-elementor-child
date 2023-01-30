@@ -7,6 +7,12 @@ footer {
       padding-top: 8rem;
    }
 
+   margin-top: 5.6rem;
+
+   @media #{$large} {
+      margin-top: 10.4rem;
+   }
+
    .footer-menu-list {
       display: flex;
       flex-direction: column;
