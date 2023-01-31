@@ -5292,12 +5292,12 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
 footer {
   background-color: #1254a2;
   height: 100%;
-  padding: 5.6rem 0 4rem;
+  padding: 6.4rem 0 4rem;
   margin-top: 5.6rem;
 }
 @media (min-width: 768px) {
   footer {
-    padding-top: 8rem;
+    padding-top: 10.4rem;
   }
 }
 @media (min-width: 992px) {
