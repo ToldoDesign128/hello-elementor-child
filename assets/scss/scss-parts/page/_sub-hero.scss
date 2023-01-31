@@ -1,12 +1,22 @@
 .sub-hero {
    background-color: $color-primary;
-   padding-block: 24vh;
    transition: $dark-bg-transition;
+
+   padding-top: 15rem;
+   padding-bottom: 8rem;
+   @media #{$medium} {
+      padding-top: 20rem;
+      padding-bottom: 14rem;
+   }
 
    .breadcrumps {
       display: inline-block;
       color: $color-txt-white-primary;
-      margin-bottom: 3.2rem;
+      margin-bottom: 1.6rem;
+
+      @media #{$medium} {
+         margin-bottom: 3.2rem;
+      }
    }
 
    h1 {

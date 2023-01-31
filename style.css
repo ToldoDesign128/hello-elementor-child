@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-@charset "UTF-8";
 /*
 Theme Name: Hello Elementor for FBK
 Author: Matteo Bruschetti, Federico Toldo
@@ -4633,19 +4632,19 @@ h1 {
 }
 @media (min-width: 992px) {
   h1 {
-    font-size: 7.2rem;
+    font-size: 6.8rem;
   }
 }
 
 h2 {
   font-weight: 400;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   line-height: 150%;
   color: #323130;
 }
 @media (min-width: 992px) {
   h2 {
-    font-size: 3.6rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -4889,7 +4888,7 @@ img {
 
 nav.breadcrumps {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
 }
 @media (min-width: 768px) {
   nav.breadcrumps {
@@ -5312,7 +5311,6 @@ footer .footer-menu-list {
   align-items: flex-start;
   gap: 1.2rem;
   margin-bottom: 4.8rem;
-  /*🔥*/
 }
 footer .footer-menu-list a {
   line-height: 150%;
@@ -5336,6 +5334,14 @@ footer .footer-menu-list a:hover {
   color: #fff;
   text-decoration: underline;
 }
+footer .footer-info {
+  margin-top: 1.6rem;
+}
+@media (min-width: 768px) {
+  footer .footer-info {
+    margin-top: 4rem;
+  }
+}
 footer .footer-info .footer-logo {
   margin-bottom: 3.2rem;
   white-space: nowrap;
@@ -5352,6 +5358,7 @@ footer .footer-info .footer-logo p {
   display: inline;
   font-size: 1.2rem;
   margin-left: 1.2rem;
+  margin-top: 0.3rem;
   color: rgba(255, 255, 255, 0.88);
   letter-spacing: 1px;
 }
@@ -5570,13 +5577,25 @@ footer .footer-info .lingua p {
 
 .sub-hero {
   background-color: #1254a2;
-  padding-block: 24vh;
   transition: background-color 0.3s ease-out;
+  padding-top: 15rem;
+  padding-bottom: 8rem;
+}
+@media (min-width: 768px) {
+  .sub-hero {
+    padding-top: 20rem;
+    padding-bottom: 14rem;
+  }
 }
 .sub-hero .breadcrumps {
   display: inline-block;
   color: #fff;
-  margin-bottom: 3.2rem;
+  margin-bottom: 1.6rem;
+}
+@media (min-width: 768px) {
+  .sub-hero .breadcrumps {
+    margin-bottom: 3.2rem;
+  }
 }
 .sub-hero h1 {
   color: #fff;
@@ -5654,9 +5673,15 @@ footer .footer-info .lingua p {
 
 .single-sub-hero {
   background-color: #fff;
-  padding-top: 24vh;
-  padding-bottom: calc(24vh - 6.4rem - 10.4rem);
   transition: background-color 0.3s ease-out;
+  padding-top: 15rem;
+  padding-bottom: 0;
+}
+@media (min-width: 768px) {
+  .single-sub-hero {
+    padding-top: 20rem;
+    padding-bottom: 1.6rem;
+  }
 }
 .single-sub-hero h1 {
   color: #323130;
@@ -6225,7 +6250,7 @@ footer .footer-info .lingua p {
 .fbk-cw-heading h3,
 .fbk-cw-heading h4 {
   margin-top: 6.4rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.8rem;
 }
 .fbk-cw-heading h2 .icon-wrapper {
   vertical-align: middle;

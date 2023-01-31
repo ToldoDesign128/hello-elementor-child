@@ -6,13 +6,10 @@ function HT_setup_theme() {
 	// Add widgets support
 	add_theme_support( 'widgets' );
    remove_theme_support( 'widgets-block-editor' ); //but without gutenberg
-
-	// register_nav_menu('ht-menu',__( 'Header HT menu' ));	
 }
 add_action("after_setup_theme", "HT_setup_theme");
 
 
-/*🔥*/
 // ADD Menus locations
 if(!function_exists('register_custom_menu')):
    function register_custom_menu() {
@@ -44,7 +41,6 @@ function NP_get_menu_by_slug( $menu_slug, $multilevel = true ) {
    }
    return $menu_items;
 }
-/*🔥*/
 
 
 add_action('admin_init', 'HT_remove_content_editor');
@@ -162,6 +158,18 @@ function action_documenti_custom_columns($column) {
    }
 }
 
+/*ADD ACF Option Page*/
+if( function_exists('acf_add_options_page') ) {
+   acf_add_options_page(array(
+      'page_title' 	=> 'Social',
+      'menu_title'	=> 'Social',
+      'menu_slug' 	=> 'social-settings',
+      'capability'	=> 'edit_posts',
+      'icon_url'      => 'dashicons-twitter',
+      'redirect'		=> true
+   ));
+}   
+
 
 // Remove comments
 add_action('admin_init', function () {
@@ -253,7 +261,7 @@ function HT_css_soft_remove_menu() {
       /*hide Elementor Template*/
       .wp-admin #adminmenuwrap #menu-posts-elementor_library{display:none !important;}
       /*hide ACF*/
-      // .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
+      .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
       /*hide Tools*/
       .wp-admin #adminmenuwrap #menu-tools{display:none !important;}
       /*hide Widget*/
@@ -275,6 +283,15 @@ function NP_css_custom_categories() {
    </style>';
 }
 add_action('wp_before_admin_bar_render', 'NP_css_custom_categories');
+
+/*Remove Personalizzate from Theme page
+--------------------------------------*/
+function NP_css_custom_themes() {
+   echo '<style type="text/css"> 
+      .wp-admin.themes-php #wpbody .hide-if-no-customize{display:none !important;} 
+   </style>';
+}
+add_action('wp_before_admin_bar_render', 'NP_css_custom_themes');
 
 
 
@@ -302,8 +319,6 @@ function HT_css_mark_menu_item() {
    </style>';
 }
 add_action('wp_before_admin_bar_render', 'HT_css_mark_menu_item');
-
-
 
 
 // Increase default post per page looped posts

@@ -1,8 +1,13 @@
 .single-sub-hero {
    background-color: $color-white;
-   padding-top: 24vh;
-   padding-bottom: calc(24vh - 6.4rem - 10.4rem);
    transition: $dark-bg-transition;
+
+   padding-top: 15rem;
+   padding-bottom: 0;
+   @media #{$medium} {
+      padding-top: 20rem;
+      padding-bottom: 1.6rem;
+   }
 
    h1 {
       color: $color-txt-primary;

@@ -43,10 +43,15 @@ footer {
             text-decoration: underline;
          }
       }
-      /*🔥*/
    }
 
    .footer-info {
+      margin-top: 1.6rem;
+
+      @media #{$medium} {
+         margin-top: 4rem;
+      }
+
       .footer-logo {
          margin-bottom: 3.2rem;
          white-space: nowrap;
@@ -62,6 +67,7 @@ footer {
             display: inline;
             font-size: 1.2rem;
             margin-left: 1.2rem;
+            margin-top: 0.3rem;
             color: rgba($color-white, 0.88);
             letter-spacing: 1px;
          }
