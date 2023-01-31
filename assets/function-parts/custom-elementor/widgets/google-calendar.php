@@ -120,26 +120,26 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 				]
 			);
 
-			$this->add_control(
-        'gcalendar_iframe',
-         [
-            'label' => esc_html__( 'iFrame', 'custom-FBK-widget' ),
-            'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'row' => 6,
-            'placeholder' => esc_html__( 'Inserisci iframe del Google Calendar', 'custom-FBK-widget' ),
-            'separator' => 'before',
-            'description' =>  '
-               <ol>
-                  <li><b>#1</b> Open Google Calendar. In the top right, click Settings icon and then Settings.</li>
-                  <li><b>#2</b> On the left side of the screen, click the name of the calendar you want to embed.</li>
-                  <li><b>#3</b> In the “Integrate this calendar” section, hit customize button.</li>
-                  <li><b>#4</b> Uncheck all the options, then copy the IFRAME code displayed.</li>
-                  <li><b>#5</b> Make sure your embedded calendar is set as public.</li>
-                  <li><b>#6</b> Paste the iframe here.</li>
-               </ol>
-            ', 'custom-FBK-widget' ,
-         ]
-      );
+			/*$this->add_control(
+         'gcalendar_iframe',
+            [
+               'label' => esc_html__( 'iFrame', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::TEXTAREA,
+               'row' => 6,
+               'placeholder' => esc_html__( 'Inserisci iframe del Google Calendar', 'custom-FBK-widget' ),
+               'separator' => 'before',
+               'description' =>  '
+                  <ol>
+                     <li><b>#1</b> Open Google Calendar. In the top right, click Settings icon and then Settings.</li>
+                     <li><b>#2</b> On the left side of the screen, click the name of the calendar you want to embed.</li>
+                     <li><b>#3</b> In the “Integrate this calendar” section, hit customize button.</li>
+                     <li><b>#4</b> Uncheck all the options, then copy the IFRAME code displayed.</li>
+                     <li><b>#5</b> Make sure your embedded calendar is set as public.</li>
+                     <li><b>#6</b> Paste the iframe here.</li>
+                  </ol>
+               ', 'custom-FBK-widget' ,
+            ]
+         );*/
 
 		$this->end_controls_section();
 

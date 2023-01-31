@@ -266,7 +266,7 @@ function HT_css_soft_remove_menu() {
       .wp-admin #adminmenuwrap #menu-tools{display:none !important;}
       /*hide Widget*/
       .wp-admin #adminmenuwrap #menu-appearance li a[href="widgets.php"]{display:none !important;}
-      /*Theme e plugin editor on WP enginge*/
+      /*Theme e plugin editor on WP engine*/
       .wp-admin #adminmenuwrap #menu-appearance li a[href="theme-editor.php"]{display:none !important;}
       .wp-admin #adminmenuwrap #menu-plugins li a[href="plugin-editor.php"]{display:none !important;}
 
