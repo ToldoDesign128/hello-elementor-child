@@ -56,6 +56,12 @@ jQuery(document).ready(function () {
     }
   });
 
+  // Hamburger menu
+  jQuery(".hamburger").click(function () {
+    jQuery(this).toggleClass("is-active");
+    jQuery(".header__content__nav").toggleClass("mobile-active");
+  });
+
   //FAQs widget
   jQuery(".faq-container").click(function () {
     jQuery(this).toggleClass("faq-active");
