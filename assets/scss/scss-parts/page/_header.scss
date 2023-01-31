@@ -15,84 +15,137 @@
 
     position: relative;
 
+    &__logo {
+      padding: 0 1.4rem;
+    }
+
     &__nav {
-      background-color: lightgreen;
-      display: flex;
-      gap: 2vw;
+      display: none;
 
-      .menu-item-wrapper {
-        flex-shrink: 0;
+      @media #{$medium} {
+        display: flex;
+        gap: 2vw;
 
-        // position: relative;
+        .menu-item-wrapper {
+          flex-shrink: 0;
 
-        .header-parent {
-          background-color: gray;
+          .header-parent {
+            color: $color-white;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            padding-inline: 0.4rem;
+          }
 
-          color: $color-white;
-          font-size: 1.6rem;
-          text-transform: uppercase;
-          text-decoration: none;
-          display: inline-block;
-          padding-inline: 0.4rem;
+          .drop-down {
+            min-height: 30rem;
+            background-color: $color-white;
+            box-shadow: -50vw 0 $color-white, 50vw 0 $color-white;
+            display: none;
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateY(100%);
+            margin-top: 1.2rem;
+            padding: 5rem 0;
+
+            transition: display 0.4s ease-in-out;
+
+            &.show {
+              display: flex;
+            }
+
+            &__content {
+              display: flex;
+              gap: 4vw;
+
+              .child-menu-item-wrapper {
+                display: flex;
+                flex-direction: column;
+
+                .header-child {
+                  text-decoration: none;
+                  color: $color-txt-primary;
+                  font-size: 2rem;
+                  cursor: pointer;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+                .header-nipote {
+                  margin: 0.8rem 0;
+                  text-decoration: none;
+                  color: $color-txt-secondary;
+                  font-size: 1.4rem;
+                  cursor: pointer;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+            &__button {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+
+      &.mobile-active {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 110%;
+        background-color: $color-white;
+        position: absolute;
+        left: -2rem;
+        right: 0;
+        bottom: 0;
+        transform: translateY(104%);
+        margin: 1.2rem;
+        padding: 5rem 0;
+        box-shadow: 0rem 1rem 1rem 0rem rgba($color-txt-secondary, $alpha: 0.3);
+
+        .menu-item-wrapper {
+          margin: 1rem 0;
+          padding: 1rem 2rem;
+          border-bottom: 1px solid $color-txt-secondary;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .header-parent {
+            color: $color-txt-primary;
+            font-size: 2rem;
+            text-decoration: none;
+          }
         }
 
         .drop-down {
-          min-height: 30rem;
-          background-color: $color-white;
-          box-shadow: -50vw 0 $color-white, 50vw 0 $color-white;
           display: none;
-
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          transform: translateY(100%);
-          margin-top: 1.2rem;
-          padding: 5rem 0;
-
-          transition: display 0.4s ease-in-out;
-
-          &.show {
-            display: flex;
-          }
-
-          &__content {
-            display: flex;
-            gap: 4vw;
-
-            .child-menu-item-wrapper {
-              display: flex;
-              flex-direction: column;
-
-              .header-child {
-                text-decoration: none;
-                color: $color-txt-primary;
-                font-size: 2rem;
-                cursor: pointer;
-              }
-              .header-nipote {
-                margin: 0.8rem 0;
-                text-decoration: none;
-                color: $color-txt-secondary;
-                font-size: 1.4rem;
-                cursor: pointer;
-              }
-            }
-          }
-          &__button {
-            flex-direction: column;
-
-            button {
-              width: 100%;
-              margin: 2rem 0;
-              padding: 1rem;
-              background-color: $color-fede;
-              color: $color-txt-primary;
-              border: none;
-              text-align: left;
-            }
-          }
         }
+      }
+    }
+
+    &__search {
+      display: none;
+
+      @media #{$medium} {
+        display: block;
+      }
+    }
+
+    &__hamburger {
+      display: block;
+
+      @media #{$medium} {
+        display: none;
       }
     }
   }

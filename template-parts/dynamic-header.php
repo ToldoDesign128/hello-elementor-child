@@ -73,26 +73,7 @@
                                                 endforeach; ?>
                                             </div>
                                             <div class="drop-down__button d-flex col-3">
-                                                <div class="col-12">
-                                                    <a href="">
-                                                        <button>Ciao</button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-12">
-                                                    <a href="">
-                                                        <button>Ciao</button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-12">
-                                                    <a href="">
-                                                        <button>Ciao</button>
-                                                    </a>
-                                                </div>
-                                                <div class="col-12">
-                                                    <a href="">
-                                                        <button>Ciao</button>
-                                                    </a>
-                                                </div>
+                                                <!-- Qui bisogna inserier il loop per i custom link -->
                                             </div>
                                         </div>
                                     <?php endif; ?>
@@ -112,6 +93,13 @@
                         </svg>
                     </a>
 
+                    <div class="header__content__hamburger">
+                        <button class="hamburger hamburger--collapse" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
