@@ -60,6 +60,7 @@ function hello_elementor_child_enqueue_scripts() {
 		],
 		'1.0.0'
 	);
+   wp_enqueue_style( 'hamburgers-style', get_stylesheet_directory_uri() . '/hamburgers.min.css');
 	// My JS
 	wp_enqueue_script( 'howto-script', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array('jquery'), false, true );
    if (is_singular('documenti')) : wp_enqueue_script( 'howto-doc-script', get_stylesheet_directory_uri() . '/assets/js/single-doc.js', array('jquery'), false, true ); endif;
@@ -351,6 +352,3 @@ require dirname(__FILE__).'/assets/function-parts/cpt-documenti.php';
 
 // Custom Elementor
 require dirname(__FILE__).'/assets/function-parts/custom-elementor/custom-elementor.php';
-
-
-?>
