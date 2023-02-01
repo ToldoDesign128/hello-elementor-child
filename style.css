@@ -5485,6 +5485,25 @@ footer .footer-info .lingua p {
   .header__nav .header__content__nav .menu-item-wrapper .drop-down__button {
     flex-direction: column;
   }
+  .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #e3e2e2;
+  }
+  .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #323130;
+    text-decoration: none;
+  }
+  .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item a svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item a svg path {
+    fill: #605e5c;
+  }
 }
 .header__nav .header__content__nav.mobile-active {
   display: flex;
