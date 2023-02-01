@@ -5489,6 +5489,7 @@ footer .footer-info .lingua p {
     width: 100%;
     padding: 1rem 2rem;
     background-color: #e3e2e2;
+    margin-bottom: 1rem;
   }
   .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item a {
     display: flex;
