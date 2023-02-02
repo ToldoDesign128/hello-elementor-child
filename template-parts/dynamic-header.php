@@ -47,7 +47,8 @@
                                             <div class="drop-down__content row col-9">
                                                 <?php foreach ($header_children as $child) :
                                                     $child_menu_item_parent = $child->menu_item_parent;
-                                                    if ($child_menu_item_parent == $page_ID) : ?>
+                                                    $child_menu_item_object = $child->object;
+                                                    if ($child_menu_item_parent == $page_ID && $child_menu_item_object != 'custom') : ?>
 
                                                         <div class="child-menu-item-wrapper col-3">
 

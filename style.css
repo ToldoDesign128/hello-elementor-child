@@ -5441,7 +5441,7 @@ footer .footer-info .lingua p {
   .header__nav .header__content__nav .menu-item-wrapper .drop-down {
     min-height: 30rem;
     background-color: #fff;
-    box-shadow: -50vw 0 #fff, 50vw 0 #fff;
+    box-shadow: -50vw 0 #fff, 50vw 0 #fff, 0rem 2rem 10rem 1rem rgba(96, 94, 92, 0.3);
     display: none;
     position: absolute;
     left: 0;
