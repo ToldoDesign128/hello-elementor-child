@@ -25,7 +25,6 @@
                                 $header_children[] = $menu_item;
                             endif;
                         endforeach;
-                        // var_dump($header_children);
 
                         foreach ($header_menu_items as $menu_item) :
                             $menu_item_parent = $menu_item->menu_item_parent;
@@ -48,7 +47,8 @@
                                             <div class="drop-down__content row col-9">
                                                 <?php foreach ($header_children as $child) :
                                                     $child_menu_item_parent = $child->menu_item_parent;
-                                                    if ($child_menu_item_parent == $page_ID) : ?>
+                                                    $child_menu_item_object = $child->object;
+                                                    if ($child_menu_item_parent == $page_ID && $child_menu_item_object != 'custom') : ?>
 
                                                         <div class="child-menu-item-wrapper col-3">
 
@@ -71,10 +71,37 @@
                                                 <?php
                                                     endif;
                                                 endforeach; ?>
+
                                             </div>
-                                            <div class="drop-down__button d-flex col-3">
-                                                <!-- Qui bisogna inserier il loop per i custom link -->
-                                            </div>
+                                            <?php if (!empty($header_children)) : ?>
+                                                <div class="drop-down__button col-3">
+                                                    <!-- Qui bisogna inserier il loop per i custom link -->
+
+                                                    <?php
+                                                    foreach ($header_children as $child) :
+                                                        $child_menu_item_parent = $child->menu_item_parent;
+                                                        if ($child_menu_item_parent == $page_ID) :
+
+                                                            $child_menu_item_object = $child->object;
+
+                                                            if ($child_menu_item_object == 'custom') : ?>
+
+                                                                <div class="drop-down__button__item">
+                                                                    <a href="<?php echo $child->url ?>" class="">
+                                                                        <?php echo $child->title ?>
+                                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white" />
+                                                                        </svg>
+                                                                    </a>
+                                                                </div>
+
+                                                    <?php
+                                                            endif;
+                                                        endif;
+                                                    endforeach; ?>
+                                                </div>
+                                            <?php endif; ?>
+
                                         </div>
                                     <?php endif; ?>
                                 </div>

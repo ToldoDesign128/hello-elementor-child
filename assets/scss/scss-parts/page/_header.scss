@@ -41,7 +41,8 @@
           .drop-down {
             min-height: 30rem;
             background-color: $color-white;
-            box-shadow: -50vw 0 $color-white, 50vw 0 $color-white;
+            box-shadow: -50vw 0 $color-white, 50vw 0 $color-white,
+              0rem 2rem 10rem 1rem rgb(96 94 92 / 30%);
             display: none;
 
             position: absolute;
@@ -91,6 +92,30 @@
             }
             &__button {
               flex-direction: column;
+
+              &__item {
+                width: 100%;
+                padding: 1rem 2rem;
+                background-color: $color-gray;
+                margin-bottom: 1rem;
+
+                a {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  color: $color-txt-primary;
+                  text-decoration: none;
+
+                  svg {
+                    width: 2.4rem;
+                    height: 2.4rem;
+
+                    path {
+                      fill: $color-txt-secondary;
+                    }
+                  }
+                }
+              }
             }
           }
         }
