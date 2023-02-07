@@ -189,7 +189,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                         <div class="col-card col-12 col-lg-6">
 
                            <a class="card card-primary" href="<?php the_permalink(); ?>">
-                              <span class="svg-wrapper">
+                              <span class="svg-wrapper"> 
                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
                                  </svg>
