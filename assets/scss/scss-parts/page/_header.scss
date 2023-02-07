@@ -98,6 +98,7 @@
                 padding: 1rem 2rem;
                 background-color: $color-gray;
                 margin-bottom: 1rem;
+                transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 
                 a {
                   display: flex;
@@ -105,6 +106,7 @@
                   align-items: center;
                   color: $color-txt-primary;
                   text-decoration: none;
+                  transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 
                   svg {
                     width: 2.4rem;
@@ -112,6 +114,20 @@
 
                     path {
                       fill: $color-txt-secondary;
+                      transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+                    }
+                  }
+                }
+                &:hover {
+                  background-color: $color-light-primary;
+
+                  a {
+                    color: $color-txt-secondary;
+
+                    svg {
+                      path {
+                        fill: rgba($color-txt-secondary, $alpha: 0.4);
+                      }
                     }
                   }
                 }

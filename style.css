@@ -5490,6 +5490,7 @@ footer .footer-info .lingua p {
     padding: 1rem 2rem;
     background-color: #e3e2e2;
     margin-bottom: 1rem;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item a {
     display: flex;
@@ -5497,6 +5498,7 @@ footer .footer-info .lingua p {
     align-items: center;
     color: #323130;
     text-decoration: none;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item a svg {
     width: 2.4rem;
@@ -5504,6 +5506,16 @@ footer .footer-info .lingua p {
   }
   .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item a svg path {
     fill: #605e5c;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item:hover {
+    background-color: #e1eaf6;
+  }
+  .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item:hover a {
+    color: #605e5c;
+  }
+  .header__nav .header__content__nav .menu-item-wrapper .drop-down__button__item:hover a svg path {
+    fill: rgba(96, 94, 92, 0.4);
   }
 }
 .header__nav .header__content__nav.mobile-active {
