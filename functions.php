@@ -320,6 +320,15 @@ function HT_css_mark_menu_item() {
    </style>';
 }
 add_action('wp_before_admin_bar_render', 'HT_css_mark_menu_item');
+/* Pagine:
+/* Mark pages with depth level > 2
+--------------------------------------*/
+function HT_css_mark_pages() {
+   echo '<style type="text/css">
+      .wp-admin.post-type-page #wpbody table.pages tr.type-page.level-2, .wp-admin.post-type-page #wpbody table.pages tr.type-page.level-3, .wp-admin.post-type-page #wpbody table.pages tr.type-page.level-4, .wp-admin.post-type-page #wpbody table.pages tr.type-page.level-5, .wp-admin.post-type-page #wpbody table.pages tr.type-page.level-6 {background-color:#ff000080!important;}
+   </style>';
+}
+add_action('wp_before_admin_bar_render', 'HT_css_mark_pages');
 
 
 // Increase default post per page looped posts
