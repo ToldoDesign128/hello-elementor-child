@@ -158,135 +158,170 @@ add_action( 'elementor/widgets/register', 'register_fbk_custom_widgets' );
  * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
  * @return void
  */
-function remove_unused_widgets( $widgets_manager ) {
+if ( ! current_user_can('administrator')) :
+   function remove_unused_widgets( $widgets_manager ) {
+      $widgets_to_unregister = [
+         //Base
+         'inner-section',
+         'heading',
+         'image',
+         // 'text-editor', // non si può disattivare nei single
+         'video',
+         'button',
+         'divider',
+         'spacer',
+         'google-maps', //non funzia
+         'icon',
 
-	$widgets_to_unregister = [
-      //Base
-      'inner-section',
-		'heading',
-		'image',
-		// 'text-editor', // non si può disattivare nei single
-		'video',
-		'button',
-		'divider',
-		'spacer',
-		'google-maps', //non funzia
-		'icon',
+         //Generale
+         'image-box',
+         'icon-box',
+         'star-rating',
+         'image-carousel',
+         'image-gallery',
+         'icon-list',
+         'counter',
+         'progress',
+         'testimonial',
+         'tabs',
+         'accordion',
+         'toggle',
+         'social-icons',
+         'alert',
+         'audio',
+         'shortcode',
+         'html',
+         'menu-anchor',
+         'sidebar',
+         'read-more',
+         'text-path' //non funzia
 
-      //Generale
-      'image-box',
-      'icon-box',
-      'star-rating',
-      'image-carousel',
-      'image-gallery',
-      'icon-list',
-      'counter',
-      'progress',
-      'testimonial',
-      'tabs',
-      'accordion',
-      'toggle',
-      'social-icons',
-      'alert',
-      'audio',
-      'shortcode',
-      'html',
-      'menu-anchor',
-      'sidebar',
-      'read-more',
-      'text-path' //non funzia
+         // pro ----------------- //
+         ,'posts'
+         ,'portfolio'
+         ,'slides'
+         ,'form'
+         ,'login'
+         ,'media-carousel'
+         ,'testimonial-carousel'
+         ,'nav-menu'
+         ,'pricing'
+         ,'facebook-comment'
+         ,'nav-menu'
+         ,'animated-headline'
+         ,'price-list'
+         ,'price-table'
+         ,'facebook-button'
+         ,'facebook-comments'
+         ,'facebook-embed'
+         ,'facebook-page'
+         ,'add-to-cart'
+         ,'categories'
+         ,'elements'
+         ,'products'
+         ,'flip-box'
+         ,'carousel'
+         ,'countdown'
+         ,'share-buttons'
+         ,'author-box'
+         ,'breadcrumbs'
+         ,'search-form'
+         ,'post-navigation'
+         ,'post-comments'
+         ,'theme-elements'
+         ,'blockquote'
+         ,'template'
+         ,'wp-widget-audio'
+         ,'woocommerce'
+         ,'social'
+         ,'library'
 
-      // pro ----------------- //
-      ,'posts'
-      ,'portfolio'
-      ,'slides'
-      ,'form'
-      ,'login'
-      ,'media-carousel'
-      ,'testimonial-carousel'
-      ,'nav-menu'
-      ,'pricing'
-      ,'facebook-comment'
-      ,'nav-menu'
-      ,'animated-headline'
-      ,'price-list'
-      ,'price-table'
-      ,'facebook-button'
-      ,'facebook-comments'
-      ,'facebook-embed'
-      ,'facebook-page'
-      ,'add-to-cart'
-      ,'categories'
-      ,'elements'
-      ,'products'
-      ,'flip-box'
-      ,'carousel'
-      ,'countdown'
-      ,'share-buttons'
-      ,'author-box'
-      ,'breadcrumbs'
-      ,'search-form'
-      ,'post-navigation'
-      ,'post-comments'
-      ,'theme-elements'
-      ,'blockquote'
-      ,'template'
-      ,'wp-widget-audio'
-      ,'woocommerce'
-      ,'social'
-      ,'library'
+         // wp widgets ----------------- //
+         ,'wp-widget-pages'
+         ,'wp-widget-archives'
+         ,'wp-widget-media_audio'
+         ,'wp-widget-media_image'
+         ,'wp-widget-media_gallery'
+         ,'wp-widget-media_video'
+         ,'wp-widget-meta'
+         ,'wp-widget-search'
+         ,'wp-widget-text'
+         ,'wp-widget-categories'
+         ,'wp-widget-recent-posts'
+         ,'wp-widget-recent-comments'
+         ,'wp-widget-rss'
+         ,'wp-widget-tag_cloud'
+         ,'wp-widget-nav_menu'
+         ,'wp-widget-custom_html'
+         ,'wp-widget-polylang'
+         ,'wp-widget-calendar'
+         ,'wp-widget-elementor-library'
+         ,'wp-widget-block'
+      ];
 
-      // wp widgets ----------------- //
-      ,'wp-widget-pages'
-      ,'wp-widget-archives'
-      ,'wp-widget-media_audio'
-      ,'wp-widget-media_image'
-      ,'wp-widget-media_gallery'
-      ,'wp-widget-media_video'
-      ,'wp-widget-meta'
-      ,'wp-widget-search'
-      ,'wp-widget-text'
-      ,'wp-widget-categories'
-      ,'wp-widget-recent-posts'
-      ,'wp-widget-recent-comments'
-      ,'wp-widget-rss'
-      ,'wp-widget-tag_cloud'
-      ,'wp-widget-nav_menu'
-      ,'wp-widget-custom_html'
-      ,'wp-widget-polylang'
-      ,'wp-widget-calendar'
-      ,'wp-widget-elementor-library'
-      ,'wp-widget-block'
-	];
+      foreach ( $widgets_to_unregister as $widget ) {
+         $widgets_manager->unregister( $widget );
+      }
+   }
+   add_action( 'elementor/widgets/register', 'remove_unused_widgets' );
 
-	foreach ( $widgets_to_unregister as $widget ) {
-		$widgets_manager->unregister( $widget );
-	}
-}
-add_action( 'elementor/widgets/register', 'remove_unused_widgets' );
+   //custom CSS in Elementor editor for non admin users
+   function HT_css_elementor_for_not_admin(){
+      echo '<style>
 
+         /*remove panel core category of widgets*/
+         .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-basic {display:none !important;}
+         .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-pro-elements {display:none !important;}
+         .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-general {display:none !important;}
+         .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements {display:none !important;}
+         .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements-single {display:none !important;}
+         .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-woocommerce-elements {display:none !important;}
+         .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-wordpress {display:none !important;}
 
+         /*remove style tab*/
+         .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}
+         /*remove advanced tab*/
+         .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-advanced {display:none !important;}
+         /*remove layout tab*/
+         .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-layout {display:none !important;}
 
-//custom CSS in Elementor editor
+         /*remove Serve aiuto?*/
+         .elementor-editor-active .elementor-panel #elementor-panel-page-editor #elementor-panel__editor__help {display:none !important;}
+
+         /*remove Capolettera switcher from Editor*/
+         .elementor-editor-active .elementor-panel .elementor-control.elementor-control-drop_cap {display:none !important;}
+
+         /*castred Wysiwyg*/
+         .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-container .mce-panel .mce-container .mce-listbox{display:none !important;} /*no switcher p and headings*/
+         .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-tools {display:none !important;} /*no caricamento media + no switcher modalità*/
+         .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(8) {display:none !important;} /*no full screen*/
+         .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(9) {display:none !important;} /*no toolbar*/
+
+         /*Remove options for Colonna*/
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-_inline_size,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-content_position,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-align,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-space_between_widgets,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-html_tag {display:none !important;}
+
+         /*Remove options for Sezione*/
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-layout,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-content_width,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-gap,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-height,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-overflow,
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-stretch_section,
+
+         .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-structure {display:none !important;}
+
+      </style>';
+   }
+   add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor_for_not_admin' );
+endif;
+
+//custom CSS in Elementor editor for non admin users
 function HT_css_elementor(){
    echo '<style>
-
-      /*remove panel core category of widgets*/
-      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-basic {display:none !important;}
-      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-pro-elements {display:none !important;}
-      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-general {display:none !important;}
-      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements {display:none !important;}
-      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-theme-elements-single {display:none !important;}
-      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-woocommerce-elements {display:none !important;}
-      .elementor-editor-active .elementor-panel .elementor-panel-category#elementor-panel-category-wordpress {display:none !important;}
-
-      /*remove style tab*/
-      .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-style {display:none !important;}
-      /*remove advanced tab*/
-      .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-advanced {display:none !important;}
-      /*remove layout tab*/
-      .elementor-editor-active .elementor-panel .elementor-panel-navigation .elementor-tab-control-layout {display:none !important;}
-
       /*remove Serve aiuto?*/
       .elementor-editor-active .elementor-panel #elementor-panel-page-editor #elementor-panel__editor__help {display:none !important;}
 
@@ -298,23 +333,6 @@ function HT_css_elementor(){
       .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .wp-editor-tools {display:none !important;} /*no caricamento media + no switcher modalità*/
       .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(8) {display:none !important;} /*no full screen*/
       .elementor-editor-active .elementor-panel .elementor-control.elementor-control-type-wysiwyg .mce-top-part.mce-stack-layout-item .mce-widget:nth-of-type(9) {display:none !important;} /*no toolbar*/
-
-      /*Remove options for Colonna*/
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-_inline_size,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-content_position,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-align,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-space_between_widgets,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-html_tag {display:none !important;}
-
-      /*Remove options for Sezione*/
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-layout,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-content_width,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-gap,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-height,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-overflow,
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-stretch_section,
-
-      .elementor-editor-active .elementor-panel #elementor-controls .elementor-control-structure {display:none !important;}
 
    </style>';
 }

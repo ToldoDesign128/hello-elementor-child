@@ -268,7 +268,7 @@ function HT_css_soft_remove_menu() {
       /*hide Widget*/
       .wp-admin #adminmenuwrap #menu-appearance li a[href="widgets.php"]{display:none !important;}
       /*hide WPML*/
-      .wp-admin #adminmenuwrap #toplevel_page_tm-menu-main{display:none !important;}
+      // .wp-admin #adminmenuwrap #toplevel_page_tm-menu-main{display:none !important;}
       /*Theme e plugin editor on WP engine*/
       .wp-admin #adminmenuwrap #menu-appearance li a[href="theme-editor.php"]{display:none !important;}
       .wp-admin #adminmenuwrap #menu-plugins li a[href="plugin-editor.php"]{display:none !important;}
