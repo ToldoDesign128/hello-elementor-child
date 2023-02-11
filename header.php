@@ -10,7 +10,6 @@
    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/favicon-light.png" type="image/x-icon" media="(prefers-color-scheme: light)">
    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/image/favicon-dark.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
    <meta name="description" content="<?php bloginfo('description'); ?>">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

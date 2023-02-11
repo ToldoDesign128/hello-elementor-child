@@ -45,9 +45,9 @@ function NP_get_menu_by_slug( $menu_slug, $multilevel = true ) {
 
 add_action('admin_init', 'HT_remove_content_editor');
 function HT_remove_content_editor() {
-		remove_post_type_support('page', 'editor' ); //remove gutenberg
-		remove_post_type_support('post', 'editor' ); //remove gutenberg
-		remove_post_type_support('page', 'thumbnail' ); //remove thumbnail
+   remove_post_type_support('page', 'editor' ); //remove gutenberg
+   remove_post_type_support('post', 'editor' ); //remove gutenberg
+   remove_post_type_support('page', 'thumbnail' ); //remove thumbnail
 }
 
 //add CSS
@@ -318,6 +318,9 @@ add_action('admin_head-nav-menus.php', __NAMESPACE__.'\\HT_custom_remove', 10);
 --------------------------------------*/
 function HT_css_mark_menu_item() {
    echo '<style type="text/css">
+      .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-0{margin-top:40px;}
+      .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-1.menu-item-custom .menu-item-handle{background-color:#E1EAF6!important;border-color:#3385C7!important;}
+      .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-2.menu-item-custom .menu-item-handle{background-color:#ff000080!important;border-color:red!important;color:red!important;}
       .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-3 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-4 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-5 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-6 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-7 .menu-item-handle, .wp-admin.nav-menus-php ul#menu-to-edit li.menu-item-depth-8 .menu-item-handle{background-color:#ff000080!important;border-color:red!important;color:red!important;}
    </style>';
 }

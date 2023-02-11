@@ -36,45 +36,55 @@
 // }
 
 jQuery(document).ready(function () {
-  //   //Navbar Dopdown
-  let currentEl;
-
-  document.querySelectorAll(".header-parent").forEach(function (headerParent) {
-    headerParent.addEventListener("mouseover", function (event) {
-      if (currentEl) {
-        currentEl.classList.remove("show");
+   //Navbar Dopdown
+   jQuery(".has-dropdown").hover(
+      function () {
+         jQuery(this).find(".arrow").addClass("arrow-up");
+         jQuery(this).find(".pointer").addClass("pointer-show");
+         jQuery(this).next(".drop-down").addClass("dropdown-show");
+      },
+      function () {
+         jQuery(this).find(".arrow").removeClass("arrow-up");
+         jQuery(this).find(".pointer").removeClass("pointer-show");
+         jQuery(this).next(".drop-down").removeClass("dropdown-show");
       }
-      currentEl = event.target.nextElementSibling;
-      currentEl.classList.add("show");
-    });
-  });
+   );
+   jQuery(".drop-down").hover(
+      function () {
+         jQuery(this).prev().find(".arrow").addClass("arrow-up");
+         jQuery(this).prev().find(".pointer").addClass("pointer-show");
+         jQuery(this).addClass("dropdown-show");
+      },
+      function () {
+         jQuery(this).prev().find(".arrow").removeClass("arrow-up");
+         jQuery(this).prev().find(".pointer").removeClass("pointer-show");
+         jQuery(this).removeClass("dropdown-show");
+      }
+   );
 
-  document.addEventListener("click", function (event) {
-    if (currentEl) {
-      currentEl.classList.remove("show");
-      currentEl = null;
-    }
-  });
+   // Hamburger menu
+   jQuery(".hamburger").click(function () {
+      jQuery(this).toggleClass("is-active");
+      jQuery(".header__mobile-nav").toggleClass("mobile-active");
+   });
+   jQuery(".backdrop").click(function () {
+      jQuery(".hamburger").toggleClass("is-active");
+      jQuery(".header__mobile-nav").toggleClass("mobile-active");
+   });
 
-  // Hamburger menu
-  jQuery(".hamburger").click(function () {
-    jQuery(this).toggleClass("is-active");
-    jQuery(".header__content__nav").toggleClass("mobile-active");
-  });
+   //FAQs widget
+   jQuery(".faq-container").click(function () {
+      jQuery(this).toggleClass("faq-active");
+   });
 
-  //FAQs widget
-  jQuery(".faq-container").click(function () {
-    jQuery(this).toggleClass("faq-active");
-  });
-
-  //Alert widget
-  jQuery(".close-alert").click(function () {
-    jQuery(this)
-      .parent()
-      .parent()
-      .parent()
-      .parent()
-      .parent(".fbk-cw-alert")
-      .addClass("closed-alert");
-  });
+   //Alert widget
+   jQuery(".close-alert").click(function () {
+      jQuery(this)
+         .parent()
+         .parent()
+         .parent()
+         .parent()
+         .parent(".fbk-cw-alert")
+         .addClass("closed-alert");
+   });
 });

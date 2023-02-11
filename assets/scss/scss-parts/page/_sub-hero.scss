@@ -2,11 +2,11 @@
    background-color: $color-primary;
    transition: $dark-bg-transition;
 
-   padding-top: 15rem;
+   padding-top: 13rem;
    padding-bottom: 8rem;
    @media #{$medium} {
-      padding-top: 20rem;
-      padding-bottom: 14rem;
+      padding-top: 16rem;
+      padding-bottom: 12rem;
    }
 
    .breadcrumps {
