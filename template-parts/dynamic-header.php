@@ -57,6 +57,7 @@
                                        <path d="M7 0L14 8H0L7 0Z"/>
                                     </svg>
                                  </div>
+                                 <div class="backdrop"></div>
                               </a>
                               <?php if (!empty($header_children)) : 
                                  $check_button = array();
@@ -112,6 +113,7 @@
                                     <?php endif; ?>
 
                                  </div>
+
                               <?php endif; 
                               
                            // se la pagina di primo livello non ha figli
@@ -147,7 +149,7 @@
       </div>
    </div>
    <nav class="header__mobile-nav d-xl-none" role="navigation">
-      <div class="backdrop"></div>
+      <div class="mobile-backdrop"></div>
       <div class="container">
          <div class="row">
             <div class="col-12">

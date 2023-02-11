@@ -5470,9 +5470,25 @@ footer .footer-info .lingua p {
   .header__nav .header__content__nav .menu-item-wrapper .header-parent.has-dropdown .pointer.pointer-show {
     opacity: 1;
   }
+  .header__nav .header__content__nav .menu-item-wrapper .header-parent.has-dropdown .backdrop {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    background-color: #000;
+    opacity: 0;
+    bottom: 0;
+    left: -100vw;
+    right: -100vw;
+    height: 100vh;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease-in-out;
+  }
+  .header__nav .header__content__nav .menu-item-wrapper .header-parent.has-dropdown .backdrop.backdrop-show {
+    opacity: 0.64;
+  }
   .header__nav .header__content__nav .menu-item-wrapper .drop-down {
     background-color: #fff;
-    box-shadow: -50vw 0 #fff, 50vw 0 #fff, 0vw 50vh 0px 20vw rgba(0, 0, 0, 0.64);
+    box-shadow: -50vw 0 #fff, 50vw 0 #fff;
     display: flex;
     position: absolute;
     left: 0;
@@ -5598,7 +5614,7 @@ footer .footer-info .lingua p {
   overflow: hidden;
   transition: all 0.4s ease-in-out;
 }
-.header__nav .header__mobile-nav .backdrop {
+.header__nav .header__mobile-nav .mobile-backdrop {
   cursor: pointer;
   position: absolute;
   top: 0;

@@ -41,11 +41,13 @@ jQuery(document).ready(function () {
       function () {
          jQuery(this).find(".arrow").addClass("arrow-up");
          jQuery(this).find(".pointer").addClass("pointer-show");
+         jQuery(this).find(".backdrop").addClass("backdrop-show");
          jQuery(this).next(".drop-down").addClass("dropdown-show");
       },
       function () {
          jQuery(this).find(".arrow").removeClass("arrow-up");
          jQuery(this).find(".pointer").removeClass("pointer-show");
+         jQuery(this).find(".backdrop").removeClass("backdrop-show");
          jQuery(this).next(".drop-down").removeClass("dropdown-show");
       }
    );
@@ -53,11 +55,13 @@ jQuery(document).ready(function () {
       function () {
          jQuery(this).prev().find(".arrow").addClass("arrow-up");
          jQuery(this).prev().find(".pointer").addClass("pointer-show");
+         jQuery(this).prev().find(".backdrop").addClass("backdrop-show");
          jQuery(this).addClass("dropdown-show");
       },
       function () {
          jQuery(this).prev().find(".arrow").removeClass("arrow-up");
          jQuery(this).prev().find(".pointer").removeClass("pointer-show");
+         jQuery(this).prev().find(".backdrop").removeClass("backdrop-show");
          jQuery(this).removeClass("dropdown-show");
       }
    );
@@ -67,7 +71,7 @@ jQuery(document).ready(function () {
       jQuery(this).toggleClass("is-active");
       jQuery(".header__mobile-nav").toggleClass("mobile-active");
    });
-   jQuery(".backdrop").click(function () {
+   jQuery(".mobile-backdrop").click(function () {
       jQuery(".hamburger").toggleClass("is-active");
       jQuery(".header__mobile-nav").toggleClass("mobile-active");
    });
