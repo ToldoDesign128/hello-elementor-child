@@ -158,7 +158,7 @@ add_action( 'elementor/widgets/register', 'register_fbk_custom_widgets' );
  * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
  * @return void
  */
-if ( ! current_user_can('administrator')) :
+// if ( ! current_user_can('administrator')) :
    function remove_unused_widgets( $widgets_manager ) {
       $widgets_to_unregister = [
          //Base
@@ -317,7 +317,7 @@ if ( ! current_user_can('administrator')) :
       </style>';
    }
    add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor_for_not_admin' );
-endif;
+// endif;
 
 //custom CSS in Elementor editor for non admin users
 function HT_css_elementor(){

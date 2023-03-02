@@ -5526,7 +5526,8 @@ footer .footer-info .lingua p {
     text-underline-offset: 3px;
   }
   .header__nav .header__content__nav .menu-item-wrapper .drop-down__content .child-menu-item-wrapper .header-nipote {
-    margin: 0.8rem 0;
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
     text-decoration: none;
     color: #605e5c;
     font-size: 1.4rem;
@@ -5675,7 +5676,7 @@ footer .footer-info .lingua p {
   }
 }
 .hero .hero-bg .searchform-wrapper {
-  margin-block: 5vh;
+  margin-block: 4.8vh;
   text-align: center;
 }
 .hero .hero-bg .searchform-wrapper form {
@@ -5684,7 +5685,7 @@ footer .footer-info .lingua p {
 .hero .hero-bg .chips-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.4rem;
+  gap: 1.6rem;
   justify-content: center;
   width: 100%;
   max-width: 100rem;

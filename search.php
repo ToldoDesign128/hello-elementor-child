@@ -40,7 +40,7 @@
             <!-- layout = loop-documenti-II -->
             <section class="fbk-cw fbk-cw-doc-II container mb-section">
                <div class="section-header">
-                  <h2><?php _e('Documenti', 'howto'); ?></h2>
+                  <h2><?php _e('Approfondimenti', 'howto'); ?></h2>
                </div>
                <div class="row docII-loop">
                   <?php foreach ( $result_type_documenti as $key => $result_post ) :

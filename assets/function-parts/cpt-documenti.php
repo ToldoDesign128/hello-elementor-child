@@ -5,20 +5,20 @@ function HT_custom_documenti() {
     register_post_type( 'documenti',
         array(
             'labels'                =>          array(
-                'name'              =>          'Documenti', //nome principale nella sidebar
-                'singular_name'     =>          'Documento',
-                'all_items'         =>          'Tutti i documenti', //nome link per visualizzare tutti i post
-                'add_new'           =>          'Aggiungi nuovo documento', //nome link per aggiungere nuovo post
-                'add_new_item'      =>          'Aggiungi nuovo  documento', //titolo della pagina di aggiunta di un nuovo post
-                'edit_item'         =>          'Modifica documento', //titolo della pagina di aggiunta di un nuovo post
-                'new_item'          =>          'Nuovo documento',
-                'view_item'         =>          'Visualizza documento',
+                'name'              =>          'Approfondimenti', //nome principale nella sidebar
+                'singular_name'     =>          'Approfondimento',
+                'all_items'         =>          'Tutti', //nome link per visualizzare tutti i post
+                'add_new'           =>          'Aggiungi nuovo', //nome link per aggiungere nuovo post
+                'add_new_item'      =>          'Aggiungi nuovo ', //titolo della pagina di aggiunta di un nuovo post
+                'edit_item'         =>          'Modifica', //titolo della pagina di aggiunta di un nuovo post
+                'new_item'          =>          'Nuovo',
+                'view_item'         =>          'Visualizza',
                 'search_items'      =>          'Cerca',
                 'not_found'         =>          'Nessun elemento trovato',
                 'not_found_in_trash'=>          'Nessun elemento nel cestino',
                 'parent_item_colon' =>          '',
             ),
-            'description'           =>          'Documenti',
+            'description'           =>          'Approfondimenti',
             'public'                =>          true,
             'publicly_queryable'    =>          true,
             'exclude_from_search'   =>          false,

@@ -76,6 +76,15 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
          ]
       );
 
+         $this->add_control(
+            'loop-docii_title',
+            [
+               'label' => esc_html__( 'Titolo', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::TEXT,
+               'placeholder' => esc_html__( 'Titolo della sezione', 'custom-FBK-widget' ),
+            ]
+         );
+
 		$this->end_controls_section();
 	}
 
@@ -93,6 +102,9 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
       $cpt_tax = 'documenti_tax';
+
+      //Content
+		$title = $settings['loop-docii_title'];
 		?>
 
 		<section class="fbk-cw fbk-cw-doc-II container mb-section">
@@ -177,10 +189,12 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                );
                $wp_query = new WP_Query( $args );
 
-               if ( $wp_query->have_posts() ) : ?>
-                  <div class="section-header">
-                     <h2>Documenti</h2>
-                  </div>
+               if ( $wp_query->have_posts() ) : 
+                  if ( $title ) :?>
+                     <div class="section-header">
+                        <h2><?php echo $title; ?></h2>
+                     </div>
+                  <?php endif; ?>
                   <div class="row docII-loop">
                      <?php while ( $wp_query->have_posts() ) : $wp_query->the_post();
                         $cpt_in_evidenza = get_field('cpt_in_evidenza');
