@@ -245,7 +245,7 @@ class FBK_Elementor_Contacts extends \Elementor\Widget_Base {
                if ($id) :
 					?>
 
-               <div class="col-12 col-sm-6<?php if (!is_singular('documenti')) : echo " col-lg-4"; endif; ?>">
+               <div class="col-12 col-sm-6<?php /*if (!is_singular('documenti')) : echo " col-lg-4"; endif;*/ ?> col-lg-4">
                   <article class="single_contact">
                      <?php if ($img) : ?><div>
                         <figure><img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"></figure>

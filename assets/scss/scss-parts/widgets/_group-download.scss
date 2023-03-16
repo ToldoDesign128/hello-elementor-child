@@ -1,4 +1,11 @@
 .fbk-cw-group-download {
+   .wysiwyg {
+      margin-bottom: 2.4rem;
+
+      @media #{$large} {
+         margin-bottom: 2.8rem;
+      }
+   }
    .col-download {
       margin-bottom: 1.6rem;
 

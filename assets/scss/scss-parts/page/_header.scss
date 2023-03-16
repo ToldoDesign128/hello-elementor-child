@@ -96,7 +96,6 @@ $nav-pad-block: 1.2rem;
 
                .drop-down {
                   background-color: $color-white;
-                  box-shadow: -50vw 0 #fff, 50vw 0 #fff;
                   display: flex;
                   position: absolute;
                   left: 0;
@@ -107,6 +106,17 @@ $nav-pad-block: 1.2rem;
                   opacity: 0;
                   pointer-events: none;
                   transition: opacity 0.2s ease-in-out;
+
+                  &:before {
+                     content: "";
+                     position: absolute;
+                     top: 0;
+                     bottom: 0;
+                     left: -100vw;
+                     right: -100vw;
+                     background-color: $color-white;
+                     z-index: -1;
+                  }
 
                   &.dropdown-show {
                      opacity: 1;

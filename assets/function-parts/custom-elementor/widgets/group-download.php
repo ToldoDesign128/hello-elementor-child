@@ -68,57 +68,70 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
-    $this->start_controls_section(
-			'content_section',
-			[
-				'label' => esc_html__( 'Introduzione', 'custom-FBK-widget' ),
-				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
-		);
-
-      $this->add_control(
-        'group-download_overtitle',
-        [
-          'label' => esc_html__( 'Sopratitolo', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXT,
-          'placeholder' => esc_html__( 'Sopratitolo della sezione', 'custom-FBK-widget' ),
-        ]
+      $this->start_controls_section(
+         'content_section',
+         [
+            'label' => esc_html__( 'Introduzione', 'custom-FBK-widget' ),
+            'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+         ]
       );
 
-      $this->add_control(
-        'group-download_title',
-        [
-          'label' => esc_html__( 'Titolo', 'custom-FBK-widget' ),
-          'type' => \Elementor\Controls_Manager::TEXT,
-          'placeholder' => esc_html__( 'Titolo della sezione', 'custom-FBK-widget' ),
-        ]
-      );
+         $this->add_control(
+         'group-download_overtitle',
+         [
+            'label' => esc_html__( 'Sopratitolo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'placeholder' => esc_html__( 'Sopratitolo della sezione', 'custom-FBK-widget' ),
+         ]
+         );
 
-      $this->add_control(
-         'group-download_btn_label',
-          [
-             'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
-             'type' => \Elementor\Controls_Manager::TEXT,
-             'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
-             'separator' => 'before',
-          ]
-       );
+         $this->add_control(
+         'group-download_title',
+         [
+            'label' => esc_html__( 'Titolo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'placeholder' => esc_html__( 'Titolo della sezione', 'custom-FBK-widget' ),
+         ]
+         );
+
+         $this->add_control(
+            'group-download_btn_label',
+            [
+               'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::TEXT,
+               'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
+               'separator' => 'before',
+            ]
+         );
  
-       $this->add_control(
-          'group-download_btn_link',
-          [
-             'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
-             'type' => \Elementor\Controls_Manager::URL,
-             'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
-             'options' => [ 'url', 'is_external', 'nofollow' ],
-             'default' => [
-                'url' => '',
-                'is_external' => false,
-                'nofollow' => false,
-             ],
-             'label_block' => true,
-          ]
-       );
+         $this->add_control(
+            'group-download_btn_link',
+            [
+               'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::URL,
+               'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
+               'options' => [ 'url', 'is_external', 'nofollow' ],
+               'default' => [
+                  'url' => '',
+                  'is_external' => false,
+                  'nofollow' => false,
+               ],
+               'label_block' => true,
+            ]
+         );
+
+         $this->add_control(
+            'group-download_txt',
+            [
+               'label' => esc_html__( 'Paragrafo', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::WYSIWYG,
+               'placeholder' => esc_html__( 'Paragrafo di testo', 'custom-FBK-widget' ),
+               'label_block' => true,
+               'dynamic' => [
+                  'active' => true,
+               ],
+            ]
+         );
 
 		$this->end_controls_section();
 
@@ -193,6 +206,8 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
       $btn_label = $settings['group-download_btn_label'];
 		if ( ! empty( $settings['group-download_btn_link']['url'] ) ) { $this->add_link_attributes( 'group-download_btn_link', $settings['group-download_btn_link'] ); }
 
+      $text = $settings['group-download_txt'];
+
 		//REPEATER - Lista Download
       $repeater = $settings['group-download_downloads']
 		?>
@@ -230,6 +245,14 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
             </div>
          </div>
 
+         <?php if ( $text ) : ?>
+            <div class="row">
+               <div class="col-12">
+                  <div class="wysiwyg"><?php echo $text; ?></div>
+               </div>
+            </div>
+         <?php endif; ?>
+
          <?php if ($repeater) : ?>
 			   <div class="row download-list">
 
@@ -238,7 +261,7 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
                   $download_file = $repeater[$index]['group-download_downloads_file'];
 
                   if ( $download_file['url'] ) { ?>
-                     <div class="col-download col-12 col-md-6<?php if (!is_singular('documenti')) : echo " col-xl-4"; endif; ?>">
+                     <div class="col-download col-12 col-md-6<?php /*if (!is_singular('documenti')) : echo " col-xl-4"; endif;*/ ?> col-xl-4">
 
                         <a class="download-card" href="<?php echo $download_file['url']; ?> " target="_blank" rel="noopener noreferrer">
                            <div class="flex-wrapper">

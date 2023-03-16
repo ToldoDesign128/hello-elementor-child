@@ -4902,6 +4902,7 @@ nav.breadcrumps ul {
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  flex-wrap: wrap;
 }
 nav.breadcrumps ul:after {
   content: "";
@@ -5488,7 +5489,6 @@ footer .footer-info .lingua p {
   }
   .header__nav .header__content__nav .menu-item-wrapper .drop-down {
     background-color: #fff;
-    box-shadow: -50vw 0 #fff, 50vw 0 #fff;
     display: flex;
     position: absolute;
     left: 0;
@@ -5499,6 +5499,16 @@ footer .footer-info .lingua p {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease-in-out;
+  }
+  .header__nav .header__content__nav .menu-item-wrapper .drop-down:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100vw;
+    right: -100vw;
+    background-color: #fff;
+    z-index: -1;
   }
   .header__nav .header__content__nav .menu-item-wrapper .drop-down.dropdown-show {
     opacity: 1;
@@ -5783,11 +5793,6 @@ footer .footer-info .lingua p {
   color: #605e5c;
 }
 
-.fbk-cw-single.container .row,
-.fbk-cw-single .container .row {
-  max-width: 80rem;
-}
-
 .single.single-documenti,
 .single.single-comunicazioni {
   background-color: #fff;
@@ -5847,7 +5852,6 @@ footer .footer-info .lingua p {
 }
 .single-sub-hero h1 {
   color: #323130;
-  max-width: 80rem;
   margin-bottom: 2.8rem;
 }
 .single-sub-hero .single-sub-hero__cf {
@@ -6181,6 +6185,14 @@ footer .footer-info .lingua p {
   }
 }
 
+.fbk-cw-group-download .wysiwyg {
+  margin-bottom: 2.4rem;
+}
+@media (min-width: 992px) {
+  .fbk-cw-group-download .wysiwyg {
+    margin-bottom: 2.8rem;
+  }
+}
 .fbk-cw-group-download .col-download {
   margin-bottom: 1.6rem;
 }
@@ -6245,20 +6257,28 @@ footer .footer-info .lingua p {
   pointer-events: none;
 }
 
+.fbk-cw-group-link .wysiwyg {
+  margin-bottom: 2.4rem;
+}
 @media (min-width: 992px) {
-  .link-list .card {
+  .fbk-cw-group-link .wysiwyg {
+    margin-bottom: 2.8rem;
+  }
+}
+@media (min-width: 992px) {
+  .fbk-cw-group-link .link-list .card {
     min-height: 15.4rem;
     height: 100%;
   }
 }
-.link-list .card.card-secondary {
+.fbk-cw-group-link .link-list .card.card-secondary {
   grid-template-rows: auto 2fr auto;
 }
-.link-list .card.no-href {
+.fbk-cw-group-link .link-list .card.no-href {
   opacity: 0.32;
   cursor: not-allowed;
 }
-.link-list .link-card__url {
+.fbk-cw-group-link .link-list .link-card__url {
   align-self: end;
   font-size: 1.4rem;
 }

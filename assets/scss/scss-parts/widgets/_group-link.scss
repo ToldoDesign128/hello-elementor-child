@@ -1,21 +1,31 @@
-.link-list {
-   .card {
+.fbk-cw-group-link {
+   .wysiwyg {
+      margin-bottom: 2.4rem;
+
       @media #{$large} {
-         min-height: 15.4rem;
-         height: 100%;
-      }
-
-      &.card-secondary {
-         grid-template-rows: auto 2fr auto;
-      }
-
-      &.no-href {
-         opacity: 0.32;
-         cursor: not-allowed;
+         margin-bottom: 2.8rem;
       }
    }
-   .link-card__url {
-      align-self: end;
-      font-size: 1.4rem;
+
+   .link-list {
+      .card {
+         @media #{$large} {
+            min-height: 15.4rem;
+            height: 100%;
+         }
+
+         &.card-secondary {
+            grid-template-rows: auto 2fr auto;
+         }
+
+         &.no-href {
+            opacity: 0.32;
+            cursor: not-allowed;
+         }
+      }
+      .link-card__url {
+         align-self: end;
+         font-size: 1.4rem;
+      }
    }
 }

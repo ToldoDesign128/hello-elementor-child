@@ -112,7 +112,7 @@ class FBK_Elementor_Gallery extends \Elementor\Widget_Base {
             <div class="row">
                
                <?php foreach ($gallery as $img) : ?>
-                  <div class="col-6 col-md-4<?php if (!is_singular('documenti')) : echo " col-xl-3"; endif; ?>">
+                  <div class="col-6 col-md-4<?php /*if (!is_singular('documenti')) : echo " col-xl-3"; endif;*/ ?> col-xl-3">
                      <figure class="gallery-item">
                         <a data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="3f43f85" href="<?php echo $img['url']; ?>">
                            <img src="<?php echo $img['url']; ?>" alt="galleria immagini FBK">

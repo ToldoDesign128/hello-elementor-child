@@ -120,6 +120,19 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
          ]
       );
 
+      $this->add_control(
+         'group-link_txt',
+         [
+            'label' => esc_html__( 'Paragrafo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::WYSIWYG,
+            'placeholder' => esc_html__( 'Paragrafo di testo', 'custom-FBK-widget' ),
+            'label_block' => true,
+            'dynamic' => [
+               'active' => true,
+            ],
+         ]
+      );
+
 		$this->end_controls_section();
 
 
@@ -203,6 +216,8 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
 		$btn_label = $settings['group-link_btn_label'];
 		if ( ! empty( $settings['group-link_btn_link']['url'] ) ) { $this->add_link_attributes( 'group-link_btn_link', $settings['group-link_btn_link'] ); }
 
+      $text = $settings['group-link_txt'];
+
 		//REPEATER - Lista Link
       $repeater = $settings['group-link_links']
 		?>
@@ -240,6 +255,14 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
             </div>
          </div>
 
+         <?php if ( $text ) : ?>
+            <div class="row">
+               <div class="col-12">
+                  <div class="wysiwyg"><?php echo $text; ?></div>
+               </div>
+            </div>
+         <?php endif; ?>
+
 			<div class="link-list">
             <div class="row">
 
@@ -250,7 +273,7 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
                   if ( ! empty( $item['group-link_links_link']['url'] ) ) { $this->add_link_attributes( "link_{$index}", $item['group-link_links_link'] );
                      $removeChar = ["https://", "http://"];
                      ?>
-                     <div class="col-card col-6 col-lg-4<?php if (!is_singular('documenti')) : echo " col-xl-3"; endif; ?>">
+                     <div class="col-card col-6 col-lg-4<?php /*if (!is_singular('documenti')) : echo " col-xl-3"; endif;*/ ?> col-xl-3">
 
                         <a class="card card-secondary" <?php echo $this->get_render_attribute_string( "link_{$index}" ); ?>>
                            <span class="svg-wrapper">
@@ -275,7 +298,7 @@ class FBK_Elementor_GroupLink extends \Elementor\Widget_Base {
                      <?php
                   } else { 
                      ?>
-                     <div class="col-card col-6 col-lg-4<?php if (!is_singular('documenti')) : echo " col-xl-3"; endif; ?>">
+                     <div class="col-card col-6 col-lg-4<?php /*if (!is_singular('documenti')) : echo " col-xl-3"; endif;*/ ?> col-xl-3">
                         <a class="card card-secondary no-href">
                            <span class="svg-wrapper">
                               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
