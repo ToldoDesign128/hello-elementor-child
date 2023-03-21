@@ -262,7 +262,7 @@ function HT_css_soft_remove_menu() {
       /*hide Elementor Template*/
       .wp-admin #adminmenuwrap #menu-posts-elementor_library{display:none !important;}
       /*hide ACF*/
-      .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
+      // .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
       /*hide Tools*/
       .wp-admin #adminmenuwrap #menu-tools{display:none !important;}
       /*hide Widget*/
