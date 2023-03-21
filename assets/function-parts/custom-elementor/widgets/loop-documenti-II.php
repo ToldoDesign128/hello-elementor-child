@@ -25,7 +25,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
     * @return string Widget title.
     */
    public function get_title() {
-      return esc_html__( 'Documenti (livello II)', 'custom-FBK-widget' );
+      return esc_html__( 'Approfondimenti (livello II)', 'custom-FBK-widget' );
    }
 
    /**
@@ -71,7 +71,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
       $this->start_controls_section(
          'content_section',
          [
-            'label' => esc_html__( 'Stampa la lista dei documenti', 'custom-FBK-widget' ),
+            'label' => esc_html__( 'Stampa la lista degli approfondimenti', 'custom-FBK-widget' ),
             'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
          ]
       );
@@ -123,7 +123,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
             if ( $current_parent_page_ID == 0 ) : // se la pagina in cui è inserito il widget non è di secondo livello 
                ?>
                <h2>Attenzione!</h2>
-               <p>Questo widget <b>"Documenti livello II"</b> è utilizzabile solo nelle pagine di secondo livello.</p>
+               <p>Questo widget <b>"Approfondimenti livello II"</b> è utilizzabile solo nelle pagine di secondo livello.</p>
                <?php
             else :
 
@@ -146,7 +146,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                   <p>
                      <?php echo 'La pagina genitore "' . $current_parent_page->post_title . '" non è stata assegnata a nessuna categoria.'; ?>
                      <br>
-                     <?php echo 'Da Wordpress seleziona Documenti > Categorie >  { nome della categoria }  > Modifica > Assegna pagina > ' . $current_parent_page->post_title; ?>
+                     <?php echo 'Da Wordpress seleziona Approfondimenti > Categorie >  { nome della categoria }  > Modifica > Assegna pagina > ' . $current_parent_page->post_title; ?>
                   </p>
                   <?php
                endif;

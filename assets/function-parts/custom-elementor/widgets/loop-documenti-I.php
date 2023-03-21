@@ -25,7 +25,7 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Documenti (livello I)', 'custom-FBK-widget' );
+		return esc_html__( 'Approfondimenti (livello I)', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -89,9 +89,9 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
       $this->add_control(
          'selected_cat',
          [
-            'label' => esc_html__( 'Categoria Documenti', 'custom-FBK-widget' ),
+            'label' => esc_html__( 'Categoria Approfondimenti', 'custom-FBK-widget' ),
             'type' => \Elementor\Controls_Manager::SELECT,
-            'description' => esc_html__( 'Seleziona la categoria di documenti da visualizzare' ),
+            'description' => esc_html__( 'Seleziona la categoria di approfondimenti da visualizzare' ),
             'options' => $options,
          ]
       );
@@ -238,7 +238,7 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
             <div class="row">
                <div class="col-12">
                   <h2>Attenzione!</h2>
-                  <p>Questo widget <b>"Documenti livello I"</b> non è utilizzabile nei documenti e nelle comunicazioni.</p>
+                  <p>Questo widget <b>"Approfondimenti livello I"</b> non è utilizzabile nelle pagine singole di approfondimenti e comunicazioni.</p>
                </div>
             </div>
          </div>

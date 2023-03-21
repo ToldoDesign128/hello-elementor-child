@@ -76,6 +76,9 @@ jQuery(document).ready(function () {
       jQuery(".header__mobile-nav").toggleClass("mobile-active");
    });
 
+   // Remove mt on first h2 of single pages
+   jQuery(".single h2").first().css("margin-top", "0");
+
    //FAQs widget
    jQuery(".faq-container").click(function () {
       jQuery(this).toggleClass("faq-active");

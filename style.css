@@ -5755,8 +5755,7 @@ footer .footer-info .lingua p {
 }
 @media (min-width: 768px) {
   .sub-hero {
-    padding-top: 16rem;
-    padding-bottom: 12rem;
+    padding-top: 15rem;
   }
 }
 .sub-hero .breadcrumps {
@@ -5847,7 +5846,6 @@ footer .footer-info .lingua p {
 @media (min-width: 768px) {
   .single-sub-hero {
     padding-top: 16rem;
-    padding-bottom: 1.6rem;
   }
 }
 .single-sub-hero h1 {
