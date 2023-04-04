@@ -1,0 +1,17 @@
+.fbk-cw-group-card {
+   .wysiwyg {
+      margin-bottom: 2.4rem;
+
+      @media #{$large} {
+         margin-bottom: 2.8rem;
+      }
+   }
+
+   .card.card-primary:not([href]) {
+      cursor: not-allowed;
+   }
+
+   .card.card-primary p.excerpt {
+      -webkit-line-clamp: 8;
+   }
+}

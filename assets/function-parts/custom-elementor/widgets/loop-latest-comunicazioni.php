@@ -181,7 +181,7 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
             <div class="row">
                <div class="col-12">
                   <h2>Attenzione!</h2>
-                  <p>Questo widget <b>"Comunicazioni recenti"</b> non è utilizzabile nei documenti e nelle comunicazioni.</p>
+                  <p>Questo widget <b>"Comunicazioni recenti"</b> non è utilizzabile negli approfondimenti e nelle comunicazioni.</p>
                </div>
             </div>
          </div>
