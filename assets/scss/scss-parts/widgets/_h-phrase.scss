@@ -1,4 +1,10 @@
 .fbk-h-phrase {
+   .h-title {
+      margin-bottom: 1.6rem;
+      @media #{$large} {
+         margin-bottom: 2rem;
+      }
+   }
    .h-phrase {
       background-color: $color-light-primary;
       color: $color-dark-primary;

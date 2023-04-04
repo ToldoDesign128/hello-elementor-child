@@ -9,8 +9,14 @@
 
    .single-page-content {
       //widgets overwrite
+      .fbk-cw-group-card .card {
+         background-color: $color-fede;
+         &:hover {
+            background-color: $color-light-primary;
+         }
+      }
       .fbk-cw-cta {
-         background-color: $color-white;
+         background-color: $color-fede;
       }
       .fbk-h-code pre.h-code {
          background-color: $color-fede;

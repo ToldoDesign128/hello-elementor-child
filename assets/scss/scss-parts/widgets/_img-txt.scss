@@ -1,0 +1,62 @@
+.fbk-imgtxt {
+   margin-top: 1.6rem;
+   margin-bottom: 4.8rem;
+
+   figure {
+      img {
+         display: block;
+         max-height: 60vh;
+         @media #{$medium} {
+            max-height: 70vh;
+         }
+         @media #{$xlarge} {
+            max-height: 80vh;
+         }
+      }
+   }
+
+   .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
+      margin-top: 1.6rem;
+      @media #{$large} {
+         margin-top: 0;
+      }
+
+      h2 {
+         margin-bottom: 1.6rem;
+         @media #{$large} {
+            margin-bottom: 2rem;
+         }
+      }
+
+      a.button {
+         align-self: flex-start;
+         white-space: normal;
+         margin-top: 0.8rem;
+      }
+   }
+
+   &.img-s {
+      figure {
+         @media #{$large} {
+            margin-right: 4rem !important;
+         }
+         @media #{$xxlarge} {
+            margin-right: 8rem !important;
+         }
+      }
+   }
+   &.img-d {
+      figure {
+         @media #{$large} {
+            margin-left: 4rem !important;
+         }
+         @media #{$xxlarge} {
+            margin-left: 8rem !important;
+         }
+      }
+   }
+}

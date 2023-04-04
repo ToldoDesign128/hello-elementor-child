@@ -77,6 +77,15 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 		);
 
       $this->add_control(
+         'h_title',
+         [
+            'label' => esc_html__( 'Titolo', 'custom-FBK-widget' ),
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'placeholder' => esc_html__( 'Titolo della sezione', 'custom-FBK-widget' ),
+         ]
+      );
+
+      $this->add_control(
          'h-phrase',
          [
             'label' => esc_html__( 'Frase in evidenza', 'custom-FBK-widget' ),
@@ -105,12 +114,18 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		
-    //Content
-		$hphrase = $settings['h-phrase'];
+      //Content
+      $title = $settings['h_title'];
+      $hphrase = $settings['h-phrase'];
 		
 		if ($hphrase) : ?>
          <div class="fbk-cw fbk-cw-single fbk-h-phrase container">
             <div class="row">
+               <div class="col-12">
+                  <h2 class="h-title">
+                     <?php echo $title; ?>
+                  </h2>
+               </div>
                <div class="col-12">
                   <p class="h-phrase">
                      <span><?php echo $hphrase; ?></span>

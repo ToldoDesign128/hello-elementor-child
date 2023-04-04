@@ -70,14 +70,18 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   // Gruppo di download 
   require_once( __DIR__ . '/widgets/group-download.php' );
   $widgets_manager->register( new \FBK_Elementor_GroupDownload() );
+
+  // Gruppo di card
+  require_once( __DIR__ . '/widgets/group-card.php' );
+  $widgets_manager->register( new \FBK_Elementor_GroupCard() );
+  
+   // Contacts
+   require_once( __DIR__ . '/widgets/contacts.php' );
+   $widgets_manager->register( new \FBK_Elementor_Contacts() );
   
    // GoogleCalendar
    require_once( __DIR__ . '/widgets/google-calendar.php' );
    $widgets_manager->register( new \FBK_Elementor_GoogleCalendar() );
-
-  // Contacts
-  require_once( __DIR__ . '/widgets/contacts.php' );
-  $widgets_manager->register( new \FBK_Elementor_Contacts() );
 
 
   /* FBK - Loops
@@ -123,13 +127,21 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   require_once( __DIR__ . '/widgets/gallery.php' );
   $widgets_manager->register( new \FBK_Elementor_Gallery() );
   
-  // Youtube video
-  require_once( __DIR__ . '/widgets/youtube-video.php' );
-  $widgets_manager->register( new \FBK_Elementor_YoutubeVideo() );
-  
+   // ImageText
+   require_once( __DIR__ . '/widgets/img-txt.php' );
+   $widgets_manager->register( new \FBK_Elementor_ImageText() );
+    
    // Button
    require_once( __DIR__ . '/widgets/btn.php' );
    $widgets_manager->register( new \FBK_Elementor_Button() );
+  
+  // iframe
+  require_once( __DIR__ . '/widgets/iframe.php' );
+  $widgets_manager->register( new \FBK_Elementor_iframe() );
+  
+  // Youtube video
+  require_once( __DIR__ . '/widgets/youtube-video.php' );
+  $widgets_manager->register( new \FBK_Elementor_YoutubeVideo() );
 
   // HighlightedPhrase
   require_once( __DIR__ . '/widgets/h-phrase.php' );

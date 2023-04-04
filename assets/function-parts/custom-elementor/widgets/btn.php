@@ -76,67 +76,67 @@ class FBK_Elementor_Button extends \Elementor\Widget_Base {
 			]
 		);
 
-      $this->add_control(
-        'button-p_btn_label',
-         [
-            'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
-            'separator' => 'before',
-         ]
-      );
+         $this->add_control(
+         'button-p_btn_label',
+            [
+               'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::TEXT,
+               'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
+               'separator' => 'before',
+            ]
+         );
 
-      $this->add_control(
-         'button-p_btn_link',
-         [
-            'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
-            'type' => \Elementor\Controls_Manager::URL,
-            'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
-            'options' => [ 'url', 'is_external', 'nofollow' ],
-            'default' => [
-               'url' => '',
-               'is_external' => false,
-               'nofollow' => false,
-            ],
-            'label_block' => true,
-         ]
-      );
+         $this->add_control(
+            'button-p_btn_link',
+            [
+               'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::URL,
+               'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
+               'options' => [ 'url', 'is_external', 'nofollow' ],
+               'default' => [
+                  'url' => '',
+                  'is_external' => false,
+                  'nofollow' => false,
+               ],
+               'label_block' => true,
+            ]
+         );
 
 		$this->end_controls_section();
 
       $this->start_controls_section(
-			'content_section',
+			'other_section',
 			[
 				'label' => esc_html__( 'Pulsante Secondario', 'custom-FBK-widget' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
-      $this->add_control(
-        'button-s_btn_label',
-         [
-            'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
-            'separator' => 'before',
-         ]
-      );
+         $this->add_control(
+         'button-s_btn_label',
+            [
+               'label' => esc_html__( 'Pulsante — Testo', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::TEXT,
+               'placeholder' => esc_html__( 'Testo del pulsante', 'custom-FBK-widget' ),
+               'separator' => 'before',
+            ]
+         );
 
-      $this->add_control(
-         'button-s_btn_link',
-         [
-            'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
-            'type' => \Elementor\Controls_Manager::URL,
-            'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
-            'options' => [ 'url', 'is_external', 'nofollow' ],
-            'default' => [
-               'url' => '',
-               'is_external' => false,
-               'nofollow' => false,
-            ],
-            'label_block' => true,
-         ]
-      );
+         $this->add_control(
+            'button-s_btn_link',
+            [
+               'label' => esc_html__( 'Pulsante — Link', 'custom-FBK-widget' ),
+               'type' => \Elementor\Controls_Manager::URL,
+               'placeholder' => esc_html__( 'https://your-link.com', 'custom-FBK-widget' ),
+               'options' => [ 'url', 'is_external', 'nofollow' ],
+               'default' => [
+                  'url' => '',
+                  'is_external' => false,
+                  'nofollow' => false,
+               ],
+               'label_block' => true,
+            ]
+         );
 
 		$this->end_controls_section();
 	}

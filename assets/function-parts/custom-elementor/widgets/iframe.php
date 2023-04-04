@@ -1,10 +1,10 @@
 <?php
 /**
- * YoutubeVideo section
+ * iframe section
  *
  * @since 1.0.0
  */
-class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base { 
+class FBK_Elementor_iframe extends \Elementor\Widget_Base { 
   
    /**
 	 * Get widget name.
@@ -14,7 +14,7 @@ class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'fbk-youtube-video';
+		return 'fbk-iframe';
 	}
 
 	/**
@@ -25,7 +25,7 @@ class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Youtube Video', 'custom-FBK-widget' );
+		return esc_html__( 'iframe', 'custom-FBK-widget' );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-youtube';
+		return 'eicon-code-highlight';
 	}
 
    /**
@@ -58,7 +58,7 @@ class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base {
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'youtube video', 'fbk', 'howto' ];
+		return [ 'iframe', 'fbk', 'howto' ];
 	}
 
 	/**
@@ -79,9 +79,9 @@ class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base {
          $this->add_control(
             'iframe',
             [
-               'label' => esc_html__( 'Youtube iframe', 'custom-FBK-widget' ),
+               'label' => esc_html__( 'iframe', 'custom-FBK-widget' ),
                'type' => \Elementor\Controls_Manager::CODE,
-               'description' => esc_html__( 'Incolla qui l\'iframe del video youtube che trovi in Condividi > Incorpora > Copia', 'custom-FBK-widget' ),
+               'description' => esc_html__( 'Incolla qui l\'iframe da incorporare nella pagina', 'custom-FBK-widget' ),
 				   'language' => 'html',
             ]
          );
@@ -107,26 +107,11 @@ class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base {
       //Content
 		$iframe = $settings['iframe'];
 		
-		if ( $iframe ) : 
-         // Use preg_match to find iframe src.
-         preg_match('/src="(.+?)"/', $iframe, $matches);
-         $src = $matches[1];
-         // Add extra parameters to src and replace HTML.
-         $params = array(
-            'controls'  => 0,
-            'hd'        => 1,
-            'autohide'  => 1
-         );
-         $new_src = add_query_arg($params, $src);
-         $iframe = str_replace($src, $new_src, $iframe);
-         // Add extra attributes to iframe HTML.
-         $attributes = 'frameborder="0"';
-         $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
-         ?>
+		if ( $iframe ) : ?>
 
-			<div class="fbk-cw fbk-cw-single fbk-cw-youtube-video container">
+			<div class="fbk-cw fbk-cw-single fbk-cw-iframe container">
             <div class="row">
-               <div class="col-12 col-lg-10 col-xl-8">
+               <div class="col-12">
                   <div class="embed-container">
                      <?php echo $iframe; ?>
                   </div>

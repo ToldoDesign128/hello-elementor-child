@@ -25,7 +25,7 @@ class FBK_Elementor_HighlightedCode extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Codice', 'custom-FBK-widget' );
+		return esc_html__( 'Visualizza codice', 'custom-FBK-widget' );
 	}
 
 	/**
