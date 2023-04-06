@@ -76,8 +76,19 @@ jQuery(document).ready(function () {
       jQuery(".header__mobile-nav").toggleClass("mobile-active");
    });
 
-   // Remove mt on first h2 of single pages
-   jQuery(".single h2").first().css("margin-top", "0");
+   // Remove mt on first widget of single pages
+   jQuery(".single .elementor-section")
+      .first()
+      .find(".fbk-cw h2")
+      .css("margin-top", "0");
+   jQuery(".single .elementor-section")
+      .first()
+      .find(".fbk-cw h3")
+      .css("margin-top", "0");
+   jQuery(".single .elementor-section")
+      .first()
+      .find(".fbk-cw h4")
+      .css("margin-top", "0");
 
    //FAQs widget
    jQuery(".faq-container").click(function () {

@@ -5856,11 +5856,19 @@ footer .footer-info .lingua p {
     padding-top: 16rem;
   }
 }
+.single-sub-hero.mb-section {
+  margin-bottom: 5.6rem;
+}
+@media (min-width: 992px) {
+  .single-sub-hero.mb-section {
+    margin-bottom: 7.2rem;
+  }
+}
 .single-sub-hero h1 {
   color: #323130;
-  margin-bottom: 2.8rem;
 }
 .single-sub-hero .single-sub-hero__cf {
+  margin-top: 2.4rem;
   display: flex;
   gap: 2rem;
   flex-direction: column;
