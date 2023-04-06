@@ -9,13 +9,21 @@
       // padding-bottom: 1.6rem;
    }
 
+   &.mb-section {
+      margin-bottom: 5.6rem;
+
+      @media #{$large} {
+         margin-bottom: 7.2rem;
+      }
+   }
+
    h1 {
       color: $color-txt-primary;
       // max-width: $width-limiter;
-      margin-bottom: 2.8rem;
    }
 
    .single-sub-hero__cf {
+      margin-top: 2.4rem;
       display: flex;
       gap: 2rem;
       flex-direction: column;
