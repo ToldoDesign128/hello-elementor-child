@@ -5602,6 +5602,38 @@ footer .footer-info .lingua p {
     opacity: 0.72;
   }
 }
+.header__nav .header__content .lingua {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header__nav .header__content .lingua .wpml-custom-switcher {
+  text-align: right;
+}
+.header__nav .header__content .lingua .wpml-custom-switcher .wpml-ls-legacy-list-horizontal {
+  padding: 0;
+  border: 0;
+}
+.header__nav .header__content .lingua .wpml-custom-switcher li.wpml-ls-current-language a {
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+.header__nav .header__content .lingua .wpml-custom-switcher li a {
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding: 0.8rem 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+.header__nav .header__content .lingua .wpml-custom-switcher li a:hover {
+  background-color: #fff;
+  color: #1254a2;
+  font-weight: 500;
+}
+.header__nav .header__content .lingua p {
+  color: rgba(255, 255, 255, 0.88);
+}
 .header__nav .header__content__hamburger {
   display: flex;
 }

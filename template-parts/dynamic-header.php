@@ -30,8 +30,8 @@
                      if ($menu_item_parent == 0) :
                         $page_title = $menu_item->title;
                         $page_url = $menu_item->url;
-                        $page_ID = $menu_item->ID; 
-                        ?>
+                        $page_ID = $menu_item->ID;
+                  ?>
                         <div class="menu-item-wrapper">
 
                            <?php $check_children = array();
@@ -55,21 +55,22 @@
                                  </div>
                                  <div class="pointer">
                                     <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M7 0L14 8H0L7 0Z"/>
+                                       <path d="M7 0L14 8H0L7 0Z" />
                                     </svg>
                                  </div>
                                  <div class="backdrop"></div>
                               </a>
-                              <?php if (!empty($header_children)) : 
+                              <?php if (!empty($header_children)) :
                                  $check_button = array();
                                  foreach ($header_children as $child) :
                                     $child_menu_item_parent = $child->menu_item_parent;
-                                    if ($child_menu_item_parent == $page_ID && $child->object == 'custom') : 
+                                    if ($child_menu_item_parent == $page_ID && $child->object == 'custom') :
                                        $check_button[] = $child;
                                     endif;
                                  endforeach;
-                                 ?>
-                                 <div class="drop-down<?php if (!empty($check_button)) : echo ' has-button'; endif; ?>">
+                              ?>
+                                 <div class="drop-down<?php if (!empty($check_button)) : echo ' has-button';
+                                                      endif; ?>">
                                     <div class="drop-down__content">
                                        <?php foreach ($header_children as $child) :
                                           $child_menu_item_parent = $child->menu_item_parent;
@@ -87,14 +88,14 @@
                                                       <a href="<?php echo $nipote->url ?>" class="header-nipote">
                                                          <?php echo $nipote->title ?>
                                                       </a>
-                                                   <?php endif;
+                                                <?php endif;
                                                 endforeach; ?>
                                              </div>
-                                             
-                                          <?php endif;
+
+                                       <?php endif;
                                        endforeach; ?>
                                     </div>
-                                    
+
                                     <?php if (!empty($check_button)) : ?>
                                        <div class="drop-down__button">
                                           <?php foreach ($header_children as $child) :
@@ -104,19 +105,19 @@
                                                    <a href="<?php echo $child->url ?>">
                                                       <?php echo $child->title ?>
                                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z"/>
+                                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" />
                                                       </svg>
                                                    </a>
                                                 </div>
-                                             <?php endif;
+                                          <?php endif;
                                           endforeach; ?>
                                        </div>
                                     <?php endif; ?>
 
                                  </div>
 
-                              <?php endif; 
-                              
+                              <?php endif;
+
                            // se la pagina di primo livello non ha figli
                            else : ?>
                               <a href="<?php echo $page_url ?>" class="header-parent">
@@ -125,9 +126,9 @@
                                  </div>
                               </a>
                            <?php endif; ?>
-                           
+
                         </div>
-                     <?php endif;
+                  <?php endif;
                   endforeach; ?>
                </nav>
 
@@ -136,6 +137,12 @@
                      <path d="M27.0978 25.2449H26.1893L25.8673 24.9443C26.9943 23.6753 27.6729 22.0278 27.6729 20.2356C27.6729 16.2393 24.3263 13 20.1978 13C16.0692 13 12.7227 16.2393 12.7227 20.2356C12.7227 24.2319 16.0692 27.4712 20.1978 27.4712C22.0493 27.4712 23.7513 26.8145 25.0623 25.7236L25.3728 26.0353V26.9147L31.1229 32.4694L32.8364 30.8108L27.0978 25.2449V25.2449ZM20.1978 25.2449C17.3342 25.2449 15.0227 23.0074 15.0227 20.2356C15.0227 17.4638 17.3342 15.2263 20.1978 15.2263C23.0613 15.2263 25.3728 17.4638 25.3728 20.2356C25.3728 23.0074 23.0613 25.2449 20.1978 25.2449Z" fill="#FFF" />
                   </svg>
                </a>
+
+               <div class="lingua">
+                  <div class="wpml-custom-switcher">
+                     <?php do_action('wpml_add_language_selector'); ?>
+                  </div>
+               </div>
 
                <div class="header__content__hamburger">
                   <button class="hamburger hamburger--collapse" type="button">
@@ -161,11 +168,11 @@
                      if ($menu_item_parent == 0) :
                         $page_title = $menu_item->title;
                         $page_url = $menu_item->url;
-                        ?>
+                  ?>
                         <li class="mobile-menu-item">
                            <a href="<?php echo $page_url; ?>"><?php echo $page_title; ?></a>
                         </li>
-                     <?php endif;
+                  <?php endif;
                   endforeach; ?>
                </ul>
             </div>
