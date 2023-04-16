@@ -87,17 +87,21 @@ function register_fbk_custom_widgets( $widgets_manager ) {
   /* FBK - Loops
   ----------------------*/
   
-  // DocumentiI
-  require_once( __DIR__ . '/widgets/loop-documenti-I.php' );
-  $widgets_manager->register( new \FBK_Elementor_LoopDocumentiI() );
+   // DocumentiI
+   require_once( __DIR__ . '/widgets/loop-documenti-I.php' );
+   $widgets_manager->register( new \FBK_Elementor_LoopDocumentiI() );
+   
+   // DocumentiII
+   require_once( __DIR__ . '/widgets/loop-documenti-II.php' );
+   $widgets_manager->register( new \FBK_Elementor_LoopDocumentiII() );
   
-  // DocumentiII
-  require_once( __DIR__ . '/widgets/loop-documenti-II.php' );
-  $widgets_manager->register( new \FBK_Elementor_LoopDocumentiII() );
-  
-    // Comunicazioni
-    require_once( __DIR__ . '/widgets/loop-latest-comunicazioni.php' );
-    $widgets_manager->register( new \FBK_Elementor_LoopComunicazioni() );
+   // Latest Comunicazioni
+   require_once( __DIR__ . '/widgets/loop-latest-comunicazioni.php' );
+   $widgets_manager->register( new \FBK_Elementor_LoopLatestComunicazioni() );
+
+   // Comunicazioni
+   require_once( __DIR__ . '/widgets/loop-comunicazioni.php' );
+   $widgets_manager->register( new \FBK_Elementor_LoopComunicazioni() );
   
 
 

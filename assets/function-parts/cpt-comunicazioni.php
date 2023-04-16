@@ -5,12 +5,12 @@ function HT_custom_comunicazioni() {
     register_post_type( 'comunicazioni',
         array(
             'labels'                =>          array(
-                'name'              =>          'Comunicazioni', //nome principale nella sidebar
+                'name'              =>          'Comunicazioni',
                 'singular_name'     =>          'Comunicazione',
-                'all_items'         =>          'Tutte le comunicazioni', //nome link per visualizzare tutti i post
-                'add_new'           =>          'Aggiungi nuova comunicazione', //nome link per aggiungere nuova post
-                'add_new_item'      =>          'Aggiungi nuova  comunicazione', //titolo della pagina di aggiunta di un nuova post
-                'edit_item'         =>          'Modifica comunicazione', //titolo della pagina di aggiunta di un nuova post
+                'all_items'         =>          'Tutte le comunicazioni', 
+                'add_new'           =>          'Aggiungi nuova comunicazione',
+                'add_new_item'      =>          'Aggiungi nuova comunicazione', 
+                'edit_item'         =>          'Modifica comunicazione', 
                 'new_item'          =>          'Nuova comunicazione',
                 'view_item'         =>          'Visualizza comunicazione',
                 'search_items'      =>          'Cerca',
@@ -57,8 +57,8 @@ function HT_comunicazioni_taxonomies() {
             'hierarchical' => true,
             'show_admin_column' => true,
             'show_in_rest' => true,
-            'show_in_quick_edit'         => false,
-            'meta_box_cb'                => false,
+            // 'show_in_quick_edit'         => false,
+            // 'meta_box_cb'                => false,
         )
     );
 

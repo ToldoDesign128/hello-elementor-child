@@ -122,7 +122,7 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
 
 
 //ADD custom admin column for Comunicazioni Categorie
-add_filter('manage_comunicazioni_posts_columns', 'filter_comunicazioni_custom_columns'); //add custom col
+/*add_filter('manage_comunicazioni_posts_columns', 'filter_comunicazioni_custom_columns'); //add custom col
 function filter_comunicazioni_custom_columns($columns) {
    $columns['comunicazioni_tax'] = 'Categoria';
    return $columns;
@@ -139,7 +139,7 @@ function action_comunicazioni_custom_columns($column) {
          echo '—';
       endif;
    }
-}
+}*/
 
 //ADD custom admin column for Documenti in Evidenza
 add_filter('manage_documenti_posts_columns', 'filter_documenti_custom_columns'); //add custom col
@@ -151,6 +151,24 @@ add_action('manage_documenti_posts_custom_column',  'action_documenti_custom_col
 function action_documenti_custom_columns($column) {
    global $post;
    if($column == 'documenti_tax') {
+      $IDfield = get_fields($post->ID);
+      if ( $IDfield && is_array($IDfield) ) :
+         $Stickyfield = $IDfield['cpt_in_evidenza'];
+         if ($Stickyfield) : echo "In evidenza"; endif;
+      endif;
+   }
+}
+
+//ADD custom admin column for Comunicazioni in Evidenza
+add_filter('manage_comunicazioni_posts_columns', 'filter_comunicazioni_custom_columns'); //add custom col
+function filter_comunicazioni_custom_columns($columns) {
+   $columns['comunicazioni_tax'] = ' ';
+   return $columns;
+}
+add_action('manage_comunicazioni_posts_custom_column',  'action_comunicazioni_custom_columns'); //add ACF data to custom col rows
+function action_comunicazioni_custom_columns($column) {
+   global $post;
+   if($column == 'comunicazioni_tax') {
       $IDfield = get_fields($post->ID);
       if ( $IDfield && is_array($IDfield) ) :
          $Stickyfield = $IDfield['cpt_in_evidenza'];
@@ -286,6 +304,15 @@ function NP_css_custom_categories() {
    </style>';
 }
 add_action('wp_before_admin_bar_render', 'NP_css_custom_categories');
+
+/*Remove Add category button inside Gutenberg
+--------------------------------------*/
+function NP_custom_gb_categories(){
+   echo '<style>
+      .wp-admin .postbox-container #documenti_taxdiv .inside #documenti_tax-adder, .wp-admin .postbox-container #comunicazioni_taxdiv .inside #comunicazioni_tax-adder{display:none !important;} 
+   </style>';
+}
+add_action( 'admin_head', 'NP_custom_gb_categories' );
 
 /*Remove Personalizzate from Theme page
 --------------------------------------*/

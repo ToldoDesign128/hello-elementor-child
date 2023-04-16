@@ -5,12 +5,12 @@ function HT_custom_documenti() {
     register_post_type( 'documenti',
         array(
             'labels'                =>          array(
-                'name'              =>          'Approfondimenti', //nome principale nella sidebar
+                'name'              =>          'Approfondimenti',
                 'singular_name'     =>          'Approfondimento',
-                'all_items'         =>          'Tutti', //nome link per visualizzare tutti i post
-                'add_new'           =>          'Aggiungi nuovo', //nome link per aggiungere nuovo post
-                'add_new_item'      =>          'Aggiungi nuovo ', //titolo della pagina di aggiunta di un nuovo post
-                'edit_item'         =>          'Modifica', //titolo della pagina di aggiunta di un nuovo post
+                'all_items'         =>          'Tutti',
+                'add_new'           =>          'Aggiungi nuovo',
+                'add_new_item'      =>          'Aggiungi nuovo ',
+                'edit_item'         =>          'Modifica',
                 'new_item'          =>          'Nuovo',
                 'view_item'         =>          'Visualizza',
                 'search_items'      =>          'Cerca',

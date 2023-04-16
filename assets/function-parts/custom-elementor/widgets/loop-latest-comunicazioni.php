@@ -1,10 +1,10 @@
 <?php
 /**
- * Comunicazioni section
+ * Latest Comunicazioni section
  *
  * @since 1.0.0
  */
-class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base { 
+class FBK_Elementor_LoopLatestComunicazioni extends \Elementor\Widget_Base { 
   
   /**
 	 * Get widget name.
@@ -14,7 +14,7 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'fbk-loop-comunicazioni';
+		return 'fbk-loop-latest-comunicazioni';
 	}
 
 	/**
@@ -127,7 +127,7 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
                   <h2><?php echo $title; ?></h2>
                </div>
                <div>
-                  <a href="<?php echo get_post_type_archive_link('comunicazioni'); ?>" class="button button-primary">Tutte le comunicazioni<span class="svg-wrapper">
+                  <a href="<?php echo get_post_type_archive_link('comunicazioni'); ?>" class="button button-primary"><?php _e('Tutte le comunicazioni', 'howto'); ?><span class="svg-wrapper">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
                         </svg>
@@ -148,7 +148,7 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
                <div class="row latest-loop">
                   <?php while ( $the_comunicazioni_query->have_posts() ) : $the_comunicazioni_query->the_post(); 
                      $cpt_in_evidenza = get_field('cpt_in_evidenza');
-                     $cpt_comunicazioni_taxonomy = get_field('cpt_comunicazioni_taxonomy');
+                     // $cpt_comunicazioni_taxonomy = get_field('cpt_comunicazioni_taxonomy');
                      $single_doc_excerpt = get_field('single_doc_excerpt');
                      ?>
                      <div class="col-card col-12 col-lg-6">
@@ -161,7 +161,7 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
                            </span>
                            <div class="content">
                               <p class="meta">
-                                 <span class="label_date_cat"><?php echo get_the_date('j F Y'); ?><?php if ($cpt_comunicazioni_taxonomy) : ?> — <?php echo $cpt_comunicazioni_taxonomy->name; endif; ?></span>
+                                 <span class="label_date_cat"><?php echo get_the_date('j F Y'); ?><?php /*if ($cpt_comunicazioni_taxonomy) : ?> — <?php echo $cpt_comunicazioni_taxonomy->name; endif;*/ ?></span>
                                  <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span><?php endif; ?>
                               </p>
                               <p class="h3-style"><?php echo the_title(); ?></p>
