@@ -122,14 +122,14 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
          <div class="fbk-cw fbk-cw-single fbk-h-phrase container">
             <div class="row">
                <div class="col-12">
-                  <h2 class="h-title">
-                     <?php echo $title; ?>
-                  </h2>
-               </div>
-               <div class="col-12">
-                  <p class="h-phrase">
-                     <span><?php echo $hphrase; ?></span>
-                  </p>
+                  <div class="h-container">
+                     <h3 class="h-title">
+                        <?php echo $title; ?>
+                     </h3>
+                     <p class="h-phrase">
+                        <span><?php echo $hphrase; ?></span>
+                     </p>
+                  </div>
                </div>
             </div>
          </div>

@@ -1,0 +1,35 @@
+.filter-tips {
+   margin-bottom: 0.8rem;
+   @media #{$large} {
+      margin-bottom: 1.2rem;
+   }
+}
+
+.filter-chips {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 1rem;
+   margin-bottom: 4rem;
+   @media #{$large} {
+      gap: 1.5rem;
+   }
+
+   .filter-chip {
+      background-color: $color-white;
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+      &.current-filter-chip {
+         background-color: rgba($color-txt-secondary, 0.1);
+         opacity: 0.5;
+         pointer-events: none;
+      }
+
+      &:hover {
+         background-color: $color-light-primary;
+         color: $color-dark-primary;
+      }
+   }
+}

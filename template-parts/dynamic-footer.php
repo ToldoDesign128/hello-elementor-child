@@ -6,16 +6,20 @@
          foreach ($footer_menu_items as $menu_item) : 
             $page_title = $menu_item->title;
             $page_url = $menu_item->url;
+            $page_id = $menu_item->object_id;
+            $current_id = get_the_ID();
             $page_children = $menu_item->item_children;
             ?>
             <div class="col-12 col-sm-6 col-md-4 footer-menu-list">
-               <a href="<?php echo $page_url ?>" class="footer-parent"><?php echo $page_title ?></a>
+               <a href="<?php echo $page_url ?>" class="footer-parent<?php if($page_id == $current_id): echo ' current-footer'; endif; ?>"><?php echo $page_title ?></a>
                <?php if (!empty($page_children)) :
                   foreach ($page_children as $child_item) : 
                      $child_title = $child_item->title;
                      $child_url = $child_item->url;
+                     $child_id = $child_item->object_id;
+                     // $current_id = get_the_ID();
                      ?>
-                     <a href="<?php echo $child_url ?>" class="footer-child"><?php echo $child_title ?></a>
+                     <a href="<?php echo $child_url ?>" class="footer-child<?php if($child_id == $current_id): echo ' current-footer'; endif; ?>"><?php echo $child_title; ?></a>
                   <?php endforeach; 
                endif; ?>
             </div>

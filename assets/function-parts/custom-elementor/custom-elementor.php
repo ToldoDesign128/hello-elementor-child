@@ -333,6 +333,52 @@ if ( ! current_user_can('administrator')) :
       </style>';
    }
    add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor_for_not_admin' );
+else: //rimuovo anche per gli admin alcuni widget di default
+   function admin_remove_unused_widgets( $widgets_manager ) {
+      $widgets_to_unregister = [
+         //Base
+         'button',
+         'icon',
+
+         //Generale
+         'star-rating',
+         'image-carousel',
+         'image-gallery',
+         'social-icons',
+         'alert',
+         'audio',
+         'menu-anchor',
+         'sidebar',
+         'read-more'
+
+         // wp widgets ----------------- //
+         ,'wp-widget-pages'
+         ,'wp-widget-archives'
+         ,'wp-widget-media_audio'
+         ,'wp-widget-media_image'
+         ,'wp-widget-media_gallery'
+         ,'wp-widget-media_video'
+         ,'wp-widget-meta'
+         ,'wp-widget-search'
+         ,'wp-widget-text'
+         ,'wp-widget-categories'
+         ,'wp-widget-recent-posts'
+         ,'wp-widget-recent-comments'
+         ,'wp-widget-rss'
+         ,'wp-widget-tag_cloud'
+         ,'wp-widget-nav_menu'
+         ,'wp-widget-custom_html'
+         ,'wp-widget-polylang'
+         ,'wp-widget-calendar'
+         ,'wp-widget-elementor-library'
+         ,'wp-widget-block'
+      ];
+
+      foreach ( $widgets_to_unregister as $widget ) {
+         $widgets_manager->unregister( $widget );
+      }
+   }
+   add_action( 'elementor/widgets/register', 'admin_remove_unused_widgets' );
 endif;
 
 //custom CSS in Elementor editor for non admin users

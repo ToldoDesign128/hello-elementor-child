@@ -1,4 +1,5 @@
 .mb-section {
+   //viene ridotto nelle single comunicazioni e doc
    margin-bottom: 5.6rem;
 
    @media #{$large} {
@@ -7,3 +8,39 @@
 }
 
 $width-limiter: 80rem;
+
+// Container for Default Elementor Widget
+.elementor-widget-image,
+.elementor-widget-heading,
+.elementor-widget-text-editor,
+.elementor-widget-video,
+.elementor-widget-divider,
+.elementor-widget-google_maps,
+.elementor-widget-image-box,
+.elementor-widget-icon-list,
+.elementor-widget-counter,
+.elementor-widget-progress,
+.elementor-widget-testimonial,
+.elementor-widget-tabs,
+.elementor-widget-accordion,
+.elementor-widget-toggle {
+   // background-color: red;
+   padding-inline: 7.5px;
+   margin-inline: auto;
+   width: 100%;
+   @media #{$xsmall} {
+      max-width: 540px;
+   }
+   @media #{$medium} {
+      max-width: 720px;
+   }
+   @media #{$large} {
+      max-width: 960px;
+   }
+   @media #{$xlarge} {
+      max-width: 1140px;
+   }
+   @media (min-width: 1400px) {
+      max-width: 1320px;
+   }
+}

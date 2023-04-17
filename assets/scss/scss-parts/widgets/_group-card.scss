@@ -8,10 +8,10 @@
    }
 
    .card.card-primary:not([href]) {
-      cursor: not-allowed;
+      pointer-events: none;
    }
 
    .card.card-primary p.excerpt {
-      -webkit-line-clamp: 8;
+      display: block;
    }
 }

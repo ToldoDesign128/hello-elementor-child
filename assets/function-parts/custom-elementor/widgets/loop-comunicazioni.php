@@ -137,11 +137,9 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
             'parent' => 0, //only parent cat
             'hide_empty' => true, //only parent cat with at least one post
          ) );
-         // var_dump($parent_cats);
          foreach ( $parent_cats as $key => $parent_cat ) {
             $options[$parent_cat->term_id] = $parent_cat->name;
          }
-         // var_dump($options);
          $this->add_control(
             'selected_cat',
             [
@@ -178,88 +176,74 @@ class FBK_Elementor_LoopComunicazioni extends \Elementor\Widget_Base {
       $btn_label = $settings['loop-comunicazioni_btn_label'];
 		if ( ! empty( $settings['loop-comunicazioni_btn_link']['url'] ) ) { $this->add_link_attributes( 'loop-comunicazioni_btn_link', $settings['loop-comunicazioni_btn_link'] ); }
       $selected_cat_id = $settings['selected_cat'];
+      ?>
 
-		// if ( !is_singular( array( 'documenti', 'comunicazioni' ) ) ) : ?>
+      <section class="fbk-cw fbk-cw-group-link container mb-section">
 
-         <section class="fbk-cw fbk-cw-group-link container mb-section">
-
-            <div class="section-header">
-               <div class="content">
-                  <p class="overtitle"><?php echo $overtitle; ?></p>
-                  <h2><?php echo $title; ?></h2>
-               </div>
-               <div>
-                  <?php if ($btn_label) : ?>
-                     <a <?php echo $this->get_render_attribute_string( 'loop-comunicazioni_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
-                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
-                           </svg>
-                        </span>
-                     </a>
-                  <?php endif; ?>
-               </div>
+         <div class="section-header">
+            <div class="content">
+               <p class="overtitle"><?php echo $overtitle; ?></p>
+               <h2><?php echo $title; ?></h2>
             </div>
-
-            <?php $args = array( 
-               'post_status'     =>    'publish',
-               'orderby'         =>    'date',
-               'order'           =>    'DESC',
-               'post_type'       =>    'comunicazioni',
-               'posts_per_page'  =>    4,
-               'tax_query'       =>    array(
-                  array(
-                     'taxonomy'           =>    $cpt_tax,
-                     'field'              =>    'term_id',
-                     'terms'              =>    $selected_cat_id,
-                     'operator'           =>    'IN',
-                  ),
-               ),
-            );
-            $the_comunicazioni_query = new WP_Query( $args );
-            if ( $the_comunicazioni_query->have_posts() ) : ?>
-               <div class="row latest-loop">
-                  <?php while ( $the_comunicazioni_query->have_posts() ) : $the_comunicazioni_query->the_post(); 
-                     $cpt_in_evidenza = get_field('cpt_in_evidenza');
-                     $single_doc_excerpt = get_field('single_doc_excerpt');
-                     ?>
-                     <div class="col-card col-12 col-lg-6">
-
-                        <a class="card card-primary" href="<?php the_permalink(); ?>">
-                           <span class="svg-wrapper">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
-                              </svg>
-                           </span>
-                           <div class="content">
-                              <p class="meta">
-                                 <span class="label_date_cat"><?php echo get_the_date('j F Y'); ?></span>
-                                 <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span><?php endif; ?>
-                              </p>
-                              <p class="h3-style"><?php echo the_title(); ?></p>
-                              <p class="excerpt"><?php echo $single_doc_excerpt; ?></p>
-                           </div>
-                        </a>
-
-                     </div>
-                  <?php endwhile; wp_reset_postdata(); ?>
-               </div>
-            <?php endif; ?>
-
-         </section>
-
-      <?php /*else : ?>
-         <div class="container mb-section">
-            <div class="row">
-               <div class="col-12">
-                  <h2>Attenzione!</h2>
-                  <p>Questo widget <b>"Comunicazioni"</b> non è utilizzabile negli approfondimenti e nelle comunicazioni.</p>
-               </div>
+            <div>
+               <?php if ($btn_label) : ?>
+                  <a <?php echo $this->get_render_attribute_string( 'loop-comunicazioni_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                        </svg>
+                     </span>
+                  </a>
+               <?php endif; ?>
             </div>
          </div>
-		<?php endif;*/ ?>
-		
-			
 
+         <?php $args = array( 
+            'post_status'     =>    'publish',
+            'orderby'         =>    'date',
+            'order'           =>    'DESC',
+            'post_type'       =>    'comunicazioni',
+            'posts_per_page'  =>    4,
+            'tax_query'       =>    array(
+               array(
+                  'taxonomy'           =>    $cpt_tax,
+                  'field'              =>    'term_id',
+                  'terms'              =>    $selected_cat_id,
+                  'operator'           =>    'IN',
+               ),
+            ),
+         );
+         $the_comunicazioni_query = new WP_Query( $args );
+         if ( $the_comunicazioni_query->have_posts() ) : ?>
+            <div class="row latest-loop">
+               <?php while ( $the_comunicazioni_query->have_posts() ) : $the_comunicazioni_query->the_post(); 
+                  $cpt_in_evidenza = get_field('cpt_in_evidenza');
+                  $single_doc_date = get_field('single_doc_date');
+                  $single_doc_excerpt = get_field('single_doc_excerpt');
+                  ?>
+                  <div class="col-card col-12 col-lg-6">
+
+                     <a class="card card-primary" href="<?php the_permalink(); ?>">
+                        <span class="svg-wrapper">
+                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
+                           </svg>
+                        </span>
+                        <div class="content">
+                           <p class="meta">
+                              <span class="label_date_cat"><?php if($single_doc_date): echo $single_doc_date; else: echo get_the_date('j F Y'); endif; ?></span>
+                              <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span><?php endif; ?>
+                           </p>
+                           <p class="h3-style"><?php echo the_title(); ?></p>
+                           <p class="excerpt"><?php echo $single_doc_excerpt; ?></p>
+                        </div>
+                     </a>
+
+                  </div>
+               <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+         <?php endif; ?>
+
+      </section>
 	<?php
 	}
 }

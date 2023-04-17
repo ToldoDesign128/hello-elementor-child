@@ -50,6 +50,13 @@
          }
       }
    }
+
+   .fbk-cw-single.mb-section {
+      margin-bottom: 1.6rem;
+      @media #{$large} {
+         margin-bottom: 4rem;
+      }
+   }
 }
 
 $gradient-overflow: 4.8rem;

@@ -237,7 +237,7 @@ class FBK_Elementor_GroupCard extends \Elementor\Widget_Base {
          $repeater = $settings['group-card_cards']
          ?>
    
-         <section class="fbk-cw fbk-cw-group-card container mb-section<?php if (is_singular('documenti')) : echo " fbk-cw-single"; endif; ?>">
+         <section class="fbk-cw fbk-cw-group-card container mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
 
             <div class="row">
                <div class="col-12">
@@ -292,9 +292,11 @@ class FBK_Elementor_GroupCard extends \Elementor\Widget_Base {
 
                      <a class="card card-primary"<?php if($card_link['url']) :?> href="<?php echo esc_url($card_link['url']); ?>"<?php endif; if($card_link['is_external']) : ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>>
                         <span class="svg-wrapper">
-                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
-                           </svg>
+                           <?php if($card_link['url']) :?>
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16.535 2.02972H0.717616V0H20V19.2824H17.9703V3.46496L1.43523 20L0 18.5648L16.535 2.02972Z" fill="#A19E9E"/>
+                              </svg>
+                           <?php endif; ?>
                         </span>
                         <div class="content">
                            <p class="meta">

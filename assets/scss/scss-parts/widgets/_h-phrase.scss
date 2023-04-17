@@ -1,21 +1,23 @@
 .fbk-h-phrase {
-   .h-title {
-      margin-bottom: 1.6rem;
-      @media #{$large} {
-         margin-bottom: 2rem;
-      }
-   }
-   .h-phrase {
+   .h-container {
       background-color: $color-light-primary;
       color: $color-dark-primary;
       padding-inline: 1.6rem;
       padding-block: 2rem;
-      margin-top: 0.8rem;
-      margin-bottom: 2.4rem;
-
       @media #{$large} {
          padding-inline: 2.4rem;
          padding-block: 2.8rem;
+      }
+      .h-title {
+         color: $color-dark-primary;
+         margin-bottom: 1.2rem;
+         @media #{$large} {
+            margin-bottom: 1.6rem;
+         }
+      }
+      .h-phrase {
+         color: $color-dark-primary;
+         margin-block: 0.8rem;
       }
    }
 }

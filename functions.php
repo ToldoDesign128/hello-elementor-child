@@ -64,6 +64,7 @@ function hello_elementor_child_enqueue_scripts() {
 	// My JS
 	wp_enqueue_script( 'howto-script', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array('jquery'), false, true );
    if (is_singular('documenti')) : wp_enqueue_script( 'howto-doc-script', get_stylesheet_directory_uri() . '/assets/js/single-doc.js', array('jquery'), false, true ); endif;
+   if (is_archive()) : wp_enqueue_script( 'howto-archive-script', get_stylesheet_directory_uri() . '/assets/js/scripts-archive.js', array('jquery'), false, true ); endif;
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20 );
 

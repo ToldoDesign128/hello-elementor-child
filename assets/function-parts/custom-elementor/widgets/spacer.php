@@ -92,7 +92,7 @@ class FBK_Elementor_Spacer extends \Elementor\Widget_Base {
 	 */
 	protected function render() { ?>
 
-      <div class="fbk-cw fbk-cw-single fbk-cw-spacer mb-section"></div>
+      <div class="fbk-cw fbk-cw-single fbk-cw-spacer"></div>
 		
 	<?php
 	}

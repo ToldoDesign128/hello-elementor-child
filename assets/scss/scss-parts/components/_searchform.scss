@@ -14,7 +14,7 @@
          border-radius: 0;
          border: 2px solid $color-white;
          background-color: $color-white;
-         padding: 1.6rem 1.6rem 1.6rem 2.4rem;
+         padding: 1.6rem;
          transition: none;
 
          //iOS min height fix
@@ -23,7 +23,7 @@
          -webkit-appearance: none !important;
 
          @media #{$large} {
-            padding: 1.6rem 2.4rem 1.6rem 3.2rem;
+            padding: 1.6rem 2.4rem;
          }
 
          &:focus-visible {

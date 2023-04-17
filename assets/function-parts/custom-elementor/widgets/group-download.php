@@ -212,7 +212,7 @@ class FBK_Elementor_GroupDownload extends \Elementor\Widget_Base {
       $repeater = $settings['group-download_downloads']
 		?>
 
-		<section class="fbk-cw fbk-cw-group-download container mb-section <?php if (is_singular('documenti')) : echo " fbk-cw-single"; endif; ?>">
+		<section class="fbk-cw fbk-cw-group-download container mb-section <?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
 
          <div class="row">
             <div class="col-12">

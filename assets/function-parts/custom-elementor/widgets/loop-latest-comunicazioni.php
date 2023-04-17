@@ -148,6 +148,7 @@ class FBK_Elementor_LoopLatestComunicazioni extends \Elementor\Widget_Base {
                <div class="row latest-loop">
                   <?php while ( $the_comunicazioni_query->have_posts() ) : $the_comunicazioni_query->the_post(); 
                      $cpt_in_evidenza = get_field('cpt_in_evidenza');
+                     $single_doc_date = get_field('single_doc_date');
                      // $cpt_comunicazioni_taxonomy = get_field('cpt_comunicazioni_taxonomy');
                      $single_doc_excerpt = get_field('single_doc_excerpt');
                      ?>
@@ -161,7 +162,7 @@ class FBK_Elementor_LoopLatestComunicazioni extends \Elementor\Widget_Base {
                            </span>
                            <div class="content">
                               <p class="meta">
-                                 <span class="label_date_cat"><?php echo get_the_date('j F Y'); ?><?php /*if ($cpt_comunicazioni_taxonomy) : ?> — <?php echo $cpt_comunicazioni_taxonomy->name; endif;*/ ?></span>
+                                 <span class="label_date_cat"><?php if($single_doc_date): echo $single_doc_date; else: echo get_the_date('j F Y'); endif; ?><?php /*if ($cpt_comunicazioni_taxonomy) : ?> — <?php echo $cpt_comunicazioni_taxonomy->name; endif;*/ ?></span>
                                  <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span><?php endif; ?>
                               </p>
                               <p class="h3-style"><?php echo the_title(); ?></p>

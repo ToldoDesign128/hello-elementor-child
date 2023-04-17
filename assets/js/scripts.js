@@ -76,18 +76,18 @@ jQuery(document).ready(function () {
       jQuery(".header__mobile-nav").toggleClass("mobile-active");
    });
 
-   // Remove mt on first widget of single pages
-   jQuery(".single .elementor-section")
+   // Remove mt on first widget heading (h2 || h3 || h4) of single doc e single comunicazioni
+   jQuery(".single .elementor-section .fbk-cw-single")
       .first()
-      .find(".fbk-cw h2")
+      .find("h2")
       .css("margin-top", "0");
-   jQuery(".single .elementor-section")
+   jQuery(".single .elementor-section .fbk-cw-single")
       .first()
-      .find(".fbk-cw h3")
+      .find("h3")
       .css("margin-top", "0");
-   jQuery(".single .elementor-section")
+   jQuery(".single .elementor-section .fbk-cw-single")
       .first()
-      .find(".fbk-cw h4")
+      .find("h4")
       .css("margin-top", "0");
 
    //FAQs widget

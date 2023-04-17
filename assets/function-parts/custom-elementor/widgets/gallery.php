@@ -108,7 +108,7 @@ class FBK_Elementor_Gallery extends \Elementor\Widget_Base {
 		
 		if ( !empty($gallery) ) : ?>
 
-			<div class="fbk-cw fbk-cw-gallery container<?php if (is_singular('documenti')) : echo " fbk-cw-single"; endif; ?>">
+			<div class="fbk-cw fbk-cw-gallery container<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
             <div class="row">
                
                <?php foreach ($gallery as $img) : ?>

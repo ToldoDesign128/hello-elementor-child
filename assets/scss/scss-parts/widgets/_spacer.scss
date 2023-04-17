@@ -1,0 +1,7 @@
+.fbk-cw-spacer {
+   height: 5.6rem;
+
+   @media #{$large} {
+      height: 9.6rem;
+   }
+}

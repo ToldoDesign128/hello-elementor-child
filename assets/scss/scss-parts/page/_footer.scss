@@ -37,6 +37,10 @@ footer {
             color: rgba($color-white, 0.88);
             font-size: 1.4rem;
          }
+         &.current-footer {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+         }
 
          &:hover {
             color: $color-white;

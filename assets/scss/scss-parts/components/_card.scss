@@ -73,6 +73,7 @@
             order: 2;
             @media #{$xxsmall} {
                order: 1;
+               margin-right: 1.6rem;
             }
          }
 
@@ -88,7 +89,6 @@
 
             @media #{$xxsmall} {
                order: 2;
-               margin-left: 1.6rem;
                margin-bottom: 0;
             }
          }

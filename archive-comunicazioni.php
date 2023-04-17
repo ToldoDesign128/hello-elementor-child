@@ -7,8 +7,8 @@
          <div class="container">
             <div class="row">
                <div class="col-12">
-                  <h1>Comunicazioni interne</h1>
-                  <p>Archivio di tutte le comunicazioni in ordine cronologico.</p>
+                  <h1><?php _e('Comunicazioni interne', 'howto'); ?></h1>
+                  <p><?php _e('Archivio di tutte le comunicazioni in ordine cronologico.', 'howto'); ?></p>
                </div>
             </div>
          </div>
@@ -16,12 +16,46 @@
    <?php endif; ?>
    
    <div class="page-content">
+
+
+      <section class="container">
+         <div class="row">
+            <div class="col-12">
+               <p class="filter-tips"><?php _e('Filtra per categoria:', 'howto'); ?></p>
+            </div>
+            <div class="col-12 filter-chips">
+
+               <a class="filter-chip" id="all-filter" href="<?php echo get_post_type_archive_link('comunicazioni'); ?>"><?php _e('Tutte', 'howto'); ?></a>
+
+               <?php
+               $filter_cats = get_terms( array(
+                  'taxonomy' => 'comunicazioni_tax',
+                  'parent' => 0, //only parent cat
+                  'hide_empty' => true, //only parent cat with at least one post
+               ) );
+               // var_dump($filter_cats);
+               foreach ( $filter_cats as $key => $filter_cat ) {
+                  $filter_name = $filter_cat->name;
+                  $filter_slug = $filter_cat->slug;
+                  $filter_taxonomy = $filter_cat->taxonomy;
+                  ?>
+
+                  <a class="filter-chip" id="<?php echo $filter_slug; ?>" href="<?php echo get_post_type_archive_link('comunicazioni') . '/?' . $filter_taxonomy . '=' . $filter_slug; ?>"><?php echo $filter_name; ?></a>
+
+                  <?php
+               }
+               ?>
+            </div>
+         </div>
+      </section>
+
+
       <?php if ( have_posts() ) : ?>
          <section class="fbk-cw fbk-cw-group-link container mb-section">
             <div class="row latest-loop">
                <?php while ( have_posts() ) : the_post();
                   $cpt_in_evidenza = get_field('cpt_in_evidenza');
-                  $cpt_comunicazioni_taxonomy = get_field('cpt_comunicazioni_taxonomy');
+                  $single_doc_date = get_field('single_doc_date');
                   $single_doc_excerpt = get_field('single_doc_excerpt');
                   ?>
 
@@ -34,7 +68,7 @@
                         </span>
                         <div class="content">
                            <p class="meta">
-                              <span class="label_date_cat"><?php echo get_the_date('j F Y'); ?><?php if ($cpt_comunicazioni_taxonomy) : ?> — <?php echo $cpt_comunicazioni_taxonomy->name; endif; ?></span>
+                              <span class="label_date_cat"><?php if($single_doc_date): echo $single_doc_date; else: echo get_the_date('j F Y'); endif; ?></span>
                               <?php if ($cpt_in_evidenza) : ?><span class="label_in_evidenza"><?php _e('in evidenza', 'howto'); ?></span><?php endif; ?>
                            </p>
                            <p class="h3-style"><?php echo the_title(); ?></p>

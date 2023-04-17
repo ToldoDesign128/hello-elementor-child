@@ -202,7 +202,7 @@ class FBK_Elementor_FAQ extends \Elementor\Widget_Base {
 		?>
 
 
-		<section class="fbk-cw fbk-cw-faq container mb-section<?php if (is_singular('documenti')) : echo " fbk-cw-single"; endif; ?>">
+		<section class="fbk-cw fbk-cw-faq container mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
 
          <div class="row">
             <div class="col-12">
