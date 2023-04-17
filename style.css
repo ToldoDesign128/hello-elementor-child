@@ -6036,12 +6036,12 @@ footer .footer-info .lingua p {
 }
 .single.single-documenti .fbk-cw-single.mb-section,
 .single.single-comunicazioni .fbk-cw-single.mb-section {
-  margin-bottom: 1.6rem;
+  margin-bottom: 2.4rem;
 }
 @media (min-width: 992px) {
   .single.single-documenti .fbk-cw-single.mb-section,
   .single.single-comunicazioni .fbk-cw-single.mb-section {
-    margin-bottom: 4rem;
+    margin-bottom: 5.6rem;
   }
 }
 
