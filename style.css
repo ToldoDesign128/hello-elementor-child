@@ -5485,6 +5485,10 @@ footer .footer-menu-list a.footer-child {
   color: rgba(255, 255, 255, 0.88);
   font-size: 1.4rem;
 }
+footer .footer-menu-list a.current-footer {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 footer .footer-menu-list a:hover {
   color: #fff;
   text-decoration: underline;
