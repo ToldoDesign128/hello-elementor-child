@@ -1,39 +1,39 @@
 .fbk-cw-cta {
-   background-color: $color-white;
-   padding-block: 5.6rem;
+  background-color: $color-white;
+  padding-block: 5.6rem;
 
-   @media #{$medium} {
-      padding-block: 6.4rem;
-   }
+  @media #{$medium} {
+    padding-block: 6.4rem;
+  }
 
-   .content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    @media #{$medium} {
+      flex-direction: row;
+    }
+
+    h2 {
+      text-align: center;
 
       @media #{$medium} {
-         flex-direction: row;
+        text-align: left;
       }
 
-      h2 {
-         text-align: center;
-
-         @media #{$medium} {
-            text-align: left;
-         }
-
-         &:target {
-            color: $color-primary;
-         }
+      &:target {
+        color: $color-primary;
       }
+    }
 
-      .button {
-         margin-top: 1.2rem;
+    .button {
+      margin-top: 1.2rem;
 
-         @media #{$medium} {
-            margin-top: 0;
-         }
+      @media #{$medium} {
+        margin-top: 0;
       }
-   }
+    }
+  }
 }

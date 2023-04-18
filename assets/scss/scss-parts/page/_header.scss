@@ -242,6 +242,7 @@ $nav-pad-block: 1.2rem;
 
         li {
           &.wpml-ls-current-language {
+            display: none;
             a {
               color: rgba($color-white, 0.4);
               pointer-events: none;
