@@ -6733,6 +6733,7 @@ footer .footer-info .lingua p {
 }
 
 .fbk-h-phrase .h-container {
+  max-width: 80rem;
   background-color: #e1eaf6;
   color: #2e4083;
   padding-inline: 1.6rem;
@@ -6759,6 +6760,7 @@ footer .footer-info .lingua p {
 }
 
 .fbk-h-code pre.h-code {
+  max-width: 80rem;
   background-color: #fff;
   padding-inline: 1.6rem;
   padding-block: 2rem;
@@ -6853,6 +6855,7 @@ footer .footer-info .lingua p {
   font-size: 1.4rem;
   line-height: 160%;
   color: #605e5c;
+  max-width: 80rem;
 }
 
 .fbk-cw-btn {

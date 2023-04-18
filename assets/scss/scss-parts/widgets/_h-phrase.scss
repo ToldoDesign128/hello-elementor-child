@@ -1,5 +1,6 @@
 .fbk-h-phrase {
    .h-container {
+      max-width: $width-limiter;
       background-color: $color-light-primary;
       color: $color-dark-primary;
       padding-inline: 1.6rem;

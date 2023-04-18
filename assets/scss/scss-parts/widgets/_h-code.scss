@@ -1,5 +1,6 @@
 .fbk-h-code {
    pre.h-code {
+      max-width: $width-limiter;
       background-color: $color-white;
       padding-inline: 1.6rem;
       padding-block: 2rem;
