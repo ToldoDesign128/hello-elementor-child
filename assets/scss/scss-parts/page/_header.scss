@@ -190,4 +190,43 @@
       }
     }
   }
+
+  .lingua {
+    .wpml-custom-switcher {
+      text-align: right;
+
+      .wpml-ls-legacy-list-horizontal {
+        padding: 0;
+        border: 0;
+      }
+
+      li {
+        &.wpml-ls-current-language {
+          display: none;
+          a {
+            color: rgba($color-white, 0.4);
+            pointer-events: none;
+          }
+        }
+
+        a {
+          color: $color-white;
+          font-size: 1.4rem;
+          letter-spacing: 1px;
+          line-height: 1;
+          padding: 0.8rem 1.1rem;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background-color: $color-white;
+            color: $color-primary;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    p {
+      color: rgba($color-white, 0.88);
+    }
+  }
 }

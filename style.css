@@ -5380,6 +5380,9 @@ footer .footer-info .lingua .wpml-custom-switcher .wpml-ls-legacy-list-horizonta
   padding: 0;
   border: 0;
 }
+footer .footer-info .lingua .wpml-custom-switcher li.wpml-ls-current-language {
+  display: none;
+}
 footer .footer-info .lingua .wpml-custom-switcher li.wpml-ls-current-language a {
   color: rgba(255, 255, 255, 0.4);
   pointer-events: none;
@@ -5564,6 +5567,36 @@ footer .footer-info .lingua p {
   .header__nav .header__content__hamburger {
     display: none;
   }
+}
+.header__nav .lingua .wpml-custom-switcher {
+  text-align: right;
+}
+.header__nav .lingua .wpml-custom-switcher .wpml-ls-legacy-list-horizontal {
+  padding: 0;
+  border: 0;
+}
+.header__nav .lingua .wpml-custom-switcher li.wpml-ls-current-language {
+  display: none;
+}
+.header__nav .lingua .wpml-custom-switcher li.wpml-ls-current-language a {
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+.header__nav .lingua .wpml-custom-switcher li a {
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding: 0.8rem 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+.header__nav .lingua .wpml-custom-switcher li a:hover {
+  background-color: #fff;
+  color: #1254a2;
+  font-weight: 500;
+}
+.header__nav .lingua p {
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .hero .hero-bg {
@@ -5800,6 +5833,55 @@ footer .footer-info .lingua p {
   line-height: 1;
   white-space: nowrap;
   align-self: flex-end;
+}
+
+.post-password-form {
+  max-width: 1320px;
+  margin: auto;
+}
+.post-password-form p {
+  margin: 1rem 0;
+}
+.post-password-form label {
+  margin-right: 1rem;
+}
+.post-password-form label #pwbox-561 {
+  background: #e1eaf6;
+  border: 1px solid #1254a2;
+  padding: 1rem 1.6rem 1rem 2.4rem;
+  margin: 1rem 0;
+}
+.post-password-form input {
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  padding: 1.2rem 1.4rem 1.2rem 1.8rem;
+  margin: 1rem;
+  line-height: 1;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #1254a2;
+  color: #fff;
+}
+.post-password-form input:hover,
+.post-password-form input :active,
+.post-password-form input :focus {
+  background-color: #e1eaf6;
+  color: #1254a2;
+}
+@media (min-width: 992px) {
+  .post-password-form input {
+    padding: 1.2rem 1.6rem 1.2rem 2.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .post-password-form input {
+    margin-top: 0;
+  }
 }
 
 .fbk-cw-highlight {
