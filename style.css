@@ -6107,7 +6107,7 @@ footer .footer-info .lingua p {
 }
 
 .post-password-form {
-  max-width: 1320px;
+  max-width: 540px;
   margin: auto;
 }
 .post-password-form p {
@@ -6119,12 +6119,14 @@ footer .footer-info .lingua p {
 .post-password-form label input {
   background: #e1eaf6;
   border: 1px solid #1254a2;
+  border-radius: 0;
   padding: 1rem 1.6rem 1rem 2.4rem;
   margin: 1rem 0;
 }
 .post-password-form input {
   display: inline-block;
   border: none;
+  border-radius: 0;
   text-decoration: none;
   padding: 1.2rem 1.4rem 1.2rem 1.8rem;
   margin: 1rem;
@@ -6152,6 +6154,26 @@ footer .footer-info .lingua p {
 @media (min-width: 768px) {
   .post-password-form input {
     margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  .post-password-form {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .post-password-form {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .post-password-form {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1480px) {
+  .post-password-form {
+    max-width: 1320px;
   }
 }
 
