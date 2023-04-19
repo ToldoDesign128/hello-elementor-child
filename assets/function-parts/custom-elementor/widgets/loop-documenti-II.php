@@ -147,7 +147,7 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                   echo 'ID della CATEGORIA genitore = ' .  $current_parent_cat; ?> <br><br><br><?php
                else: ?>
                   <p>
-                     <?php echo 'La pagina genitore (in lingua italiana)"' . get_the_title($current_parent_page_ID_it) . '" non è stata assegnata a nessuna categoria.'; ?>
+                     <?php echo 'La pagina genitore (in lingua italiana) "' . get_the_title($current_parent_page_ID_it) . '" non è stata assegnata a nessuna categoria.'; ?>
                      <br>
                      <?php echo 'Da Wordpress seleziona Approfondimenti > Categorie >  { nome della categoria }  > Modifica > Assegna pagina > ' . get_the_title($current_parent_page_ID_it); ?>
                   </p>
@@ -164,14 +164,17 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                }
 
                //06 - get ID of Current Child Category
+               echo 'ID della PAGINA corrente = ' .  $current_page_ID; ?><br><br><?php
+               $current_page_ID_it = apply_filters( 'wpml_object_id', $current_page_ID, 'post', FALSE, 'it' );
+               echo 'ID della PAGINA corrente ITALIANA = ' .  $current_page_ID_it; ?><br><br><?php
                if (in_array($current_page_ID, $current_child_page_IDs)) : // se la current page ha una child cat assegnata
                   $current_parent_cat = array_search ($current_page_ID, $current_child_page_IDs);
                else: ?>
                   <p>
                      <br>
-                     <?php echo 'La pagina corrente "' . $current_page->post_title . '" non è stata assegnata a nessuna categoria.'; ?>
+                     <?php echo 'La pagina corrente (in lingua italiana) "' . get_the_title($current_page_ID_it) . '" non è stata assegnata a nessuna categoria.'; ?>
                      <br>
-                     <?php echo 'Da Wordpress seleziona Documenti > Categorie >  { nome della categoria }  > Modifica > Assegna pagina > ' . $current_page->post_title; ?>
+                     <?php echo 'Da Wordpress seleziona Approfondimenti > Categorie >  { nome della categoria }  > Modifica > Assegna pagina > ' . get_the_title($current_page_ID_it); ?>
                   </p>
                   <?php
                endif;
