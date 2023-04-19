@@ -139,9 +139,9 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                }
 
                //04 - get ID of Current Parent Category
-               echo 'ID della PAGINA genitore = ' .  $current_parent_page_ID; ?><br><br><?php
+               echo 'ID della PAGINA genitore = ' .  $current_parent_page_ID; ?><br><?php
                $current_parent_page_ID_it = apply_filters( 'wpml_object_id', $current_parent_page_ID, 'post', FALSE, 'it' );
-               echo 'ID della PAGINA genitore ITALIANA = ' .  $current_parent_page_ID_it; ?><br><br><?php
+               echo 'ID della PAGINA genitore ITALIANA = ' .  $current_parent_page_ID_it; ?><br><?php
                if (in_array($current_parent_page_ID_it, $parent_pages)) : // se la parent page ha una parent cat assegnata
                   $current_parent_cat = array_search ($current_parent_page_ID_it, $parent_pages);
                   echo 'ID della CATEGORIA genitore = ' .  $current_parent_cat; ?> <br><br><br><?php
@@ -164,11 +164,12 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                }
 
                //06 - get ID of Current Child Category
-               echo 'ID della PAGINA corrente = ' .  $current_page_ID; ?><br><br><?php
+               echo 'ID della PAGINA corrente = ' .  $current_page_ID; ?><br><?php
                $current_page_ID_it = apply_filters( 'wpml_object_id', $current_page_ID, 'post', FALSE, 'it' );
-               echo 'ID della PAGINA corrente ITALIANA = ' .  $current_page_ID_it; ?><br><br><?php
-               if (in_array($current_page_ID, $current_child_page_IDs)) : // se la current page ha una child cat assegnata
-                  $current_parent_cat = array_search ($current_page_ID, $current_child_page_IDs);
+               echo 'ID della PAGINA corrente ITALIANA = ' .  $current_page_ID_it; ?><br><?php
+               if (in_array($current_page_ID_it, $current_child_page_IDs)) : // se la current page ha una child cat assegnata
+                  $current_parent_cat = array_search ($current_page_ID_it, $current_child_page_IDs);
+                  echo 'ID della CATEGORIA = ' .  $current_parent_cat; ?> <br><br><br><?php
                else: ?>
                   <p>
                      <br>
