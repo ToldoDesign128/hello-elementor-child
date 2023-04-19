@@ -114,9 +114,11 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
             //01 - get Current Page
             $current_page = get_queried_object(); 
             if($current_page): $current_page_ID = $current_page->ID;
+            var_dump($current_page);
 
             //02 - get Current Parent Page
             $current_parent_page_ID = $current_page->post_parent; endif;
+            echo $current_parent_page_ID;
 
             if ( $current_parent_page_ID == 0 ) : // se la pagina in cui è inserito il widget non è di secondo livello 
                ?>
@@ -139,12 +141,12 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                }
 
                //04 - get ID of Current Parent Category
-               echo 'ID della PAGINA genitore = ' .  $current_parent_page_ID; ?><br><?php
+               /*echo 'ID della PAGINA genitore = ' .  $current_parent_page_ID; ?><br><?php*/
                $current_parent_page_ID_it = apply_filters( 'wpml_object_id', $current_parent_page_ID, 'post', FALSE, 'it' );
-               echo 'ID della PAGINA genitore ITALIANA = ' .  $current_parent_page_ID_it; ?><br><?php
+               /*echo 'ID della PAGINA genitore ITALIANA = ' .  $current_parent_page_ID_it; ?><br><?php*/
                if (in_array($current_parent_page_ID_it, $parent_pages)) : // se la parent page ha una parent cat assegnata
                   $current_parent_cat = array_search ($current_parent_page_ID_it, $parent_pages);
-                  echo 'ID della CATEGORIA genitore = ' .  $current_parent_cat; ?> <br><br><br><?php
+                  /*echo 'ID della CATEGORIA genitore = ' .  $current_parent_cat; ?> <br><br><br><?php*/
                else: ?>
                   <p>
                      <?php echo 'La pagina genitore (in lingua italiana) "' . get_the_title($current_parent_page_ID_it) . '" non è stata assegnata a nessuna categoria.'; ?>
@@ -164,12 +166,12 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                }
 
                //06 - get ID of Current Child Category
-               echo 'ID della PAGINA corrente = ' .  $current_page_ID; ?><br><?php
+               /*echo 'ID della PAGINA corrente = ' .  $current_page_ID; ?><br><?php*/
                $current_page_ID_it = apply_filters( 'wpml_object_id', $current_page_ID, 'post', FALSE, 'it' );
-               echo 'ID della PAGINA corrente ITALIANA = ' .  $current_page_ID_it; ?><br><?php
+               /*echo 'ID della PAGINA corrente ITALIANA = ' .  $current_page_ID_it; ?><br><?php*/
                if (in_array($current_page_ID_it, $current_child_page_IDs)) : // se la current page ha una child cat assegnata
                   $current_parent_cat = array_search ($current_page_ID_it, $current_child_page_IDs);
-                  echo 'ID della CATEGORIA = ' .  $current_parent_cat; ?> <br><br><br><?php
+                  /*echo 'ID della CATEGORIA = ' .  $current_parent_cat; ?> <br><br><br><?php*/
                else: ?>
                   <p>
                      <br>
