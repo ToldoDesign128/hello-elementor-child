@@ -44,10 +44,10 @@ get_header();
             <div class="row justify-content-center">
                <?php while( have_rows('home_posts') ) : the_row();
                   $home_post = get_sub_field('home_post');
-                  $home_post_title = $home_post->post_title;
-                  $home_post_link = get_post_permalink( $home_post->ID );
-
-                  if ($home_post) :?>
+                  if ($home_post) :
+                     $home_post_title = $home_post->post_title;
+                     $home_post_link = get_post_permalink( $home_post->ID );
+                     ?>
                      <div class="col-card col-6 col-lg-3">
                         <a class="card card-secondary" href="<?php echo $home_post_link; ?>">
                            <span class="svg-wrapper">
