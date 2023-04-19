@@ -140,8 +140,14 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                }
 
                //04 - get ID of Current Parent Category
+               var_dump($parent_pages);
                if (in_array($current_parent_page_ID, $parent_pages)) : // se la parent page ha una parent cat assegnata
                   $current_parent_cat = array_search ($current_parent_page_ID, $parent_pages);
+                  echo 'ID della CATEGORIA genitore = ' .  $current_parent_cat; ?> <br><br><br><?php
+                  echo 'ID della PAGINA genitore = ' .  $current_parent_page_ID; ?> <br><br><br><?php
+                  echo 'ID della PAGINA genitore ITALIANA = ' .  apply_filters( 'wpml_object_id', $current_parent_page_ID, 'post', FALSE, 'it' );; ?> <br><br><br><?php
+
+
                else: ?>
                   <p>
                      <?php echo 'La pagina genitore "' . $current_parent_page->post_title . '" non è stata assegnata a nessuna categoria.'; ?>
