@@ -117,10 +117,9 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
 
             //02 - get Current Parent Page
             $current_parent_page_ID = $current_page->post_parent; endif;
-            echo $current_parent_page_ID;
             $current_parent_page_ID_it = apply_filters( 'wpml_object_id', $current_parent_page_ID, 'post', FALSE, 'it' );
 
-            if ( $current_parent_page_ID == 0 ) : // se la pagina in cui è inserito il widget non è di secondo livello 
+            if ( $current_parent_page_ID_it == 0 ) : // se la pagina in cui è inserito il widget non è di secondo livello 
                ?>
                <h2>Attenzione!</h2>
                <p>Questo widget <b>"Approfondimenti livello II"</b> è utilizzabile solo nelle pagine di secondo livello.</p>
