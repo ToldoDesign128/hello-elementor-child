@@ -139,7 +139,7 @@ class FBK_Elementor_LoopDocumentiI extends \Elementor\Widget_Base {
 
                               <article class="child-card">
                                  <a class="head" <?php if ($child_cat_page) : ?>href="<?php echo get_permalink( $child_cat_page ); ?>"<?php endif; ?>>
-                                    <h3><?php echo $cat_child_term->name; ?></h3>
+                                    <h3><?php echo get_title( $child_cat_page ); ?></h3>
                                     <?php if ($child_cat_page) : ?>
                                        <span class="svg-wrapper">
                                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

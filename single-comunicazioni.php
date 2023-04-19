@@ -4,7 +4,6 @@ get_header();
 while ( have_posts() ) : the_post();
    $bread_current = get_the_title();
    $bread_archive_link = get_post_type_archive_link('comunicazioni');
-   $bread_archive_label = 'Comunicazioni';
 
    $single_doc_author = get_field('single_doc_author');
    $single_doc_date = get_field('single_doc_date');
@@ -36,7 +35,7 @@ while ( have_posts() ) : the_post();
                            </div>
                            <li>
                               <a href="<?php echo $bread_archive_link; ?>" class="bread-link">
-                                 <?php echo $bread_archive_label; ?>
+                                 <?php _e('Comunicazioni', 'howto'); ?>
                               </a>
                            </li>
                            <div class="pointer d-none d-sm-block">

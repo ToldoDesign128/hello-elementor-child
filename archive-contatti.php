@@ -7,8 +7,8 @@
          <div class="container">
             <div class="row">
                <div class="col-12">
-                  <h1>Contatti</h1>
-                  <p>Archivio di tutti i contatti utili.</p>
+                  <h1><?php _e('Contatti', 'howto'); ?></h1>
+                  <p><?php _e('Archivio di tutti i contatti utili.', 'howto'); ?></p>
                </div>
             </div>
          </div>
