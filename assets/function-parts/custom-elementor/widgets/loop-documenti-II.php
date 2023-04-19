@@ -140,9 +140,8 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                }
 
                //04 - get ID of Current Parent Category
-               /*echo 'ID della PAGINA genitore = ' .  $current_parent_page_ID; ?><br><?php*/
-               
-               echo 'ID della PAGINA genitore ITALIANA = ' .  $current_parent_page_ID_it; ?><br><?php
+               /*echo 'ID della PAGINA genitore = ' .  $current_parent_page_ID; ?><br><?php
+               echo 'ID della PAGINA genitore ITALIANA = ' .  $current_parent_page_ID_it; ?><br><?php*/
                if (in_array($current_parent_page_ID_it, $parent_pages)) : // se la parent page ha una parent cat assegnata
                   $current_parent_cat = array_search ($current_parent_page_ID_it, $parent_pages);
                   /*echo 'ID della CATEGORIA genitore = ' .  $current_parent_cat; ?> <br><br><br><?php*/
