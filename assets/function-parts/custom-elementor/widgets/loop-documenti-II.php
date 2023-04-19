@@ -139,7 +139,6 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                }
 
                //04 - get ID of Current Parent Category
-               var_dump($parent_pages); ?><br><br><?php
                echo 'ID della PAGINA genitore = ' .  $current_parent_page_ID; ?><br><br><?php
                $current_parent_page_ID_it = apply_filters( 'wpml_object_id', $current_parent_page_ID, 'post', FALSE, 'it' );
                echo 'ID della PAGINA genitore ITALIANA = ' .  $current_parent_page_ID_it; ?><br><br><?php
@@ -148,9 +147,9 @@ class FBK_Elementor_LoopDocumentiII extends \Elementor\Widget_Base {
                   echo 'ID della CATEGORIA genitore = ' .  $current_parent_cat; ?> <br><br><br><?php
                else: ?>
                   <p>
-                     <?php echo 'La pagina genitore "' . $current_parent_page->post_title . '" non è stata assegnata a nessuna categoria.'; ?>
+                     <?php echo 'La pagina genitore (in lingua italiana)"' . get_the_title($current_parent_page_ID_it) . '" non è stata assegnata a nessuna categoria.'; ?>
                      <br>
-                     <?php echo 'Da Wordpress seleziona Approfondimenti > Categorie >  { nome della categoria }  > Modifica > Assegna pagina > ' . $current_parent_page->post_title; ?>
+                     <?php echo 'Da Wordpress seleziona Approfondimenti > Categorie >  { nome della categoria }  > Modifica > Assegna pagina > ' . get_the_title($current_parent_page_ID_it); ?>
                   </p>
                   <?php
                endif;
