@@ -24,6 +24,7 @@ $width-limiter: 80rem;
 .elementor-widget-tabs,
 .elementor-widget-accordion,
 .elementor-widget-toggle,
+.elementor-widget-gallery,
 .elementor-widget-posts,
 .elementor-widget-loop-grid,
 .elementor-widget-loop-carousel,
@@ -60,7 +61,18 @@ $width-limiter: 80rem;
 .elementor-widget-wp-widget-audio,
 .elementor-widget-woocommerce,
 .elementor-widget-social,
-.elementor-widget-library {
+.elementor-widget-library,
+.elementor-widget-slides,
+.elementor-widget-hotspot,
+.elementor-widget-reviews,
+.elementor-widget-table-of-contents,
+.elementor-widget-elementor-widget-call-to-action,
+.elementor-widget-code-highlight,
+.elementor-widget-video-playlist,
+.elementor-widget-paypal-button,
+.elementor-widget-stripe-button,
+.elementor-widget-progress-tracker,
+.elementor-widget-wpml-language-switcher {
    padding-inline: 7.5px;
    margin-inline: auto;
    width: 100%;

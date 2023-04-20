@@ -351,6 +351,16 @@ else:
          'sidebar',
          'read-more'
 
+         // pro ----------------- //
+         ,'facebook-comment'
+         ,'facebook-button'
+         ,'facebook-comments'
+         ,'facebook-embed'
+         ,'facebook-page'
+         ,'add-to-cart'
+         ,'woocommerce'
+         ,'template'
+
          // wp widgets ----------------- //
          ,'wp-widget-pages'
          ,'wp-widget-archives'
