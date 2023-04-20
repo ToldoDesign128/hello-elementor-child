@@ -103,7 +103,7 @@ footer {
 
             li {
                &.wpml-ls-current-language {
-                  display: none;
+                  // display: none;
                   a {
                      color: rgba($color-white, 0.4);
                      pointer-events: none;

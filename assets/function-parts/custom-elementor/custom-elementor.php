@@ -223,7 +223,6 @@ if ( ! current_user_can('administrator')) :
          ,'nav-menu'
          ,'pricing'
          ,'facebook-comment'
-         ,'nav-menu'
          ,'animated-headline'
          ,'price-list'
          ,'price-table'
@@ -333,7 +332,8 @@ if ( ! current_user_can('administrator')) :
       </style>';
    }
    add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor_for_not_admin' );
-else: //rimuovo anche per gli admin alcuni widget di default
+else:
+   //rimuovo anche per gli admin alcuni widget di default
    function admin_remove_unused_widgets( $widgets_manager ) {
       $widgets_to_unregister = [
          //Base

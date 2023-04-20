@@ -314,7 +314,7 @@ function HT_css_soft_remove_menu()
       /*hide Elementor Template*/
       .wp-admin #adminmenuwrap #menu-posts-elementor_library{display:none !important;}
       /*hide ACF*/
-      // .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
+      .wp-admin #adminmenuwrap #toplevel_page_edit-post_type-acf-field-group{display:none !important;}
       /*hide Tools*/
       .wp-admin #adminmenuwrap #menu-tools{display:none !important;}
       /*hide Widget*/
@@ -401,6 +401,16 @@ function HT_css_mark_pages()
    </style>';
 }
 add_action('wp_before_admin_bar_render', 'HT_css_mark_pages');
+/* Categorie approfondimenti:
+/* Mark cat with depth level > 2
+--------------------------------------*/
+function HT_css_mark_doc_cat()
+{
+   echo '<style type="text/css">
+      .wp-admin.post-type-documenti.taxonomy-documenti_tax #wpbody #posts-filter table.wp-list-table #the-list tr.level-2, .wp-admin.post-type-documenti.taxonomy-documenti_tax #wpbody #posts-filter table.wp-list-table #the-list tr.level-3, .wp-admin.post-type-documenti.taxonomy-documenti_tax #wpbody #posts-filter table.wp-list-table #the-list tr.level-4, .wp-admin.post-type-documenti.taxonomy-documenti_tax #wpbody #posts-filter table.wp-list-table #the-list tr.level-5 {background-color:#ff000080!important;}
+   </style>';
+}
+add_action('wp_before_admin_bar_render', 'HT_css_mark_doc_cat');
 
 
 // Increase default post per page looped posts

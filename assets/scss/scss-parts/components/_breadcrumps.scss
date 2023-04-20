@@ -38,6 +38,10 @@ nav.breadcrumps {
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
+            max-width: 50ch;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             vertical-align: middle;
             transition: color 0.3s ease-in-out;
 
