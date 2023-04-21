@@ -52,7 +52,7 @@ while ( have_posts() ) : the_post();
                                     <svg class="home" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                        <path d="M8.33464 16.6667V11.6667H11.668V16.6667H15.8346V10H18.3346L10.0013 2.5L1.66797 10H4.16797V16.6667H8.33464Z"/>
                                     </svg>
-                                 </a>
+                                 </a> 
                               </li>
                               <div class="pointer">
                                  <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
