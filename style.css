@@ -6068,7 +6068,7 @@ footer .footer-info .lingua p {
   }
 }
 .header__nav .header__content .lingua {
-  margin-top: 1px;
+  margin-top: 2px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
