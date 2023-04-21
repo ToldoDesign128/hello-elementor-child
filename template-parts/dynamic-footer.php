@@ -1,6 +1,22 @@
 <footer>
    <div class="container">
       <!-- Sitemap -->
+      <?php if (is_singular('documenti')) : 
+         //id della pagina associata alla cat di secondo livello
+         $current_tax = 'documenti_tax';
+         $current_ID = get_the_ID();
+         $current_cats = get_the_terms($current_ID, $current_tax);
+         if ( $current_cats ) :
+            foreach ( $current_cats as $key => $cur_cat ) {
+               if ($cur_cat->parent != 0) :
+                  $page_ID = get_field('child_cat_page', $cur_cat);
+                  $page_ID_cur = apply_filters( 'wpml_object_id', $page_ID );
+               endif;
+            }
+         endif;
+         
+         echo $page_ID_cur;
+      endif; ?>
       <div class="row">
          <?php $footer_menu_items = NP_get_menu_by_slug('footer');
          foreach ($footer_menu_items as $menu_item) : 
@@ -17,9 +33,8 @@
                      $child_title = $child_item->title;
                      $child_url = $child_item->url;
                      $child_id = $child_item->object_id;
-                     // $current_id = get_the_ID();
                      ?>
-                     <a href="<?php echo $child_url ?>" class="footer-child<?php if($child_id == $current_id): echo ' current-footer'; endif; ?>"><?php echo $child_title; ?></a>
+                     <a href="<?php echo $child_url ?>" class="footer-child<?php if($child_id == $current_id || $page_ID_cur == $current_id): echo ' current-footer'; endif; ?>"><?php echo $page_ID_cur .' ' . $child_title . ' ' . $child_id; ?></a>
                   <?php endforeach; 
                endif; ?>
             </div>

@@ -7,19 +7,15 @@ while ( have_posts() ) : the_post();
 
    $current_tax = 'documenti_tax';
    $current_ID = get_the_ID();
-   $current_ID_it = apply_filters( 'wpml_object_id', $current_ID, 'post', FALSE, 'it' );
    $current_cats = get_the_terms($current_ID, $current_tax);
    if ( $current_cats ) :
       foreach ( $current_cats as $key => $cur_cat ) {
          if ($cur_cat->parent == 0) {
-            // $bread_first_label = $cur_cat->name;
             $page_ID = get_field('child_cat_page', $cur_cat);
             $bread_first_link = get_permalink($page_ID);
-            // $page_ID_it = apply_filters( 'wpml_object_id', $page_ID, 'post', FALSE, 'it' );
             $page_ID_cur = apply_filters( 'wpml_object_id', $page_ID );
             $bread_first_label = get_the_title($page_ID_cur);
          } else { 
-            // $bread_second_label = $cur_cat->name;
             $page_ID = get_field('child_cat_page', $cur_cat);
             $bread_second_link = get_permalink($page_ID);
             $page_ID_cur = apply_filters( 'wpml_object_id', $page_ID );
@@ -41,12 +37,7 @@ while ( have_posts() ) : the_post();
                <div class="row">
                   <div class="col-12">
 
-                     <?php 
-
-                        // echo 'ID approfondimento attuale = ' . $current_ID; ?><br><?php
-                        // echo 'ID approfondimento in ITALIANO = ' . $current_ID_it; ?><br><?php
-                     
-                     if ( $current_cats ) : ?>
+                     <?php if ( $current_cats ) : ?>
                         <nav class="breadcrumps">
                            <ul>
                               <li>
@@ -62,10 +53,6 @@ while ( have_posts() ) : the_post();
                                  </svg>
                               </div>
                               <li>
-                                 <?php 
-                                 /*echo 'ID pagina associata ITA alla cat di primo lvl = ' . $page_ID_it; ?><br><?php*/
-                                 echo 'ID pagina associata CORRENTE alla cat di secondo lvl = ' . $page_ID_cur;
-                                 ?><br>
                                  <a href="<?php echo $bread_first_link; ?>" class="bread-link">
                                     <?php echo $bread_first_label; ?>
                                  </a>
