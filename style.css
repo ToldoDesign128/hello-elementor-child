@@ -6349,6 +6349,10 @@ footer .footer-info .lingua p {
     margin-bottom: 5.6rem;
   }
 }
+.single.single-documenti .cw-pages-after-singlepost,
+.single.single-comunicazioni .cw-pages-after-singlepost {
+  margin-top: 4.8rem;
+}
 
 .archive.post-type-archive .lingua {
   display: none;

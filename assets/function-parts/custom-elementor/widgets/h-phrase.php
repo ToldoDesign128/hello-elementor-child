@@ -119,7 +119,7 @@ class FBK_Elementor_HighlightedPhrase extends \Elementor\Widget_Base {
       $hphrase = $settings['h-phrase'];
 		
 		if ($hphrase) : ?>
-         <div class="fbk-cw fbk-cw-single fbk-h-phrase container">
+         <div class="fbk-cw fbk-cw-singlepost fbk-cw-single fbk-h-phrase container">
             <div class="row">
                <div class="col-12">
                   <div class="h-container">

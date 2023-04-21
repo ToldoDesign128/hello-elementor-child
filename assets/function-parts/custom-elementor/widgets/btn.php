@@ -164,7 +164,7 @@ class FBK_Elementor_Button extends \Elementor\Widget_Base {
 		if ( ! empty( $settings['button-s_btn_link']['url'] ) ) { $this->add_link_attributes( 'button-s_btn_link', $settings['button-s_btn_link'] ); }
 		?>
 
-		<section class="fbk-cw fbk-cw-single fbk-cw-btn container">
+		<section class="fbk-cw fbk-cw-singlepost fbk-cw-single fbk-cw-btn container">
          <div class="row">
             <div class="col-12">
                <div class="btns-wrapper">

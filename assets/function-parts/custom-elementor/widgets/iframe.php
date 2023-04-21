@@ -109,7 +109,7 @@ class FBK_Elementor_iframe extends \Elementor\Widget_Base {
 		
 		if ( $iframe ) : ?>
 
-			<div class="fbk-cw fbk-cw-single fbk-cw-iframe container">
+			<div class="fbk-cw fbk-cw-singlepost fbk-cw-single fbk-cw-iframe container">
             <div class="row">
                <div class="col-12">
                   <div class="embed-container">

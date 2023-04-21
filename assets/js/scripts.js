@@ -76,20 +76,6 @@ jQuery(document).ready(function () {
       jQuery(".header__mobile-nav").toggleClass("mobile-active");
    });
 
-   // Remove mt on first widget heading (h2 || h3 || h4) of single doc e single comunicazioni
-   jQuery(".single .elementor-section .fbk-cw-single")
-      .first()
-      .find("h2")
-      .css("margin-top", "0");
-   jQuery(".single .elementor-section .fbk-cw-single")
-      .first()
-      .find("h3")
-      .css("margin-top", "0");
-   jQuery(".single .elementor-section .fbk-cw-single")
-      .first()
-      .find("h4")
-      .css("margin-top", "0");
-
    //FAQs widget
    jQuery(".faq-container").click(function () {
       jQuery(this).toggleClass("faq-active");
@@ -105,4 +91,42 @@ jQuery(document).ready(function () {
          .parent(".fbk-cw-alert")
          .addClass("closed-alert");
    });
+
+   // Remove mt on first widget heading (h2 || h3 || h4) of single doc e single comunicazioni
+   jQuery(".single .elementor-section .fbk-cw-single")
+      .first()
+      .find("h2")
+      .css("margin-top", "0");
+   jQuery(".single .elementor-section .fbk-cw-single")
+      .first()
+      .find("h3")
+      .css("margin-top", "0");
+   jQuery(".single .elementor-section .fbk-cw-single")
+      .first()
+      .find("h4")
+      .css("margin-top", "0");
+
+   //Add mt on widget FBK - Pagine placed after an FBK - Articoli
+   // se i widget sono nella stessa sezione
+   jQuery(
+      ".single .elementor-section .elementor-column .elementor-widget-wrap .elementor-widget .fbk-cw-singlepost"
+   )
+      .parent()
+      .parent()
+      .next(".elementor-widget")
+      .find(".fbk-cw-pages")
+      .addClass("cw-pages-after-singlepost");
+   // se i widget sono nella un due sezioni differenti
+   jQuery(
+      ".single .elementor-section .elementor-column .elementor-widget-wrap .elementor-widget .fbk-cw-singlepost"
+   )
+      .parent()
+      .parent()
+      .parent()
+      .parent()
+      .parent()
+      .parent()
+      .next(".elementor-section")
+      .find(".elementor-widget:first-of-type() .fbk-cw-pages")
+      .addClass("cw-pages-after-singlepost");
 });

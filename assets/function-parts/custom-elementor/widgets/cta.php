@@ -147,7 +147,7 @@ class FBK_Elementor_CTA extends \Elementor\Widget_Base {
       ?>
 
 
-		<section class="fbk-cw fbk-cw-cta mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
+		<section class="fbk-cw fbk-cw-pages fbk-cw-cta mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
          <div class="container">
             <div class="row">
                <div class="col-12 content">

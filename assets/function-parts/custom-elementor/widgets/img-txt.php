@@ -176,7 +176,7 @@ class FBK_Elementor_ImageText extends \Elementor\Widget_Base {
       $position = $settings['imgtxt_position'];
 		
 		if ($position) : ?>
-         <div class="fbk-cw fbk-cw-single fbk-imgtxt container <?php echo $position; ?>">
+         <div class="fbk-cw fbk-cw-singlepost fbk-cw-single fbk-imgtxt container <?php echo $position; ?>">
             <div class="row">
                <?php if ( $img['url'] ) : ?>
                   <div class="col-12 col-lg-6 <?php if ($position == 'img-d') : echo 'order-lg-last'; endif;?>">

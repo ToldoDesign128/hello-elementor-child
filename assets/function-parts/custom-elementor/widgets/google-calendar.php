@@ -172,7 +172,7 @@ class FBK_Elementor_GoogleCalendar extends \Elementor\Widget_Base {
 
       if ( !is_singular('documenti') ) : ?>
 
-         <section class="fbk-cw fbk-cw-group-link container mb-section">
+         <section class="fbk-cw fbk-cw-pages fbk-cw-group-link container mb-section">
 
             <div class="section-header">
                <div class="content">

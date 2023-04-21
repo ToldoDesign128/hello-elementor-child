@@ -111,7 +111,7 @@ class FBK_Elementor_Paragraph extends \Elementor\Widget_Base {
 		$text = $settings['p_txt'];
 		
 		if ( $text ) : ?>
-         <div class="fbk-cw fbk-cw-single fbk-p container">
+         <div class="fbk-cw fbk-cw-singlepost fbk-cw-single fbk-p container">
             <div class="row">
                <div class="col-12">
                   <div class="wysiwyg"><?php echo $text; ?></div>

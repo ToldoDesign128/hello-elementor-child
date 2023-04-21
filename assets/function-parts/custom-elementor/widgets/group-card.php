@@ -237,13 +237,13 @@ class FBK_Elementor_GroupCard extends \Elementor\Widget_Base {
          $repeater = $settings['group-card_cards']
          ?>
    
-         <section class="fbk-cw fbk-cw-group-card container mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
+         <section class="fbk-cw fbk-cw-pages fbk-cw-group-card container mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
 
             <div class="row">
                <div class="col-12">
                   <div class="section-header">
                      <div class="content">
-                        <p class="overtitle"><?php echo $overtitle; ?></p>
+                     <?php if ($overtitle) : ?><p class="overtitle"><?php echo $overtitle; ?></p><?php endif; ?>
                         <?php if ($title) : 
                            // Slugify the title
                            $slug = preg_replace('~[^\pL\d]+~u', '-', $title);

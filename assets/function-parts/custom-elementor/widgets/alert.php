@@ -146,7 +146,7 @@ class FBK_Elementor_Alert extends \Elementor\Widget_Base {
       ?>
 
 
-		<section class="fbk-cw fbk-cw-alert container <?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
+		<section class="fbk-cw fbk-cw-pages fbk-cw-alert container <?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
          <div class="row mb-section">
             <div class="col-12">
                <div class="alert-wrapper">

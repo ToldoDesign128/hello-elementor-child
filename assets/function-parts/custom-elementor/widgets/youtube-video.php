@@ -124,7 +124,7 @@ class FBK_Elementor_YoutubeVideo extends \Elementor\Widget_Base {
          $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
          ?>
 
-			<div class="fbk-cw fbk-cw-single fbk-cw-youtube-video container">
+			<div class="fbk-cw fbk-cw-singlepost fbk-cw-single fbk-cw-youtube-video container">
             <div class="row">
                <div class="col-12 col-lg-10 col-xl-8">
                   <div class="embed-container">

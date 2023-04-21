@@ -160,7 +160,7 @@ class FBK_Elementor_Intro extends \Elementor\Widget_Base {
       $text = $settings['intro_txt'];
 		?>
 
-		<section class="fbk-cw fbk-cw-intro container mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
+		<section class="fbk-cw fbk-cw-pages fbk-cw-intro container mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
 
          <?php if ($title || $overtitle || $btn_label) : ?>
             <div class="row">

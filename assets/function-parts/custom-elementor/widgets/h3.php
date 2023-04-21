@@ -107,7 +107,7 @@ class FBK_Elementor_HeadingThree extends \Elementor\Widget_Base {
 		$title = $settings['h3_title'];
 		
 		if ( $title ) : ?>
-         <div class="fbk-cw fbk-cw-single fbk-cw-heading container">
+         <div class="fbk-cw fbk-cw-singlepost fbk-cw-single fbk-cw-heading container">
             <div class="row">
                <div class="col-12">
                   <h3><?php echo $title; ?></h3>

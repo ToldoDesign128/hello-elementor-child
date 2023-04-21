@@ -140,7 +140,7 @@ class FBK_Elementor_HeadingTwo extends \Elementor\Widget_Base {
          $slug = preg_replace('~-+~', '-', $slug);
          $slug = strtolower($slug);
          ?>
-         <div class="fbk-cw fbk-cw-single fbk-cw-heading container">
+         <div class="fbk-cw fbk-cw-singlepost fbk-cw-single fbk-cw-heading container">
             <div class="row">
                <div class="col-12">
                   <h2 id="<?php echo $slug; ?>">
