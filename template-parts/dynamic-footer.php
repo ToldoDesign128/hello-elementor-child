@@ -14,8 +14,6 @@
                endif;
             }
          endif;
-         
-         echo $page_ID_cur;
       endif; ?>
       <div class="row">
          <?php $footer_menu_items = NP_get_menu_by_slug('footer');
@@ -34,7 +32,7 @@
                      $child_url = $child_item->url;
                      $child_id = $child_item->object_id;
                      ?>
-                     <a href="<?php echo $child_url ?>" class="footer-child<?php if($child_id == $current_id || $page_ID_cur == $current_id): echo ' current-footer'; endif; ?>"><?php echo $page_ID_cur .' ' . $child_title . ' ' . $child_id; ?></a>
+                     <a href="<?php echo $child_url ?>" class="footer-child<?php if($child_id == $current_id || $page_ID_cur == $child_id): echo ' current-footer'; endif; ?>"><?php echo $child_title; ?></a>
                   <?php endforeach; 
                endif; ?>
             </div>
