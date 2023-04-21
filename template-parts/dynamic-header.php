@@ -132,7 +132,7 @@
                   endforeach; ?>
                </nav>
 
-               <div>
+               <div class="header-utilities">
                   <div class="lingua">
                      <div class="wpml-custom-switcher">
                         <?php do_action('wpml_add_language_selector'); ?>

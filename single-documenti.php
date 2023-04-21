@@ -16,13 +16,12 @@ while ( have_posts() ) : the_post();
             $page_ID = get_field('child_cat_page', $cur_cat);
             $bread_first_link = get_permalink($page_ID);
             $page_ID_it = apply_filters( 'wpml_object_id', $page_ID, 'post', FALSE, 'it' );
-            $bread_first_label = get_the_title($page_ID_it);
+            $page_ID_cur = apply_filters( 'wpml_object_id', $page_ID );
+            $bread_first_label = get_the_title($page_ID_cur);
          } else { 
-            // $bread_second_label = $cur_cat->name;
+            $bread_second_label = $cur_cat->name;
             $page_ID = get_field('child_cat_page', $cur_cat);
             $bread_second_link = get_permalink($page_ID);
-            $page_ID_it = apply_filters( 'wpml_object_id', $page_ID, 'post', FALSE, 'it' );
-            $bread_second_label = get_the_title($page_ID_it);
          }
       }
    endif;
@@ -62,7 +61,8 @@ while ( have_posts() ) : the_post();
                               </div>
                               <li>
                                  <?php 
-                                 echo 'ID pagina associata alla cat di primo lvl = ' . $page_ID_it;
+                                 echo 'ID pagina associata ITA alla cat di primo lvl = ' . $page_ID_it; ?><br><?php
+                                 echo 'ID pagina associata CORRENTE alla cat di primo lvl = ' . $page_ID_cur;
                                  ?><br>
                                  <a href="<?php echo $bread_first_link; ?>" class="bread-link">
                                     <?php echo $bread_first_label; ?>
