@@ -204,36 +204,38 @@ class FBK_Elementor_FAQ extends \Elementor\Widget_Base {
 
 		<section class="fbk-cw fbk-cw-pages fbk-cw-faq container mb-section<?php if (is_singular('documenti') || is_singular('comunicazioni')) : echo " fbk-cw-single"; endif; ?>">
 
-         <div class="row">
-            <div class="col-12">
-               <div class="section-header">
-                  <div class="content">
-                     <?php if ($overtitle) : ?><p class="overtitle"><?php echo $overtitle; ?></p><?php endif; ?>
-                     <?php if ($title) : 
-                        // Slugify the title
-                        $slug = preg_replace('~[^\pL\d]+~u', '-', $title);
-                        $slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
-                        $slug = preg_replace('~[^-\w]+~', '', $slug);
-                        $slug = trim($slug, '-');
-                        $slug = preg_replace('~-+~', '-', $slug);
-                        $slug = strtolower($slug);
-                        ?>
-                        <h2 id="<?php echo $slug; ?>"><?php echo $title; ?></h2>
-                     <?php endif; ?>
-                  </div>
-                  <div>
-                     <?php if ($btn_label) : ?>
-                        <a <?php echo $this->get_render_attribute_string( 'faq_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
-                              </svg>
-                           </span>
-                        </a>
-                     <?php endif; ?>
+         <?php if ($overtitle || $title || $btn_label) : ?>   
+            <div class="row">
+               <div class="col-12">
+                  <div class="section-header">
+                     <div class="content">
+                        <?php if ($overtitle) : ?><p class="overtitle"><?php echo $overtitle; ?></p><?php endif; ?>
+                        <?php if ($title) : 
+                           // Slugify the title
+                           $slug = preg_replace('~[^\pL\d]+~u', '-', $title);
+                           $slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+                           $slug = preg_replace('~[^-\w]+~', '', $slug);
+                           $slug = trim($slug, '-');
+                           $slug = preg_replace('~-+~', '-', $slug);
+                           $slug = strtolower($slug);
+                           ?>
+                           <h2 id="<?php echo $slug; ?>"><?php echo $title; ?></h2>
+                        <?php endif; ?>
+                     </div>
+                     <div>
+                        <?php if ($btn_label) : ?>
+                           <a <?php echo $this->get_render_attribute_string( 'faq_btn_link' ); ?> class="button button-primary"><?php echo $btn_label; ?><span class="svg-wrapper">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7239 3.33333H2.66672V2H14V13.3333H12.6667V4.27614L3.13812 13.8047L2.19531 12.8619L11.7239 3.33333Z" fill="white"/>
+                                 </svg>
+                              </span>
+                           </a>
+                        <?php endif; ?>
+                     </div>
                   </div>
                </div>
             </div>
-         </div>
+         <?php endif; ?>
       
 			<div class="row faqs">
 

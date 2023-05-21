@@ -5136,6 +5136,7 @@ li {
 .wysiwyg ol li {
   color: #605e5c;
 }
+.wysiwyg b,
 .wysiwyg strong {
   color: #323130;
   font-weight: 600;
@@ -6600,7 +6601,7 @@ footer .footer-info .lingua p {
 }
 @media (min-width: 992px) {
   .fbk-cw-faq .faqs .faq-container .faq-answer .wysiwyg {
-    max-width: 80ch;
+    max-width: 80rem;
   }
 }
 .fbk-cw-faq .faqs .faq-container:hover {
