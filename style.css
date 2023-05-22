@@ -7112,6 +7112,8 @@ footer .footer-info .lingua p {
 .fbk-h-code pre.h-code code {
   color: #605e5c;
   line-height: 2;
+  display: block;
+  white-space: pre-wrap;
 }
 
 .fbk-imgtxt {
