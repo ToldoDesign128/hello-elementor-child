@@ -52,26 +52,30 @@ while ( have_posts() ) : the_post();
                                     <path d="M0 7.9425L3.435 4.5L0 1.0575L1.0575 0L5.5575 4.5L1.0575 9L0 7.9425Z" fill="#A19E9E"/>
                                  </svg>
                               </div>
-                              <li>
-                                 <a href="<?php echo $bread_first_link; ?>" class="bread-link">
-                                    <?php echo $bread_first_label; ?>
-                                 </a>
-                              </li>
-                              <div class="pointer">
-                                 <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 7.9425L3.435 4.5L0 1.0575L1.0575 0L5.5575 4.5L1.0575 9L0 7.9425Z" fill="#A19E9E"/>
-                                 </svg>
-                              </div>
-                              <li>
-                                 <a href="<?php echo $bread_second_link; ?>" class="bread-link">
-                                    <?php echo $bread_second_label; ?>
-                                 </a>
-                              </li>
-                              <div class="pointer d-none d-sm-block">
-                                 <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 7.9425L3.435 4.5L0 1.0575L1.0575 0L5.5575 4.5L1.0575 9L0 7.9425Z" fill="#A19E9E"/>
-                                 </svg>
-                              </div>
+                              <?php if($bread_first_link): ?>
+                                 <li>
+                                    <a href="<?php echo $bread_first_link; ?>" class="bread-link">
+                                       <?php echo $bread_first_label; ?>
+                                    </a>
+                                 </li>
+                                 <div class="pointer">
+                                    <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M0 7.9425L3.435 4.5L0 1.0575L1.0575 0L5.5575 4.5L1.0575 9L0 7.9425Z" fill="#A19E9E"/>
+                                    </svg>
+                                 </div>
+                              <?php endif; ?>
+                              <?php if($bread_second_link): ?>
+                                 <li>
+                                    <a href="<?php echo $bread_second_link; ?>" class="bread-link">
+                                       <?php echo $bread_second_label; ?>
+                                    </a>
+                                 </li>
+                                 <div class="pointer d-none d-sm-block">
+                                    <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M0 7.9425L3.435 4.5L0 1.0575L1.0575 0L5.5575 4.5L1.0575 9L0 7.9425Z" fill="#A19E9E"/>
+                                    </svg>
+                                 </div>
+                              <?php endif; ?>
                               <li class="d-none d-sm-inline">
                                  <a title="pagina attuale" class="bread-link">
                                     <?php echo $bread_current; ?>
