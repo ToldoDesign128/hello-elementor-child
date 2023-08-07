@@ -175,110 +175,110 @@ add_action( 'elementor/widgets/register', 'register_fbk_custom_widgets' );
  * @return void
  */
 if ( ! current_user_can('administrator')) :
-   function remove_unused_widgets( $widgets_manager ) {
-      $widgets_to_unregister = [
-         //Base
-         'inner-section',
-         'heading',
-         'image',
-         // 'text-editor', // non si può disattivare nei single
-         'video',
-         'button',
-         'divider',
-         'spacer',
-         'google-maps', //non funzia
-         'icon',
+   // function remove_unused_widgets( $widgets_manager ) {
+   //    $widgets_to_unregister = [
+   //       //Base
+   //       'inner-section',
+   //       'heading',
+   //       'image',
+   //       // 'text-editor', // non si può disattivare nei single
+   //       'video',
+   //       'button',
+   //       'divider',
+   //       'spacer',
+   //       'google-maps', //non funzia
+   //       'icon',
 
-         //Generale
-         'image-box',
-         'icon-box',
-         'star-rating',
-         'image-carousel',
-         'image-gallery',
-         'icon-list',
-         'counter',
-         'progress',
-         'testimonial',
-         'tabs',
-         'accordion',
-         'toggle',
-         'social-icons',
-         'alert',
-         'audio',
-         'shortcode',
-         'html',
-         'menu-anchor',
-         'sidebar',
-         'read-more',
-         'text-path' //non funzia
+   //       //Generale
+   //       'image-box',
+   //       'icon-box',
+   //       'star-rating',
+   //       'image-carousel',
+   //       'image-gallery',
+   //       'icon-list',
+   //       'counter',
+   //       'progress',
+   //       'testimonial',
+   //       'tabs',
+   //       'accordion',
+   //       'toggle',
+   //       'social-icons',
+   //       'alert',
+   //       'audio',
+   //       'shortcode',
+   //       'html',
+   //       'menu-anchor',
+   //       'sidebar',
+   //       'read-more',
+   //       'text-path' //non funzia
 
-         // pro ----------------- //
-         ,'posts'
-         ,'portfolio'
-         ,'slides'
-         ,'form'
-         ,'login'
-         ,'media-carousel'
-         ,'testimonial-carousel'
-         ,'nav-menu'
-         ,'pricing'
-         ,'facebook-comment'
-         ,'animated-headline'
-         ,'price-list'
-         ,'price-table'
-         ,'facebook-button'
-         ,'facebook-comments'
-         ,'facebook-embed'
-         ,'facebook-page'
-         ,'add-to-cart'
-         ,'categories'
-         ,'elements'
-         ,'products'
-         ,'flip-box'
-         ,'carousel'
-         ,'countdown'
-         ,'share-buttons'
-         ,'author-box'
-         ,'breadcrumbs'
-         ,'search-form'
-         ,'post-navigation'
-         ,'post-comments'
-         ,'theme-elements'
-         ,'blockquote'
-         ,'template'
-         ,'wp-widget-audio'
-         ,'woocommerce'
-         ,'social'
-         ,'library'
+   //       // pro ----------------- //
+   //       ,'posts'
+   //       ,'portfolio'
+   //       ,'slides'
+   //       ,'form'
+   //       ,'login'
+   //       ,'media-carousel'
+   //       ,'testimonial-carousel'
+   //       ,'nav-menu'
+   //       ,'pricing'
+   //       ,'facebook-comment'
+   //       ,'animated-headline'
+   //       ,'price-list'
+   //       ,'price-table'
+   //       ,'facebook-button'
+   //       ,'facebook-comments'
+   //       ,'facebook-embed'
+   //       ,'facebook-page'
+   //       ,'add-to-cart'
+   //       ,'categories'
+   //       ,'elements'
+   //       ,'products'
+   //       ,'flip-box'
+   //       ,'carousel'
+   //       ,'countdown'
+   //       ,'share-buttons'
+   //       ,'author-box'
+   //       ,'breadcrumbs'
+   //       ,'search-form'
+   //       ,'post-navigation'
+   //       ,'post-comments'
+   //       ,'theme-elements'
+   //       ,'blockquote'
+   //       ,'template'
+   //       ,'wp-widget-audio'
+   //       ,'woocommerce'
+   //       ,'social'
+   //       ,'library'
 
-         // wp widgets ----------------- //
-         ,'wp-widget-pages'
-         ,'wp-widget-archives'
-         ,'wp-widget-media_audio'
-         ,'wp-widget-media_image'
-         ,'wp-widget-media_gallery'
-         ,'wp-widget-media_video'
-         ,'wp-widget-meta'
-         ,'wp-widget-search'
-         ,'wp-widget-text'
-         ,'wp-widget-categories'
-         ,'wp-widget-recent-posts'
-         ,'wp-widget-recent-comments'
-         ,'wp-widget-rss'
-         ,'wp-widget-tag_cloud'
-         ,'wp-widget-nav_menu'
-         ,'wp-widget-custom_html'
-         ,'wp-widget-polylang'
-         ,'wp-widget-calendar'
-         ,'wp-widget-elementor-library'
-         ,'wp-widget-block'
-      ];
+   //       // wp widgets ----------------- //
+   //       ,'wp-widget-pages'
+   //       ,'wp-widget-archives'
+   //       ,'wp-widget-media_audio'
+   //       ,'wp-widget-media_image'
+   //       ,'wp-widget-media_gallery'
+   //       ,'wp-widget-media_video'
+   //       ,'wp-widget-meta'
+   //       ,'wp-widget-search'
+   //       ,'wp-widget-text'
+   //       ,'wp-widget-categories'
+   //       ,'wp-widget-recent-posts'
+   //       ,'wp-widget-recent-comments'
+   //       ,'wp-widget-rss'
+   //       ,'wp-widget-tag_cloud'
+   //       ,'wp-widget-nav_menu'
+   //       ,'wp-widget-custom_html'
+   //       ,'wp-widget-polylang'
+   //       ,'wp-widget-calendar'
+   //       ,'wp-widget-elementor-library'
+   //       ,'wp-widget-block'
+   //    ];
 
-      foreach ( $widgets_to_unregister as $widget ) {
-         $widgets_manager->unregister( $widget );
-      }
-   }
-   add_action( 'elementor/widgets/register', 'remove_unused_widgets' );
+   //    foreach ( $widgets_to_unregister as $widget ) {
+   //       $widgets_manager->unregister( $widget );
+   //    }
+   // }
+   // add_action( 'elementor/widgets/register', 'remove_unused_widgets' );
 
    //custom CSS in Elementor editor for non admin users
    function HT_css_elementor_for_not_admin(){
@@ -334,61 +334,61 @@ if ( ! current_user_can('administrator')) :
    add_action( 'elementor/editor/after_enqueue_styles', 'HT_css_elementor_for_not_admin' );
 else:
    //rimuovo anche per gli admin alcuni widget di default
-   function admin_remove_unused_widgets( $widgets_manager ) {
-      $widgets_to_unregister = [
-         //Base
-         'button',
-         'icon',
+   // function admin_remove_unused_widgets( $widgets_manager ) {
+   //    $widgets_to_unregister = [
+   //       //Base
+   //       'button',
+   //       'icon',
 
-         //Generale
-         'star-rating',
-         'image-carousel',
-         'image-gallery',
-         'social-icons',
-         'alert',
-         'audio',
-         'menu-anchor',
-         'sidebar',
-         'read-more'
+   //       //Generale
+   //       'star-rating',
+   //       'image-carousel',
+   //       'image-gallery',
+   //       'social-icons',
+   //       'alert',
+   //       'audio',
+   //       'menu-anchor',
+   //       'sidebar',
+   //       'read-more'
 
-         // pro ----------------- //
-         ,'facebook-comment'
-         ,'facebook-button'
-         ,'facebook-comments'
-         ,'facebook-embed'
-         ,'facebook-page'
-         ,'add-to-cart'
-         ,'woocommerce'
-         ,'template'
+   //       // pro ----------------- //
+   //       ,'facebook-comment'
+   //       ,'facebook-button'
+   //       ,'facebook-comments'
+   //       ,'facebook-embed'
+   //       ,'facebook-page'
+   //       ,'add-to-cart'
+   //       ,'woocommerce'
+   //       ,'template'
 
-         // wp widgets ----------------- //
-         ,'wp-widget-pages'
-         ,'wp-widget-archives'
-         ,'wp-widget-media_audio'
-         ,'wp-widget-media_image'
-         ,'wp-widget-media_gallery'
-         ,'wp-widget-media_video'
-         ,'wp-widget-meta'
-         ,'wp-widget-search'
-         ,'wp-widget-text'
-         ,'wp-widget-categories'
-         ,'wp-widget-recent-posts'
-         ,'wp-widget-recent-comments'
-         ,'wp-widget-rss'
-         ,'wp-widget-tag_cloud'
-         ,'wp-widget-nav_menu'
-         ,'wp-widget-custom_html'
-         ,'wp-widget-polylang'
-         ,'wp-widget-calendar'
-         ,'wp-widget-elementor-library'
-         ,'wp-widget-block'
-      ];
+   //       // wp widgets ----------------- //
+   //       ,'wp-widget-pages'
+   //       ,'wp-widget-archives'
+   //       ,'wp-widget-media_audio'
+   //       ,'wp-widget-media_image'
+   //       ,'wp-widget-media_gallery'
+   //       ,'wp-widget-media_video'
+   //       ,'wp-widget-meta'
+   //       ,'wp-widget-search'
+   //       ,'wp-widget-text'
+   //       ,'wp-widget-categories'
+   //       ,'wp-widget-recent-posts'
+   //       ,'wp-widget-recent-comments'
+   //       ,'wp-widget-rss'
+   //       ,'wp-widget-tag_cloud'
+   //       ,'wp-widget-nav_menu'
+   //       ,'wp-widget-custom_html'
+   //       ,'wp-widget-polylang'
+   //       ,'wp-widget-calendar'
+   //       ,'wp-widget-elementor-library'
+   //       ,'wp-widget-block'
+   //    ];
 
-      foreach ( $widgets_to_unregister as $widget ) {
-         $widgets_manager->unregister( $widget );
-      }
-   }
-   add_action( 'elementor/widgets/register', 'admin_remove_unused_widgets' );
+   //    foreach ( $widgets_to_unregister as $widget ) {
+   //       $widgets_manager->unregister( $widget );
+   //    }
+   // }
+   // add_action( 'elementor/widgets/register', 'admin_remove_unused_widgets' );
 endif;
 
 //custom CSS in Elementor editor for non admin users
