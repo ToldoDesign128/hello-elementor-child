@@ -1,99 +1,115 @@
 .hero {
-   .hero-bg {
-      min-height: 100vh;
-      min-height: 100svh; //da toglierci poi l'altezza della navbar
-      background-color: $color-primary;
-      display: grid;
-      align-items: center;
-      transition: $dark-bg-transition;
+  .hero-bg {
+    min-height: 100vh;
+    min-height: 100svh; //da toglierci poi l'altezza della navbar
+    background-color: $color-primary;
+    display: grid;
+    align-items: center;
+    transition: $dark-bg-transition;
 
-      @media #{$underlarge} {
-         padding-bottom: 20%;
+    @media #{$underlarge} {
+      padding-bottom: 20%;
+    }
+
+    h1 {
+      margin-top: 10rem;
+      color: $color-txt-white-primary;
+      text-align: center;
+      font-size: clamp(5.6rem, 10vw, 8.8rem);
+
+      @media #{$medium} {
+        margin-top: 0;
       }
+    }
 
-      h1 {
-         color: $color-txt-white-primary;
-         text-align: center;
-         font-size: clamp(5.6rem, 10vw, 8.8rem);
-      }
-
-      .subtitle {
-         color: $color-txt-white-secondary;
-         text-align: center;
-         letter-spacing: 3px;
-         font-size: 1.8rem;
-
-         @media #{$large} {
-            font-size: 2.4rem;
-         }
-      }
-
-      .searchform-wrapper {
-         margin-block: 4.8vh;
-         text-align: center;
-
-         form {
-            justify-content: center;
-         }
-      }
-
-      .chips-wrapper {
-         display: flex;
-         flex-wrap: wrap;
-         gap: 1.6rem;
-         justify-content: center;
-         width: 100%;
-         max-width: 100rem;
-         margin-inline: auto;
-
-         .chip {
-            display: inline-block;
-            padding: 1rem 1.6rem;
-            text-decoration: none;
-            color: $color-txt-primary;
-            background-color: $color-white;
-            font-size: 1.4rem;
-            text-align: center;
-            line-height: 100%;
-            transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-            span {
-               display: -webkit-box;
-               -webkit-line-clamp: 1;
-               -webkit-box-orient: vertical;
-               overflow: hidden;
-               text-overflow: ellipsis;
-            }
-
-            @media #{$xxsmall} {
-               max-width: 32rem;
-               white-space: nowrap;
-               overflow: hidden;
-               text-overflow: ellipsis;
-
-               span {
-                  display: inline;
-               }
-            }
-
-            &:hover {
-               background-color: $color-light-primary;
-               color: $color-primary;
-            }
-
-            &:focus-visible {
-               outline: 2px solid $color-primary;
-               outline-offset: -4px;
-            }
-         }
-      }
-   }
-
-   .home_posts {
-      transform: translateY(-20%);
+    .subtitle {
+      color: $color-txt-white-secondary;
+      text-align: center;
+      letter-spacing: 3px;
+      font-size: 1.8rem;
 
       @media #{$large} {
-         transform: translateY(-35%);
+        font-size: 2.4rem;
       }
-   }
+    }
+
+    .intro-text {
+      margin-bottom: 3vh;
+      color: $color-txt-white-secondary;
+      text-align: center;
+      font-size: 1.2rem;
+
+      @media #{$large} {
+        font-size: 1.4rem;
+      }
+    }
+
+    .searchform-wrapper {
+      margin-block: 3vh;
+      text-align: center;
+
+      form {
+        justify-content: center;
+      }
+    }
+
+    .chips-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      justify-content: center;
+      width: 100%;
+      max-width: 100rem;
+      margin-inline: auto;
+
+      .chip {
+        display: inline-block;
+        padding: 1rem 1.6rem;
+        text-decoration: none;
+        color: $color-txt-primary;
+        background-color: $color-white;
+        font-size: 1.4rem;
+        text-align: center;
+        line-height: 100%;
+        transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        span {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        @media #{$xxsmall} {
+          max-width: 32rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          span {
+            display: inline;
+          }
+        }
+
+        &:hover {
+          background-color: $color-light-primary;
+          color: $color-primary;
+        }
+
+        &:focus-visible {
+          outline: 2px solid $color-primary;
+          outline-offset: -4px;
+        }
+      }
+    }
+  }
+
+  .home_posts {
+    transform: translateY(-20%);
+
+    @media #{$large} {
+      transform: translateY(-35%);
+    }
+  }
 }

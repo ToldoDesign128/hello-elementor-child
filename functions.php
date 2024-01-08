@@ -269,6 +269,12 @@ function disable_emojis_remove_dns_prefetch($urls, $relation_type)
    return $urls;
 }
 
+//Remove add media button from wysiwyg 
+function RemoveAddMediaButtonsForNonAdmins()
+{
+   remove_action('media_buttons', 'media_buttons');
+}
+add_action('admin_head', 'RemoveAddMediaButtonsForNonAdmins');
 
 //Remove items from admin bar
 function HT_remove_admin_bar_links()

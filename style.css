@@ -5747,6 +5747,13 @@ nav.breadcrumps.parent-breadcrumps ul .pointer svg path {
   color: #2e4083;
 }
 
+.elementor-widget-container ul,
+.elementor-widget-container ol,
+#content ul,
+#content ol {
+  margin-left: 1.8rem;
+}
+
 footer {
   background-color: #1254a2;
   height: 100%;
@@ -6172,9 +6179,15 @@ footer .footer-info .lingua p {
   }
 }
 .hero .hero-bg h1 {
+  margin-top: 10rem;
   color: #fff;
   text-align: center;
   font-size: clamp(5.6rem, 10vw, 8.8rem);
+}
+@media (min-width: 768px) {
+  .hero .hero-bg h1 {
+    margin-top: 0;
+  }
 }
 .hero .hero-bg .subtitle {
   color: #e2eaf4;
@@ -6187,8 +6200,19 @@ footer .footer-info .lingua p {
     font-size: 2.4rem;
   }
 }
+.hero .hero-bg .intro-text {
+  margin-bottom: 3vh;
+  color: #e2eaf4;
+  text-align: center;
+  font-size: 1.2rem;
+}
+@media (min-width: 992px) {
+  .hero .hero-bg .intro-text {
+    font-size: 1.4rem;
+  }
+}
 .hero .hero-bg .searchform-wrapper {
-  margin-block: 4.8vh;
+  margin-block: 3vh;
   text-align: center;
 }
 .hero .hero-bg .searchform-wrapper form {
