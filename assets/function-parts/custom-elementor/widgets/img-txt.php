@@ -223,9 +223,11 @@ class FBK_Elementor_ImageText extends \Elementor\Widget_Base
                   <div class="col-12 col-lg-6 <?php if ($position == 'img-d') : echo 'order-lg-last';
                                                 endif; ?>">
                      <div class="content">
-                        <figure>
-                           <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
-                        </figure>
+                        <a href="<?php echo $img['url']; ?>" target="_blank">
+                           <figure>
+                              <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+                           </figure>
+                        </a>
                      </div>
                   </div>
                <?php endif; ?>
